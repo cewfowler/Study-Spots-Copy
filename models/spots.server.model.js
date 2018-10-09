@@ -14,13 +14,19 @@ var spotsSchema = new Schema ({
   },
 
   coordinates: {
-    lattitude: Number,
-    longitude: Number
+    lattitude: {
+      type: Number,
+      required: true
+    },
+    longitude: {
+      type: Number,
+      required: true
+    }
   },
 
-  room {
+  spots {
     type: [Schema.types.mixed]
-  }
+  },
 
   upvotes: Number,
   downvotes: Number,
@@ -28,6 +34,9 @@ var spotsSchema = new Schema ({
   updatedAt: Date
 
 });
+
+//TODO: in order to add a spot to the array, must call
+// spots.markModified('spots');
 
 //TODO: make sure createdAt is initialized in the add/create study spot function
 //This function is meant to change the updated time to the save time
