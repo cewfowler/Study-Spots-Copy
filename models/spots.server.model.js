@@ -28,9 +28,6 @@ var spotsSchema = new Schema ({
     type: [Schema.types.mixed]
   },
 
-  upvotes: Number,
-  downvotes: Number,
-  createdAt: Date,
   updatedAt: Date
 
 });
