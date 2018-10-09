@@ -2,11 +2,25 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var spotsSchema = new Schema ({
-
-  location: {
+  bldgName: {
     type: String,
     required: true
   },
+
+  bldgCode: {
+    type: String,
+    required: true,
+    unique: true
+  },
+
+  coordinates: {
+    lattitude: Number,
+    longitude: Number
+  },
+
+  room {
+    type: [Schema.types.mixed]
+  }
 
   upvotes: Number,
   downvotes: Number,
