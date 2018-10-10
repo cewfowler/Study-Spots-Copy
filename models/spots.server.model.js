@@ -24,7 +24,7 @@ var spotsSchema = new Schema ({
     }
   },
 
-  spots {
+  spots: {
     type: [Schema.types.mixed]
   },
 
