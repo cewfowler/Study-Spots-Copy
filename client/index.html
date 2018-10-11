@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <title></title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=yes' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
     <style>
@@ -14,22 +14,25 @@
 
       #map {
         position: absolute;
-        top: 0;
+        top: 40px;
         bottom: 0;
+        height: 75%;
         width: 100%;
       }
     </style>
   </head>
   <body>
 
-  <div id='map'></div>
+  <h3>This is the basic map </h3>
+  <p id='map'></p>
   <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
   var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', // stylesheet location
-    center: [-93.261, 44.971], // starting position [lng, lat]
-    zoom: 10 // starting zoom
+    style: 'mapbox://styles/adamhochberger/cjn1ri2mp52yi2smkz22nskdj', //fully populated stylesheet
+    center: [-82.346109, 29.648578], // starting position [lng, lat]
+    zoom: 16.5 // starting zoom
+    //29.648578, -82.346109 for Gainesville lat/lng, switch for center
   });
 
   map.on('load', function() {
@@ -38,9 +41,9 @@
       type: 'circle',
       source: {
         type: 'vector',
-        url: 'mapbox://adamhochberger.2mq3ubfa'
+        url: 'adamhochberger.a4jhjxtv' //fully populated UF builds per uf_api
       },
-      'source-layer': 'HPC_landmarks-cgl18y',
+      'source-layer': 'result-2-5wxyl3',
     });
   });
 
