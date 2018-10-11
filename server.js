@@ -5,19 +5,23 @@ var express = require('express'),
     mongoose = require('mongoose'),
     config = require('./config'),
     //cookieParser = require('cookie-parser')
-    port = process.env.PORT || 8080;
+    port = process.env.PORT || 8080,
+    routes = require('./server/routes/routes');
     //var uri;
 
 //mongoose.connect(config.db.uri);
 
 app.use('/', express.static('client'));
 
-app.use('/*', function(req,res){
-  res.redirect('/');
-});
-
 app.get('/', function(req, res) {
   res.status(200).send();
+});
+
+// api calls should be referenced using '/spots'
+app.use('/spots/', routes);
+
+app.use('/*', function(req,res){
+  res.redirect('/');
 });
 
 app.listen(port, function() {
