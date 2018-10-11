@@ -4,7 +4,10 @@ var mongoose = require('mongoose'),
 
 module.exports = function(app) {
 
-  app.post('/', function(req, res){
+  app.post('/:bldgCode', function(req, res){
       console.log("Posting new study spot");
+
+
   });
+
 }
