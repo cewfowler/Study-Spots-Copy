@@ -1,8 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    SpotModel = require('../models/spots.server.model.js'),
+    spot = require('../models/spotsClass.js');
 
 module.exports = function(app) {
 
-  app.post('/api/addspot', function(req, res){
+  app.post('/', function(req, res){
       console.log("Posting new study spot");
   });
 }
