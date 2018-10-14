@@ -17,6 +17,10 @@ class StudySpot {
     this.upvotes--;
   };
 
+  getUpVotes() {
+    return this.upvotes;
+  };
+
   downVote() {
     this.downvotes++;
   };
@@ -24,4 +28,8 @@ class StudySpot {
   removeDownVote() {
     this.downvotes--;
   };
+
+  getDownVotes() {
+    return this.downVotes;
+  }
 };
