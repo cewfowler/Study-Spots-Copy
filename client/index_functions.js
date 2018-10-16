@@ -9,15 +9,50 @@ var map = new mapboxgl.Map({
 
 map.on('load', function() {
   map.addLayer({
-    id: 'historical-places',
-    type: 'circle',
+    id: 'buildings',
+    type: 'symbol',
     source: {
-      type: 'vector',
-      url: 'adamhochberger.a4jhjxtv' //fully populated UF builds per uf_api
-    },
-    'source-layer': 'result-2-5wxyl3',
+      type: 'geojson',
+      url: 'adamhochberger.cjnaxr1a505ge33mnxjgmxgke-0cehz' //fully populated UF builds per uf_api
+    }
   });
 });
+
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['buildings'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
+    + 'Spot 1 <br>'
+    + 'Spot 2 <br>'
+    + '</p>'
+    + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
+    )
+    .addTo(map);
+
+});
+
+map.on('mouseenter', 'buildings', function () {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'buildings', function () {
+    map.getCanvas().style.cursor = '';
+});
+
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'bottom-right');
+
 
 function openMenu(){
   document.getElementById("myMenu").style.width = "500px";
@@ -27,7 +62,9 @@ function closeMenu(){
   document.getElementById("myMenu").style.width = "0";
 }
 
-//TODO: Implement pop-up functionality
+
+
+//TODO: Implement form show/hide for button
 //TODO: Adjust panning for the markers
 //TODO: Implement filtering of the markers
-//TODO: Separate server into .js file so that mapbox is used properly
+//TODO: Implement more user-settings for map layers (building names, satellite)
