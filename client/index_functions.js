@@ -63,7 +63,8 @@ function closeMenu(){
 }
 
 
+
 //TODO: Implement form show/hide for button
 //TODO: Adjust panning for the markers
 //TODO: Implement filtering of the markers
-//TODO: Implement more user-settings for map layers
+//TODO: Implement more user-settings for map layers (building names, satellite)
