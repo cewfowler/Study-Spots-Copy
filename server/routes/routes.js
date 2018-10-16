@@ -12,6 +12,7 @@ module.exports = function(app) {
       if (err) return err;
       res.status(200).send(studySpots);
     });
+    
   });
 
   // the only thing that should be passed in the request is the building bCode
