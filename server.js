@@ -9,7 +9,7 @@ var express = require('express'),
     routes = require('./server/routes/routes');
     //var uri;
 
-//mongoose.connect(config.db.uri);
+mongoose.connect(config.db.uri);
 
 app.use('/', express.static('client'));
 

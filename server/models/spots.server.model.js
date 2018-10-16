@@ -7,6 +7,8 @@ var spotsSchema = new Schema ({
     required: true
   },
 
+  bldgFormalName: String,
+
   bldgCode: {
     type: String,
     required: true,
@@ -14,18 +16,12 @@ var spotsSchema = new Schema ({
   },
 
   coordinates: {
-    lattitude: {
-      type: Number,
-      required: true
-    },
-    longitude: {
-      type: Number,
-      required: true
-    }
+    type: [Number],
+    required: true
   },
 
   spots: {
-    type: [Schema.types.mixed]
+    type: [Schema.Types.mixed]
   },
 
   updatedAt: Date
