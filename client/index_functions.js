@@ -19,12 +19,31 @@ map.on('load', function() {
   });
 });
 
+
+//should delete later
 function openMenu(){
   document.getElementById("myMenu").style.width = "500px";
 }
 
+//should delete later
 function closeMenu(){
   document.getElementById("myMenu").style.width = "0";
+}
+
+//toggle menu function
+function toggleMenu(){
+  let menu = document.getElementById("myMenu");
+  let mapStyles = document.getElementById("map");
+    if (menu.style.width == "0px") {
+        mapStyles.style.width = "66%";
+        mapStyles.style.left = "500px";
+        menu.style.width = "500px";
+    } else {
+        mapStyles.style.width = "99%";
+        mapStyles.style.left = "0px";
+        menu.style.width = "0px";
+
+    }
 }
 
 //TODO: Implement pop-up functionality
