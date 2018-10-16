@@ -53,17 +53,23 @@ map.on('mouseleave', 'buildings', function () {
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
+//toggle menu function
+function toggleMenu(){
+  let menu = document.getElementById("myMenu");
+  let mapStyles = document.getElementById("map");
+    if (menu.style.width == "0px") {
+        mapStyles.style.width = "66%";
+        mapStyles.style.left = "500px";
+        menu.style.width = "500px";
+    } else {
+        mapStyles.style.width = "99%";
+        mapStyles.style.left = "0px";
+        menu.style.width = "0px";
 
-function openMenu(){
-  document.getElementById("myMenu").style.width = "500px";
+    }
 }
 
-function closeMenu(){
-  document.getElementById("myMenu").style.width = "0";
-}
-
-
-
+//TODO: Implement pop-up functionality
 //TODO: Implement form show/hide for button
 //TODO: Adjust panning for the markers
 //TODO: Implement filtering of the markers
