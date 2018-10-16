@@ -25,7 +25,7 @@ var spotsSchema = new Schema ({
   },
 
   spots: {
-    type: [Schema.types.mixed]
+    type: [Schema.Types.mixed]
   },
 
   updatedAt: Date

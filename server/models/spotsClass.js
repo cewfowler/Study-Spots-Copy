@@ -1,25 +1,35 @@
 
 // used for initialization of a new study spot
-exports.StudySpot = function(loc) {
-  this.location = loc;
-  this.upvotes = 0;
-  this.downvotes = 0;
-};
+class StudySpot {
 
+  constructor(loc) {
+    this.location = loc;
+    this.upvotes = 0;
+    this.downvotes = 0;
+  }
 
-//methods for incrementing/decrementing upvotes and downvotes
-StudySpot.prototype.upVote = function() {
-  this.upvotes++;
-};
+  //methods for incrementing/decrementing upvotes and downvotes
+  upVote() {
+    this.upvotes++;
+  };
 
-StudySpot.prototype.removeUpVote = function() {
-  this.upvotes--;
-};
+  removeUpVote() {
+    this.upvotes--;
+  };
 
-StudySpot.prototype.downVote = function() {
-  this.downvotes++;
-};
+  getUpVotes() {
+    return this.upvotes;
+  };
 
-StudySpot.prototype.removeDownVote = function() {
-  this.downvotes--;
+  downVote() {
+    this.downvotes++;
+  };
+
+  removeDownVote() {
+    this.downvotes--;
+  };
+
+  getDownVotes() {
+    return this.downVotes;
+  }
 };
