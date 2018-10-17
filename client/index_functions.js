@@ -7,7 +7,7 @@ var map = new mapboxgl.Map({
   //29.648578, -82.346109 for Gainesville lat/lng, switch for center
 });
 
-map.on('load', function() {
+map.on('load', function () {
   map.addLayer({
     id: 'buildings',
     type: 'symbol',
@@ -18,7 +18,7 @@ map.on('load', function() {
   });
 });
 
-map.on('click', function(e) {
+map.on('click', function (e) {
   var features = map.queryRenderedFeatures(e.point, {
     layers: ['buildings'] // replace this with the name of the layer
   });
@@ -32,42 +32,54 @@ map.on('click', function(e) {
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
-    + 'Spot 1 <br>'
-    + 'Spot 2 <br>'
-    + '</p>'
-    + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
+      + 'Spot 1 <br>'
+      + 'Spot 2 <br>'
+      + '</p>'
+      + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
     )
     .addTo(map);
-
+  openMenu();
 });
 
 map.on('mouseenter', 'buildings', function () {
-    map.getCanvas().style.cursor = 'pointer';
+  map.getCanvas().style.cursor = 'pointer';
 });
 
 // Change it back to a pointer when it leaves.
 map.on('mouseleave', 'buildings', function () {
-    map.getCanvas().style.cursor = '';
+  map.getCanvas().style.cursor = '';
 });
 
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
 //toggle menu function
-function toggleMenu(){
+function toggleMenu() {
   let menu = document.getElementById("myMenu");
   let mapStyles = document.getElementById("map");
-    if (menu.style.width == "0px") {
-        mapStyles.style.width = "66%";
-        mapStyles.style.left = "507px";
-        menu.style.width = "500px";
-    } else {
-        mapStyles.style.width = "99%";
-        mapStyles.style.left = "0px";
-        menu.style.width = "0px";
+  if (menu.style.width == "0px") {
+    mapStyles.style.width = "66%";
+    mapStyles.style.left = "507px";
+    menu.style.width = "500px";
+  } else {
+    mapStyles.style.width = "99%";
+    mapStyles.style.left = "0px";
+    menu.style.width = "0px";
 
-    }
+  }
 }
+
+//just opens the menu
+function openMenu() {
+  let menu = document.getElementById("myMenu");
+  let mapStyles = document.getElementById("map");
+  if (menu.style.width == "0px") {
+    mapStyles.style.width = "66%";
+    mapStyles.style.left = "507px";
+    menu.style.width = "500px";
+  }
+}
+
 
 //TODO: Implement pop-up functionality
 //TODO: Implement form show/hide for button
