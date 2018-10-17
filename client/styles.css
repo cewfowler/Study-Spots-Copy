@@ -13,7 +13,8 @@ body {
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-left: 5px
+    padding-left: 5px;
+    z-index: -1;
   }
   h1 {
     font-family: arial, sans-serif;
