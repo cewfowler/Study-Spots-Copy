@@ -1,0 +1,3763 @@
+[
+  {
+     "coordinates":[29.63934, -82.34584]
+    ,"bldgFormalName":"Shands Biohazard Waste Storage"
+    ,"bldgName":"Shands Biohazard Waste Storage"
+    ,"bldgCode":"A07"
+  },
+  {
+     "coordinates":[29.63937, -82.34575]
+    ,"bldgFormalName":"Shands Linen Utility"
+    ,"bldgName":"Shands Linen Utility"
+    ,"bldgCode":"A08"
+  },
+  {
+     "coordinates":[29.64015, -82.34231]
+    ,"bldgFormalName":"Shands In-Patient MRI Building"
+    ,"bldgName":"Shands In-Patient MRI Building"
+    ,"bldgCode":"A10"
+  },
+  {
+     "coordinates":[29.64138, -82.34119]
+    ,"bldgFormalName":"Shands Facilities Administration"
+    ,"bldgName":"Shands Facilities Administration"
+    ,"bldgCode":"A15"
+  },
+  {
+     "coordinates":[29.64138, -82.34119]
+    ,"bldgFormalName":"Shands Facilities Administration"
+    ,"bldgName":"Shands Facilities Administration"
+    ,"bldgCode":"A15"
+  },
+  {
+     "coordinates":[29.65025, -82.3457]
+    ,"bldgFormalName":"Rex & Preston Farrior Hall"
+    ,"bldgName":"Academic Advising Center (Aac)"
+    ,"bldgCode":"AAF"
+  },
+  {
+     "coordinates":[29.62989, -82.35757]
+    ,"bldgFormalName":"Animal Care Extension Facility 1"
+    ,"bldgName":"Animal Care Extension Facility 1"
+    ,"bldgCode":"ACEF"
+  },
+  {
+     "coordinates":[29.73326, -82.2201]
+    ,"bldgFormalName":"Roland T. Stern Learning Center at Austin Cary Forest"
+    ,"bldgName":"Learning Center"
+    ,"bldgCode":"ACLC"
+  },
+  {
+     "coordinates":[29.75069, -82.21934]
+    ,"bldgFormalName":"Teaching Pavilion, Forestry-ACMF"
+    ,"bldgName":"Teaching Pavilion, Forestry-ACMF"
+    ,"bldgCode":"ACMF"
+  },
+  {
+     "coordinates":[29.64429, -82.33889]
+    ,"bldgFormalName":"Alpha Chi Omega"
+    ,"bldgName":"Sorority -Alpha Chi Omega"
+    ,"bldgCode":"ACO"
+  },
+  {
+     "coordinates":[29.63874, -82.36337]
+    ,"bldgFormalName":"Agronomy Drying Facility"
+    ,"bldgName":"Agronomy Drying Facility"
+    ,"bldgCode":"ADF"
+  },
+  {
+     "coordinates":[29.6439, -82.33815]
+    ,"bldgFormalName":"Alpha Delta Pi"
+    ,"bldgName":"Sorority -Alpha Delta Pi"
+    ,"bldgCode":"ADP"
+  },
+  {
+     "coordinates":[29.64812, -82.35597]
+    ,"bldgFormalName":"Alpha Epsilon Pi"
+    ,"bldgName":"Fraternity -Alpha Epsilon Pi"
+    ,"bldgCode":"AEP"
+  },
+  {
+     "coordinates":[29.7393, -82.26851]
+    ,"bldgFormalName":"Agronomy Field Lab (Bru)"
+    ,"bldgName":"Agronomy Field Lab (Bru)"
+    ,"bldgCode":"AFLB"
+  },
+  {
+     "coordinates":[29.64734, -82.34404]
+    ,"bldgFormalName":"Aquatic Food Prod. Pilot Plant"
+    ,"bldgName":"Aquatic Food Prod. Pilot Plant"
+    ,"bldgCode":"AFPP"
+  },
+  {
+     "coordinates":[29.63877, -82.36309]
+    ,"bldgFormalName":"Fertilizer Storage"
+    ,"bldgName":"Agronomy Fertilizer Storage"
+    ,"bldgCode":"AFS"
+  },
+  {
+     "coordinates":[29.6387, -82.35945]
+    ,"bldgFormalName":"Drying Building"
+    ,"bldgName":"Agronomy Drying Building"
+    ,"bldgCode":"AGDB"
+  },
+  {
+     "coordinates":[29.63826, -82.36365]
+    ,"bldgFormalName":"Agricultural Engineering Bldg"
+    ,"bldgName":"Agricultural Engineering"
+    ,"bldgCode":"AGE"
+  },
+  {
+     "coordinates":[29.63827, -82.36392]
+    ,"bldgFormalName":"Agric Engineering Field Lab"
+    ,"bldgName":"Agric Engineering Field Lab"
+    ,"bldgCode":"AGEL"
+  },
+  {
+     "coordinates":[29.63814, -82.36328]
+    ,"bldgFormalName":"Agricultural Engineering Shop"
+    ,"bldgName":"Agricultural Engineering Shop"
+    ,"bldgCode":"AGES"
+  },
+  {
+     "coordinates":[29.64784, -82.33893]
+    ,"bldgFormalName":"Alpha Gamma Rho"
+    ,"bldgName":"Fraternity -Alpha Gamma Rho"
+    ,"bldgCode":"AGR"
+  },
+  {
+     "coordinates":[29.6335, -82.35524]
+    ,"bldgFormalName":"IFAS Laboratory (Agy)"
+    ,"bldgName":"IFAS Laboratory (Agy)"
+    ,"bldgCode":"AGYL"
+  },
+  {
+     "coordinates":[29.60602, -82.36656]
+    ,"bldgFormalName":"UF Shands AHC, I.T. Svcs"
+    ,"bldgName":"UF Shands AHC, I.T. Svcs"
+    ,"bldgCode":"AHC"
+  },
+  {
+     "coordinates":[29.63257, -82.35197]
+    ,"bldgFormalName":"Animal Building"
+    ,"bldgName":"Animal Building"
+    ,"bldgCode":"ANB"
+  },
+  {
+     "coordinates":[29.65158, -82.34189]
+    ,"bldgFormalName":"James N. Anderson Hall"
+    ,"bldgName":"Anderson Hall"
+    ,"bldgCode":"AND"
+  },
+  {
+     "coordinates":[29.63128, -82.35179]
+    ,"bldgFormalName":"Animal Sciences Building"
+    ,"bldgName":"Animal Sciences Building"
+    ,"bldgCode":"ANS"
+  },
+  {
+     "coordinates":[29.63071, -82.35154]
+    ,"bldgFormalName":"Animal Sciences Building"
+    ,"bldgName":"Animal Sciences Building"
+    ,"bldgCode":"ANSC"
+  },
+  {
+     "coordinates":[29.64426, -82.33804]
+    ,"bldgFormalName":"Alpha Omicron Pi"
+    ,"bldgName":"Sorority -Alpha Omicron Pi"
+    ,"bldgCode":"AOP"
+  },
+  {
+     "coordinates":[29.6469, -82.34396]
+    ,"bldgFormalName":"Aquatic Products Lab"
+    ,"bldgName":"Aquatic Products Lab"
+    ,"bldgCode":"APL"
+  },
+  {
+     "coordinates":[29.6283, -82.35382]
+    ,"bldgFormalName":"Agronomy Plant Introduct. Lab"
+    ,"bldgName":"Agronomy Plant Introduct. Lab"
+    ,"bldgCode":"APLL"
+  },
+  {
+     "coordinates":[29.72728, -82.41759]
+    ,"bldgFormalName":"Aquatic Weeds Res Ctr (Mlhpr)"
+    ,"bldgName":"Aquatic Weeds Res Ctr (Mlhpr)"
+    ,"bldgCode":"AQW1"
+  },
+  {
+     "coordinates":[29.6395, -82.35633]
+    ,"bldgFormalName":"Aquatic Weed Research"
+    ,"bldgName":"Aquatic Weeds Research"
+    ,"bldgCode":"AQW3"
+  },
+  {
+     "coordinates":[29.64117, -82.34384]
+    ,"bldgFormalName":"Academic Research Building"
+    ,"bldgName":"Academic Research Building"
+    ,"bldgCode":"ARB"
+  },
+  {
+     "coordinates":[29.64775, -82.3417]
+    ,"bldgFormalName":"Architecture"
+    ,"bldgName":"Architecture"
+    ,"bldgCode":"ARCH"
+  },
+  {
+     "coordinates":[29.64062, -82.37435]
+    ,"bldgFormalName":"ACS Housing"
+    ,"bldgName":"ACS Housing"
+    ,"bldgCode":"ARF2"
+  },
+  {
+     "coordinates":[29.64347, -82.36615]
+    ,"bldgFormalName":"Elmore Hall For Admin Services"
+    ,"bldgName":"Elmore Hall For Admin Services"
+    ,"bldgCode":"ASF"
+  },
+  {
+     "coordinates":[29.63237, -82.35197]
+    ,"bldgFormalName":"Animal Science Preparation Bld"
+    ,"bldgName":"Animal Science Preparation Bld"
+    ,"bldgCode":"ASP"
+  },
+  {
+     "coordinates":[29.63278, -82.35319]
+    ,"bldgFormalName":"Animal Sci. Physiology Barn"
+    ,"bldgName":"Animal Sci Physiology Barn"
+    ,"bldgCode":"ASPB"
+  },
+  {
+     "coordinates":[29.64877, -82.35384]
+    ,"bldgFormalName":"Lemerand Athletics Center"
+    ,"bldgName":"Lemerand Center"
+    ,"bldgCode":"ATHL"
+  },
+  {
+     "coordinates":[29.64989, -82.33886]
+    ,"bldgFormalName":"Alpha Tau Omega"
+    ,"bldgName":"Fraternity -Alpha Tau Omega"
+    ,"bldgCode":"ATO"
+  },
+  {
+     "coordinates":[29.64898, -82.34292]
+    ,"bldgFormalName":"University Auditorium"
+    ,"bldgName":"University Auditorium"
+    ,"bldgCode":"AUD"
+  },
+  {
+     "coordinates":[29.63942, -82.356]
+    ,"bldgFormalName":"Restroom and Shower Facility"
+    ,"bldgName":"Restroom and Shower Facility"
+    ,"bldgCode":"AVS"
+  },
+  {
+     "coordinates":[29.72727, -82.41702]
+    ,"bldgFormalName":"Aquatic Weeds Annex (Mlhpr)"
+    ,"bldgName":"Aquatic Weeds Annex (Mlhpr)"
+    ,"bldgCode":"AWAX"
+  },
+  {
+     "coordinates":[29.65093, -82.33278]
+    ,"bldgFormalName":"Ayers Medical Plaza"
+    ,"bldgName":"Ayers Medical Plaza"
+    ,"bldgCode":"AYER"
+  },
+  {
+     "coordinates":[29.64392, -82.34449]
+    ,"bldgFormalName":"William Bartram Hall"
+    ,"bldgName":"Bartram Hall"
+    ,"bldgCode":"BAR"
+  },
+  {
+     "coordinates":[29.64961, -82.35619]
+    ,"bldgFormalName":"Basketball Practice Facility"
+    ,"bldgName":"Basketball Practice Facility"
+    ,"bldgCode":"BASK"
+  },
+  {
+     "coordinates":[29.64203, -82.3636]
+    ,"bldgFormalName":"Baughman Support Building"
+    ,"bldgName":"Baughman Support Building"
+    ,"bldgCode":"BAU1"
+  },
+  {
+     "coordinates":[29.64222, -82.36355]
+    ,"bldgFormalName":"Baughman Meditation Center"
+    ,"bldgName":"Baughman Meditation Center"
+    ,"bldgCode":"BAU2"
+  },
+  {
+     "coordinates":[29.63946, -82.35996]
+    ,"bldgFormalName":"Bio-Containment Facility"
+    ,"bldgName":"Bio-Containment Facility"
+    ,"bldgCode":"BCF"
+  },
+  {
+     "coordinates":[29.6335, -82.35567]
+    ,"bldgFormalName":"Bio-Control Laboratory"
+    ,"bldgName":"Bio-Control Laboratory"
+    ,"bldgCode":"BCL"
+  },
+  {
+     "coordinates":[29.6441, -82.34076]
+    ,"bldgFormalName":"Robert Calder Beaty Towers A"
+    ,"bldgName":"R. C. Beaty Towers A"
+    ,"bldgCode":"BEA"
+  },
+  {
+     "coordinates":[29.6442, -82.34024]
+    ,"bldgFormalName":"Robert Calder Beaty Towers B"
+    ,"bldgName":"R. C. Beaty Towers B"
+    ,"bldgCode":"BEB"
+  },
+  {
+     "coordinates":[29.64438, -82.34058]
+    ,"bldgFormalName":"Robert Calder Beaty Commons C"
+    ,"bldgName":"R. C. Beaty Commons"
+    ,"bldgCode":"BEC"
+  },
+  {
+     "coordinates":[29.64399, -82.34042]
+    ,"bldgFormalName":"R.C. Beaty Service Bldg F"
+    ,"bldgName":"Beaty Service Bldg F"
+    ,"bldgCode":"BEF"
+  },
+  {
+     "coordinates":[29.64341, -82.34762]
+    ,"bldgFormalName":"John R. Benton Hall"
+    ,"bldgName":"Benton Hall"
+    ,"bldgCode":"BEN"
+  },
+  {
+     "coordinates":[29.64921, -82.35905]
+    ,"bldgFormalName":"Bruton-Geer Hall"
+    ,"bldgName":"Bruton-Geer  Hall"
+    ,"bldgCode":"BGH"
+  },
+  {
+     "coordinates":[29.78572, -82.47954]
+    ,"bldgFormalName":"Biotechnology #1"
+    ,"bldgName":"Biotechnology Building 1"
+    ,"bldgCode":"BIO1"
+  },
+  {
+     "coordinates":[29.62749, -82.36149]
+    ,"bldgFormalName":"Bioremediation Lab"
+    ,"bldgName":"Bioremediation Laboratory"
+    ,"bldgCode":"BIOL"
+  },
+  {
+     "coordinates":[29.78279, -82.4748]
+    ,"bldgFormalName":"Sid Martin Biotechnology Fac."
+    ,"bldgName":"Sid Martin Biotechnology"
+    ,"bldgCode":"BIRF"
+  },
+  {
+     "coordinates":[29.64343, -82.36804]
+    ,"bldgFormalName":"Bookstore Warehouse"
+    ,"bldgName":"Bookstore Warehouse"
+    ,"bldgCode":"BKW"
+  },
+  {
+     "coordinates":[29.64197, -82.3679]
+    ,"bldgFormalName":"Behavior Lab Annex"
+    ,"bldgName":"Behavior Lab Annex (Museum)"
+    ,"bldgCode":"BLAX"
+  },
+  {
+     "coordinates":[29.64192, -82.34786]
+    ,"bldgFormalName":"Alvin P. Black Hall"
+    ,"bldgName":"Black Hall"
+    ,"bldgCode":"BLK"
+  },
+  {
+     "coordinates":[29.64061, -82.3457]
+    ,"bldgFormalName":"Biomedical Sciences Building"
+    ,"bldgName":"Biomedical Sciences"
+    ,"bldgCode":"BMS"
+  },
+  {
+     "coordinates":[29.64816, -82.35635]
+    ,"bldgFormalName":"Beta Theta Pi"
+    ,"bldgName":"Fraternity -Beta Theta Pi"
+    ,"bldgCode":"BQP"
+  },
+  {
+     "coordinates":[29.64655, -82.34208]
+    ,"bldgFormalName":"Annie D. Broward Hall"
+    ,"bldgName":"Broward Hall"
+    ,"bldgCode":"BRO"
+  },
+  {
+     "coordinates":[29.64893, -82.34572]
+    ,"bldgFormalName":"T.W. Bryant Space Science Ctr"
+    ,"bldgName":"Bryant Space Science Center"
+    ,"bldgCode":"BRT"
+  },
+  {
+     "coordinates":[29.74356, -82.26511]
+    ,"bldgFormalName":"Equipment Storage"
+    ,"bldgName":"Equipment Storage"
+    ,"bldgCode":"BRU1"
+  },
+  {
+     "coordinates":[29.65127, -82.34032]
+    ,"bldgFormalName":"Nathan P. Bryan Hall"
+    ,"bldgName":"Bryan Hall"
+    ,"bldgCode":"BRY"
+  },
+  {
+     "coordinates":[29.6402, -82.3457]
+    ,"bldgFormalName":"Basic Science Building"
+    ,"bldgName":"Basic Science"
+    ,"bldgCode":"BSU"
+  },
+  {
+     "coordinates":[29.63849, -82.35962]
+    ,"bldgFormalName":"Bio-Tech Lab"
+    ,"bldgName":"Bio-Tech Laboratory"
+    ,"bldgCode":"BTL"
+  },
+  {
+     "coordinates":[29.61763, -82.35433]
+    ,"bldgFormalName":"Beef Teaching Facility Dorms"
+    ,"bldgName":""
+    ,"bldgCode":"BTUS"
+  },
+  {
+     "coordinates":[29.65089, -82.345]
+    ,"bldgFormalName":"Henry H. Buckman Hall"
+    ,"bldgName":"Buckman Hall"
+    ,"bldgCode":"BUC"
+  },
+  {
+     "coordinates":[29.64537, -82.34803]
+    ,"bldgFormalName":"UF Bookstore & Welcome Center"
+    ,"bldgName":"UF Bookstore & Welcome Center"
+    ,"bldgCode":"BWC"
+  },
+  {
+     "coordinates":[29.64908, -82.34167]
+    ,"bldgFormalName":"William G. Carleton Auditorium"
+    ,"bldgName":"Carleton Auditorium"
+    ,"bldgCode":"CAR"
+  },
+  {
+     "coordinates":[29.65297, -82.34294]
+    ,"bldgFormalName":"The 105 Classroom Building"
+    ,"bldgName":"105 Classroom Building"
+    ,"bldgCode":"CBD"
+  },
+  {
+     "coordinates":[29.64246, -82.34861]
+    ,"bldgFormalName":"Chemical Engineering Digester"
+    ,"bldgName":"Chemical Engineering Digester"
+    ,"bldgCode":"CEDG"
+  },
+  {
+     "coordinates":[29.64825, -82.34837]
+    ,"bldgFormalName":"Civil Engineering Storage"
+    ,"bldgName":"Civil Engineering Storage"
+    ,"bldgCode":"CEGS"
+  },
+  {
+     "coordinates":[29.63677, -82.35307]
+    ,"bldgFormalName":"Center for Environmental & Human Toxicology"
+    ,"bldgName":"Center for Environmental & Human Tox"
+    ,"bldgCode":"CEHT"
+  },
+  {
+     "coordinates":[29.63688, -82.35286]
+    ,"bldgFormalName":"Center for Environmental & Human Toxicology Annex"
+    ,"bldgName":"Center Environmental & Human Tox. Annex"
+    ,"bldgCode":"CEHT"
+  },
+  {
+     "coordinates":[29.63926, -82.33049]
+    ,"bldgFormalName":"Coastal Engineering Lab"
+    ,"bldgName":"Coastal Engineering Lab"
+    ,"bldgCode":"CEL1"
+  },
+  {
+     "coordinates":[29.63819, -82.33058]
+    ,"bldgFormalName":"Coastal Engingeering Lab"
+    ,"bldgName":"Coastal Engineering Lab"
+    ,"bldgCode":"CEL2"
+  },
+  {
+     "coordinates":[29.64881, -82.34332]
+    ,"bldgFormalName":"Century Tower"
+    ,"bldgName":"Century Tower"
+    ,"bldgCode":"CENT"
+  },
+  {
+     "coordinates":[29.64393, -82.34308]
+    ,"bldgFormalName":"Centrex (University Police)"
+    ,"bldgName":"Centrex (University Police)"
+    ,"bldgCode":"CENX"
+  },
+  {
+     "coordinates":[29.63378, -82.35054]
+    ,"bldgFormalName":"Veterinary Small Animal Hospital"
+    ,"bldgName":"CERC"
+    ,"bldgCode":"CERC"
+  },
+  {
+     "coordinates":[29.64241, -82.3478]
+    ,"bldgFormalName":"Chemical Engineering Student Center"
+    ,"bldgName":"Chemical Engineering Student Center"
+    ,"bldgCode":"CESC"
+  },
+  {
+     "coordinates":[29.64263, -82.34857]
+    ,"bldgFormalName":"Chemical Eng Solvent Storage"
+    ,"bldgName":"Chemical Eng Solvent Storage"
+    ,"bldgCode":"CESS"
+  },
+  {
+     "coordinates":[29.63893, -82.33057]
+    ,"bldgFormalName":"Coastal Engineering Test Lab"
+    ,"bldgName":"Coastal Engineering Test Lab"
+    ,"bldgCode":"CETL"
+  },
+  {
+     "coordinates":[29.63801, -82.35159]
+    ,"bldgFormalName":"Cancer/Genetics Research Complex"
+    ,"bldgName":"Cancer/Genetics Research"
+    ,"bldgCode":"CGRC"
+  },
+  {
+     "coordinates":[29.64271, -82.348]
+    ,"bldgFormalName":"Chemical Engineering"
+    ,"bldgName":"Chemical Engineering"
+    ,"bldgCode":"CHE"
+  },
+  {
+     "coordinates":[29.63333, -82.36111]
+    ,"bldgFormalName":"Chemical Storage"
+    ,"bldgName":"Chemical Storage"
+    ,"bldgCode":"CHEM"
+  },
+  {
+     "coordinates":[29.64117, -82.37337]
+    ,"bldgFormalName":"Animal Research Chem Storage"
+    ,"bldgName":"Animal Research Chemical Stor"
+    ,"bldgCode":"CHST"
+  },
+  {
+     "coordinates":[29.65089, -82.34412]
+    ,"bldgFormalName":"Chemistry Laboratory"
+    ,"bldgName":"Chemistry Laboratory"
+    ,"bldgCode":"CLB"
+  },
+  {
+     "coordinates":[29.6347, -82.34508]
+    ,"bldgFormalName":"Schiebler CMS "
+    ,"bldgName":"Schiebler CMS"
+    ,"bldgCode":"CMS"
+  },
+  {
+     "coordinates":[29.64466, -82.33805]
+    ,"bldgFormalName":"Chi Omega"
+    ,"bldgName":"Sorority -Chi Omega"
+    ,"bldgCode":"CO"
+  },
+  {
+     "coordinates":[29.64087, -82.34491]
+    ,"bldgFormalName":"Communicore"
+    ,"bldgName":"Communicore"
+    ,"bldgCode":"COM"
+  },
+  {
+     "coordinates":[29.64619, -82.34661]
+    ,"bldgFormalName":"H. Philip Constans Theatre"
+    ,"bldgName":"Constans Theatre"
+    ,"bldgCode":"CON"
+  },
+  {
+     "coordinates":[29.63893, -82.369]
+    ,"bldgFormalName":"Center for Outdoor Recreation & Education"
+    ,"bldgName":"CORE"
+    ,"bldgCode":"CORE"
+  },
+  {
+     "coordinates":[29.63896, -82.33085]
+    ,"bldgFormalName":"Coastal Engineering Shops"
+    ,"bldgName":"Coastal Engineering Shops"
+    ,"bldgCode":"COSL"
+  },
+  {
+     "coordinates":[29.64524, -82.35446]
+    ,"bldgFormalName":"Chi Phi"
+    ,"bldgName":"Fraternity - Chi Phi"
+    ,"bldgCode":"CP"
+  },
+  {
+     "coordinates":[28.10243, -81.71171]
+    ,"bldgFormalName":"Ben Hill Griffin Citrus Hall"
+    ,"bldgName":""
+    ,"bldgCode":"CREC"
+  },
+  {
+     "coordinates":[29.64385, -82.34488]
+    ,"bldgFormalName":"Archie F. Carr Hall"
+    ,"bldgName":"Carr Hall"
+    ,"bldgCode":"CRR"
+  },
+  {
+     "coordinates":[29.64831, -82.34435]
+    ,"bldgFormalName":"Computer Sciences/Engineering"
+    ,"bldgName":"Computer Sciences/Engineering"
+    ,"bldgCode":"CSE"
+  },
+  {
+     "coordinates":[29.63366, -82.36171]
+    ,"bldgFormalName":"Crops And Soils Field Lab"
+    ,"bldgName":"Crops And Soils Field Lab"
+    ,"bldgCode":"CSFL"
+  },
+  {
+     "coordinates":[29.78139, -82.47181]
+    ,"bldgFormalName":"Center Of Excellence"
+    ,"bldgName":"Center Of Excellence"
+    ,"bldgCode":"CTEX"
+  },
+  {
+     "coordinates":[29.63985, -82.34983]
+    ,"bldgFormalName":"Clinical & Translational Research Building"
+    ,"bldgName":"Clinical & Translational Research Bldg"
+    ,"bldgCode":"CTRB"
+  },
+  {
+     "coordinates":[29.63794, -82.35309]
+    ,"bldgFormalName":"Mowry Chilled Water Plant (CWP10)"
+    ,"bldgName":"Mowry Chilled Water Plant (CWP10)"
+    ,"bldgCode":"CW10"
+  },
+  {
+     "coordinates":[29.64253, -82.36933]
+    ,"bldgFormalName":"Counseling And Wellness Center"
+    ,"bldgName":"Counseling And Wellness"
+    ,"bldgCode":"CWC"
+  },
+  {
+     "coordinates":[29.64815, -82.3485]
+    ,"bldgFormalName":"Weil Chilled Water Plant (CWP1)"
+    ,"bldgName":"Weil Chilled Water Plant (CWP1)"
+    ,"bldgCode":"CWP1"
+  },
+  {
+     "coordinates":[29.64059, -82.34695]
+    ,"bldgFormalName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgCode":"CWP2"
+  },
+  {
+     "coordinates":[29.64059, -82.34695]
+    ,"bldgFormalName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgCode":"CWP2"
+  },
+  {
+     "coordinates":[29.64059, -82.34695]
+    ,"bldgFormalName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgCode":"CWP2"
+  },
+  {
+     "coordinates":[29.64059, -82.34695]
+    ,"bldgFormalName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgCode":"CWP2"
+  },
+  {
+     "coordinates":[29.64059, -82.34695]
+    ,"bldgFormalName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgName":"Lacy Rabon Chilled Water Plant (CWP2)"
+    ,"bldgCode":"CWP2"
+  },
+  {
+     "coordinates":[29.64942, -82.34115]
+    ,"bldgFormalName":"Walker Hall Chilled Water Plant (CWP3)"
+    ,"bldgName":"Walker Hall Chilled Water Plant (CWP3)"
+    ,"bldgCode":"CWP3"
+  },
+  {
+     "coordinates":[29.63558, -82.36839]
+    ,"bldgFormalName":"SW Chilled Water Plant (CWP4)"
+    ,"bldgName":"SW Chilled Water Plant (CWP4)"
+    ,"bldgCode":"CWP4"
+  },
+  {
+     "coordinates":[29.64604, -82.34503]
+    ,"bldgFormalName":"McCarty Chilled Water Plant (CWP5)"
+    ,"bldgName":"McCarty Chilled Water Plant (CWP5)"
+    ,"bldgCode":"CWP5"
+  },
+  {
+     "coordinates":[29.63956, -82.36594]
+    ,"bldgFormalName":"West Chilled Water Plant (CWP6)"
+    ,"bldgName":"West Chilled Water Plant (CWP6)"
+    ,"bldgCode":"CWP6"
+  },
+  {
+     "coordinates":[29.6481, -82.35809]
+    ,"bldgFormalName":"Holland Law Chilled Water Plant (CWP7)"
+    ,"bldgName":"Holland Law Chilled Water Plant (CWP7)"
+    ,"bldgCode":"CWP7"
+  },
+  {
+     "coordinates":[29.64088, -82.34663]
+    ,"bldgFormalName":"SE Chilled Water Plant (CWP9)"
+    ,"bldgName":"SE Chilled Water Plant (CWP9)"
+    ,"bldgCode":"CWP9"
+  },
+  {
+     "coordinates":[29.6457, -82.33976]
+    ,"bldgFormalName":"Cypress Hall Student Housing"
+    ,"bldgName":"Cypress Hall"
+    ,"bldgCode":"CYP"
+  },
+  {
+     "coordinates":[29.63515, -82.35041]
+    ,"bldgFormalName":"Shands Heliport Hangar"
+    ,"bldgName":"Shands Heliport Hangar"
+    ,"bldgCode":"D03"
+  },
+  {
+     "coordinates":[29.63515, -82.35069]
+    ,"bldgFormalName":"Shands Heliport Office Bldg"
+    ,"bldgName":"Shands Heliport Office Bldg"
+    ,"bldgCode":"D05"
+  },
+  {
+     "coordinates":[29.64995, -82.34508]
+    ,"bldgFormalName":"Manning J. Dauer Hall"
+    ,"bldgName":"Dauer Hall"
+    ,"bldgCode":"DAU"
+  },
+  {
+     "coordinates":[29.62787, -82.36139]
+    ,"bldgFormalName":"MAE Design Center Annex"
+    ,"bldgName":"Design Center Annex"
+    ,"bldgCode":"DCA"
+  },
+  {
+     "coordinates":[29.63321, -82.35144]
+    ,"bldgFormalName":"Deriso Hall"
+    ,"bldgName":"Deriso Hall"
+    ,"bldgCode":"DER"
+  },
+  {
+     "coordinates":[29.73929, -82.26818]
+    ,"bldgFormalName":"Drying & Grinding Bldg (Bru)"
+    ,"bldgName":"Drying & Grinding Bldg (Bru)"
+    ,"bldgCode":"DGB"
+  },
+  {
+     "coordinates":[29.64698, -82.34129]
+    ,"bldgFormalName":"Broward Dining Center"
+    ,"bldgName":"Broward Dining Center"
+    ,"bldgCode":"DINE"
+  },
+  {
+     "coordinates":[29.6395, -82.34503]
+    ,"bldgFormalName":"Dental Science"
+    ,"bldgName":"Dental Science"
+    ,"bldgCode":"DSB"
+  },
+  {
+     "coordinates":[29.65251, -82.34869]
+    ,"bldgFormalName":"Delta Tau Delta"
+    ,"bldgName":"Fraternity - Delta Tau Delta"
+    ,"bldgCode":"DTD"
+  },
+  {
+     "coordinates":[29.65248, -82.34688]
+    ,"bldgFormalName":"Delta Upsilon"
+    ,"bldgName":"Fraternity -Delta Upsilon"
+    ,"bldgCode":"DU"
+  },
+  {
+     "coordinates":[29.64339, -82.339]
+    ,"bldgFormalName":"Delta Zeta"
+    ,"bldgName":"Sorority - Delta Zeta"
+    ,"bldgCode":"DZ"
+  },
+  {
+     "coordinates":[29.65249, -82.34906]
+    ,"bldgFormalName":"Emerson Alumni Hall"
+    ,"bldgName":"Emerson Alumni Hall"
+    ,"bldgCode":"EAH"
+  },
+  {
+     "coordinates":[29.64732, -82.3502]
+    ,"bldgFormalName":"East Hall"
+    ,"bldgName":"East Hall"
+    ,"bldgCode":"EAS"
+  },
+  {
+     "coordinates":[29.67241, -82.30008]
+    ,"bldgFormalName":"UF Data Center"
+    ,"bldgName":"UF Data Center"
+    ,"bldgCode":"ECDC"
+  },
+  {
+     "coordinates":[29.6311, -82.36704]
+    ,"bldgFormalName":"Electronic Communications Lab"
+    ,"bldgName":"Electronic Communications Lab"
+    ,"bldgCode":"ECL"
+  },
+  {
+     "coordinates":[29.67204, -82.29937]
+    ,"bldgFormalName":"East Campus Office Building"
+    ,"bldgName":"East Campus Office"
+    ,"bldgCode":"ECOB"
+  },
+  {
+     "coordinates":[29.64162, -82.34838]
+    ,"bldgFormalName":"Engineering Design Building"
+    ,"bldgName":"Engineering Design Building"
+    ,"bldgCode":"EDB"
+  },
+  {
+     "coordinates":[29.63113, -82.36749]
+    ,"bldgFormalName":"EH&S Program Support Building"
+    ,"bldgName":"EH&S Program Support"
+    ,"bldgCode":"EHSP"
+  },
+  {
+     "coordinates":[29.63176, -82.36748]
+    ,"bldgFormalName":"EH&S Storage"
+    ,"bldgName":"EH&S Storage"
+    ,"bldgCode":"EHSS"
+  },
+  {
+     "coordinates":[29.62699, -82.35627]
+    ,"bldgFormalName":"Implement Shed"
+    ,"bldgName":"Entomology Implement Shed"
+    ,"bldgCode":"EIS"
+  },
+  {
+     "coordinates":[29.62765, -82.36148]
+    ,"bldgFormalName":"Environmental Microbiology"
+    ,"bldgName":"Environmental Microbiology Lab"
+    ,"bldgCode":"EML"
+  },
+  {
+     "coordinates":[29.63952, -82.36023]
+    ,"bldgFormalName":"Environmental Soil Bin"
+    ,"bldgName":"Environmental Soil Bin"
+    ,"bldgCode":"ENSB"
+  },
+  {
+     "coordinates":[29.63902, -82.35769]
+    ,"bldgFormalName":"Entomology Field Laboratory"
+    ,"bldgName":"Entomology Field Laboratory"
+    ,"bldgCode":"ENYF"
+  },
+  {
+     "coordinates":[29.63344, -82.3667]
+    ,"bldgFormalName":"Entomology Shop"
+    ,"bldgName":"Entomology Shop"
+    ,"bldgCode":"ENYS"
+  },
+  {
+     "coordinates":[29.63734, -82.35192]
+    ,"bldgFormalName":"Emerging Pathogens Institute"
+    ,"bldgName":"Pathogens"
+    ,"bldgCode":"EPI"
+  },
+  {
+     "coordinates":[29.63988, -82.35675]
+    ,"bldgFormalName":"Editorial Publications Storage"
+    ,"bldgName":"Editorial Publications Storage"
+    ,"bldgCode":"EPS"
+  },
+  {
+     "coordinates":[29.63545, -82.36465]
+    ,"bldgFormalName":"Environmental Stress Lab"
+    ,"bldgName":"Environmental Stress Lab"
+    ,"bldgCode":"ESL"
+  },
+  {
+     "coordinates":[29.62725, -82.35666]
+    ,"bldgFormalName":"Sterilizer Shed"
+    ,"bldgName":"Entomology Sterilizer Shed"
+    ,"bldgCode":"ESS"
+  },
+  {
+     "coordinates":[29.63465, -82.36647]
+    ,"bldgFormalName":"Steinmetz Hall"
+    ,"bldgName":"Entomology-Nematology Building"
+    ,"bldgCode":"EYN"
+  },
+  {
+     "coordinates":[29.63331, -82.33867]
+    ,"bldgFormalName":"Shands Endoscopy Center"
+    ,"bldgName":"Shands Endoscopy Center"
+    ,"bldgCode":"F01"
+  },
+  {
+     "coordinates":[29.64818, -82.3406]
+    ,"bldgFormalName":"Fine Arts A"
+    ,"bldgName":"Fine Arts A"
+    ,"bldgCode":"FAA"
+  },
+  {
+     "coordinates":[29.64817, -82.33979]
+    ,"bldgFormalName":"Fine Arts B"
+    ,"bldgName":"Fine Arts B"
+    ,"bldgCode":"FAB"
+  },
+  {
+     "coordinates":[29.64775, -82.34043]
+    ,"bldgFormalName":"Fine Arts C"
+    ,"bldgName":"Fine Arts C"
+    ,"bldgCode":"FAC"
+  },
+  {
+     "coordinates":[29.63182, -82.35006]
+    ,"bldgFormalName":"Vet Med Food Animal Clinic"
+    ,"bldgName":"Vet Med Food Animal Clinic"
+    ,"bldgCode":"FACL"
+  },
+  {
+     "coordinates":[29.6484, -82.34017]
+    ,"bldgFormalName":"Fine Arts D"
+    ,"bldgName":"Fine Arts D"
+    ,"bldgCode":"FAD"
+  },
+  {
+     "coordinates":[29.62747, -82.36049]
+    ,"bldgFormalName":"Fuel Cell Garage"
+    ,"bldgName":"Fuel Cell Garage"
+    ,"bldgCode":"FCBG"
+  },
+  {
+     "coordinates":[29.63563, -82.36394]
+    ,"bldgFormalName":"Fruit Crops Pole Barn"
+    ,"bldgName":"Fruit Crops Pole Barn"
+    ,"bldgCode":"FCPB"
+  },
+  {
+     "coordinates":[29.63521, -82.36486]
+    ,"bldgFormalName":"Pesticide Storage"
+    ,"bldgName":"Fruit Crops Pesticide Storage"
+    ,"bldgCode":"FCPS"
+  },
+  {
+     "coordinates":[29.62887, -82.35949]
+    ,"bldgFormalName":"Agric Engineering Field Lab"
+    ,"bldgName":"Agric Engineering Field Lab"
+    ,"bldgCode":"FDLB"
+  },
+  {
+     "coordinates":[29.62946, -82.35969]
+    ,"bldgFormalName":"Agric Engineering Field Lab"
+    ,"bldgName":"Agric Engineering Field Lab"
+    ,"bldgCode":"FDOF"
+  },
+  {
+     "coordinates":[29.6377, -82.35636]
+    ,"bldgFormalName":"Drying Facility, Forestry "
+    ,"bldgName":"Drying Facility, Forestry "
+    ,"bldgCode":"FDRY"
+  },
+  {
+     "coordinates":[29.64558, -82.34536]
+    ,"bldgFormalName":"Forest Stewardship"
+    ,"bldgName":"Forest Stewardship"
+    ,"bldgCode":"FEE"
+  },
+  {
+     "coordinates":[29.63845, -82.35733]
+    ,"bldgFormalName":"Forestry Resource and Conservation"
+    ,"bldgName":"Forestry Resource and Conservation"
+    ,"bldgCode":"FF1"
+  },
+  {
+     "coordinates":[29.6378, -82.3564]
+    ,"bldgFormalName":"Field Lab, Forestry"
+    ,"bldgName":"Field Lab, Forestry"
+    ,"bldgCode":"FF3"
+  },
+  {
+     "coordinates":[29.6335, -82.355]
+    ,"bldgFormalName":"Wildlife Field Lab"
+    ,"bldgName":"Field Lab"
+    ,"bldgCode":"FF4"
+  },
+  {
+     "coordinates":[29.63349, -82.35511]
+    ,"bldgFormalName":"Wildlife Field Lab"
+    ,"bldgName":"Wildlife Field Lab"
+    ,"bldgCode":"FF5"
+  },
+  {
+     "coordinates":[29.64706, -82.34474]
+    ,"bldgFormalName":"Alan and Cathy Hitchcock Field and Fork Pantry"
+    ,"bldgName":"Field and Fork Food Pantry"
+    ,"bldgCode":"FFP"
+  },
+  {
+     "coordinates":[29.6384, -82.36114]
+    ,"bldgFormalName":"Willard M. Fifield Hall"
+    ,"bldgName":"Fifield Hall"
+    ,"bldgCode":"FIF"
+  },
+  {
+     "coordinates":[29.65263, -82.34153]
+    ,"bldgFormalName":"University Press"
+    ,"bldgName":"S.U.S. Press Offices"
+    ,"bldgCode":"FLAP"
+  },
+  {
+     "coordinates":[29.65264, -82.34144]
+    ,"bldgFormalName":"S.U.S. Press"
+    ,"bldgName":"S.U.S. Press"
+    ,"bldgCode":"FLAP"
+  },
+  {
+     "coordinates":[29.78066, -82.47152]
+    ,"bldgFormalName":"Florida Biologix"
+    ,"bldgName":"Florida Biologix"
+    ,"bldgCode":"FLBX"
+  },
+  {
+     "coordinates":[29.65137, -82.34531]
+    ,"bldgFormalName":"Duncan U. Fletcher Hall"
+    ,"bldgName":"Fletcher Hall"
+    ,"bldgCode":"FLE"
+  },
+  {
+     "coordinates":[29.64938, -82.34727]
+    ,"bldgFormalName":"Florida Gymnasium"
+    ,"bldgName":"Florida Gymnasium"
+    ,"bldgCode":"FLG"
+  },
+  {
+     "coordinates":[29.65143, -82.34395]
+    ,"bldgFormalName":"Keene-Flint Hall"
+    ,"bldgName":"Keene-Flint Hall"
+    ,"bldgCode":"FLI"
+  },
+  {
+     "coordinates":[29.64995, -82.33281]
+    ,"bldgFormalName":"Florida Innovation Hub At UF"
+    ,"bldgName":"Innovation Hub"
+    ,"bldgCode":"FLIH"
+  },
+  {
+     "coordinates":[29.65011, -82.34378]
+    ,"bldgFormalName":"B.H. Griffin - W.L. Floyd Hall"
+    ,"bldgName":"Griffin-Floyd Hall"
+    ,"bldgCode":"FLO"
+  },
+  {
+     "coordinates":[29.6439, -82.33761]
+    ,"bldgFormalName":"Phi Mu"
+    ,"bldgName":"Sorority -Phi Mu"
+    ,"bldgCode":"FM"
+  },
+  {
+     "coordinates":[29.63566, -82.36464]
+    ,"bldgFormalName":"Fruit Packing"
+    ,"bldgName":"Fruit Packing"
+    ,"bldgCode":"FPK"
+  },
+  {
+     "coordinates":[29.65047, -82.34739]
+    ,"bldgFormalName":"Florida Pool Office/Lockers"
+    ,"bldgName":"Florida Pool Offices/Lockers"
+    ,"bldgCode":"FPOF"
+  },
+  {
+     "coordinates":[29.63751, -82.35655]
+    ,"bldgFormalName":"Potting Shed, Forestry "
+    ,"bldgName":"Potting Shed, Forestry "
+    ,"bldgCode":"FPS"
+  },
+  {
+     "coordinates":[29.63349, -82.36101]
+    ,"bldgFormalName":"Field Support"
+    ,"bldgName":"Field Support"
+    ,"bldgCode":"FS1"
+  },
+  {
+     "coordinates":[29.72753, -82.41715]
+    ,"bldgFormalName":"Field Storage (Mlhpr)"
+    ,"bldgName":"Field Storage"
+    ,"bldgCode":"FS5"
+  },
+  {
+     "coordinates":[29.64431, -82.37053]
+    ,"bldgFormalName":"Facilities Services Administration"
+    ,"bldgName":"Facilities Services"
+    ,"bldgCode":"FSAD"
+  },
+  {
+     "coordinates":[29.6434, -82.36991]
+    ,"bldgFormalName":"Facilities Services Building Services"
+    ,"bldgName":"Facilities Services Building Services"
+    ,"bldgCode":"FSBS"
+  },
+  {
+     "coordinates":[29.64296, -82.36925]
+    ,"bldgFormalName":"Facilities Services Central Stores"
+    ,"bldgName":"Facilities Services Central Stores"
+    ,"bldgCode":"FSCS"
+  },
+  {
+     "coordinates":[29.64804, -82.35013]
+    ,"bldgFormalName":"Gator Corner Dining Center"
+    ,"bldgName":"Gator Corner Dining Center"
+    ,"bldgCode":"FSF"
+  },
+  {
+     "coordinates":[29.64339, -82.36878]
+    ,"bldgFormalName":"Facilities Services Grounds"
+    ,"bldgName":"Facilities Services Grounds"
+    ,"bldgCode":"FSGR"
+  },
+  {
+     "coordinates":[29.64364, -82.37021]
+    ,"bldgFormalName":"Facilities Services Human Resources"
+    ,"bldgName":"Facilities Services Human Resources"
+    ,"bldgCode":"FSHR"
+  },
+  {
+     "coordinates":[29.64285, -82.36788]
+    ,"bldgFormalName":"Facilities Services Motor Pool"
+    ,"bldgName":"Facilities Services Motor Pool"
+    ,"bldgCode":"FSMP"
+  },
+  {
+     "coordinates":[29.64691, -82.34439]
+    ,"bldgFormalName":"Food Science & Human Nutrition"
+    ,"bldgName":"Food Science & Human Nutrition"
+    ,"bldgCode":"FSN"
+  },
+  {
+     "coordinates":[29.63684, -82.35965]
+    ,"bldgFormalName":"Food Science Storage"
+    ,"bldgName":"Food Science Storage"
+    ,"bldgCode":"FSS"
+  },
+  {
+     "coordinates":[27.42618, -80.40805]
+    ,"bldgFormalName":"Indian River Research and Education Center"
+    ,"bldgName":"Office/Lab Building"
+    ,"bldgCode":"FTP"
+  },
+  {
+     "coordinates":[29.6378, -82.35653]
+    ,"bldgFormalName":"Workshop/Storage, Forestry"
+    ,"bldgName":"Workshop/Storage, Forestry"
+    ,"bldgCode":"FW1"
+  },
+  {
+     "coordinates":[29.64434, -82.34644]
+    ,"bldgFormalName":"Greenhouse, CLAS"
+    ,"bldgName":"Greenhouse, CLAS"
+    ,"bldgCode":"GA1"
+  },
+  {
+     "coordinates":[29.63917, -82.35855]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA10"
+  },
+  {
+     "coordinates":[29.63917, -82.35864]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA11"
+  },
+  {
+     "coordinates":[29.63918, -82.35829]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA13"
+  },
+  {
+     "coordinates":[29.63918, -82.35838]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA14"
+  },
+  {
+     "coordinates":[29.63898, -82.35838]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA15"
+  },
+  {
+     "coordinates":[29.63898, -82.35846]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA16"
+  },
+  {
+     "coordinates":[29.63898, -82.35855]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA17"
+  },
+  {
+     "coordinates":[29.63913, -82.35947]
+    ,"bldgFormalName":"Greenhouse, Pathology"
+    ,"bldgName":"Greenhouse, Pathology"
+    ,"bldgCode":"GA18"
+  },
+  {
+     "coordinates":[29.63898, -82.3582]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA2"
+  },
+  {
+     "coordinates":[29.63917, -82.35846]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA4"
+  },
+  {
+     "coordinates":[29.63863, -82.36395]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA5"
+  },
+  {
+     "coordinates":[29.63898, -82.35864]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA6"
+  },
+  {
+     "coordinates":[29.63898, -82.358]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA7"
+  },
+  {
+     "coordinates":[29.63917, -82.3582]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA8"
+  },
+  {
+     "coordinates":[29.62842, -82.35385]
+    ,"bldgFormalName":"Greenhouse, Agronomy"
+    ,"bldgName":"Greenhouse, Agronomy"
+    ,"bldgCode":"GA9"
+  },
+  {
+     "coordinates":[29.64668, -82.35327]
+    ,"bldgFormalName":"Gator Band Shell"
+    ,"bldgName":"Gator Band Shell"
+    ,"bldgCode":"GBS"
+  },
+  {
+     "coordinates":[29.64999, -82.365]
+    ,"bldgFormalName":"Guy Bostick Golf Clubhouse"
+    ,"bldgName":"Golf Course Clubhouse"
+    ,"bldgCode":"GCH"
+  },
+  {
+     "coordinates":[29.65016, -82.36546]
+    ,"bldgFormalName":"Golf Cart Storage"
+    ,"bldgName":"Golf Cart Storage"
+    ,"bldgCode":"GCS"
+  },
+  {
+     "coordinates":[29.63374, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE1"
+  },
+  {
+     "coordinates":[29.63923, -82.35895]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE10"
+  },
+  {
+     "coordinates":[29.63384, -82.36669]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE11"
+  },
+  {
+     "coordinates":[29.63373, -82.36688]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE12"
+  },
+  {
+     "coordinates":[29.63373, -82.36693]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE13"
+  },
+  {
+     "coordinates":[29.63373, -82.36699]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE14"
+  },
+  {
+     "coordinates":[29.63373, -82.36704]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE15"
+  },
+  {
+     "coordinates":[29.63385, -82.36688]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE16"
+  },
+  {
+     "coordinates":[29.63385, -82.36693]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE17"
+  },
+  {
+     "coordinates":[29.63385, -82.36699]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE18"
+  },
+  {
+     "coordinates":[29.63385, -82.36704]
+    ,"bldgFormalName":"Entomology Greenhouse"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE19"
+  },
+  {
+     "coordinates":[29.63369, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE2"
+  },
+  {
+     "coordinates":[29.63358, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Grennhouse, Entomology"
+    ,"bldgCode":"GE20"
+  },
+  {
+     "coordinates":[29.63363, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE21"
+  },
+  {
+     "coordinates":[29.63364, -82.3667]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE22"
+  },
+  {
+     "coordinates":[29.63918, -82.35773]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE3"
+  },
+  {
+     "coordinates":[29.63918, -82.35801]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE4"
+  },
+  {
+     "coordinates":[29.63916, -82.35787]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE5"
+  },
+  {
+     "coordinates":[29.62691, -82.35625]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE6"
+  },
+  {
+     "coordinates":[29.63937, -82.35852]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE7"
+  },
+  {
+     "coordinates":[29.63386, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE8"
+  },
+  {
+     "coordinates":[29.63381, -82.36654]
+    ,"bldgFormalName":"Greenhouse, Entomology"
+    ,"bldgName":"Greenhouse, Entomology"
+    ,"bldgCode":"GE9"
+  },
+  {
+     "coordinates":[29.65073, -82.34011]
+    ,"bldgFormalName":"Gerson Hall"
+    ,"bldgName":"Gerson Hall"
+    ,"bldgCode":"GER"
+  },
+  {
+     "coordinates":[29.63731, -82.3566]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF1"
+  },
+  {
+     "coordinates":[29.63768, -82.35685]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF2"
+  },
+  {
+     "coordinates":[29.63776, -82.35668]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF3"
+  },
+  {
+     "coordinates":[29.63776, -82.35676]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF4"
+  },
+  {
+     "coordinates":[29.63776, -82.35685]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF5"
+  },
+  {
+     "coordinates":[29.63768, -82.35676]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF6"
+  },
+  {
+     "coordinates":[29.63732, -82.35642]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF7"
+  },
+  {
+     "coordinates":[29.63768, -82.35668]
+    ,"bldgFormalName":"Greenhouse, Forestry"
+    ,"bldgName":"Greenhouse, Forestry"
+    ,"bldgCode":"GF8"
+  },
+  {
+     "coordinates":[29.63644, -82.36326]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Fruit Crops"
+    ,"bldgCode":"GFC1"
+  },
+  {
+     "coordinates":[29.63542, -82.36389]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Fruit Crops"
+    ,"bldgCode":"GFC2"
+  },
+  {
+     "coordinates":[29.63513, -82.36461]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Fruit Crops"
+    ,"bldgCode":"GFC4"
+  },
+  {
+     "coordinates":[29.63527, -82.36463]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Fruit Crops"
+    ,"bldgCode":"GFC5"
+  },
+  {
+     "coordinates":[29.63722, -82.3602]
+    ,"bldgFormalName":"Greenhouse, Food Science"
+    ,"bldgName":"Greenhouse, Food Science"
+    ,"bldgCode":"GFS"
+  },
+  {
+     "coordinates":[29.64262, -82.36514]
+    ,"bldgFormalName":"IFAS Greenhouse"
+    ,"bldgName":"IFAS Greenhouse"
+    ,"bldgCode":"GG1"
+  },
+  {
+     "coordinates":[29.64422, -82.34627]
+    ,"bldgFormalName":"Greenhouse, Zoology"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH1"
+  },
+  {
+     "coordinates":[29.63357, -82.36586]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH10"
+  },
+  {
+     "coordinates":[29.63357, -82.36578]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH11"
+  },
+  {
+     "coordinates":[29.63955, -82.35812]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH12"
+  },
+  {
+     "coordinates":[29.64039, -82.35996]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH13"
+  },
+  {
+     "coordinates":[29.63364, -82.36698]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH2"
+  },
+  {
+     "coordinates":[29.63364, -82.36692]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH3"
+  },
+  {
+     "coordinates":[29.63364, -82.36687]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH4"
+  },
+  {
+     "coordinates":[29.63358, -82.36692]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH5"
+  },
+  {
+     "coordinates":[29.63358, -82.36687]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH6"
+  },
+  {
+     "coordinates":[29.7276, -82.41734]
+    ,"bldgFormalName":"Greenhouse (Mlhpr)"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH62"
+  },
+  {
+     "coordinates":[29.63352, -82.36687]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH7"
+  },
+  {
+     "coordinates":[29.63316, -82.35514]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH8"
+  },
+  {
+     "coordinates":[29.63316, -82.35514]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH8"
+  },
+  {
+     "coordinates":[29.63369, -82.36582]
+    ,"bldgFormalName":"Greenhouse"
+    ,"bldgName":"Greenhouse"
+    ,"bldgCode":"GH9"
+  },
+  {
+     "coordinates":[29.64422, -82.34614]
+    ,"bldgFormalName":"Greenhouse, Botany"
+    ,"bldgName":"Greenhouse, Botany"
+    ,"bldgCode":"GHB1"
+  },
+  {
+     "coordinates":[29.64363, -82.34486]
+    ,"bldgFormalName":"Greenhouse, Botany"
+    ,"bldgName":"Greenhouse, Botany"
+    ,"bldgCode":"GHB2"
+  },
+  {
+     "coordinates":[29.63723, -82.36192]
+    ,"bldgFormalName":"Greenhouse, Hort Sciences"
+    ,"bldgName":"Greenhouse, Hort Sciences"
+    ,"bldgCode":"GHS1"
+  },
+  {
+     "coordinates":[29.6391, -82.35963]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GHS2"
+  },
+  {
+     "coordinates":[29.63976, -82.35951]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Hort. Science"
+    ,"bldgCode":"GHS3"
+  },
+  {
+     "coordinates":[29.6399, -82.35989]
+    ,"bldgFormalName":"Greenhouse, Fruit Crops"
+    ,"bldgName":"Greenhouse, Hort. Science"
+    ,"bldgCode":"GHS4"
+  },
+  {
+     "coordinates":[29.64006, -82.35997]
+    ,"bldgFormalName":"Greenhouse, Vegetable Crops"
+    ,"bldgName":"Greenhouse, Hort. Science"
+    ,"bldgCode":"GHS5"
+  },
+  {
+     "coordinates":[29.63937, -82.36034]
+    ,"bldgFormalName":"Greenhouse, Turfgrass"
+    ,"bldgName":"Greenhouse, Turfgrass"
+    ,"bldgCode":"GHT1"
+  },
+  {
+     "coordinates":[29.6394, -82.36053]
+    ,"bldgFormalName":"Greenhouse, Turfgrass"
+    ,"bldgName":"Greenhouse, Turfgrass"
+    ,"bldgCode":"GHT2"
+  },
+  {
+     "coordinates":[29.6394, -82.3606]
+    ,"bldgFormalName":"Greenhouse, Turfgrass"
+    ,"bldgName":"Greenhouse, Turfgrass"
+    ,"bldgCode":"GHT3"
+  },
+  {
+     "coordinates":[29.63933, -82.36053]
+    ,"bldgFormalName":"Greenhouse, Turfgrass"
+    ,"bldgName":"Greenhouse, Turfgrass"
+    ,"bldgCode":"GHT4"
+  },
+  {
+     "coordinates":[29.63933, -82.3606]
+    ,"bldgFormalName":"Greenhouse, Turfgrass"
+    ,"bldgName":"Greenhouse, Turfgrass"
+    ,"bldgCode":"GHT5"
+  },
+  {
+     "coordinates":[29.6391, -82.35908]
+    ,"bldgFormalName":"Greenhouse, Nematology"
+    ,"bldgName":"Greenhouse, Nematology"
+    ,"bldgCode":"GN1"
+  },
+  {
+     "coordinates":[29.6394, -82.3593]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, Ornht"
+    ,"bldgCode":"GO1"
+  },
+  {
+     "coordinates":[29.64001, -82.3581]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO10"
+  },
+  {
+     "coordinates":[29.63957, -82.3593]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, Ornht"
+    ,"bldgCode":"GO2"
+  },
+  {
+     "coordinates":[29.6394, -82.35893]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, Ornht"
+    ,"bldgCode":"GO3"
+  },
+  {
+     "coordinates":[29.63958, -82.35897]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, Ornht"
+    ,"bldgCode":"GO4"
+  },
+  {
+     "coordinates":[29.63957, -82.35849]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO5"
+  },
+  {
+     "coordinates":[29.63998, -82.35853]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO6"
+  },
+  {
+     "coordinates":[29.63998, -82.35844]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO7"
+  },
+  {
+     "coordinates":[29.63998, -82.35836]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO8"
+  },
+  {
+     "coordinates":[29.63998, -82.35827]
+    ,"bldgFormalName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Greenhouse, OrbldgFormalNamental Hort"
+    ,"bldgCode":"GO9"
+  },
+  {
+     "coordinates":[29.63912, -82.35604]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP1"
+  },
+  {
+     "coordinates":[29.63919, -82.3559]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP10"
+  },
+  {
+     "coordinates":[29.63898, -82.35829]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP11"
+  },
+  {
+     "coordinates":[29.63916, -82.35626]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP13"
+  },
+  {
+     "coordinates":[29.63916, -82.35619]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP14"
+  },
+  {
+     "coordinates":[29.63904, -82.35604]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP15"
+  },
+  {
+     "coordinates":[29.63904, -82.35597]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP16"
+  },
+  {
+     "coordinates":[29.63904, -82.3559]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP17"
+  },
+  {
+     "coordinates":[29.63904, -82.35611]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP18"
+  },
+  {
+     "coordinates":[29.63896, -82.35611]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP19"
+  },
+  {
+     "coordinates":[29.63912, -82.35597]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP2"
+  },
+  {
+     "coordinates":[29.63912, -82.35934]
+    ,"bldgFormalName":"Greenhouse,Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP20"
+  },
+  {
+     "coordinates":[29.63896, -82.35604]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP21"
+  },
+  {
+     "coordinates":[29.63896, -82.35597]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP22"
+  },
+  {
+     "coordinates":[29.63896, -82.35589]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP23"
+  },
+  {
+     "coordinates":[29.63902, -82.35626]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP24"
+  },
+  {
+     "coordinates":[29.63902, -82.35618]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP25"
+  },
+  {
+     "coordinates":[29.63891, -82.35618]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP26"
+  },
+  {
+     "coordinates":[29.63917, -82.35919]
+    ,"bldgFormalName":"Shade House, Plant Pathology"
+    ,"bldgName":"Shade House, Plant Pathology"
+    ,"bldgCode":"GP27"
+  },
+  {
+     "coordinates":[29.63919, -82.35597]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP3"
+  },
+  {
+     "coordinates":[29.63903, -82.35568]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP35"
+  },
+  {
+     "coordinates":[29.63919, -82.35604]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP4"
+  },
+  {
+     "coordinates":[29.63919, -82.35611]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP5"
+  },
+  {
+     "coordinates":[29.63893, -82.3556]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP7"
+  },
+  {
+     "coordinates":[29.63912, -82.3559]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP8"
+  },
+  {
+     "coordinates":[29.63912, -82.35611]
+    ,"bldgFormalName":"Greenhouse, Plant Pathology"
+    ,"bldgName":"Greenhouse, Plant Pathology"
+    ,"bldgCode":"GP9"
+  },
+  {
+     "coordinates":[29.65286, -82.3335]
+    ,"bldgFormalName":"GRADhaus"
+    ,"bldgName":"GRADhaus"
+    ,"bldgCode":"GRAD"
+  },
+  {
+     "coordinates":[29.64589, -82.35106]
+    ,"bldgFormalName":"Graham Area Office"
+    ,"bldgName":"Graham Area Office"
+    ,"bldgCode":"GRAO"
+  },
+  {
+     "coordinates":[29.64928, -82.34209]
+    ,"bldgFormalName":"Linton E. Grinter Hall"
+    ,"bldgName":"Grinter Hall"
+    ,"bldgCode":"GRI"
+  },
+  {
+     "coordinates":[29.6435, -82.36923]
+    ,"bldgFormalName":"Facilities Services Grounds Admin."
+    ,"bldgName":"Facilities Services Grounds Administration"
+    ,"bldgCode":"GRND"
+  },
+  {
+     "coordinates":[29.63898, -82.35808]
+    ,"bldgFormalName":"Greenhouse, Soils"
+    ,"bldgName":"Greenhouse, Soils"
+    ,"bldgCode":"GS1"
+  },
+  {
+     "coordinates":[29.63918, -82.3581]
+    ,"bldgFormalName":"Greenhouse, Soils"
+    ,"bldgName":"Greenhouse, Soils"
+    ,"bldgCode":"GS2"
+  },
+  {
+     "coordinates":[29.64009, -82.34444]
+    ,"bldgFormalName":"General Services"
+    ,"bldgName":"General Services Building"
+    ,"bldgCode":"GSA"
+  },
+  {
+     "coordinates":[29.64764, -82.36865]
+    ,"bldgFormalName":"Melnyk Golf Practice Facility"
+    ,"bldgName":"Golf Practice Facility"
+    ,"bldgCode":"GTPF"
+  },
+  {
+     "coordinates":[29.63671, -82.36187]
+    ,"bldgFormalName":"Greenhouse, Vegetable Crops"
+    ,"bldgName":"Greenhouse, Vegetable Crops"
+    ,"bldgCode":"GVC1"
+  },
+  {
+     "coordinates":[29.63697, -82.3619]
+    ,"bldgFormalName":"Greenhouse,Vegetable Crops"
+    ,"bldgName":"Greenhouse, Vegetable Crops"
+    ,"bldgCode":"GVC2"
+  },
+  {
+     "coordinates":[29.63896, -82.37527]
+    ,"bldgFormalName":"UF Health Florida Surgical Center"
+    ,"bldgName":""
+    ,"bldgCode":"H01"
+  },
+  {
+     "coordinates":[29.63692, -82.37024]
+    ,"bldgFormalName":"Samuel P. Harn Museum Of Art"
+    ,"bldgName":"Harn Museum Of Art"
+    ,"bldgCode":"HARN"
+  },
+  {
+     "coordinates":[30.86176, -85.18699]
+    ,"bldgFormalName":"Hay Storage"
+    ,"bldgName":""
+    ,"bldgCode":"HAY"
+  },
+  {
+     "coordinates":[29.63651, -82.34239]
+    ,"bldgFormalName":"Health Sci Ctr Admin Services"
+    ,"bldgName":"Health Sci Ctr Admin Services"
+    ,"bldgCode":"HCAD"
+  },
+  {
+     "coordinates":[29.63112, -82.36732]
+    ,"bldgFormalName":"Health Center Surge #2"
+    ,"bldgName":"Health Center Surge #2"
+    ,"bldgCode":"HCS2"
+  },
+  {
+     "coordinates":[29.63117, -82.36794]
+    ,"bldgFormalName":"Health Center Surge #4"
+    ,"bldgName":"Health Center Surge #4"
+    ,"bldgCode":"HCS4"
+  },
+  {
+     "coordinates":[29.6406, -82.34291]
+    ,"bldgFormalName":"Human Development Center"
+    ,"bldgName":"Human Development Center"
+    ,"bldgCode":"HDC"
+  },
+  {
+     "coordinates":[29.72152, -82.41834]
+    ,"bldgFormalName":"Equipment Storage (Mlhpr)"
+    ,"bldgName":"Equipment Storage"
+    ,"bldgCode":"HEQ1"
+  },
+  {
+     "coordinates":[29.72125, -82.41829]
+    ,"bldgFormalName":"Equipment Storage (Mlhpr)"
+    ,"bldgName":"Equipment Storage"
+    ,"bldgCode":"HEQ2"
+  },
+  {
+     "coordinates":[29.65109, -82.34862]
+    ,"bldgFormalName":"Heritage Hall"
+    ,"bldgName":"Heritage Hall"
+    ,"bldgCode":"HER"
+  },
+  {
+     "coordinates":[29.6504, -82.3406]
+    ,"bldgFormalName":"Hough Hall"
+    ,"bldgName":"Hough Hall"
+    ,"bldgCode":"HGS"
+  },
+  {
+     "coordinates":[29.63995, -82.35916]
+    ,"bldgFormalName":"Headhouse, OrbldgFormalNamental Hort"
+    ,"bldgName":"Headhouse, Ornht"
+    ,"bldgCode":"HHO"
+  },
+  {
+     "coordinates":[29.64211, -82.34432]
+    ,"bldgFormalName":"George T. Harrell, M.D. Medical Education Building"
+    ,"bldgName":"Harrell Medical Education Building"
+    ,"bldgCode":"HMEB"
+  },
+  {
+     "coordinates":[29.62718, -82.35635]
+    ,"bldgFormalName":"Honey Lab"
+    ,"bldgName":"Entomology Honey Lab"
+    ,"bldgCode":"HNY"
+  },
+  {
+     "coordinates":[29.64981, -82.35915]
+    ,"bldgFormalName":"Spessard L. Holland Law Center"
+    ,"bldgName":"Holland Law Center"
+    ,"bldgCode":"HOL"
+  },
+  {
+     "coordinates":[29.62552, -82.35383]
+    ,"bldgFormalName":"Environmental Hort Support"
+    ,"bldgName":"Env Hort Support"
+    ,"bldgCode":"HORT"
+  },
+  {
+     "coordinates":[29.64416, -82.3398]
+    ,"bldgFormalName":"Housing Office"
+    ,"bldgName":"Housing Office"
+    ,"bldgCode":"HOU"
+  },
+  {
+     "coordinates":[29.64165, -82.34526]
+    ,"bldgFormalName":"Health Prof, Nursing And Pharmacy"
+    ,"bldgName":"Health Prof, Nursing, Pharmacy"
+    ,"bldgCode":"HPNP"
+  },
+  {
+     "coordinates":[29.65176, -82.33405]
+    ,"bldgFormalName":"Human Resources Building"
+    ,"bldgName":"HR Building"
+    ,"bldgCode":"HRB"
+  },
+  {
+     "coordinates":[29.72221, -82.42023]
+    ,"bldgFormalName":"Equipment Storage (Mlhpr)"
+    ,"bldgName":"OrbldgFormalNamental Hort Soil Bins"
+    ,"bldgCode":"HSB1"
+  },
+  {
+     "coordinates":[29.59893, -82.3464]
+    ,"bldgFormalName":"Sam Wall Animal Sci North Barn"
+    ,"bldgName":"Sam Wall Animal Sci North Barn"
+    ,"bldgCode":"HTUN"
+  },
+  {
+     "coordinates":[29.59871, -82.34636]
+    ,"bldgFormalName":"Sam Wall Animal Sci South Barn"
+    ,"bldgName":"Sam Wall Animal Sci South Barn"
+    ,"bldgCode":"HTUS"
+  },
+  {
+     "coordinates":[29.64818, -82.34558]
+    ,"bldgFormalName":"Hub"
+    ,"bldgName":"Hub"
+    ,"bldgCode":"HUB"
+  },
+  {
+     "coordinates":[29.64452, -82.35249]
+    ,"bldgFormalName":"Hume Hall Commons Building"
+    ,"bldgName":"Hume Commons Bldg"
+    ,"bldgCode":"HUME"
+  },
+  {
+     "coordinates":[29.65172, -82.34025]
+    ,"bldgFormalName":"James W. 'Bill' Heavener Hall"
+    ,"bldgName":"Heavener Hall"
+    ,"bldgCode":"HVNR"
+  },
+  {
+     "coordinates":[29.65232, -82.34218]
+    ,"bldgFormalName":"Institute Of Black Culture"
+    ,"bldgName":"Institute Of Black Culture"
+    ,"bldgCode":"IBLC"
+  },
+  {
+     "coordinates":[29.65024, -82.34]
+    ,"bldgFormalName":"Information Booth, University"
+    ,"bldgName":"Information Booth, University"
+    ,"bldgCode":"IBU"
+  },
+  {
+     "coordinates":[29.65045, -82.3349]
+    ,"bldgFormalName":"Infinity Hall Entrepreneurial Student Housing"
+    ,"bldgName":"Infinity Hall"
+    ,"bldgCode":"IFH"
+  },
+  {
+     "coordinates":[29.63998, -82.35722]
+    ,"bldgFormalName":"Mechanics Shop"
+    ,"bldgName":"Mechanics Shop"
+    ,"bldgCode":"IFMS"
+  },
+  {
+     "coordinates":[29.63844, -82.36169]
+    ,"bldgFormalName":"Volatile Storage"
+    ,"bldgName":"Volatile Storage"
+    ,"bldgCode":"IFVS"
+  },
+  {
+     "coordinates":[29.63957, -82.35674]
+    ,"bldgFormalName":"IFAS Warehouse"
+    ,"bldgName":"IFAS Warehouse"
+    ,"bldgCode":"IFW2"
+  },
+  {
+     "coordinates":[29.65233, -82.34197]
+    ,"bldgFormalName":"Hispanic/Latino Cultures"
+    ,"bldgName":"Hispanic/Latino Cultures Inst"
+    ,"bldgCode":"IHLC"
+  },
+  {
+     "coordinates":[29.64603, -82.34567]
+    ,"bldgFormalName":"Center for Online Learning and Technology"
+    ,"bldgName":"COLT"
+    ,"bldgCode":"IIT"
+  },
+  {
+     "coordinates":[29.69997, -82.27371]
+    ,"bldgFormalName":"Interim Library Facility 1"
+    ,"bldgName":"Interim Library Facility 1"
+    ,"bldgCode":"ILF1"
+  },
+  {
+     "coordinates":[29.70004, -82.27302]
+    ,"bldgFormalName":"Interim Library Facility 2"
+    ,"bldgName":"Interim Library Facility 2"
+    ,"bldgCode":"ILF2"
+  },
+  {
+     "coordinates":[29.63781, -82.36288]
+    ,"bldgFormalName":"Agricultural Networks Laboratory"
+    ,"bldgName":"Agricultural Networks Laboratory"
+    ,"bldgCode":"IMAG"
+  },
+  {
+     "coordinates":[29.64569, -82.34321]
+    ,"bldgFormalName":"Office Building"
+    ,"bldgName":"Office Building"
+    ,"bldgCode":"IMPL"
+  },
+  {
+     "coordinates":[29.64952, -82.34659]
+    ,"bldgFormalName":"Infirmary"
+    ,"bldgName":"Infirmary"
+    ,"bldgCode":"INF"
+  },
+  {
+     "coordinates":[29.64908, -82.34556]
+    ,"bldgFormalName":"U. F. Information"
+    ,"bldgName":"U. F. Information"
+    ,"bldgCode":"INFO"
+  },
+  {
+     "coordinates":[29.63344, -82.35482]
+    ,"bldgFormalName":"IFAS Storage (Agy)"
+    ,"bldgName":"IFAS Storage (Agy)"
+    ,"bldgCode":"ISS3"
+  },
+  {
+     "coordinates":[29.64438, -82.34222]
+    ,"bldgFormalName":"May A. Mann Jennings Hall Office"
+    ,"bldgName":"Jennings Hall Office"
+    ,"bldgCode":"JEN"
+  },
+  {
+     "coordinates":[29.644, -82.34202]
+    ,"bldgFormalName":"May A. Mann Jennings Hall B"
+    ,"bldgName":"Jennings Hall B"
+    ,"bldgCode":"JENB"
+  },
+  {
+     "coordinates":[29.65144, -82.34441]
+    ,"bldgFormalName":"Joseph Hernandez Hall"
+    ,"bldgName":"Joseph Hernandez Hall"
+    ,"bldgCode":"JHH"
+  },
+  {
+     "coordinates":[29.64578, -82.35666]
+    ,"bldgFormalName":"Kappa Alpha"
+    ,"bldgName":"Fraternity -Kappa Alpha"
+    ,"bldgCode":"KA"
+  },
+  {
+     "coordinates":[29.64529, -82.33468]
+    ,"bldgFormalName":"Kappa Alpha Theta"
+    ,"bldgName":"Sorority -Kappa Alpha Theta"
+    ,"bldgCode":"KAT"
+  },
+  {
+     "coordinates":[29.64462, -82.33652]
+    ,"bldgFormalName":"Kappa Delta"
+    ,"bldgName":"Sorority -Kappa Delta"
+    ,"bldgCode":"KD"
+  },
+  {
+     "coordinates":[29.64735, -82.35349]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 10"
+    ,"bldgCode":"KE10"
+  },
+  {
+     "coordinates":[29.64771, -82.35334]
+    ,"bldgFormalName":"Keys Residential Complex "
+    ,"bldgName":"Keys Commons Bldg"
+    ,"bldgCode":"KEY1"
+  },
+  {
+     "coordinates":[29.64805, -82.35346]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 2"
+    ,"bldgCode":"KEY2"
+  },
+  {
+     "coordinates":[29.64789, -82.35392]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 3"
+    ,"bldgCode":"KEY3"
+  },
+  {
+     "coordinates":[29.64787, -82.35431]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 4"
+    ,"bldgCode":"KEY4"
+  },
+  {
+     "coordinates":[29.64801, -82.35465]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 5"
+    ,"bldgCode":"KEY5"
+  },
+  {
+     "coordinates":[29.64764, -82.3549]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 6"
+    ,"bldgCode":"KEY6"
+  },
+  {
+     "coordinates":[29.64758, -82.35451]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 7"
+    ,"bldgCode":"KEY7"
+  },
+  {
+     "coordinates":[29.64754, -82.35412]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 8"
+    ,"bldgCode":"KEY8"
+  },
+  {
+     "coordinates":[29.64757, -82.35375]
+    ,"bldgFormalName":"Keys Residential Complex"
+    ,"bldgName":"Keys Residence Hse 9"
+    ,"bldgCode":"KEY9"
+  },
+  {
+     "coordinates":[29.6481, -82.3389]
+    ,"bldgFormalName":"Kappa Kappa Gamma "
+    ,"bldgName":"Kappa Kappa Gamma -Sorority"
+    ,"bldgCode":"KKG"
+  },
+  {
+     "coordinates":[29.64311, -82.34738]
+    ,"bldgFormalName":"Merwin J. Larsen Hall"
+    ,"bldgName":"Larsen Hall"
+    ,"bldgCode":"LAR"
+  },
+  {
+     "coordinates":[29.65138, -82.34289]
+    ,"bldgFormalName":"Library West"
+    ,"bldgName":"Library West"
+    ,"bldgCode":"LBW"
+  },
+  {
+     "coordinates":[29.64543, -82.35577]
+    ,"bldgFormalName":"Lambda Chi Alpha"
+    ,"bldgName":"Fraternity -Lambda Chi Alpha"
+    ,"bldgCode":"LCA"
+  },
+  {
+     "coordinates":[29.65043, -82.34428]
+    ,"bldgFormalName":"Townes R. Leigh Hall"
+    ,"bldgName":"Leigh Hall"
+    ,"bldgCode":"LEI"
+  },
+  {
+     "coordinates":[29.64872, -82.34134]
+    ,"bldgFormalName":"Little Hall Express"
+    ,"bldgName":"Little Hall Express"
+    ,"bldgCode":"LHEX"
+  },
+  {
+     "coordinates":[29.64885, -82.34073]
+    ,"bldgFormalName":"Winston W. Little Hall"
+    ,"bldgName":"Little Hall"
+    ,"bldgCode":"LIT"
+  },
+  {
+     "coordinates":[29.64152, -82.365]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Res Bldg"
+    ,"bldgCode":"LRB1"
+  },
+  {
+     "coordinates":[29.64181, -82.36555]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Res Bldg"
+    ,"bldgCode":"LRB2"
+  },
+  {
+     "coordinates":[29.64181, -82.36681]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Res Bldg"
+    ,"bldgCode":"LRB3"
+  },
+  {
+     "coordinates":[29.64113, -82.36683]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Res Bldg"
+    ,"bldgCode":"LRB4"
+  },
+  {
+     "coordinates":[29.64134, -82.36607]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Res Bldg"
+    ,"bldgCode":"LRB5"
+  },
+  {
+     "coordinates":[29.64152, -82.36688]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Staff Apts"
+    ,"bldgCode":"LRB6"
+  },
+  {
+     "coordinates":[29.64099, -82.34701]
+    ,"bldgFormalName":"Sanitary Lift Station L1"
+    ,"bldgName":"Sanitary Lift Station L1"
+    ,"bldgCode":"LSL1"
+  },
+  {
+     "coordinates":[29.64511, -82.35921]
+    ,"bldgFormalName":"Sanitary Lift Station L2"
+    ,"bldgName":"Sanitary Lift Station L2"
+    ,"bldgCode":"LSL2"
+  },
+  {
+     "coordinates":[29.64185, -82.36621]
+    ,"bldgFormalName":"Lakeside Residential Complex"
+    ,"bldgName":"Lakeside Commons"
+    ,"bldgCode":"LSRC"
+  },
+  {
+     "coordinates":[29.64668, -82.34919]
+    ,"bldgFormalName":"Materials Engineering"
+    ,"bldgName":"Materials Engineering"
+    ,"bldgCode":"MAE"
+  },
+  {
+     "coordinates":[29.64329, -82.34827]
+    ,"bldgFormalName":"Mechanical & Aerospace Eng A"
+    ,"bldgName":"Mechanical & Aerospace Eng A"
+    ,"bldgCode":"MAEA"
+  },
+  {
+     "coordinates":[29.64636, -82.34944]
+    ,"bldgFormalName":"Mechanical & Aerospace Eng B"
+    ,"bldgName":"Mechanical & Aerospace Eng B"
+    ,"bldgCode":"MAEB"
+  },
+  {
+     "coordinates":[29.64735, -82.3495]
+    ,"bldgFormalName":"Mechanical & Aerospace Eng C"
+    ,"bldgName":"Mechanical & Aerospace Eng C"
+    ,"bldgCode":"MAEC"
+  },
+  {
+     "coordinates":[29.64284, -82.36704]
+    ,"bldgFormalName":"U.F. Mail & Documents Services"
+    ,"bldgName":""
+    ,"bldgCode":"MAIL"
+  },
+  {
+     "coordinates":[29.64677, -82.34031]
+    ,"bldgFormalName":"Angela Mallory Hall"
+    ,"bldgName":"Mallory Hall"
+    ,"bldgCode":"MAL"
+  },
+  {
+     "coordinates":[29.65163, -82.34104]
+    ,"bldgFormalName":"Walter J. Matherly Hall"
+    ,"bldgName":"Matherly Hall"
+    ,"bldgCode":"MAT"
+  },
+  {
+     "coordinates":[29.64186, -82.34321]
+    ,"bldgFormalName":"Mcknight Brain Institute"
+    ,"bldgName":"Mcknight Brain Institute"
+    ,"bldgCode":"MBI"
+  },
+  {
+     "coordinates":[29.64948, -82.35347]
+    ,"bldgFormalName":"Mckethan Baseball Stadium"
+    ,"bldgName":"Mckethan Baseball Stadium"
+    ,"bldgCode":"MBS"
+  },
+  {
+     "coordinates":[29.64697, -82.34555]
+    ,"bldgFormalName":"Dan McCarty Hall A"
+    ,"bldgName":"Mccarty Hall A"
+    ,"bldgCode":"MCCA"
+  },
+  {
+     "coordinates":[29.64674, -82.34492]
+    ,"bldgFormalName":"Dan McCarty Hall B"
+    ,"bldgName":"Mccarty Hall B"
+    ,"bldgCode":"MCCB"
+  },
+  {
+     "coordinates":[29.64666, -82.34537]
+    ,"bldgFormalName":"Dan McCarty Hall C"
+    ,"bldgName":"Mccarty Hall C"
+    ,"bldgCode":"MCCC"
+  },
+  {
+     "coordinates":[29.64649, -82.34437]
+    ,"bldgFormalName":"Dan McCarty Hall D"
+    ,"bldgName":"Mccarty Hall D"
+    ,"bldgCode":"MCCD"
+  },
+  {
+     "coordinates":[29.63079, -82.36723]
+    ,"bldgFormalName":"Microfabritech East"
+    ,"bldgName":"Microfabritech East"
+    ,"bldgCode":"MCFE"
+  },
+  {
+     "coordinates":[29.63079, -82.36749]
+    ,"bldgFormalName":"Microfabritech West"
+    ,"bldgName":"Microfabritech West"
+    ,"bldgCode":"MCFW"
+  },
+  {
+     "coordinates":[29.63612, -82.37061]
+    ,"bldgFormalName":"Mcguire Ctr For Lepidoptera Res "
+    ,"bldgName":"Mcguire Ctr For Lepidoptera Res "
+    ,"bldgCode":"MCG"
+  },
+  {
+     "coordinates":[29.64804, -82.34643]
+    ,"bldgFormalName":"Microkelvin Laboratory"
+    ,"bldgName":"Microkelvin Laboratory"
+    ,"bldgCode":"MCKL"
+  },
+  {
+     "coordinates":[29.63995, -82.36295]
+    ,"bldgFormalName":"Microbiology/Cell Science"
+    ,"bldgName":"Microbiology/Cell Science"
+    ,"bldgCode":"MCSB"
+  },
+  {
+     "coordinates":[29.64619, -82.34568]
+    ,"bldgFormalName":"Mccarty Annex A"
+    ,"bldgName":"Mccarty Annex A"
+    ,"bldgCode":"MCXA"
+  },
+  {
+     "coordinates":[29.6329, -82.36168]
+    ,"bldgFormalName":"Norman Mehrhof Hall"
+    ,"bldgName":"Mehrhof Hall"
+    ,"bldgCode":"MEH"
+  },
+  {
+     "coordinates":[29.72018, -82.41834]
+    ,"bldgFormalName":"Residence (Mlhpr)"
+    ,"bldgName":"Residence (Millhopper)"
+    ,"bldgCode":"MHR"
+  },
+  {
+     "coordinates":[29.64883, -82.35932]
+    ,"bldgFormalName":"Martin H Levin Advocacy Center"
+    ,"bldgName":"Levin Advocacy Ctr"
+    ,"bldgCode":"MLAC"
+  },
+  {
+     "coordinates":[30.86213, -85.18697]
+    ,"bldgFormalName":"Maintenance"
+    ,"bldgName":""
+    ,"bldgCode":"MS2"
+  },
+  {
+     "coordinates":[29.64048, -82.34463]
+    ,"bldgFormalName":"Stetson Medical Sciences"
+    ,"bldgName":"Stetson Medical Sciences"
+    ,"bldgCode":"MSB"
+  },
+  {
+     "coordinates":[29.64794, -82.34394]
+    ,"bldgFormalName":"Robert Marston Science Library"
+    ,"bldgName":"Marston Science Library"
+    ,"bldgCode":"MSL"
+  },
+  {
+     "coordinates":[29.64823, -82.34289]
+    ,"bldgFormalName":"Music Building"
+    ,"bldgName":"Music Building"
+    ,"bldgCode":"MUB"
+  },
+  {
+     "coordinates":[29.64439, -82.34418]
+    ,"bldgFormalName":"Joshua C. Dickinson Hall"
+    ,"bldgName":"Dickinson Hall "
+    ,"bldgCode":"MUS"
+  },
+  {
+     "coordinates":[29.64186, -82.36794]
+    ,"bldgFormalName":"Special Project Lab - FLMNH"
+    ,"bldgName":""
+    ,"bldgCode":"MUSB"
+  },
+  {
+     "coordinates":[29.63186, -82.36037]
+    ,"bldgFormalName":"Shands Renal Dialysys"
+    ,"bldgName":"Shands Renal Dialysis"
+    ,"bldgCode":"N01"
+  },
+  {
+     "coordinates":[29.64274, -82.34617]
+    ,"bldgFormalName":"Nanoscale Research Facility"
+    ,"bldgName":"Nanoscale Research"
+    ,"bldgCode":"NANO"
+  },
+  {
+     "coordinates":[29.6335, -82.36745]
+    ,"bldgFormalName":"Natural  Area Teaching Pavilion"
+    ,"bldgName":"Natural  Area Teaching Pavilion"
+    ,"bldgCode":"NATP"
+  },
+  {
+     "coordinates":[29.64229, -82.34714]
+    ,"bldgFormalName":"Engineering"
+    ,"bldgName":"Engineering Building"
+    ,"bldgCode":"NEB"
+  },
+  {
+     "coordinates":[29.63092, -82.36793]
+    ,"bldgFormalName":"Comm & Neurbio Sci Surge #5"
+    ,"bldgName":"Comm & Neurbio Sci Surge #5"
+    ,"bldgCode":"NEU5"
+  },
+  {
+     "coordinates":[29.63064, -82.36773]
+    ,"bldgFormalName":"Neurobiological Surge #6"
+    ,"bldgName":"Neurobiological Surge #6"
+    ,"bldgCode":"NEU6"
+  },
+  {
+     "coordinates":[29.64909, -82.34508]
+    ,"bldgFormalName":"Wilmon E. Newell Hall"
+    ,"bldgName":"Newell Hall"
+    ,"bldgCode":"NEW"
+  },
+  {
+     "coordinates":[29.65083, -82.34862]
+    ,"bldgFormalName":"Florida Field North End Zone"
+    ,"bldgName":"Florida Field North End Zone"
+    ,"bldgCode":"NEZ"
+  },
+  {
+     "coordinates":[29.63901, -82.35784]
+    ,"bldgFormalName":"Nematology Field Lab"
+    ,"bldgName":"Nematology Field Lab"
+    ,"bldgCode":"NFL"
+  },
+  {
+     "coordinates":[29.64789, -82.35075]
+    ,"bldgFormalName":"North Hall"
+    ,"bldgName":"North Hall"
+    ,"bldgCode":"NOR"
+  },
+  {
+     "coordinates":[29.6439, -82.34979]
+    ,"bldgFormalName":"Physics Building"
+    ,"bldgName":"Physics Building"
+    ,"bldgCode":"NPB"
+  },
+  {
+     "coordinates":[29.63916, -82.35791]
+    ,"bldgFormalName":"Nematology Potting Shed"
+    ,"bldgName":"Nematology Potting Shed"
+    ,"bldgCode":"NPS"
+  },
+  {
+     "coordinates":[29.64766, -82.34809]
+    ,"bldgFormalName":"Nuclear Reactor"
+    ,"bldgName":"Nuclear Reactor Building"
+    ,"bldgCode":"NRB"
+  },
+  {
+     "coordinates":[29.64625, -82.33799]
+    ,"bldgFormalName":"James W. Norman Gym"
+    ,"bldgName":"Norman Gym"
+    ,"bldgCode":"NRG"
+  },
+  {
+     "coordinates":[29.64685, -82.33812]
+    ,"bldgFormalName":"James W. Norman Hall"
+    ,"bldgName":"Norman Hall"
+    ,"bldgCode":"NRN"
+  },
+  {
+     "coordinates":[29.64658, -82.33755]
+    ,"bldgFormalName":"James W. Norman Hall Addition"
+    ,"bldgName":"Norman Hall Addition"
+    ,"bldgCode":"NRNA"
+  },
+  {
+     "coordinates":[29.64734, -82.34803]
+    ,"bldgFormalName":"Nuclear Sciences"
+    ,"bldgName":"Nuclear Sciences Building"
+    ,"bldgCode":"NSC"
+  },
+  {
+     "coordinates":[29.64403, -82.36406]
+    ,"bldgFormalName":"NS Field Station"
+    ,"bldgName":"NS Field Station"
+    ,"bldgCode":"NSFS"
+  },
+  {
+     "coordinates":[29.6319, -82.36719]
+    ,"bldgFormalName":"Nuclear Field Building"
+    ,"bldgName":"Nuclear Field Building"
+    ,"bldgCode":"NUCF"
+  },
+  {
+     "coordinates":[29.64538, -82.34572]
+    ,"bldgFormalName":"H.S. Newins-E.A. Ziegler Hall"
+    ,"bldgName":"Newins-Ziegler Hall SFRC/WEC "
+    ,"bldgCode":"NZH"
+  },
+  {
+     "coordinates":[29.64303, -82.34904]
+    ,"bldgFormalName":"Observatory"
+    ,"bldgName":"Observatory"
+    ,"bldgCode":"OBS"
+  },
+  {
+     "coordinates":[29.65247, -82.34959]
+    ,"bldgFormalName":"Earl and Christy Powell Hall"
+    ,"bldgName":"Development & Alumni Affairs"
+    ,"bldgCode":"ODAA"
+  },
+  {
+     "coordinates":[29.64036, -82.35767]
+    ,"bldgFormalName":"oDAS AT&T Fiber Hut"
+    ,"bldgName":"oDAS "
+    ,"bldgCode":"ODAS"
+  },
+  {
+     "coordinates":[29.64036, -82.35865]
+    ,"bldgFormalName":"Polyhouse #10"
+    ,"bldgName":"Polyhouse #10-OrbldgFormalNamental Hort."
+    ,"bldgCode":"OH10"
+  },
+  {
+     "coordinates":[29.64003, -82.3591]
+    ,"bldgFormalName":"Carport"
+    ,"bldgName":"OrbldgFormalNamental Hort Carport"
+    ,"bldgCode":"OHC"
+  },
+  {
+     "coordinates":[29.63975, -82.35899]
+    ,"bldgFormalName":"Laboratory Building"
+    ,"bldgName":"OrbldgFormalNamental Hort Laboratory"
+    ,"bldgCode":"OHL1"
+  },
+  {
+     "coordinates":[29.63982, -82.35857]
+    ,"bldgFormalName":"Laboratory Building"
+    ,"bldgName":"OrbldgFormalNamental Horticulture Lab"
+    ,"bldgCode":"OHL2"
+  },
+  {
+     "coordinates":[29.64004, -82.35923]
+    ,"bldgFormalName":"Pot Washing Building"
+    ,"bldgName":"OrbldgFormalNamental Hort Pot Washing"
+    ,"bldgCode":"OHP"
+  },
+  {
+     "coordinates":[29.64058, -82.35866]
+    ,"bldgFormalName":"Polyhouse #5"
+    ,"bldgName":"Polyhouse #5-OrbldgFormalNamental Hort."
+    ,"bldgCode":"OHP5"
+  },
+  {
+     "coordinates":[29.64037, -82.35848]
+    ,"bldgFormalName":"Polyhouse #9-OrbldgFormalNamental Hort."
+    ,"bldgName":"Polyhouse #9-OrbldgFormalNamental Hort."
+    ,"bldgCode":"OHP9"
+  },
+  {
+     "coordinates":[29.64011, -82.35914]
+    ,"bldgFormalName":"Pesticide Building"
+    ,"bldgName":"OrbldgFormalNamental Hort Pesticide Bldg"
+    ,"bldgCode":"OHPB"
+  },
+  {
+     "coordinates":[29.64007, -82.35872]
+    ,"bldgFormalName":"Soils Building"
+    ,"bldgName":"OrbldgFormalNamental Hort Soils Building"
+    ,"bldgCode":"OHSB"
+  },
+  {
+     "coordinates":[29.63839, -82.37379]
+    ,"bldgFormalName":"Orthopaedics & Sports Medicine  "
+    ,"bldgName":"Orthopaedics & Sports Medicine Institute"
+    ,"bldgCode":"OSMI"
+  },
+  {
+     "coordinates":[29.63888, -82.34231]
+    ,"bldgFormalName":"Shands Cancer Center"
+    ,"bldgName":"Shands Cancer Center"
+    ,"bldgCode":"P04"
+  },
+  {
+     "coordinates":[29.63955, -82.34079]
+    ,"bldgFormalName":"Cardiovascular/Neuroscience Hospital"
+    ,"bldgName":""
+    ,"bldgCode":"P06"
+  },
+  {
+     "coordinates":[29.63904, -82.33963]
+    ,"bldgFormalName":"Hospital Parking Garage"
+    ,"bldgName":""
+    ,"bldgCode":"P10"
+  },
+  {
+     "coordinates":[29.63837, -82.33963]
+    ,"bldgFormalName":"Parking Garage"
+    ,"bldgName":""
+    ,"bldgCode":"P12"
+  },
+  {
+     "coordinates":[30.86944, -85.18448]
+    ,"bldgFormalName":"Arena"
+    ,"bldgName":"Arena"
+    ,"bldgCode":"PAVL"
+  },
+  {
+     "coordinates":[29.64732, -82.3595]
+    ,"bldgFormalName":"Pi Beta Phi"
+    ,"bldgName":"Sorority -Pi Beta Phi"
+    ,"bldgCode":"PBF"
+  },
+  {
+     "coordinates":[29.63822, -82.35953]
+    ,"bldgFormalName":"Plant Cell/Molecular Bio Lab"
+    ,"bldgName":"Plant Cell/Molecular Bio Lab"
+    ,"bldgCode":"PCMB"
+  },
+  {
+     "coordinates":[29.63528, -82.36928]
+    ,"bldgFormalName":"Phillips Center For The Performing Arts "
+    ,"bldgName":"Phillips Center"
+    ,"bldgCode":"PCPA"
+  },
+  {
+     "coordinates":[29.65056, -82.33885]
+    ,"bldgFormalName":"Phi Delta Theta"
+    ,"bldgName":"Fraternity -Phi Delta Theta"
+    ,"bldgCode":"PDT"
+  },
+  {
+     "coordinates":[29.65008, -82.34205]
+    ,"bldgFormalName":"George Peabody Hall"
+    ,"bldgName":"Peabody Hall"
+    ,"bldgCode":"PEA"
+  },
+  {
+     "coordinates":[29.63696, -82.36021]
+    ,"bldgFormalName":"Plant Growth Room"
+    ,"bldgName":"Plant Growth Building"
+    ,"bldgCode":"PGB"
+  },
+  {
+     "coordinates":[29.64456, -82.34884]
+    ,"bldgFormalName":"Earle B. Phelps Lab"
+    ,"bldgName":"Phelps Lab"
+    ,"bldgCode":"PHL"
+  },
+  {
+     "coordinates":[29.63724, -82.36006]
+    ,"bldgFormalName":"Pesticide Information Office"
+    ,"bldgName":"Pesticide Information Office"
+    ,"bldgCode":"PIO"
+  },
+  {
+     "coordinates":[29.64098, -82.33435]
+    ,"bldgFormalName":"PK Elementary Wing"
+    ,"bldgName":"Pk Elementary Wing"
+    ,"bldgCode":"PKEL"
+  },
+  {
+     "coordinates":[29.64126, -82.3345]
+    ,"bldgFormalName":"PKY  School H  Addition"
+    ,"bldgName":"PKY  School H  Addition"
+    ,"bldgCode":"PKHA"
+  },
+  {
+     "coordinates":[29.63943, -82.33515]
+    ,"bldgFormalName":"PKY  School L  Addition"
+    ,"bldgName":"PKY  School L  Addition"
+    ,"bldgCode":"PKLA"
+  },
+  {
+     "coordinates":[29.64778, -82.35707]
+    ,"bldgFormalName":"Pi Kappa Phi"
+    ,"bldgName":"Fraternity -Pi Kappa Phi"
+    ,"bldgCode":"PKP"
+  },
+  {
+     "coordinates":[29.64191, -82.33525]
+    ,"bldgFormalName":"PKY School Temporary R  1157"
+    ,"bldgName":"PKY School Temporary R  1157"
+    ,"bldgCode":"PKR1"
+  },
+  {
+     "coordinates":[29.64178, -82.33542]
+    ,"bldgFormalName":"PKY School Temporary R  1167"
+    ,"bldgName":"PKY School Temporary R  1167"
+    ,"bldgCode":"PKR2"
+  },
+  {
+     "coordinates":[29.64195, -82.33541]
+    ,"bldgFormalName":"PKY School Temporary R  1168"
+    ,"bldgName":"PKY School Temporary R  1168"
+    ,"bldgCode":"PKR3"
+  },
+  {
+     "coordinates":[29.64997, -82.33838]
+    ,"bldgFormalName":"Phi Kappa Tau"
+    ,"bldgName":"Fraternity - Phi Kappa Tau"
+    ,"bldgCode":"PKT"
+  },
+  {
+     "coordinates":[29.64036, -82.33526]
+    ,"bldgFormalName":"PKY Develop.Research School A"
+    ,"bldgName":"Pk Performing Arts Center"
+    ,"bldgCode":"PKYA"
+  },
+  {
+     "coordinates":[29.64056, -82.33491]
+    ,"bldgFormalName":"PKY Develop.Research School C"
+    ,"bldgName":"PKY Develop.Research School C"
+    ,"bldgCode":"PKYC"
+  },
+  {
+     "coordinates":[29.64039, -82.33489]
+    ,"bldgFormalName":"PKY Develop.Research School D"
+    ,"bldgName":"PKY Develop.Research School D"
+    ,"bldgCode":"PKYD"
+  },
+  {
+     "coordinates":[29.63979, -82.335]
+    ,"bldgFormalName":"PKY Develop.Research School E"
+    ,"bldgName":"PKY Develop.Research School E"
+    ,"bldgCode":"PKYE"
+  },
+  {
+     "coordinates":[29.64032, -82.33431]
+    ,"bldgFormalName":"PKY Develop.Research School F"
+    ,"bldgName":"PKY Develop.Research School F"
+    ,"bldgCode":"PKYF"
+  },
+  {
+     "coordinates":[29.64117, -82.33482]
+    ,"bldgFormalName":"PKY Develop.Research School H"
+    ,"bldgName":"PKY Develop.Research School H"
+    ,"bldgCode":"PKYH"
+  },
+  {
+     "coordinates":[29.64149, -82.33479]
+    ,"bldgFormalName":"PKY Develop.Research School I"
+    ,"bldgName":""
+    ,"bldgCode":"PKYI"
+  },
+  {
+     "coordinates":[29.63993, -82.33427]
+    ,"bldgFormalName":"PKY Develop.Research School J"
+    ,"bldgName":"PKY Develop.Research School J"
+    ,"bldgCode":"PKYJ"
+  },
+  {
+     "coordinates":[29.63968, -82.33428]
+    ,"bldgFormalName":"PKY Develop.Research School K"
+    ,"bldgName":"PKY Develop.Research School K"
+    ,"bldgCode":"PKYK"
+  },
+  {
+     "coordinates":[29.63943, -82.33481]
+    ,"bldgFormalName":"PKY Develop.Research School L"
+    ,"bldgName":"PKY Develop.Research School L"
+    ,"bldgCode":"PKYL"
+  },
+  {
+     "coordinates":[29.63942, -82.33436]
+    ,"bldgFormalName":"PKY Develop.Research School M"
+    ,"bldgName":"PKY Develop.Research School M"
+    ,"bldgCode":"PKYM"
+  },
+  {
+     "coordinates":[29.63921, -82.3349]
+    ,"bldgFormalName":"PKY Develop.Research School N"
+    ,"bldgName":"PKY Develop.Research School N"
+    ,"bldgCode":"PKYN"
+  },
+  {
+     "coordinates":[29.63917, -82.33445]
+    ,"bldgFormalName":"PKY Develop.Research School O"
+    ,"bldgName":"PKY Develop.Research School O"
+    ,"bldgCode":"PKYO"
+  },
+  {
+     "coordinates":[29.63881, -82.33432]
+    ,"bldgFormalName":"PKY Develop.Research School P"
+    ,"bldgName":"PKY Develop.Research School P"
+    ,"bldgCode":"PKYP"
+  },
+  {
+     "coordinates":[29.63918, -82.33413]
+    ,"bldgFormalName":"PKY Develop.Research School Q"
+    ,"bldgName":"PKY Develop.Research School Q"
+    ,"bldgCode":"PKYQ"
+  },
+  {
+     "coordinates":[29.63845, -82.33417]
+    ,"bldgFormalName":"PKY School Temporary T 1429"
+    ,"bldgName":"PKY School Temporary T 1429"
+    ,"bldgCode":"PKYT"
+  },
+  {
+     "coordinates":[29.63846, -82.33454]
+    ,"bldgFormalName":"PKY School Temporary T 1426"
+    ,"bldgName":"PKY School Temporary T 1426"
+    ,"bldgCode":"PKYT"
+  },
+  {
+     "coordinates":[29.63846, -82.33442]
+    ,"bldgFormalName":"PKY School Temporary T 1427"
+    ,"bldgName":"PKY School Temporary T 1427"
+    ,"bldgCode":"PKYT"
+  },
+  {
+     "coordinates":[29.63846, -82.33431]
+    ,"bldgFormalName":"PKY School Temporary T 1428"
+    ,"bldgName":"PKY School Temporary T 1428"
+    ,"bldgCode":"PKYT"
+  },
+  {
+     "coordinates":[29.64032, -82.33475]
+    ,"bldgFormalName":"PKY  School Walkways"
+    ,"bldgName":"PKY  School Walkways"
+    ,"bldgCode":"PKYW"
+  },
+  {
+     "coordinates":[29.63953, -82.33403]
+    ,"bldgFormalName":"PKY School Temporary Z 1152"
+    ,"bldgName":"PKY School Temporary Z 1152"
+    ,"bldgCode":"PKZ1"
+  },
+  {
+     "coordinates":[29.63942, -82.334]
+    ,"bldgFormalName":"PKY School Temporary Z 1153"
+    ,"bldgName":"PKY School Temporary Z 1153"
+    ,"bldgCode":"PKZ2"
+  },
+  {
+     "coordinates":[29.63716, -82.35986]
+    ,"bldgFormalName":"Pesticide Lab Annex B"
+    ,"bldgName":"Pesticide Lab Annex B"
+    ,"bldgCode":"PLAX"
+  },
+  {
+     "coordinates":[29.64805, -82.35556]
+    ,"bldgFormalName":"Pi Lambda Phi"
+    ,"bldgName":"Fraternity -Pi Lambda Phi"
+    ,"bldgCode":"PLP"
+  },
+  {
+     "coordinates":[29.63908, -82.35835]
+    ,"bldgFormalName":"Field Lab"
+    ,"bldgName":"Field Lab"
+    ,"bldgCode":"PLSL"
+  },
+  {
+     "coordinates":[29.63972, -82.35986]
+    ,"bldgFormalName":"Polyhouse"
+    ,"bldgName":"Polyhouse"
+    ,"bldgCode":"POLY"
+  },
+  {
+     "coordinates":[29.64999, -82.34726]
+    ,"bldgFormalName":"Florida Outdoor Pool"
+    ,"bldgName":"Florida Pool Plant"
+    ,"bldgCode":"POOL"
+  },
+  {
+     "coordinates":[29.63583, -82.37025]
+    ,"bldgFormalName":"Powell Hall (FLMNH)"
+    ,"bldgName":"Powell Hall (FLMNH)"
+    ,"bldgCode":"POW"
+  },
+  {
+     "coordinates":[29.6394, -82.35632]
+    ,"bldgFormalName":"Plant Pathology Cytology Laboratory"
+    ,"bldgName":"Plant Pathology Cytology Laboratory"
+    ,"bldgCode":"PPCL"
+  },
+  {
+     "coordinates":[29.63892, -82.36089]
+    ,"bldgFormalName":"Plant Pathology Diagnostics Lab"
+    ,"bldgName":"Plant Path Diagnostics Lab"
+    ,"bldgCode":"PPDL"
+  },
+  {
+     "coordinates":[29.63935, -82.35597]
+    ,"bldgFormalName":"Plant Pathology Growth Room"
+    ,"bldgName":"Plant Pathology Growth Room"
+    ,"bldgCode":"PPGR"
+  },
+  {
+     "coordinates":[29.78076, -82.4733]
+    ,"bldgFormalName":"Progress Park"
+    ,"bldgName":"South Progress Park"
+    ,"bldgCode":"PR01"
+  },
+  {
+     "coordinates":[29.78148, -82.47297]
+    ,"bldgFormalName":"Progress Park North"
+    ,"bldgName":"Progress Park North"
+    ,"bldgCode":"PR02"
+  },
+  {
+     "coordinates":[29.78148, -82.47297]
+    ,"bldgFormalName":"Progress Park North"
+    ,"bldgName":"Progress Park North"
+    ,"bldgCode":"PR02"
+  },
+  {
+     "coordinates":[29.64926, -82.35516]
+    ,"bldgFormalName":"James G. Pressly Stadium"
+    ,"bldgName":"James G. Pressly Stadium"
+    ,"bldgCode":"PRE"
+  },
+  {
+     "coordinates":[29.64088, -82.37425]
+    ,"bldgFormalName":"ACS Housing"
+    ,"bldgName":"ACS Housing"
+    ,"bldgCode":"PRF"
+  },
+  {
+     "coordinates":[29.63715, -82.35936]
+    ,"bldgFormalName":"Food/Environ Toxicology Lab"
+    ,"bldgName":"Food/Environ Toxicology Lab"
+    ,"bldgCode":"PRL"
+  },
+  {
+     "coordinates":[29.64007, -82.34303]
+    ,"bldgFormalName":"Shands Patient Services Bldg"
+    ,"bldgName":"Shands Patient Services Bldg"
+    ,"bldgCode":"PSB"
+  },
+  {
+     "coordinates":[29.63947, -82.3596]
+    ,"bldgFormalName":"Plant Science Facility"
+    ,"bldgName":"Plant Science Facility"
+    ,"bldgCode":"PSF"
+  },
+  {
+     "coordinates":[29.64146, -82.34785]
+    ,"bldgFormalName":"Particle Science & Technology"
+    ,"bldgName":"Particle Science & Technology"
+    ,"bldgCode":"PST"
+  },
+  {
+     "coordinates":[29.64341, -82.3463]
+    ,"bldgFormalName":"Psychology Building"
+    ,"bldgName":"Psychology Building"
+    ,"bldgCode":"PSY"
+  },
+  {
+     "coordinates":[29.64941, -82.34553]
+    ,"bldgFormalName":"Jim and Alexis Pugh Hall"
+    ,"bldgName":"Pugh Hall"
+    ,"bldgCode":"PUGH"
+  },
+  {
+     "coordinates":[29.64747, -82.35717]
+    ,"bldgFormalName":"Theta Chi"
+    ,"bldgName":"Fraternity -Theta Chi"
+    ,"bldgCode":"QC"
+  },
+  {
+     "coordinates":[29.67295, -82.30018]
+    ,"bldgFormalName":"Qualification Lab, CTT"
+    ,"bldgName":"Qualification Lab"
+    ,"bldgCode":"QUAL"
+  },
+  {
+     "coordinates":[27.42625, -80.4056]
+    ,"bldgFormalName":"Exotic/Aquatic Plant Quarantine "
+    ,"bldgName":"Exotic/Aquatic Plant Quarantine "
+    ,"bldgCode":"QUAR"
+  },
+  {
+     "coordinates":[29.64625, -82.34294]
+    ,"bldgFormalName":"Marjorie K. Rawlings Hall"
+    ,"bldgName":"Rawlings Hall"
+    ,"bldgCode":"RAW"
+  },
+  {
+     "coordinates":[29.65012, -82.34634]
+    ,"bldgFormalName":"Racquet Club Dining Center"
+    ,"bldgName":"Racquet Club Dining Center"
+    ,"bldgCode":"RCD"
+  },
+  {
+     "coordinates":[29.64922, -82.3444]
+    ,"bldgFormalName":"Rolfs Elevator Equipment Bldg"
+    ,"bldgName":"Rolfs Elevator Equipment Bldg"
+    ,"bldgCode":"REE"
+  },
+  {
+     "coordinates":[29.64631, -82.34788]
+    ,"bldgFormalName":"J. Wayne Reitz Union"
+    ,"bldgName":"Reitz Student Union"
+    ,"bldgCode":"REI"
+  },
+  {
+     "coordinates":[29.64645, -82.33985]
+    ,"bldgFormalName":"Mary M. Reid Hall"
+    ,"bldgName":"Reid Hall"
+    ,"bldgCode":"REID"
+  },
+  {
+     "coordinates":[29.64749, -82.34901]
+    ,"bldgFormalName":"Frederick N Rhines Hall"
+    ,"bldgName":"Rhines Hall"
+    ,"bldgCode":"RHN"
+  },
+  {
+     "coordinates":[29.64747, -82.35114]
+    ,"bldgFormalName":"Harold C. Riker Hall"
+    ,"bldgName":"Riker  Hall"
+    ,"bldgCode":"RIK"
+  },
+  {
+     "coordinates":[29.64971, -82.3577]
+    ,"bldgFormalName":"Ring Varsity Tennis Building"
+    ,"bldgName":"Ring Varsity Tennis Building"
+    ,"bldgCode":"RING"
+  },
+  {
+     "coordinates":[29.63317, -82.36115]
+    ,"bldgFormalName":"Research Laboratory"
+    ,"bldgName":"Research Laboratory"
+    ,"bldgCode":"RL1"
+  },
+  {
+     "coordinates":[29.63316, -82.36091]
+    ,"bldgFormalName":"Research Laboratory"
+    ,"bldgName":"Research Laboratory"
+    ,"bldgCode":"RL2"
+  },
+  {
+     "coordinates":[29.64797, -82.34811]
+    ,"bldgFormalName":"Percy L. Reed Laboratory"
+    ,"bldgName":"Reed Laboratory"
+    ,"bldgCode":"RLA"
+  },
+  {
+     "coordinates":[29.63983, -82.35806]
+    ,"bldgFormalName":"Residence / Laboratory"
+    ,"bldgName":"Residence / Laboratory Bldg."
+    ,"bldgCode":"RLAB"
+  },
+  {
+     "coordinates":[29.64694, -82.3432]
+    ,"bldgFormalName":"M.E. Rinker Hall"
+    ,"bldgName":"Rinker Hall"
+    ,"bldgCode":"RNK"
+  },
+  {
+     "coordinates":[29.64443, -82.34543]
+    ,"bldgFormalName":"Frazier Rogers Hall"
+    ,"bldgName":"Rogers, Frazier Hall"
+    ,"bldgCode":"ROG"
+  },
+  {
+     "coordinates":[29.64925, -82.34448]
+    ,"bldgFormalName":"Peter Rolfs Hall"
+    ,"bldgName":"Rolfs Hall"
+    ,"bldgCode":"ROL"
+  },
+  {
+     "coordinates":[29.64538, -82.35506]
+    ,"bldgFormalName":"Sigma Alpha Epsilon"
+    ,"bldgName":"Fraternity-Sigma Alpha Epsilon"
+    ,"bldgCode":"SAE"
+  },
+  {
+     "coordinates":[29.64027, -82.3465]
+    ,"bldgFormalName":"Shepard Broad Building"
+    ,"bldgName":"Shepard Broad Bldg"
+    ,"bldgCode":"SBB"
+  },
+  {
+     "coordinates":[29.64764, -82.34262]
+    ,"bldgFormalName":"Steinbrenner Band Hall"
+    ,"bldgName":"Steinbrenner "
+    ,"bldgCode":"SBH"
+  },
+  {
+     "coordinates":[29.64672, -82.35716]
+    ,"bldgFormalName":"Sigma Chi"
+    ,"bldgName":"Fraternity -Sigma Chi"
+    ,"bldgCode":"SC"
+  },
+  {
+     "coordinates":[29.62708, -82.36066]
+    ,"bldgFormalName":"Solar Engineering Laboratory"
+    ,"bldgName":"Solar Engineering Laboratory"
+    ,"bldgCode":"SEL"
+  },
+  {
+     "coordinates":[29.62867, -82.36097]
+    ,"bldgFormalName":"Solar Energy Test House 1"
+    ,"bldgName":"Solar Energy Test House 1"
+    ,"bldgCode":"SET1"
+  },
+  {
+     "coordinates":[29.62898, -82.36132]
+    ,"bldgFormalName":"Solar Energy Test House"
+    ,"bldgName":"Solar Energy Test House"
+    ,"bldgCode":"SET3"
+  },
+  {
+     "coordinates":[29.64917, -82.34863]
+    ,"bldgFormalName":"Florida Field South End Zone"
+    ,"bldgName":"Florida Field South End Zone"
+    ,"bldgCode":"SEZ"
+  },
+  {
+     "coordinates":[29.6498, -82.35276]
+    ,"bldgFormalName":"Sports Field House"
+    ,"bldgName":"Sports Field House"
+    ,"bldgCode":"SFH"
+  },
+  {
+     "coordinates":[29.64546, -82.35149]
+    ,"bldgFormalName":"Thomas M. Simpson Hall"
+    ,"bldgName":"Simpson Hall"
+    ,"bldgCode":"SIM"
+  },
+  {
+     "coordinates":[29.65003, -82.34425]
+    ,"bldgFormalName":"Harry H. Sisler Hall"
+    ,"bldgName":"Sisler Hall"
+    ,"bldgCode":"SIS"
+  },
+  {
+     "coordinates":[29.64455, -82.33611]
+    ,"bldgFormalName":"Sigma Kappa"
+    ,"bldgName":"Sorority -Sigma Kappa"
+    ,"bldgCode":"SK"
+  },
+  {
+     "coordinates":[29.65076, -82.34552]
+    ,"bldgFormalName":"Andrew Sledd Hall"
+    ,"bldgName":"Sledd Hall"
+    ,"bldgCode":"SLD"
+  },
+  {
+     "coordinates":[29.65092, -82.34181]
+    ,"bldgFormalName":"George S. Smathers Library"
+    ,"bldgName":"Smathers Library"
+    ,"bldgCode":"SMA"
+  },
+  {
+     "coordinates":[29.63782, -82.34902]
+    ,"bldgFormalName":"Shands Medical Plaza B"
+    ,"bldgName":"Shands Medical Plaza B"
+    ,"bldgCode":"SMPB"
+  },
+  {
+     "coordinates":[29.6494, -82.35117]
+    ,"bldgFormalName":"Stephen C. O`Connell Center"
+    ,"bldgName":"O`Connell Center"
+    ,"bldgCode":"SOC"
+  },
+  {
+     "coordinates":[29.63103, -82.35193]
+    ,"bldgFormalName":"Animal Science Solvent Storage"
+    ,"bldgName":"Animal Science Solvent Storage"
+    ,"bldgCode":"SOLS"
+  },
+  {
+     "coordinates":[29.64554, -82.35617]
+    ,"bldgFormalName":"Sigma Phi Epsilon"
+    ,"bldgName":"Fraternity -Sigma Phi Epsilon"
+    ,"bldgCode":"SPE"
+  },
+  {
+     "coordinates":[29.78266, -82.47538]
+    ,"bldgFormalName":"Specific Pathogen Free Animal"
+    ,"bldgName":"Specific Pathogen Free Animal"
+    ,"bldgCode":"SPFA"
+  },
+  {
+     "coordinates":[29.63934, -82.35801]
+    ,"bldgFormalName":"Soils Plant Preparation Lab"
+    ,"bldgName":"Soils Plant Preparation Lab"
+    ,"bldgCode":"SPPL"
+  },
+  {
+     "coordinates":[29.64871, -82.35713]
+    ,"bldgFormalName":"Springs Residential Complex"
+    ,"bldgName":"Springs Commons Building"
+    ,"bldgCode":"SPRC"
+  },
+  {
+     "coordinates":[29.65012, -82.34676]
+    ,"bldgFormalName":"Student Recreation and Fitness Center"
+    ,"bldgName":"Student Recreation and Fitness Center"
+    ,"bldgCode":"SRFC"
+  },
+  {
+     "coordinates":[29.65017, -82.34163]
+    ,"bldgFormalName":"Marshall M. Criser Hall"
+    ,"bldgName":"Criser Hall"
+    ,"bldgCode":"SSB"
+  },
+  {
+     "coordinates":[29.63927, -82.35593]
+    ,"bldgFormalName":"Equipment Storage"
+    ,"bldgName":"Equipment Storage"
+    ,"bldgCode":"ST1"
+  },
+  {
+     "coordinates":[29.6333, -82.36797]
+    ,"bldgFormalName":"Field Storage "
+    ,"bldgName":"Field Storage"
+    ,"bldgCode":"ST2"
+  },
+  {
+     "coordinates":[29.63909, -82.35876]
+    ,"bldgFormalName":"Storage, Nematology"
+    ,"bldgName":"Nematology Storage Trailer"
+    ,"bldgCode":"ST4"
+  },
+  {
+     "coordinates":[29.63372, -82.36576]
+    ,"bldgFormalName":"Storage"
+    ,"bldgName":"Storage"
+    ,"bldgCode":"ST5"
+  },
+  {
+     "coordinates":[29.65003, -82.3494]
+    ,"bldgFormalName":"Ben Hill Griffin Stadium"
+    ,"bldgName":"Stadium, Ben Hill Griffin"
+    ,"bldgCode":"STA"
+  },
+  {
+     "coordinates":[29.65089, -82.3411]
+    ,"bldgFormalName":"David Stuzin Hall"
+    ,"bldgName":"Stuzin Hall"
+    ,"bldgCode":"STZ"
+  },
+  {
+     "coordinates":[29.63007, -82.36066]
+    ,"bldgFormalName":"Swine Unit Feed Mill"
+    ,"bldgName":"Swine Unit Feed Mill"
+    ,"bldgCode":"SUFM"
+  },
+  {
+     "coordinates":[29.62937, -82.35962]
+    ,"bldgFormalName":"Swine Unit Methane Shed"
+    ,"bldgName":"Swine Unit Methane Shed"
+    ,"bldgCode":"SUMS"
+  },
+  {
+     "coordinates":[29.6439, -82.36809]
+    ,"bldgFormalName":"Surplus Property Warehouse"
+    ,"bldgName":"Surplus Property Warehouse"
+    ,"bldgCode":"SURP"
+  },
+  {
+     "coordinates":[29.64851, -82.35157]
+    ,"bldgFormalName":"Wayne & Jimmie Carse Swim/Dive"
+    ,"bldgName":"Swim/Dive Facility"
+    ,"bldgCode":"SWIM"
+  },
+  {
+     "coordinates":[29.6385, -82.36828]
+    ,"bldgFormalName":"Southwest Recreation Center"
+    ,"bldgName":"Southwest Recreation Center"
+    ,"bldgCode":"SWRC"
+  },
+  {
+     "coordinates":[29.63045, -82.36053]
+    ,"bldgFormalName":"Swine Unit Barn"
+    ,"bldgName":"Swine Unit Barn"
+    ,"bldgCode":"SWUB"
+  },
+  {
+     "coordinates":[29.64266, -82.37013]
+    ,"bldgFormalName":"Telecommunications"
+    ,"bldgName":"Telecommunications"
+    ,"bldgCode":"TEL"
+  },
+  {
+     "coordinates":[29.64711, -82.35724]
+    ,"bldgFormalName":"Tau Epsilon Phi"
+    ,"bldgName":"Fraternity -Tau Epsilon Phi"
+    ,"bldgCode":"TEP"
+  },
+  {
+     "coordinates":[29.63962, -82.36045]
+    ,"bldgFormalName":"Turfgrass Envirotron"
+    ,"bldgName":"Turfgrass Envirotron"
+    ,"bldgCode":"TGE"
+  },
+  {
+     "coordinates":[29.64001, -82.3439]
+    ,"bldgFormalName":"Wm A. Shands Teaching Hospital"
+    ,"bldgName":"Shands Teaching Hospital"
+    ,"bldgCode":"THC"
+  },
+  {
+     "coordinates":[29.65119, -82.346]
+    ,"bldgFormalName":"William R. Thomas Hall"
+    ,"bldgName":"Thomas Hall"
+    ,"bldgCode":"THO"
+  },
+  {
+     "coordinates":[29.64944, -82.33989]
+    ,"bldgFormalName":"John J. Tigert Hall"
+    ,"bldgName":"Tigert Hall"
+    ,"bldgCode":"TIG"
+  },
+  {
+     "coordinates":[29.65236, -82.33515]
+    ,"bldgFormalName":"Tau Kappa Epsilon"
+    ,"bldgName":"Fraternity - Tau Kappa Epsilon"
+    ,"bldgCode":"TKE"
+  },
+  {
+     "coordinates":[29.64797, -82.35139]
+    ,"bldgFormalName":"Benjamin A. Tolbert Hall"
+    ,"bldgName":"Tolbert Hall"
+    ,"bldgCode":"TOL"
+  },
+  {
+     "coordinates":[29.62, -82.41434]
+    ,"bldgFormalName":"Treeo Center"
+    ,"bldgName":"Treeo Center"
+    ,"bldgCode":"TREC"
+  },
+  {
+     "coordinates":[29.63722, -82.35365]
+    ,"bldgFormalName":"Toxicology Research Facility"
+    ,"bldgName":""
+    ,"bldgCode":"TRF"
+  },
+  {
+     "coordinates":[29.64582, -82.35184]
+    ,"bldgFormalName":"Harry R. Trusler Hall"
+    ,"bldgName":"Trusler Hall"
+    ,"bldgCode":"TRU"
+  },
+  {
+     "coordinates":[29.64921, -82.34407]
+    ,"bldgFormalName":"Ralph D. Turlington Hall"
+    ,"bldgName":"Turlington Hall"
+    ,"bldgCode":"TUR"
+  },
+  {
+     "coordinates":[29.65282, -82.3496]
+    ,"bldgFormalName":"University Foundation Annex"
+    ,"bldgName":"University Foundation Annex"
+    ,"bldgCode":"UFFX"
+  },
+  {
+     "coordinates":[29.65165, -82.35399]
+    ,"bldgFormalName":"Earl and Christy Powell University House"
+    ,"bldgName":"University House"
+    ,"bldgCode":"UNVH"
+  },
+  {
+     "coordinates":[29.64425, -82.3429]
+    ,"bldgFormalName":"Public Safety"
+    ,"bldgName":"Public Safety"
+    ,"bldgCode":"UPD"
+  },
+  {
+     "coordinates":[29.64415, -82.34237]
+    ,"bldgFormalName":"University Police Annex #1"
+    ,"bldgName":"University Police Annex #1"
+    ,"bldgCode":"UPD1"
+  },
+  {
+     "coordinates":[29.63379, -82.36618]
+    ,"bldgFormalName":"Urban Entomology"
+    ,"bldgName":"Urban Entomology"
+    ,"bldgCode":"URBE"
+  },
+  {
+     "coordinates":[29.65045, -82.34689]
+    ,"bldgFormalName":"Kathryn Chicone Ustler Hall"
+    ,"bldgName":"Ustler Hall"
+    ,"bldgCode":"UST"
+  },
+  {
+     "coordinates":[29.64924, -82.35615]
+    ,"bldgFormalName":"University Womens Club"
+    ,"bldgName":"University Womens Club"
+    ,"bldgCode":"UWC"
+  },
+  {
+     "coordinates":[29.63368, -82.34836]
+    ,"bldgFormalName":"VAB Auditorium"
+    ,"bldgName":"VAB Auditorium"
+    ,"bldgCode":"VABA"
+  },
+  {
+     "coordinates":[29.63708, -82.34358]
+    ,"bldgFormalName":"Va Education Building #14"
+    ,"bldgName":"Va Education Building #14"
+    ,"bldgCode":"VAEB"
+  },
+  {
+     "coordinates":[29.63703, -82.34483]
+    ,"bldgFormalName":"V. A. Hospital"
+    ,"bldgName":"V. A. Hospital"
+    ,"bldgCode":"VAH"
+  },
+  {
+     "coordinates":[29.64856, -82.35112]
+    ,"bldgFormalName":"Gen. James A. Van Fleet Hall"
+    ,"bldgName":"Van Fleet Hall"
+    ,"bldgCode":"VAN"
+  },
+  {
+     "coordinates":[29.63659, -82.36158]
+    ,"bldgFormalName":"Vegetable Crops Classlab/Stor"
+    ,"bldgName":"Vegetable Crops Classlab/Stor"
+    ,"bldgCode":"VCG"
+  },
+  {
+     "coordinates":[29.63327, -82.34994]
+    ,"bldgFormalName":"Veterinary Clinical Sciences"
+    ,"bldgName":"Veterinary Clinical Sciences"
+    ,"bldgCode":"VCS"
+  },
+  {
+     "coordinates":[29.63705, -82.35376]
+    ,"bldgFormalName":"Vet Science Surgery"
+    ,"bldgName":"Vet Science Surgery"
+    ,"bldgCode":"VETS"
+  },
+  {
+     "coordinates":[29.63371, -82.34878]
+    ,"bldgFormalName":"Veterinary Academic Building"
+    ,"bldgName":"Veterinary Academic Bldg"
+    ,"bldgCode":"VMAB"
+  },
+  {
+     "coordinates":[29.63237, -82.34998]
+    ,"bldgFormalName":"Courtelis Equine Teaching Hosp"
+    ,"bldgName":"Courtelis Equine Teaching Hosp"
+    ,"bldgCode":"VMEH"
+  },
+  {
+     "coordinates":[29.63275, -82.349]
+    ,"bldgFormalName":"Vet Med Metabolic Building"
+    ,"bldgName":"Vet Med Metabolic Building"
+    ,"bldgCode":"VMMB"
+  },
+  {
+     "coordinates":[29.63141, -82.34905]
+    ,"bldgFormalName":"Vet Med Reproduction Barn"
+    ,"bldgName":"Vet Med Reproduction Barn"
+    ,"bldgCode":"VMRB"
+  },
+  {
+     "coordinates":[29.63135, -82.34927]
+    ,"bldgFormalName":"Vet Med Reproduction Barn"
+    ,"bldgName":"Vet Med Reproduction Barn"
+    ,"bldgCode":"VMRP"
+  },
+  {
+     "coordinates":[29.65006, -82.35774]
+    ,"bldgFormalName":"Varsity Tennis Building"
+    ,"bldgName":"Varsity Tennis Building"
+    ,"bldgCode":"VTB"
+  },
+  {
+     "coordinates":[29.64946, -82.35707]
+    ,"bldgFormalName":"Scott Linder Tennis Stadium"
+    ,"bldgName":"Linder Tennis Stadium"
+    ,"bldgCode":"VTS"
+  },
+  {
+     "coordinates":[29.64946, -82.34159]
+    ,"bldgFormalName":"Col. Edgar S. Walker Hall"
+    ,"bldgName":"Walker Hall"
+    ,"bldgCode":"WAL"
+  },
+  {
+     "coordinates":[29.6384, -82.35906]
+    ,"bldgFormalName":"Wallace Building"
+    ,"bldgName":"Wallace Building"
+    ,"bldgCode":"WALC"
+  },
+  {
+     "coordinates":[29.59652, -82.34672]
+    ,"bldgFormalName":"Sam Wall Arena Support Bldg"
+    ,"bldgName":"Sam Wall Arena Support Bldg"
+    ,"bldgCode":"WALL"
+  },
+  {
+     "coordinates":[29.64848, -82.33072]
+    ,"bldgFormalName":"WARPhaus"
+    ,"bldgName":"WARPhaus"
+    ,"bldgCode":"WARP"
+  },
+  {
+     "coordinates":[29.64201, -82.3502]
+    ,"bldgFormalName":"Water Reclamation Admin. Bldg."
+    ,"bldgName":"Water Reclamation Admin. Bldg."
+    ,"bldgCode":"WATR"
+  },
+  {
+     "coordinates":[29.53357, -82.30519]
+    ,"bldgFormalName":"Wauburg North Boat Shelter"
+    ,"bldgName":"Wauburg North Boat Shelter"
+    ,"bldgCode":"WAU"
+  },
+  {
+     "coordinates":[29.63857, -82.33078]
+    ,"bldgFormalName":"Coastal Engineering Wave Tank"
+    ,"bldgName":"Coastal Engineering Wave Tank"
+    ,"bldgCode":"WAVE"
+  },
+  {
+     "coordinates":[29.64705, -82.35073]
+    ,"bldgFormalName":"Rudolf Weaver Hall"
+    ,"bldgName":"Weaver Hall"
+    ,"bldgCode":"WEA"
+  },
+  {
+     "coordinates":[29.63844, -82.36292]
+    ,"bldgFormalName":"IFAS Wildlife Ecology Storage"
+    ,"bldgName":"IFAS Wildlife Ecology Storage"
+    ,"bldgCode":"WECS"
+  },
+  {
+     "coordinates":[29.64835, -82.34843]
+    ,"bldgFormalName":"Joseph Weil Hall"
+    ,"bldgName":"Weil Hall"
+    ,"bldgCode":"WEIL"
+  },
+  {
+     "coordinates":[29.64783, -82.34738]
+    ,"bldgFormalName":"Rae O. Weimer Hall"
+    ,"bldgName":"Weimer Hall"
+    ,"bldgCode":"WEIM"
+  },
+  {
+     "coordinates":[29.63381, -82.35545]
+    ,"bldgFormalName":"IFAS Wildlife Ecology Lab"
+    ,"bldgName":"IFAS Wildlife Ecology Lab"
+    ,"bldgCode":"WEL1"
+  },
+  {
+     "coordinates":[29.63403, -82.35542]
+    ,"bldgFormalName":"IFAS Wildlife Ecology Lab"
+    ,"bldgName":"IFAS Wildlife Ecology Lab"
+    ,"bldgCode":"WEL2"
+  },
+  {
+     "coordinates":[29.64144, -82.34345]
+    ,"bldgFormalName":"Brain Institute Bridge"
+    ,"bldgName":"Brain Institute Bridge"
+    ,"bldgCode":"WLKW"
+  },
+  {
+     "coordinates":[29.64791, -82.34654]
+    ,"bldgFormalName":"Robert C. Williamson Hall"
+    ,"bldgName":"Williamson Hall"
+    ,"bldgCode":"WM"
+  },
+  {
+     "coordinates":[29.63172, -82.36813]
+    ,"bldgFormalName":"Waste Management Facility"
+    ,"bldgName":"Waste Management Facility"
+    ,"bldgCode":"WMF"
+  },
+  {
+     "coordinates":[29.64414, -82.41913]
+    ,"bldgFormalName":"WRUF Transmitter Building"
+    ,"bldgName":"WRUF Transmitter Building"
+    ,"bldgCode":"WRUF"
+  },
+  {
+     "coordinates":[29.63918, -82.36376]
+    ,"bldgFormalName":"Weed Sciences Field Building"
+    ,"bldgName":"Weed Sciences Field Building"
+    ,"bldgCode":"WSFL"
+  },
+  {
+     "coordinates":[29.65417, -82.42384]
+    ,"bldgFormalName":"Tower Hill Office Park"
+    ,"bldgName":"Tower Hill Office Park"
+    ,"bldgCode":"X71"
+  },
+  {
+     "coordinates":[29.65009, -82.34804]
+    ,"bldgFormalName":"Yon Hall"
+    ,"bldgName":"Yon Hall"
+    ,"bldgCode":"YON"
+  },
+  {
+     "coordinates":[29.64622, -82.34035]
+    ,"bldgFormalName":"Nancy W. Yulee Hall"
+    ,"bldgName":"Yulee Hall"
+    ,"bldgCode":"YUL"
+  },
+  {
+     "coordinates":[29.64437, -82.33742]
+    ,"bldgFormalName":"Zeta Tau Alpha"
+    ,"bldgName":"Sorority -Zeta Tau Alpha"
+    ,"bldgCode":"ZTA"
+  }]
