@@ -86,7 +86,6 @@ function closeMenu() {
   }
 }
 
-
 //TODO: Implement pop-up functionality
 //TODO: Implement form show/hide for button
 //TODO: Adjust panning for the markers
