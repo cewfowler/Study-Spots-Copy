@@ -56,20 +56,14 @@ map.addControl(nav, 'bottom-right');
 //toggle menu function
 function toggleMenu() {
   let menu = document.getElementById("myMenu");
-  let mapStyles = document.getElementById("map");
   if (menu.style.width == "0px") {
-    mapStyles.style.width = "66%";
-    mapStyles.style.left = "507px";
-    menu.style.width = "500px";
+    openMenu();
   } else {
-    mapStyles.style.width = "99%";
-    mapStyles.style.left = "0px";
-    menu.style.width = "0px";
-
+    closeMenu();
   }
 }
 
-//just opens the menu
+//opens the menu
 function openMenu() {
   let menu = document.getElementById("myMenu");
   let mapStyles = document.getElementById("map");
@@ -77,6 +71,18 @@ function openMenu() {
     mapStyles.style.width = "66%";
     mapStyles.style.left = "507px";
     menu.style.width = "500px";
+  }
+}
+
+//closes the menu
+function closeMenu() {
+  let menu = document.getElementById("myMenu");
+  let mapStyles = document.getElementById("map");
+  if (menu.style.width != "0px") {
+    mapStyles.style.width = "99%";
+    mapStyles.style.left = "0px";
+    menu.style.width = "0px";
+
   }
 }
 
