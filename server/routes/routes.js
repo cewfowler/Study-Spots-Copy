@@ -8,11 +8,14 @@ module.exports = function(app) {
   //TODO: testing
   app.get('/', function(req, res) {
 
-    SpotModel.find({}, function(err, studySpots) {
-      if (err) return err;
+    SpotModel.find({}, {sort: {bldgCode: 1}}, function(err, studySpots) {
+      if (err) {
+        console.log('Error retrieving spots from database');
+        return err;
+      }
       res.status(200).send(studySpots);
     });
-    
+
   });
 
   // the only thing that should be passed in the request is the building bCode
@@ -28,6 +31,7 @@ module.exports = function(app) {
         {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
           if (err) {
             console.log("Error updating building with code " + bCode);
+            return err;
           }
 
           res.status(201).send();
