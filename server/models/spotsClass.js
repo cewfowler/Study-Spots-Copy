@@ -6,6 +6,8 @@ class StudySpot {
     this.location = loc;
     this.upvotes = 0;
     this.downvotes = 0;
+    //binary availability: set to 1 for taken, 0 for open
+    this.availability = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 
   //methods for incrementing/decrementing upvotes and downvotes
