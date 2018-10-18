@@ -32,13 +32,11 @@ map.on('click', function (e) {
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
-      + 'Spot 1 <br>'
-      + 'Spot 2 <br>'
       + '</p>'
       + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
     )
     .addTo(map);
-  openMenu(); 
+  openMenu();
 });
 
 //on click, center map onto building marker
