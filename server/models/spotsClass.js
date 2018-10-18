@@ -6,8 +6,9 @@ class StudySpot {
     this.location = loc;
     this.upvotes = 0;
     this.downvotes = 0;
+
     //binary availability: set to 1 for taken, 0 for open
-    this.availability = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    this.availability = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
   }
 
   //methods for incrementing/decrementing upvotes and downvotes
@@ -33,5 +34,17 @@ class StudySpot {
 
   getDownVotes() {
     return this.downVotes;
-  }
+  };
+
+  changeAvailability(index) {
+    this.availability[index] = !this.availability[index];
+  };
+
+  resetAvailability() {
+    this.availability = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
+  };
+
+  getAvailability() {
+    return this.availability;
+  };
 };
