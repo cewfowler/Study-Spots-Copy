@@ -38,9 +38,22 @@ map.on('click', function (e) {
       + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
     )
     .addTo(map);
-  openMenu();
+  openMenu(); 
 });
 
+//on click, center map onto building marker
+map.on('click', 'buildings', function (e) {
+  var flyToPoint = e.features[0].geometry.coordinates;
+  flyToPoint[0] = flyToPoint[0]+.0015;
+  flyToPoint[1] = flyToPoint[1]+.00099;
+  map.flyTo({
+    center: flyToPoint,
+    speed: 0.4,
+
+  });
+});
+
+//changes mouse into pointer hand when hovering onto building marker
 map.on('mouseenter', 'buildings', function () {
   map.getCanvas().style.cursor = 'pointer';
 });
