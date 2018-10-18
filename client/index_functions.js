@@ -41,14 +41,25 @@ map.on('click', function (e) {
 
 //on click, center map onto building marker
 map.on('click', 'buildings', function (e) {
+  let menu = document.getElementById("myMenu");
   var flyToPoint = e.features[0].geometry.coordinates;
-  flyToPoint[0] = flyToPoint[0]+.0015;
-  flyToPoint[1] = flyToPoint[1]+.00099;
-  map.flyTo({
-    center: flyToPoint,
-    speed: 0.4,
 
-  });
+  //this if-else statement is used for shifting the center of the map based on if the
+  //menu bar is open
+  if (menu.style.width != "0px") {
+    map.flyTo({
+      center: flyToPoint,
+      speed: 0.2,
+      offset: [-255, 50],
+    });
+  }
+  else {
+    map.flyTo({
+      center: flyToPoint,
+      speed: 0.2,
+      offset: [0,0],
+    });
+  }
 });
 
 //changes mouse into pointer hand when hovering onto building marker
