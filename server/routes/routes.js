@@ -4,14 +4,17 @@ var mongoose = require('mongoose'),
 
 module.exports = function(app) {
 
+  app.get('/', function(req, res) {
+    res.status(200).send();
+  });
   //return the database entries for all the study spots when loading the page
   //TODO: testing
-  app.get('/', function(req, res) {
+  app.get('/spots', function(req, res) {
 
-    SpotModel.find({}, {sort: {bldgCode: 1}}, function(err, studySpots) {
+    SpotModel.find({}, function(err, studySpots) {
       if (err) {
         console.log('Error retrieving spots from database');
-        return err;
+        res.status(500).redirect('/');
       }
       res.status(200).send(studySpots);
     });
@@ -22,7 +25,7 @@ module.exports = function(app) {
   // and the location/room number for the new spot
   // TODO: check if bCode can be called directly or if it has to be pulled from req
   //TODO: testing
-  app.post('/:bCode', function(req, res){
+  app.post('/spots/:bCode', function(req, res){
       console.log("Attempting to post new study spot");
 
       var newSpot = req.spot;
@@ -40,7 +43,7 @@ module.exports = function(app) {
   });
 
   //TODO: testing
-  app.get('/:bCode', function(req, res) {
+  app.get('/spots/:bCode', function(req, res) {
       SpotModel.find({bldgCode: bCode}, function(err, bldg) {
         if (err) return err;
         res.status(200).send(bCode);
