@@ -46,18 +46,23 @@ body {
   .openbtn:hover {
     background-color: #3F48b0;
   }
+
   #formbutton{
-  font-size: 13px;
-  cursor: pointer;
-  background-color: #3F48CC;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  margin: 0 auto;
-}
-#formbutton:hover {
-  background-color: #3F48b0;
-}
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #3F48CC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin: 0 auto;
+  }
+  #formbutton:hover {
+    background-color: #3F48b0;
+  }
+
+  .mapboxgl-popup-content{
+    text-align: center
+  }
 
   .sidebar .closebtn {
     position: absolute;
