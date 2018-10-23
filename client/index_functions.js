@@ -33,7 +33,7 @@ map.on('click', function (e) {
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
       + '</p>'
-      + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
+      + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
     )
     .addTo(map);
   // openMenu();
