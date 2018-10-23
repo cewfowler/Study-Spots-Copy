@@ -7,7 +7,7 @@ class StudySpot {
     this.upvotes = 0;
     this.downvotes = 0;
 
-    //binary availability: set to 1 for taken, 0 for open
+    //availabilit corresponds to UF schedule, boolean corresponding to period it is available
     this.availability = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
   }
 
