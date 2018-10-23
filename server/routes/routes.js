@@ -3,12 +3,6 @@ var mongoose = require('mongoose'),
     spot = require('../models/spotsClass.js');
 
 module.exports = function(app) {
-  /*
-  //load page
-  app.get('/', function(req, res) {
-    res.status(200)
-
-  });*/
 
   //return the database entries for all the study spots when loading the page
   //TODO: testing
@@ -24,20 +18,29 @@ module.exports = function(app) {
 
   });
 
+
+  //return information on a specific building
+  //TODO: testing
+  app.get('/spots/:bCode', function(req, res) {
+      SpotModel.find({bldgCode: req.params.bCode}, function(err, bldg) {
+        if (err) return err;
+        res.status(200).send(bCode);
+      });
+  });
+
   // adds a new study spot to bldg with bCode
   // params: bCode,location
   // initializes study spot with no upvotes/downvotes
-  // TODO: check if bCode can be called directly or if it has to be pulled from req
   //TODO: testing
   app.post('/spots/:bCode', function(req, res){
       console.log("Attempting to post new study spot");
 
       var newSpot = req.spot;
 
-      SpotModel.findOneAndUpdate({bldgCode: bCode},
+      SpotModel.findOneAndUpdate({bldgCode: req.params.bCode},
         {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
           if (err) {
-            console.log("Error updating building with code " + bCode);
+            console.log("Error updating building with code " + req.params.bCode);
             return err;
           }
 
@@ -46,17 +49,53 @@ module.exports = function(app) {
 
   });
 
-  //return information on a specific building
-  //TODO: testing
-  app.get('/spots/:bCode', function(req, res) {
-      SpotModel.find({bldgCode: bCode}, function(err, bldg) {
-        if (err) return err;
-        res.status(200).send(bCode);
-      });
+
+  // find specific room in a bldg
+  app.get('/spots/:bCode/:room', function(req,res) {
+    console.log("Retrieving room");
+    SpotModel.find({bldgCode: req.params.bCode}, function(err, studySpot) {
+
+      if (err) {
+        console.log("Error finding bldg with code " + req.params.bCode);
+        return err;
+      }
+
+      studySpot.find({spots.location: req.params.room}, function(err, spot) {
+
+        if (err) {
+          console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
+          return err;
+        }
+
+        res.status(200).send(spot);
+
+      })
+    });
   });
 
+  /* TODO: finish route
+  //update number of upvotes/downvotes for a room
   app.post('/spots/:bCode/:room', function(req,res) {
+    SpotModel.find({bldgCode: req.params.bCode}, function(err, studySpot) {
 
+      if (err) {
+        console.log("Error finding bldg with code " + req.params.bCode);
+        return err;
+      }
+
+      studySpot.findOneAndUpdate({spots.location: req.params.room},
+        {$set: {spots.upvotes: req.}},
+        {new: true}, function(err, spot) {
+
+        if (err) {
+          console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
+          return err;
+        }
+
+        res.status(200).send(spot);
+
+      })
+    });
   });
-
+  */
 }
