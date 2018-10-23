@@ -8,8 +8,6 @@ var express = require('express'),
     port = process.env.PORT || 8080;
     //var uri;
 
-mongoose.connect(config.db.uri);
-
 //log requests to console
 app.use(morgan('dev'));
 
