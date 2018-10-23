@@ -36,7 +36,7 @@ map.on('click', function (e) {
       + '<button class="trigger" id="formbutton" onclick="showForm()">Add Spot</button>'
     )
     .addTo(map);
-  openMenu();
+  // openMenu();
 });
 
 //on click, center map onto building marker
