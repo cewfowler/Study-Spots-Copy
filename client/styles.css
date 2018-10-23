@@ -95,3 +95,19 @@ body {
       max-width: 400px;
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
+
+  /* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+max-width: 300px;
+padding: 10px;
+background-color: white;
+}

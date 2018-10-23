@@ -38,14 +38,21 @@
     <input type="search" name="q" size="31" placeholder="Search">
   </div>
 
-  
+
   <!-- navigation bar -->
   <div class="row2" id="menu_toggle">
     <button class="openbtn" onclick="toggleMenu()">
       ☰ Menu</button>
   </div>
 
-  
+  <div class="form-popup" id="addForm" ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+      Room Name:<br>
+      <input type="text" ng-model="bldg.roomName"><br>
+      <button ng-click="add()">Add</button>
+    </form>
+  </div>
+
   <p id='map'></p>
 
   <script type="text/javascript" src="index_functions.js"></script>

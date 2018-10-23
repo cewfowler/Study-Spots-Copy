@@ -108,6 +108,24 @@ function closeMenu() {
   }
 }
 
+function toggleForm(){
+  if (document.getElementById("addForm").style.display == "block"){
+    document.getElementById("addForm").style.display = "none";
+  }
+  else{
+    document.getElementById("addForm").style.display = "block";
+  }
+}
+
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.add = function(){
+      //do some thing using $scope.bldg
+    }
+    $scope.add()
+});
+
+
 //TODO: Implement pop-up functionality
 //TODO: Implement form show/hide for button
 //TODO: Adjust panning for the markers
