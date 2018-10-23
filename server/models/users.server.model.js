@@ -13,6 +13,7 @@ var Users = new Schema ({
     required: true
   },
 
+  //keeps track of upvoted rooms
   upvoted: {
     bldg: {
       bldgCode: {
@@ -24,6 +25,7 @@ var Users = new Schema ({
     }
   },
 
+  //keeps track of downvotes rooms
   downvoted: {
     bldg: {
       bldgCode: {
@@ -33,6 +35,6 @@ var Users = new Schema ({
         }
       }
     }
-  },
+  }
 
 });

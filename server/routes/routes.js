@@ -1,10 +1,8 @@
 var mongoose = require('mongoose'),
     SpotModel = require('../models/spots.server.model.js'),
-    config = require('../../config'),
     spot = require('../models/spotsClass.js');
 
 module.exports = function(app) {
-  mongoose.connect(config.db.uri);
 
   //return the database entries for all the study spots when loading the page
   app.get('/spots', function(req, res) {
