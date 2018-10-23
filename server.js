@@ -10,6 +10,10 @@ var express = require('express'),
 
 mongoose.connect(config.db.uri);
 
+//log requests to console
+app.use(morgan('dev'));
+
+//serve client
 app.use('/', express.static('client'));
 
 // api calls should be referenced using '/spots'
