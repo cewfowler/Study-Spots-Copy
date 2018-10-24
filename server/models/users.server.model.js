@@ -1,7 +1,9 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    config = require('../../config'),
+    Schema = mongoose.Schema,
+    db = mongoose.createConnection(config.usersdb.uri);
 
-var Users = new Schema ({
+var usersSchema = new Schema ({
 
   email: {
     type: String,
@@ -37,4 +39,23 @@ var Users = new Schema ({
     }
   }
 
+  createdAt: {
+    type: Date,
+    default: Date.now()
+  },
+
+  updatedAt: {
+    type: Date,
+    default: Date.now()
+  }
+
 });
+
+usersSchema.pre('save', function(next) {
+  this.updatedAt = Date.now();
+  next();
+});
+
+var User = db.model('User', usersSchema);
+
+module.exports = User;

@@ -1,5 +1,7 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    config = require('../../config'),
+    Schema = mongoose.Schema,
+    db = mongoose.createConnection(config.spotsdb.uri);
 
 var spotsSchema = new Schema ({
   bldgName: {
@@ -41,6 +43,6 @@ spotsSchema.pre('save', function(next) {
 });
 
 // Use schema to instantiate a mongoose model
-var Spot = mongoose.model('Spot', spotsSchema);
+var Spot = db.model('Spot', spotsSchema);
 
 module.exports = Spot;
