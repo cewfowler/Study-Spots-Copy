@@ -4,8 +4,8 @@ var mongoose = require('mongoose'),
     spot = require('../models/spotsClass.js');
 
 module.exports = function(app) {
-  mongoose.connect(config.db.uri);
 
+  //mongoose.createConnection(config.spotsdb.uri);
   //return the database entries for all the study spots when loading the page
   app.get('/spots', function(req, res) {
 
@@ -98,4 +98,5 @@ module.exports = function(app) {
     });
   });
   */
+
 }
