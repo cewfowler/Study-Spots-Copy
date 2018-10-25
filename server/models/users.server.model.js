@@ -37,7 +37,7 @@ var usersSchema = new Schema ({
         }
       }
     }
-  }
+  },//i think you missed this comma, I was getting an error ~Danny
 
   createdAt: {
     type: Date,
