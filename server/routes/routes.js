@@ -37,6 +37,7 @@ module.exports = function(app) {
 
       var newSpot = req.spot;
 
+      /*
       SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
         {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
           if (err) {
@@ -45,6 +46,20 @@ module.exports = function(app) {
           }
 
           res.status(201).send();
+        });
+        */
+
+        SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
+          if (err) {
+            console.log('Error finding bldg with bldgCode ' + req.params.bCode);
+            res.status(500).redirect('/');
+          }
+
+          //add new spot to the spots array, markModified makes sure it gets saved
+          studySpot.spots.push(newSpot);
+          studySpot.markModified('spots');
+          studySpot.save();
+          res.status(200).send(studySpots);
         });
 
   });

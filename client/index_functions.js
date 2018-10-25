@@ -118,12 +118,14 @@ function toggleForm(){
 }
 
 var app = angular.module('myApp', []);
-app.controller('formCtrl', function($scope) {
+app.controller('formCtrl', ['$scope', 'Spots', function($scope, Spots) {
     $scope.add = function(){
       //do some thing using $scope.bldg
-    }
+      //return $http.post('https://study-spots-group3-1250-test.herokuapp.com/spots/' + $scope.bldg.bldgCode, $scope.bldg.roomName);
+      }
     $scope.add()
-});
+}
+]);
 
 
 //TODO: Implement pop-up functionality

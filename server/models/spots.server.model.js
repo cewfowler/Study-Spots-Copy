@@ -36,9 +36,7 @@ var spotsSchema = new Schema ({
 //TODO: make sure createdAt is initialized in the add/create study spot function
 //This function is meant to change the updated time to the save time
 spotsSchema.pre('save', function(next) {
-  var curTime = new Date;
-  this.updatedAt = curTime;
-
+  this.updatedAt = Date.now();
   next();
 });
 
