@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     SpotModel = require('../models/spots.server.model.js'),
-    config = require('../../config'),
+    config = require('../../config/config'),
     spot = require('../models/spotsClass.js');
 
 module.exports = function(app) {

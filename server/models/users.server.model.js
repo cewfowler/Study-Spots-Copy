@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    config = require('../../config'),
+    config = require('../../config/config'),
     Schema = mongoose.Schema,
     db = mongoose.createConnection(config.usersdb.uri);
 
