@@ -32,12 +32,15 @@ function closeMenu() {
   }
 }
 
+//TOGGLES FORM WHEN ADD SPOT IS CLICKED
 function toggleForm(){
   if (document.getElementById("addForm").style.display == "block"){
     document.getElementById("addForm").style.display = "none";
+    document.getElementById("formbutton").innerHTML = "Add Spot";
   }
   else{
     document.getElementById("addForm").style.display = "block";
+    document.getElementById("formbutton").style.display = "none";
   }
 }
 

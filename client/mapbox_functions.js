@@ -34,6 +34,12 @@ map.on('click', function (e) {
     .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
       + '</p>'
       + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
+      + '<div class="form-popup" id="addForm" ng-app="myApp" ng-controller="formCtrl">'
+      +  '<form novalidate>'
+      +    '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
+      +    '<button id="addbutton" ng-click="add()">Add</button>'
+      +  '</form>'
+      + '</div>'
     )
     .addTo(map);
   // openMenu();

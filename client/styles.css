@@ -60,6 +60,19 @@ body {
     background-color: #3F48b0;
   }
 
+  #addbutton{
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #3F48CC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin: 0 auto;
+  }
+  #addbutton:hover {
+    background-color: #3F48b0;
+  }
+  
   .mapboxgl-popup-content{
     text-align: center
   }
@@ -99,15 +112,8 @@ body {
   /* The popup form - hidden by default */
 .form-popup {
   display: none;
-  position: fixed;
+  position: center;
   bottom: 0;
   right: 15px;
-  border: 3px solid #f1f1f1;
   z-index: 9;
-}
-
-.form-container {
-max-width: 300px;
-padding: 10px;
-background-color: white;
 }
