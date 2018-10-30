@@ -51,6 +51,11 @@ var usersSchema = new Schema ({
 
 });
 
+//TODO: add hashing function and check using hash
+usersSchema.methods.validatePassword = function(password) {
+  return password = this.password;
+};
+
 usersSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
   next();

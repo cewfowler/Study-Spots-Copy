@@ -16,7 +16,7 @@ app.use('/', express.static('client'));
 
 // api calls should be referenced using '/spots'
 //app.use('/spots/', routes);
-require('./server/routes/routes')(app);
+require('./server/routes/spotsRoutes')(app);
 
 app.use('/*', function(req,res){
   res.redirect('/');
