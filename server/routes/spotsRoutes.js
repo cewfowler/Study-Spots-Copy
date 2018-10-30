@@ -37,6 +37,7 @@ module.exports = function(app) {
 
       var newSpot = req.spot;
 
+      console.log(newSpot);
       SpotModel.find({bldgCode: req.params.bCode.toUpperCase()},
         function(err, spotToUpdate) {
 
