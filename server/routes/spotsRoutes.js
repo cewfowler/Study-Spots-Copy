@@ -51,7 +51,7 @@ module.exports = function(app) {
           spotToUpdate.save();
 
 
-          res.status(201).send();
+          res.status(201).send(spotToUpdate);
         });
 
   });
@@ -67,7 +67,7 @@ module.exports = function(app) {
         return err;
       }
 
-      studySpot.find({location: req.params.room}, function(err, spot) {
+      studySpot.find({spots: req.params.room}, function(err, spot) {
 
         if (err) {
           console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
