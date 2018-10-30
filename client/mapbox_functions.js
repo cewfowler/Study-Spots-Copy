@@ -18,7 +18,7 @@ map.on('load', function () {
   });
 });
 
-map.on('click', function (e) {
+map.on('click', 'buildings', function (e) {
   var features = map.queryRenderedFeatures(e.point, {
     layers: ['buildings'] // replace this with the name of the layer
   });
@@ -43,10 +43,7 @@ map.on('click', function (e) {
     )
     .addTo(map);
   // openMenu();
-});
 
-//on click, center map onto building marker
-map.on('click', 'buildings', function (e) {
   let menu = document.getElementById("myMenu");
   var flyToPoint = e.features[0].geometry.coordinates;
 
