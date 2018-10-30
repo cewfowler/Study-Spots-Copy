@@ -37,12 +37,18 @@ module.exports = function(app) {
 
       var newSpot = req.spot;
 
-      SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
-        {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
+      SpotModel.find({bldgCode: req.params.bCode.toUpperCase()},
+        function(err, spotToUpdate) {
+
           if (err) {
             console.log("Error updating building with code " + req.params.bCode);
             return err;
           }
+
+          spotToUpdate.spots.push(newSpot);
+          spotToUpdate.markModified('spots');
+          spotToUpdate.save();
+
 
           res.status(201).send();
         });
