@@ -55,7 +55,7 @@ var UsersSchema = new Schema ({
     default: Date.now()
   },
 
-  updatedAt: {
+  lastLogin: {
     type: Date,
     default: Date.now()
   }
@@ -73,11 +73,6 @@ UsersSchema.methods.validatePassword = function(password) {
   const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
   return this.hash === hash;
 }
-
-//TODO: add hashing function and check using hash
-UsersSchema.methods.validatePassword = function(password) {
-  return password = this.password;
-};
 
 UsersSchema.methods.generateJWT = function() {
   const today = new Date();
@@ -99,8 +94,9 @@ UsersSchema.methods.toAuthJSON = function() {
   };
 }
 
-usersSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
+
+usersSchema.post('validatePassword', function(next) {
+  this.lastLogin = Date.now();
   next();
 });
 
