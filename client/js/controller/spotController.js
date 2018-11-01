@@ -2,6 +2,33 @@
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function($scope, Spots) {
 
+
+    //Uses the getAll function from the spotFactory file
+    ////////TODO: Ensure this works properly with the spotsRouters
+    Spots.getAll().then(function(response) {
+
+      //Debug log for the response from the function
+      console.log(response);
+
+      //Sets the spots variable in the scope to response.data when pulled
+      $scope.spots = response.data;
+
+    }, function(error) {
+
+      //Debug log for the response if an error was thrown
+      console.log('Unable to retrieve listings:', error);
+    });
+
+    //Function that will add a spot from bldgCode
+    $scope.add = function(){
+
+      ////////TODO: Need to add proper add functionality once local markers can return information
+      //This may not work fully, copied it from the other index_functions controller to condense
+
+      console.log($scope.spots.bldg.bldgCode);
+      return $http.post('/spots/' + $scope.bldg.bldgCode, $scope.bldg.roomName);
+    }
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
 
       //Initializes the map variable from the Map constructor
@@ -14,6 +41,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
 /*
+    //Method that will initialize local points on the map (need to be able to convert JSON data first)
     map.on('load', function(e) {
 
       map.addSource('spots-source', {
@@ -31,6 +59,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 */
 
+    //Event that checks for a click on the buildings layer
     map.on('click', 'buildings', function (e) {
 
       //Creates a features variable from the properties on the clicked point
@@ -104,30 +133,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     map.addControl(nav, 'bottom-right');
 
 
-    //Uses the getAll function from the spotFactory file
-    ////////TODO: Ensure this works properly with the spotsRouters
-    Spots.getAll().then(function(response) {
 
-      //Debug log for the response from the function
-      console.log(response);
-
-      //Sets the spots variable in the scope to response.data when pulled
-      $scope.spots = response.data;
-
-    }, function(error) {
-
-      //Debug log for the response if an error was thrown
-      console.log('Unable to retrieve listings:', error);
-    });
-
-    //Function that will add a spot from bldgCode
-    $scope.add = function(){
-
-      ////////TODO: Need to add proper add functionality once local markers can return information
-      //This may not work fully, copied it from the other index_functions controller to condense
-
-      console.log($scope.spots.bldg.bldgCode);
-      return $http.post('/spots/' + $scope.bldg.bldgCode, $scope.bldg.roomName);
-    }
 
 }]);
