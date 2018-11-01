@@ -6,9 +6,10 @@
   <title></title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=yes' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
@@ -36,7 +37,19 @@
 
   <!--Menu sidebar -->
   <div id="myMenu" class="sidebar" style="width: 0px;">
-    <input type="search" name="q" size="31" placeholder="Search">
+    <div ng-app="spotsApp">
+    <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+      <div ng-controller="SpotsController">
+      <table>
+            <th>Bld</th><th>Name</th><th>Formal Name</th>
+            <tr ng-repeat="spot in spots | filter: spotQuery">
+              <td> {{ spot.bldgCode }} </td>
+              <td> {{ spot.bldgName }} </td>
+              <td> {{ spot.bldgFormalName }} </td>
+            </tr>
+      </table>
+      </div>
+    </div>
   </div>
 
 
@@ -50,6 +63,9 @@
 
   <p id='map'></p>
 
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/factory/spotFactory.js"></script>
+  <script type="text/javascript" src="js/controller/spotController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
   <script type="text/javascript" src="mapbox_functions.js"></script>
   </body>

@@ -1,5 +1,6 @@
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
-var map = new mapboxgl.Map({
+  var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/adamhochberger/cjn1ri2mp52yi2smkz22nskdj', //fully populated stylesheet
   center: [-82.346109, 29.648578], // starting position [lng, lat]
@@ -7,34 +8,27 @@ var map = new mapboxgl.Map({
   //29.648578, -82.346109 for Gainesville lat/lng, switch for center
 });
 
-map.on('load', function () {
-  map.addLayer({
-    id: 'buildings',
-    type: 'symbol',
-    source: {
-      type: 'geojson',
-      url: 'adamhochberger.cjnaxr1a505ge33mnxjgmxgke-0cehz' //fully populated UF builds per uf_api
-    }
-  });
-});
 
-map.on('click', function (e) {
+//on click, center map onto building marker
+map.on('click', 'buildings', function (e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['buildings'] // replace this with the name of the layer
+    layers: ['buildings'] // will be replaced by a local layer that gets created
   });
 
   if (!features.length) {
     return;
   }
 
+  //Sets a variable equal to the array of information that gets passed in from layer
   var feature = features[0];
 
+  //Creates a new popup based upon the attributes of the clicked marker
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.COMMON_NAME + '</h3><p>'
       + '</p>'
       + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
-      + '<div class="form-popup" id="addForm" ng-app="myApp" ng-controller="formCtrl">'
+      + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
       +  '<form novalidate>'
       +    '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
       +    '<button id="addbutton" ng-click="add()">Add</button>'
@@ -43,10 +37,8 @@ map.on('click', function (e) {
     )
     .addTo(map);
   // openMenu();
-});
 
-//on click, center map onto building marker
-map.on('click', 'buildings', function (e) {
+
   let menu = document.getElementById("myMenu");
   var flyToPoint = e.features[0].geometry.coordinates;
 
