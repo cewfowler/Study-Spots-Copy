@@ -15,57 +15,65 @@
 
 <body>
 
+  <!-- Uses the spotsApp from app.js etc to find listings -->
+  <div ng-app="spotsApp" ng-controller="SpotsController">
+
   <!-- Header -->
-  <div class="row">
-    <table>
-      <tr>
-        <th>
-          <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
-        </th>
-        <th>
-          <h1>Study Spots </h1>
-        </th>
-        <th>
-          <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
-        </th>
-        <th>
-          <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
-        </th>
-      </tr>
-    </table>
-  </div>
+    <div class="row">
+      <table>
+        <tr>
+          <th>
+            <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
+          </th>
+          <th>
+            <h1>Study Spots </h1>
+          </th>
+          <th>
+            <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
+          </th>
+          <th>
+            <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
+          </th>
+
+          <div ng-show="spotDetails != undefined">
+            <th> {{ spotDetails.bldg }}  {{ spotDetails.bldgName }}</th>
+            <th> {{ spotDetails.coordinates[0] }}
+              {{ spotDetails.coordinates[1] }}</th>
+          </div>
+        </tr>
+      </table>
+    </div>
 
 
-  <!--Menu sidebar -->
-  <div id="myMenu" class="sidebar" style="width: 0px;">
+    <!--Menu sidebar -->
+    <div id="myMenu" class="sidebar" style="width: 0px;">
 
-    <!-- Uses the spotsApp from app.js etc to find listings -->
-    <div ng-app="spotsApp">
+      <!-- Search bar -->
+      <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
 
-    <!-- Search bar -->
-    <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+        <!-- Uses the spotsApp from spotController.js etc to find listings -->
 
-      <!-- Uses the spotsApp from spotController.js etc to find listings -->
-      <div ng-controller="SpotsController">
+          <!-- Table for the building listings -->
+          <table class="table table-striped table-hover">
 
-        <!-- Table for the building listings -->
-        <table class="table table-striped table-hover">
+            <!-- Headers for the tables -->
+            <th>Bld</th><th>Name</th><th>Formal Name</th>
 
-          <!-- Headers for the tables -->
-          <th>Bld</th><th>Name</th><th>Formal Name</th>
+            <!-- Creates the table format by pulling the response.data from $scope.spots -->
+            <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery"
+              ng-click="showDetails(spots.indexOf(spot))">
 
-          <!-- Creates the table format by pulling the response.data from $scope.spots -->
-          <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery">
+              <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
+              <td> {{ spot.bldgCode }} </td>
+              <td> {{ spot.bldgName }} </td>
+              <td> {{ spot.bldgFormalName }} </td>
 
-            <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
-            <td> {{ spot.bldgCode }} </td>
-            <td> {{ spot.bldgName }} </td>
-            <td> {{ spot.bldgFormalName }} </td>
-          </tr>
-        </table>
+            </tr>
+          </table>
+
+        </div>
       </div>
     </div>
-  </div>
 
 
   <!-- navigation bar -->
@@ -82,6 +90,6 @@
   <script type="text/javascript" src="js/factory/spotFactory.js"></script>
   <script type="text/javascript" src="js/controller/spotController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
-<script type="text/javascript" src="mapbox_functions.js"></script>
+<!--  <script type="text/javascript" src="mapbox_functions.js"></script> -->
   </body>
 </html>

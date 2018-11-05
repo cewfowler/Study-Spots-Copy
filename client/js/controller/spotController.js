@@ -1,7 +1,9 @@
 //Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
+
+
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function($scope, Spots) {
-
 
     //Uses the getAll function from the spotFactory file
     ////////TODO: Ensure this works properly with the spotsRouters
@@ -12,12 +14,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //Sets the spots variable in the scope to response.data when pulled
       $scope.spots = response.data;
+      $scope.geoSpots = geoJson.parse($scope.spots, {Point: ['latitude', 'longitude']});
 
     }, function(error) {
-
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
     });
+
 
     //Function that will add a spot from bldgCode
     $scope.add = function(){
@@ -26,13 +29,18 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //This may not work fully, copied it from the other index_functions controller to condense
 
       console.log($scope.spots.bldg.bldgCode);
-      return $http.post('/spots/' + $scope.bldg.bldgCode, $scope.bldg.roomName);
+      Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
+
     }
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
+    $scope.showDetails = function(index) {
+      $scope.spotDetails = $scope.spots[index];
+    }
+
+
 
       //Initializes the map variable from the Map constructor
-      var map = new mapboxgl.Map({
+    var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/adamhochberger/cjn1ri2mp52yi2smkz22nskdj', //basic stylesheet
       center: [-82.346109, 29.648578], // starting position [lng, lat]
@@ -58,6 +66,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       });
     });
 */
+
 
     //Event that checks for a click on the buildings layer
     map.on('click', 'buildings', function (e) {
@@ -93,7 +102,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         )
         .addTo(map);
 
-      console.log($scope.feature.properties.ID);
+
       // openMenu();
 
 
