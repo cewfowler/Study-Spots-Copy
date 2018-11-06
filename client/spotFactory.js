@@ -14,7 +14,7 @@ angular.module('spots', []).factory('Spots', function($http) {
       },
 
       update: function(bCode, room, updatedRoom) {
-	      return $http.post('/spots/' + bCode + '/' + room, {updatedRoom: updatedRoom});
+	      return $http.post('/spots/' + bCode + '/' + room, {spot: updatedRoom});
       },
      };
      return methods;
