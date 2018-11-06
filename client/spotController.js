@@ -51,6 +51,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgCode": String(obj.bldgCode),
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
+            "bldgNum": String(obj.bldgNum),
             "spots": obj.spots
           },
           "geometry": {
