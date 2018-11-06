@@ -1,5 +1,5 @@
 /* Dependencies */
-var spots = require('../controllers/spots.server.controller.js'),
+var spots = require('../spots.server.controller.js'),
     express = require('express'),
     router = express.Router();
 
