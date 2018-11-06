@@ -20,6 +20,7 @@ module.exports = function(app) {
   });
 
 
+  /* COMMENTED OUT BECAUSE NOT BEING USED
   //return information on a specific building
   app.get('/spots/:bCode', function(req, res) {
       SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, bldg) {
@@ -27,6 +28,7 @@ module.exports = function(app) {
         res.status(200).send(bldg);
       });
   });
+  */
 
   // adds a new study spot to bldg with bCode
   // params: bCode,location
@@ -69,7 +71,7 @@ module.exports = function(app) {
         return err;
       }
 
-      studySpot.find({spots: req.params.room}, function(err, spot) {
+      studySpot.spots.find({location: req.params.room}, function(err, spot) {
 
         if (err) {
           console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
