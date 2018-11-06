@@ -6,38 +6,72 @@
   <title></title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=yes' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+  <!-- Uses the spotsApp from app.js etc to find listings -->
+  <div ng-app="spotsApp" ng-controller="SpotsController">
+
   <!-- Header -->
-  <div class="row">
-    <table>
-      <tr>
-        <th>
-          <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
-        </th>
-        <th>
-          <h1>Study Spots </h1>
-        </th>
-        <th>
-          <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
-        </th>
-        <th>
-          <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
-        </th>
-      </tr>
-    </table>
-  </div>
+    <div class="row">
+      <table>
+        <tr>
+          <th>
+            <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
+          </th>
+          <th>
+            <h1>Study Spots </h1>
+          </th>
+          <th>
+            <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
+          </th>
+          <th>
+            <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
+          </th>
+
+          <div ng-show="spotDetails.id != undefined">
+            <th> {{ spotDetails.bldg }}  {{ spotDetails.bldgName }}</th>
+          </div>
+        </tr>
+      </table>
+    </div>
 
 
-  <!--Menu sidebar -->
-  <div id="myMenu" class="sidebar" style="width: 0px;">
-    <input type="search" name="q" size="31" placeholder="Search">
-  </div>
+    <!--Menu sidebar -->
+    <div id="myMenu" class="sidebar" style="width: 0px;">
+
+      <!-- Search bar -->
+      <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+
+        <!-- Uses the spotsApp from spotController.js etc to find listings -->
+
+          <!-- Table for the building listings -->
+          <table class="table table-striped table-hover">
+
+            <!-- Headers for the tables -->
+            <th>Bld</th><th>Name</th><th>Formal Name</th>
+
+            <!-- Creates the table format by pulling the response.data from $scope.spots -->
+            <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery"
+              ng-click="showDetails(spots.indexOf(spot))">
+
+              <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
+              <td> {{ spot.bldgCode }} </td>
+              <td> {{ spot.bldgName }} </td>
+              <td> {{ spot.bldgFormalName }} </td>
+
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
 
 
   <!-- navigation bar -->
@@ -47,10 +81,13 @@
   </div>
 
 
+  <!-- creates id in the <p> for the mapbox to load -->
+  <p id='map' ng-click="spotDetails"></p>
 
-  <p id='map'></p>
-
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="spotFactory.js"></script>
+  <script type="text/javascript" src="spotController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
-  <script type="text/javascript" src="mapbox_functions.js"></script>
+<!--  <script type="text/javascript" src="mapbox_functions.js"></script> -->
   </body>
 </html>
