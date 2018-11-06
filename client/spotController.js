@@ -199,7 +199,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
+          + '<br><button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
           + '<form novalidate>'
           + '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
@@ -222,14 +222,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         map.flyTo({
           center: flyToPoint,
           speed: 0.2,
-          offset: [-255, 50],
+          offset: [-255, 150],
         });
       }
       else {
         map.flyTo({
           center: flyToPoint,
           speed: 0.2,
-          offset: [0, 0],
+          offset: [0, 150],
         });
       }
     });
