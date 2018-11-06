@@ -152,28 +152,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         if (BLDGcode == 3485) {
           return pictureURL + "00004629.jpg";
         }
-
         //Shands Cancer Center
         if (BLDGcode == 2013) {
           return pictureURL + "00001464.JPG";
         }
-
         //Heavener Hall
         if (BLDGcode == 65) {
           return pictureURL + "00004060.jpg";
         }
-
         //Hernandez Hall
         if (BLDGcode == 275) {
           return pictureURL + "00004676.jpg";
         }
-
         // //BUILDING NAME
         // if(BLDGcode == BUILDINGCODE){
         //   return pictureURL + "EXTENSION#";
         // }
-
-
 
         //used in error handling funciton: onError(this)
         errorURL = pictureURL + BLDGprefix + BLDGcode;
@@ -249,17 +243,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
+    //Initalizes a location finder for the Mapbox
+    var locationTracker = new mapboxgl.GeolocateControl();
+    map.addControl(locationTracker, 'bottom-right');
+
+
   }]);
 
-  
-    //handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
-    function onError(img) {
-      delete img.onerror;
-      var n = img.src;
-      img.src = errorURL + ".JPG";
-      if (n.endsWith(".JPG")) {
-        img.width = 200;
-        img.height = 200;
-        img.src = "images/gator404.png"
-      }
-    }
+
+//handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
+function onError(img) {
+  delete img.onerror;
+  var n = img.src;
+  img.src = errorURL + ".JPG";
+  if (n.endsWith(".JPG")) {
+    img.width = 200;
+    img.height = 200;
+    img.src = "images/gator404.png"
+  }
+}
