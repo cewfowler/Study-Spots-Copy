@@ -3,11 +3,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxN
 
 
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
-  function($scope, Spots) {
+  function ($scope, Spots) {
 
     //Uses the getAll function from the spotFactory file
     ////////TODO: Ensure this works properly with the spotsRouters
-    Spots.getAll().then(function(response) {
+    Spots.getAll().then(function (response) {
 
       //Debug log for the response from the function
       console.log(response);
@@ -16,25 +16,25 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spots = response.data;
       console.log($scope.spots);
 
-    /* Format for the data entries
-      geoJson:
-      { "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [obj.coordinates[0], obj.coordinates[1]},
-            "properties": {
-            // everything else
-              "id": obj.id,
-              "bldgCode": obj.bldgCode,
-              "bldgFormalName": obj.bldgFormalName,
-              "bldgName": obj.bldgName,
-              "spots": obj.spots
+      /* Format for the data entries
+        geoJson:
+        { "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "geometry": {"type": "Point", "coordinates": [obj.coordinates[0], obj.coordinates[1]},
+              "properties": {
+              // everything else
+                "id": obj.id,
+                "bldgCode": obj.bldgCode,
+                "bldgFormalName": obj.bldgFormalName,
+                "bldgName": obj.bldgName,
+                "spots": obj.spots
+              }
             }
-          }
-      ]
-    }
-    */
+        ]
+      }
+      */
 
       $scope.spots_geo = {
         "type": "FeatureCollection",
@@ -42,7 +42,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         ]
       }
 
-      for (var i = 0; i < $scope.spots.length; i++){
+      for (var i = 0; i < $scope.spots.length; i++) {
         var obj = $scope.spots[i];
         var feature = {
           "type": "Feature",
@@ -61,14 +61,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spots_geo.features[i] = feature;
       }
       console.dir($scope.spots_geo);
-    }, function(error) {
+    }, function (error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
     });
 
 
     //Function that will add a spot from bldgCode
-    $scope.add = function(index){
+    $scope.add = function (index) {
 
       ////////TODO: Need to add proper add functionality once local markers can return information
       //This may not work fully, copied it from the other index_functions controller to condense
@@ -77,12 +77,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     }
 
-    $scope.showDetails = function(index) {
+    $scope.showDetails = function (index) {
       $scope.spotDetails = $scope.spots[index];
       console.log($scope.spotDetails);
     }
 
-      //Initializes the map variable from the Map constructor
+    //Initializes the map variable from the Map constructor
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
@@ -91,20 +91,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //29.648578, -82.346109 for Gainesville lat/lng, switch for center
     });
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
-    map.on('load', function(e) {
+    map.on('load', function (e) {
 
       map.addSource('spots', {
-            type: 'geojson',
-            data: $scope.spots_geo,
-            maxzoom: 16,
-            buffer: 10,
-            tolerance: 10
-        });
-        map.addLayer({
-          id: 'spots',
-          type: 'circle',
-          source: 'spots'
-        });
+        type: 'geojson',
+        data: $scope.spots_geo,
+        maxzoom: 16,
+        buffer: 10,
+        tolerance: 10
+      });
+      map.addLayer({
+        id: 'spots',
+        type: 'circle',
+        source: 'spots'
+      });
     });
 
 
@@ -125,6 +125,66 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
 
+
+      //basic form of the URL for the image
+      var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
+
+      //function that creates the URL
+      function fetchURL(BLDGextension) {
+        BLDGcode = feature.properties.bldgCode;
+        // console.log("Building Code: " + BLDGcode);
+        if (BLDGcode.length == 1) {
+          BLDGprefix = "B000";
+        }
+        else if (BLDGcode.length == 2) {
+          BLDGprefix = "B00";
+        }
+        else if (BLDGcode.length == 3) {
+          BLDGprefix = "B0";
+        }
+        else {
+          BLDGprefix = "B";
+        }
+
+        //case-by-case situations for specific buildings
+        //Infinity Hall
+        if (BLDGcode == 3485) {
+          return pictureURL + "00004629.jpg";
+        }
+
+        //Shands Cancer Center
+        if (BLDGcode == 2013) {
+          return pictureURL + "00001464.JPG";
+        }
+
+        //Heavener Hall
+        if (BLDGcode == 65) {
+          return pictureURL + "00004060.jpg";
+        }
+
+        //Hernandez Hall
+        if (BLDGcode == 275) {
+          return pictureURL + "00004676.jpg";
+        }
+
+        // //BUILDING NAME
+        // if(BLDGcode == BUILDINGCODE){
+        //   return pictureURL + "EXTENSION#";
+        // }
+
+
+
+        //used in error handling funciton: onError(this)
+        errorURL = pictureURL + BLDGprefix + BLDGcode;
+
+        //img url with initial extension of .jpg
+        responseURL = pictureURL + BLDGprefix + BLDGcode + BLDGextension;
+        return responseURL;
+
+      }
+
+
+
       //Sets a variable equal to the array of information that gets passed in from layer
 
       //Creates a new popup based upon the attributes of the clicked marker
@@ -137,12 +197,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         //Creates an add form button along with the implementation for a spotsApp
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
+          + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200">'
           + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
-          +  '<form novalidate>'
-          +    '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
-          +    '<button id="addbutton" ng-click="add($index)">Add</button>'
-          +  '</form>'
+          + '<form novalidate>'
+          + '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
+          + '<button id="addbutton" ng-click="add($index)">Add</button>'
+          + '</form>'
           + '</div>'
         )
         .addTo(map);
@@ -167,10 +228,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         map.flyTo({
           center: flyToPoint,
           speed: 0.2,
-          offset: [0,0],
+          offset: [0, 0],
         });
       }
     });
+
+    //handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
+    function onError(img) {
+      delete img.onerror;
+      var n = img.src;
+      img.src = errorURL + ".JPG";
+      if (n.endsWith(".JPG")) {
+        img.width = 200;
+        img.height = 200;
+        img.src = "images/gator404.png"
+      }
+    }
 
     //changes mouse into pointer hand when hovering onto building marker
     map.on('mouseenter', 'spots', function () {
@@ -186,4 +259,4 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
-}]);
+  }]);
