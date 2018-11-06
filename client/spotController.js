@@ -131,7 +131,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //function that creates the URL
       function fetchURL(BLDGextension) {
-        BLDGcode = feature.properties.bldgCode;
+        BLDGcode = feature.properties.bldgNum;
         // console.log("Building Code: " + BLDGcode);
         if (BLDGcode.length == 1) {
           BLDGprefix = "B000";
@@ -197,7 +197,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         //Creates an add form button along with the implementation for a spotsApp
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
-          + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200">'
+          + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
           + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
           + '<form novalidate>'
@@ -233,17 +233,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       }
     });
 
-    //handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
-    function onError(img) {
-      delete img.onerror;
-      var n = img.src;
-      img.src = errorURL + ".JPG";
-      if (n.endsWith(".JPG")) {
-        img.width = 200;
-        img.height = 200;
-        img.src = "images/gator404.png"
-      }
-    }
 
     //changes mouse into pointer hand when hovering onto building marker
     map.on('mouseenter', 'spots', function () {
@@ -260,3 +249,16 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     map.addControl(nav, 'bottom-right');
 
   }]);
+
+  
+    //handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
+    function onError(img) {
+      delete img.onerror;
+      var n = img.src;
+      img.src = errorURL + ".JPG";
+      if (n.endsWith(".JPG")) {
+        img.width = 200;
+        img.height = 200;
+        img.src = "images/gator404.png"
+      }
+    }
