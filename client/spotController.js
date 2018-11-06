@@ -60,7 +60,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-      console.log($scope.spots_geo);
+      console.dir($scope.spots_geo);
     }, function(error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
@@ -80,6 +80,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     $scope.showDetails = function(index) {
       $scope.spotDetails = $scope.spots[index];
+      console.log($scope.spotDetails);
     }
 
       //Initializes the map variable from the Map constructor
@@ -120,11 +121,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       if (!features.length) {
         return;
       }
+      console.log(features);
+      var feature = features[0];
+      $scope.spotDetails = features[0].properties;
+      console.log($scope.spotDetails);
 
       //Sets a variable equal to the array of information that gets passed in from layer
-      var feature = features[0];
-      $scope.spotDetails = feature.properties;
-      console.log($scope.spotDetails);
 
       //Creates a new popup based upon the attributes of the clicked marker
       $scope.popup = new mapboxgl.Popup({ offset: [0, -15] })
@@ -134,7 +136,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
         //Sets the HTML for the popup
         //Creates an add form button along with the implementation for a spotsApp
-        .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
+        .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
@@ -152,7 +154,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
-      var flyToPoint = e.features[0].geometry.coordinates;
+      var flyToPoint = feature.geometry.coordinates;
 
       //Checks if the menu is open or not and adjust the fly/panover properly
       if (menu.style.width != "0px") {

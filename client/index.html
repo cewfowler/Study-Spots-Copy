@@ -35,10 +35,8 @@
             <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
           </th>
 
-          <div ng-show="spotDetails != undefined">
+          <div ng-show="spotDetails.id != undefined">
             <th> {{ spotDetails.bldg }}  {{ spotDetails.bldgName }}</th>
-            <th> {{ spotDetails.coordinates[0] }}
-              {{ spotDetails.coordinates[1] }}</th>
           </div>
         </tr>
       </table>
@@ -84,7 +82,7 @@
 
 
   <!-- creates id in the <p> for the mapbox to load -->
-  <p id='map'></p>
+  <p id='map' ng-click="spotDetails"></p>
 
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="spotFactory.js"></script>
