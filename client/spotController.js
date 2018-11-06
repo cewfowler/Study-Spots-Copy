@@ -68,13 +68,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
 
     //Function that will add a spot from bldgCode
-    $scope.add = function(){
+    $scope.add = function(index){
 
       ////////TODO: Need to add proper add functionality once local markers can return information
       //This may not work fully, copied it from the other index_functions controller to condense
-
-      console.log($scope.spots.bldg.bldgCode);
-    //  Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
+      console.log("Adding to bldg " + $scope.spots[index].bldg.bldgCode);
+      //Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
 
     }
 
@@ -142,7 +141,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
           +  '<form novalidate>'
           +    '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
-          +    '<button id="addbutton" ng-click="add()">Add</button>'
+          +    '<button id="addbutton" ng-click="add($index)">Add</button>'
           +  '</form>'
           + '</div>'
         )
