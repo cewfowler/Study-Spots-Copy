@@ -10,9 +10,11 @@ angular.module('spots', []).factory('Spots', function($http) {
       //Basic create methods for the spots url and building code
       //TODO: adjust this according to spotsRoutes.js file
 	    create: function(bCode, roomName) {
-        let params = new URLSearchParams();
-        params.append("spot", roomName)
-	      return $http.post('/spots/' + bCode, {params: params});
+	      return $http.post('/spots/' + bCode, {spot: roomName});
+      },
+
+      update: function(bCode, room, updatedRoom) {
+	      return $http.post('/spots/' + bCode + '/' + room, {updatedRoom: updatedRoom});
       },
      };
      return methods;

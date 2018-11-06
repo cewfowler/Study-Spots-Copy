@@ -35,6 +35,8 @@ module.exports = function(app) {
   app.post('/spots/:bCode', function(req, res){
       console.log("Attempting to post new study spot");
 
+      //TODO: which of these to use
+      //var newSpot = req.params.spot;
       var newSpot = req.spot;
 
       console.log(newSpot);
@@ -80,7 +82,7 @@ module.exports = function(app) {
     });
   });
 
-  /* TODO: finish route
+  // TODO: finish route
   //update number of upvotes/downvotes for a room
   app.post('/spots/:bCode/:room', function(req,res) {
     SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
@@ -89,21 +91,28 @@ module.exports = function(app) {
         console.log("Error finding bldg with code " + req.params.bCode);
         return err;
       }
+      console.log(studySpot.spots);
 
-      studySpot.findOneAndUpdate({location: req.params.room},
-        {$set: {spots.upvotes: req.}},
-        {new: true}, function(err, spot) {
-
+      studySpot.spots.find({location: req.params.room}, function(err, spot) {
         if (err) {
           console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
           return err;
         }
 
+        //TODO: think of ways other than updating from client side and saving
+        // ie. update from server side and then update client
+        // or only call this function once the room menu has closed
+        //spot = req.params.spot
+        spot = req.spot;
+
+        //TODO: Do these go below this find method?
+        studySpot.markModified('spots');
+        studySpot.save();
         res.status(200).send(spot);
 
-      })
+      });
+
     });
   });
-  */
 
 }
