@@ -71,7 +71,7 @@ module.exports = function(app) {
         return err;
       }
 
-      studySpot.find({spots: req.params.room}, function(err, spot) {
+      studySpot.spots.find({location: req.params.room}, function(err, spot) {
 
         if (err) {
           console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);

@@ -17,6 +17,8 @@ var spotsSchema = new Schema ({
     unique: true
   },
 
+  bldgNum: String,
+
   coordinates: {
     type: [Number],
     required: true
