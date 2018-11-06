@@ -14,8 +14,53 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //Sets the spots variable in the scope to response.data when pulled
       $scope.spots = response.data;
-      $scope.geoSpots = geoJson.parse($scope.spots, {Point: ['latitude', 'longitude']});
+      console.log($scope.spots);
 
+    /* Format for the data entries
+      geoJson:
+      { "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [obj.coordinates[0], obj.coordinates[1]},
+            "properties": {
+            // everything else
+              "id": obj.id,
+              "bldgCode": obj.bldgCode,
+              "bldgFormalName": obj.bldgFormalName,
+              "bldgName": obj.bldgName,
+              "spots": obj.spots
+            }
+          }
+      ]
+    }
+    */
+    
+      $scope.spots_geo = {
+        "type": "FeatureCollection",
+        "features": [
+        ]
+      }
+
+      for (var i = 0; i < $scope.spots.length; i++){
+        var obj = $scope.spots[i];
+        var feature = {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [obj.coordinates[0], obj.coordinates[1]]
+          },
+          "properties": {
+            "id": obj._id,
+            "bldgCode": obj.bldgCode,
+            "bldgFormalName": obj.bldgFormalName,
+            "bldgName": obj.bldgName,
+            "spots": obj.spots
+          }
+        }
+        $scope.spots_geo.features[i] = feature;
+      }
+      console.log($scope.spots_geo);
     }, function(error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
@@ -29,7 +74,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //This may not work fully, copied it from the other index_functions controller to condense
 
       console.log($scope.spots.bldg.bldgCode);
-      Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
+    //  Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
 
     }
 
