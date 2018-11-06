@@ -35,7 +35,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       ]
     }
     */
-    
+
       $scope.spots_geo = {
         "type": "FeatureCollection",
         "features": [
@@ -46,16 +46,16 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         var obj = $scope.spots[i];
         var feature = {
           "type": "Feature",
+          "properties": {
+            "id": String(obj._id),
+            "bldgCode": String(obj.bldgCode),
+            "bldgFormalName": String(obj.bldgFormalName),
+            "bldgName": String(obj.bldgName),
+            "spots": obj.spots
+          },
           "geometry": {
             "type": "Point",
-            "coordinates": [obj.coordinates[0], obj.coordinates[1]]
-          },
-          "properties": {
-            "id": obj._id,
-            "bldgCode": obj.bldgCode,
-            "bldgFormalName": obj.bldgFormalName,
-            "bldgName": obj.bldgName,
-            "spots": obj.spots
+            "coordinates": [obj.coordinates[1], obj.coordinates[0]]
           }
         }
         $scope.spots_geo.features[i] = feature;
@@ -82,43 +82,38 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = $scope.spots[index];
     }
 
-
-
       //Initializes the map variable from the Map constructor
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/adamhochberger/cjn1ri2mp52yi2smkz22nskdj', //basic stylesheet
+      style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
       center: [-82.346109, 29.648578], // starting position [lng, lat]
       zoom: 16.5 // starting zoom
       //29.648578, -82.346109 for Gainesville lat/lng, switch for center
     });
-
-/*
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
     map.on('load', function(e) {
 
-      map.addSource('spots-source', {
-            type: 'vector',
-            data: $scope.spots,
+      map.addSource('spots', {
+            type: 'geojson',
+            data: $scope.spots_geo,
             maxzoom: 16,
             buffer: 10,
             tolerance: 10
         });
-      map.addLayer({
-        id: 'buildings',
-        type: 'circle',
-        source: 'spots-source'
-      });
+        map.addLayer({
+          id: 'spots',
+          type: 'circle',
+          source: 'spots'
+        });
     });
-*/
 
 
     //Event that checks for a click on the buildings layer
-    map.on('click', 'buildings', function (e) {
+    map.on('click', 'spots', function (e) {
 
       //Creates a features variable from the properties on the clicked point
       var features = map.queryRenderedFeatures(e.point, {
-        layers: ['buildings'] // will be replaced by a local layer that gets created
+        layers: ['spots'] // will be replaced by a local layer that gets created
       });
 
       //Verifies if there is a proper length for the features length
@@ -127,15 +122,19 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       }
 
       //Sets a variable equal to the array of information that gets passed in from layer
-      $scope.feature = features[0];
+      var feature = features[0];
+      $scope.spotDetails = feature.properties;
+      console.log($scope.spotDetails);
 
       //Creates a new popup based upon the attributes of the clicked marker
       $scope.popup = new mapboxgl.Popup({ offset: [0, -15] })
+
         //Sets the coordinates of the popup to that of the clicked point
-        .setLngLat($scope.feature.geometry.coordinates)
+        .setLngLat(feature.geometry.coordinates)
+
         //Sets the HTML for the popup
         //Creates an add form button along with the implementation for a spotsApp
-        .setHTML('<h3>' + $scope.feature.properties.COMMON_NAME + '</h3><p>'
+        .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
           + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
@@ -173,20 +172,17 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
     //changes mouse into pointer hand when hovering onto building marker
-    map.on('mouseenter', 'buildings', function () {
+    map.on('mouseenter', 'spots', function () {
       map.getCanvas().style.cursor = 'pointer';
     });
 
     // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'buildings', function () {
+    map.on('mouseleave', 'spots', function () {
       map.getCanvas().style.cursor = '';
     });
 
     //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
-
-
-
 
 }]);
