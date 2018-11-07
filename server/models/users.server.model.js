@@ -17,36 +17,26 @@ var UsersSchema = new Schema ({
     type: String
   },
 
+  /*
   hash: {
     type: String
-  },
+  },*/
 
   password: {
     type: String,
-    required: true
   },
 
   //keeps track of upvoted rooms
   upvoted: {
-    bldg: {
-      bldgCode: {
-        type: String,
-        rooms: {
-          type: [String]
-        }
-      }
+    rooms: {
+      type: [String]
     }
   },
 
   //keeps track of downvotes rooms
   downvoted: {
-    bldg: {
-      bldgCode: {
-        type: String,
-        rooms: {
-          type: [String]
-        }
-      }
+    rooms: {
+      type: [String]
     }
   },
 
@@ -65,7 +55,7 @@ var UsersSchema = new Schema ({
 //sets salt and hash for password
 UsersSchema.methods.setPassword = function(password) {
   this.salt = crypto.randomBytes(16).toString('hex');
-  this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
+  this.password = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
 }
 
 //check user entered password against password in db (using hashing)
@@ -92,10 +82,9 @@ UsersSchema.methods.toAuthJSON = function() {
     email: this.email,
     token: this.generateJWT()
   };
-}
+};
 
-
-usersSchema.post('validatePassword', function(next) {
+UsersSchema.post('validatePassword', function(next) {
   this.lastLogin = Date.now();
   next();
 });
