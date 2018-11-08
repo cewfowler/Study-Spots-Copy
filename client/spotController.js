@@ -42,7 +42,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         ]
       }
       var testRooms = ["Room1", "Room2"];
+      $scope.spots.triangle = [];
       for (var i = 0; i < $scope.spots.length; i++) {
+
+        //ADD triangles
+        $scope.spots.triangle[i] = "►";
+        $scope.spotDetails = $scope.spots[i];
+        $scope.spotDetails.triangle = $scope.spots.triangle[i];
+
         var obj = $scope.spots[i];
         var feature = {
           "type": "Feature",
@@ -83,6 +90,19 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     $scope.showDetails = function (index) {
 
       $scope.spotDetails = $scope.spots[index];
+
+      //CHANGE TRIANGLE
+      $scope.spotDetails.rooms = $scope.rooms;
+      $scope.spotDetails.triangle = $scope.spots.triangle[index];
+
+      if ($scope.spots.triangle[index] == "►"){
+        $scope.spotDetails.triangle = "▼";
+        $scope.spots.triangle[index] = "▼";
+      }
+      else{
+        $scope.spotDetails.triangle = "►";
+        $scope.spots.triangle[index] = "►";
+      }
       console.log($scope.spotDetails);
 
       var arrayFlyTo = $scope.spotDetails.coordinates;
