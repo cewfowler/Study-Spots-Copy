@@ -67,13 +67,17 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       console.log('Unable to retrieve listings:', error);
     });
 
+    $scope.topForm = false;
 
     //Function that will add a spot from bldgCode
     $scope.add = function (index) {
 
-      ////////TODO: Need to add proper add functionality once local markers can return information
-      //This may not work fully, copied it from the other index_functions controller to condense
-      console.log("Adding to bldg " + $scope.spots[index].bldg.bldgCode);
+      //Debugging for index of passed in spot
+
+      //able to pull index properly from menu bar on the left sidebar
+      //TODO: fix issues with pulling bldg code from map
+      console.log(index);
+      console.log("Adding to bldg " + $scope.spots[index].bldgCode);
       //Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
 
     }
@@ -83,6 +87,18 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       console.log($scope.spotDetails);
     }
 
+    $scope.openForm = function () {
+      if (document.getElementById("addForm").style.display == "block"){
+        document.getElementById("addForm").style.display = "none";
+        document.getElementById("formbutton").innerHTML = "Add Spot";
+      }
+      else{
+        document.getElementById("addForm").style.display = "block";
+        document.getElementById("formbutton").style.display = "none";
+      }
+    }
+
+
     //Initializes the map variable from the Map constructor
     var map = new mapboxgl.Map({
       container: 'map', // container id
@@ -91,6 +107,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       zoom: 16.5 // starting zoom
       //29.648578, -82.346109 for Gainesville lat/lng, switch for center
     });
+
+
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
     map.on('load', function (e) {
 
@@ -193,12 +211,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
-          + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
-          + '<form novalidate>'
-          + '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
-          + '<button id="addbutton" ng-click="add($index)">Add</button>'
-          + '</form>'
+          + '<br><button class="trigger" id="formbutton">Add Spot</button>'
           + '</div>'
         )
         .addTo(map);
@@ -234,14 +247,17 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       map.getCanvas().style.cursor = 'pointer';
     });
 
+
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'spots', function () {
       map.getCanvas().style.cursor = '';
     });
 
+
     //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
+
 
     //Initalizes a location finder for the Mapbox
     var locationTracker = new mapboxgl.GeolocateControl();
