@@ -178,16 +178,19 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       }
 
+      // Checks to see if there is already a popup on the map and if so, remove it
+      var checkPopup = document.getElementsByClassName('mapboxgl-popup');
+      if (checkPopup[0]) checkPopup[0].remove();
 
+
+      //These popups are different from the popups found on the map... they dont include the addSpot button
       var popups = new mapboxgl.Popup({ closeOnClick: true })
-
         .setLngLat([arrayFlyTo[1], arrayFlyTo[0]])
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
            )
       popups.addTo(map);
-
     }
 
     //Initializes the map variable from the Map constructor
