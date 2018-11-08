@@ -236,7 +236,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       if (!features.length) {
         return;
       }
-      console.log(features);
+      // console.log(features);
       var feature = features[0];
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
@@ -309,19 +309,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><button class="trigger" id="formbutton" onclick="toggleForm()">Add Spot</button>'
-          + '<div class="form-popup" id="addForm" ng-app="spotsApp" ng-controller="SpotsController">'
-          + '<form novalidate>'
-          + '<br><input type="text" ng-model="bldg.roomName" placeholder="Room Name"><br>'
-          + '<button id="addbutton" ng-click="add($index)">Add</button>'
-          + '</form>'
-          + '</div>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="toggleMenu()">Add Spot</button>'
         )
         .addTo(map);
-
-
-
-      // openMenu();
 
 
       //Finds the menu documentElement
