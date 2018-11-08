@@ -71,15 +71,39 @@
           </table>
 
         </div>
-      </div>
+
+
+
+
+    <!-- navigation bar -->
+    <div class="row2" id="menu_toggle">
+      <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
+      <button id="signup" class="rightbtn" onclick="toggleSignup()">Sign Up</button>
+      <button id="login" class="rightbtn" onclick="toggleLogin()">Log In</button>
     </div>
 
 
-  <!-- navigation bar -->
-  <div class="row2" id="menu_toggle">
-    <button class="openbtn" onclick="toggleMenu()">
-      ☰ Menu</button>
-  </div>
+<div ng-controller="authentController">
+  <!-- SIGN UP POPUP -->
+<div class="sign-form" id="signupForm">
+  <form novalidate>
+    <br><input ng-model="email" type="text" placeholder="Email"><br>
+    <br><input ng-model="password" type="text" placeholder="Password"><br>
+    <button class="openbtn" id="addbutton" ng-click="signup()" style="margin-left:25%">Sign Up</button>
+
+  </form>
+</div>
+<!-- LOG IN POPUP -->
+<div class="sign-form" id="loginForm" >
+  <form novalidate>
+    <br><input ng-model="email" type="text" placeholder="Email"><br>
+    <br><input ng-model="password" type="text" placeholder="Password"><br>
+    <button class="openbtn" id="addbutton" ng-click="login()" style="margin-left:30%">Login</button>
+  </form>
+</div>
+</div>
+</div>
+
 
 
   <!-- creates id in the <p> for the mapbox to load -->
@@ -88,6 +112,7 @@
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="spotFactory.js"></script>
   <script type="text/javascript" src="spotController.js"></script>
+    <script type="text/javascript" src="authentController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
 <!--  <script type="text/javascript" src="mapbox_functions.js"></script> -->
   </body>

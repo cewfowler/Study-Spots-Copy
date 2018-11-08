@@ -72,7 +72,20 @@ body {
   #addbutton:hover {
     background-color: #3F48b0;
   }
-  
+  .sign-form{
+  float:right;
+  background-color: white;
+  padding: 10px 10px;
+  }
+
+  #loginForm{
+    display: none;
+  }
+
+  #signupForm{
+    display: none;
+  }
+
   .mapboxgl-popup-content{
     text-align: center
   }

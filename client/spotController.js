@@ -1,6 +1,17 @@
 //Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
 
+angular.module('spots').controller('authentController', ['$scope',
+  function($scope, Spots){
+    $scope.login = function(){
+
+    }
+
+    $scope.signup = function(){
+
+    }
+
+  }])
 
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function ($scope, Spots) {
