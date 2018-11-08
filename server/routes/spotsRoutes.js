@@ -20,15 +20,17 @@ module.exports = function(app) {
   });
 
 
-  /* COMMENTED OUT BECAUSE NOT BEING USED
+  // COMMENTED OUT BECAUSE NOT BEING USED
   //return information on a specific building
+
+  //un-commented for debug purposes
   app.get('/spots/:bCode', function(req, res) {
       SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, bldg) {
         if (err) return err;
         res.status(200).send(bldg);
       });
   });
-  */
+
 
   // adds a new study spot to bldg with bCode
   // params: bCode,location
@@ -36,10 +38,17 @@ module.exports = function(app) {
   //TODO: testing
   app.post('/spots/:bCode', function(req, res){
       console.log("Attempting to post new study spot");
-
+      console.log(req);
+      console.log(req.params.bCode);
+      console.log(req.spot);
       //TODO: which of these to use
+
+      //********TODO: hitting webpage error  because req.spot is undefined
+      //Does not show up in console logs of log(req), even in params
+
       //var newSpot = req.params.spot;
       var newSpot = req.spot;
+
 
       console.log(newSpot);
       SpotModel.find({bldgCode: req.params.bCode.toUpperCase()},

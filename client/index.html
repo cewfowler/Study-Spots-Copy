@@ -40,7 +40,7 @@
             <div class="form-popup" id="addForm" >
               <form novalidate>
                 <th><input type="text" ng-model="bldg.roomName" placeholder="Room Name"></th>
-                <th><button id="addbutton" ng-click="add()">Add</button></th>
+                <th><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)">Add</button></th>
               </form>
             </div>
           </div>

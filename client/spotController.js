@@ -70,14 +70,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     $scope.topForm = false;
 
     //Function that will add a spot from bldgCode
-    $scope.add = function (index) {
+    $scope.add = function (bCode, roomName) {
 
       //Debugging for index of passed in spot
 
       //able to pull index properly from menu bar on the left sidebar
       //TODO: fix issues with pulling bldg code from map
-      console.log(index);
-      console.log("Adding to bldg " + $scope.spots[index].bldgCode);
+      console.log(bCode);
+      console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
+      Spots.create(bCode, roomName).then(function(response) {
+        console.log("Woo: " + response);
+      }, function (error) {
+        console.log('Unable to create room:', error);
+
+      });
       //Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
 
     }
