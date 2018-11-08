@@ -55,7 +55,7 @@
           <table class="table table-striped table-hover">
 
             <!-- Headers for the tables -->
-            <th>Bld</th><th>Name</th><th>Formal Name</th>
+            <th>Bld</th><th>Name</th>
 
             <!-- Creates the table format by pulling the response.data from $scope.spots -->
             <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery"
@@ -64,7 +64,7 @@
               <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
               <td> {{ spot.bldgCode }} </td>
               <td> {{ spot.bldgName }} </td>
-              <td> {{ spot.bldgFormalName }} </td>
+              <!-- <td> {{ spot.bldgFormalName }} </td> -->
 
             </tr>
           </table>

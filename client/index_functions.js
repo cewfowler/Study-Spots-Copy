@@ -33,12 +33,12 @@ function closeMenu() {
 }
 
 //TOGGLES FORM WHEN ADD SPOT IS CLICKED
-function toggleForm(){
-  if (document.getElementById("addForm").style.display == "block"){
+function toggleForm() {
+  if (document.getElementById("addForm").style.display == "block") {
     document.getElementById("addForm").style.display = "none";
     document.getElementById("formbutton").innerHTML = "Add Spot";
   }
-  else{
+  else {
     document.getElementById("addForm").style.display = "block";
     document.getElementById("formbutton").style.display = "none";
   }
@@ -46,3 +46,4 @@ function toggleForm(){
 
 //TODO: Implement filtering of the markers
 //TODO: Implement more user-settings for map layers (building names, satellite)
+

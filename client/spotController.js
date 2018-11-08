@@ -41,7 +41,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-
+      var testRooms = ["Room1", "Room2"];
       for (var i = 0; i < $scope.spots.length; i++) {
         var obj = $scope.spots[i];
         var feature = {
@@ -52,7 +52,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
-            "spots": obj.spots
+            // "spots": obj.spots
+            "spots": testRooms
           },
           "geometry": {
             "type": "Point",
@@ -78,9 +79,84 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     }
 
+    //performs the functionality of sidebar locating buidings an instantiating a popup
     $scope.showDetails = function (index) {
+
       $scope.spotDetails = $scope.spots[index];
       console.log($scope.spotDetails);
+
+      var arrayFlyTo = $scope.spotDetails.coordinates;
+
+      console.log(arrayFlyTo);
+      map.flyTo({
+        zoom: 16.5,
+        center: [arrayFlyTo[1], arrayFlyTo[0]],
+        speed: 0.8,
+        offset: [-255, 150],
+
+      })
+
+      var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
+
+      //function that creates the URL
+      function fetchURL(BLDGextension) {
+        // BLDGcode = feature.properties.bldgNum;
+        BLDGcode = $scope.spotDetails.bldgNum;
+        // console.log("Building Code: " + BLDGcode);
+        if (BLDGcode.length == 1) {
+          BLDGprefix = "B000";
+        }
+        else if (BLDGcode.length == 2) {
+          BLDGprefix = "B00";
+        }
+        else if (BLDGcode.length == 3) {
+          BLDGprefix = "B0";
+        }
+        else {
+          BLDGprefix = "B";
+        }
+
+        //case-by-case situations for specific buildings
+        //Infinity Hall
+        if (BLDGcode == 3485) {
+          return pictureURL + "00004629.jpg";
+        }
+        //Shands Cancer Center
+        if (BLDGcode == 2013) {
+          return pictureURL + "00001464.JPG";
+        }
+        //Heavener Hall
+        if (BLDGcode == 65) {
+          return pictureURL + "00004060.jpg";
+        }
+        //Hernandez Hall
+        if (BLDGcode == 275) {
+          return pictureURL + "00004676.jpg";
+        }
+        // //BUILDING NAME
+        // if(BLDGcode == BUILDINGCODE){
+        //   return pictureURL + "EXTENSION#";
+        // }
+
+        //used in error handling funciton: onError(this)
+        errorURL = pictureURL + BLDGprefix + BLDGcode;
+
+        //img url with initial extension of .jpg
+        responseURL = pictureURL + BLDGprefix + BLDGcode + BLDGextension;
+        return responseURL;
+
+      }
+
+
+      var popups = new mapboxgl.Popup({ closeOnClick: true })
+
+        .setLngLat([arrayFlyTo[1], arrayFlyTo[0]])
+        .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
+          + '</p>'
+          + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
+           )
+      popups.addTo(map);
+
     }
 
     //Initializes the map variable from the Map constructor
@@ -88,6 +164,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       container: 'map', // container id
       style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
       center: [-82.346109, 29.648578], // starting position [lng, lat]
+      // hash: true,
       zoom: 16.5 // starting zoom
       //29.648578, -82.346109 for Gainesville lat/lng, switch for center
     });
@@ -132,7 +209,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //function that creates the URL
       function fetchURL(BLDGextension) {
-        BLDGcode = feature.properties.bldgNum;
+        // BLDGcode = feature.properties.bldgNum;
+        BLDGcode = $scope.spotDetails.bldgNum;
         // console.log("Building Code: " + BLDGcode);
         if (BLDGcode.length == 1) {
           BLDGprefix = "B000";
@@ -204,12 +282,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .addTo(map);
 
 
+
       // openMenu();
 
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
       var flyToPoint = feature.geometry.coordinates;
+      console.log(flyToPoint);
 
       //Checks if the menu is open or not and adjust the fly/panover properly
       if (menu.style.width != "0px") {
