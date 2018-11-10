@@ -92,23 +92,26 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       }
       console.dir($scope.spots_geo);
 
-      map.addSource('spots', {
-        type: 'geojson',
-        data: $scope.spots_geo,
-        maxzoom: 16,
-        buffer: 10,
-        tolerance: 10
+      map.on('load', function() {
+        map.addSource('spots', {
+          type: 'geojson',
+          data: $scope.spots_geo,
+          maxzoom: 16,
+          buffer: 10,
+          tolerance: 10
+        });
+        map.addLayer({
+          id: 'spots',
+          type: 'symbol',
+          source: 'spots',
+          layout: {
+            'icon-image': 'marker-15',
+            'icon-allow-overlap': true
+          }
+        });
       });
-      map.addLayer({
-        id: 'spots',
-        type: 'symbol',
-        source: 'spots',
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true
-        }
-      });
-      
+
+
     }, function (error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
