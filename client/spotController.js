@@ -1,6 +1,16 @@
 //Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
 
+//handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
+var map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
+  center: [-82.346109, 29.648578], // starting position [lng, lat]
+  // hash: true,
+  zoom: 16.5 // starting zoom
+  //29.648578, -82.346109 for Gainesville lat/lng, switch for center
+});
+
 angular.module('spots').controller('authentController', ['$scope',
   function($scope, Spots){
     $scope.login = function(){
@@ -81,11 +91,28 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spots_geo.features[i] = feature;
       }
       console.dir($scope.spots_geo);
+
+      map.addSource('spots', {
+        type: 'geojson',
+        data: $scope.spots_geo,
+        maxzoom: 16,
+        buffer: 10,
+        tolerance: 10
+      });
+      map.addLayer({
+        id: 'spots',
+        type: 'symbol',
+        source: 'spots',
+        layout: {
+          'icon-image': 'marker-15',
+          'icon-allow-overlap': true
+        }
+      });
+      
     }, function (error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
     });
-
 
     //Function that will add a spot from bldgCode
     $scope.add = function (index) {
@@ -194,35 +221,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     }
 
     //Initializes the map variable from the Map constructor
-    var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
-      center: [-82.346109, 29.648578], // starting position [lng, lat]
-      // hash: true,
-      zoom: 16.5 // starting zoom
-      //29.648578, -82.346109 for Gainesville lat/lng, switch for center
-    });
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
-    map.on('load', function (e) {
 
-      map.addSource('spots', {
-        type: 'geojson',
-        data: $scope.spots_geo,
-        maxzoom: 16,
-        buffer: 10,
-        tolerance: 10
-      });
-      map.addLayer({
-        id: 'spots',
-        type: 'symbol',
-        source: 'spots',
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true
-        }
-      });
+      //Initalizes a basic zoom control for the Mapbox
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-right');
+
+    //Initalizes a location finder for the Mapbox
+    var locationTracker = new mapboxgl.GeolocateControl({
+      positionOptions: {
+          enableHighAccuracy: true
+      },
+      showUserLocation: true
     });
-
+    map.addControl(locationTracker, 'bottom-right');
 
     //Event that checks for a click on the buildings layer
     map.on('click', 'spots', function (e) {
@@ -347,19 +359,11 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       map.getCanvas().style.cursor = '';
     });
 
-    //Initalizes a basic zoom control for the Mapbox
-    var nav = new mapboxgl.NavigationControl();
-    map.addControl(nav, 'bottom-right');
-
-    //Initalizes a location finder for the Mapbox
-    var locationTracker = new mapboxgl.GeolocateControl();
-    map.addControl(locationTracker, 'bottom-right');
-
-
   }]);
 
 
-//handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
+
+
 function onError(img) {
   delete img.onerror;
   var n = img.src;
