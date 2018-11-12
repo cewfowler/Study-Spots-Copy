@@ -108,7 +108,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           'icon-allow-overlap': true
         }
       });
-      
+
     }, function (error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
@@ -124,6 +124,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     }
 
+    $scope.sort_by = function(inputValue) {
+    if ($scope.sortingOrder == inputValue)
+      $scope.reverse = !$scope.reverse;
+
+    $scope.sortingOrder = inputValue;
+  };
     //performs the functionality of sidebar locating buidings an instantiating a popup
     $scope.showDetails = function (index) {
 
@@ -131,16 +137,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //CHANGE TRIANGLE
       $scope.spotDetails.rooms = $scope.rooms;
-      $scope.spotDetails.triangle = $scope.spots.triangle[index];
-
-      if ($scope.spots.triangle[index] == "►"){
-        $scope.spotDetails.triangle = "▼";
-        $scope.spots.triangle[index] = "▼";
-      }
-      else{
-        $scope.spotDetails.triangle = "►";
-        $scope.spots.triangle[index] = "►";
-      }
       console.log($scope.spotDetails);
 
       var arrayFlyTo = $scope.spotDetails.coordinates;
@@ -253,7 +249,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
 
-
+      $scope.spotQuery = $scope.spotDetails.name;
       //basic form of the URL for the image
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
@@ -328,6 +324,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
+      let mapStyles = document.getElementById("map");
+
       var flyToPoint = feature.geometry.coordinates;
       console.log(flyToPoint);
 
@@ -340,11 +338,15 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         });
       }
       else {
+        mapStyles.style.width = "66%";
+        mapStyles.style.left = "507px";
+        menu.style.width = "500px";
         map.flyTo({
           center: flyToPoint,
           speed: 0.2,
           offset: [0, 150],
         });
+
       }
     });
 
@@ -360,7 +362,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
   }]);
-
+$(document).ready(function(){
+  $("#fakeass").on("hide.bs.collapse", function(){
+    $(".td").html('<span class="glyphicon glyphicon-chevron-down"></span>');
+  });
+  $("#fakeass").on("show.bs.collapse", function(){
+    $(".td").html('<span class="glyphicon glyphicon-chevron-up"></span>');
+  });
+});
 
 
 

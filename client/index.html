@@ -8,6 +8,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="styles.css">
@@ -34,10 +35,6 @@
           <th>
             <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
           </th>
-
-          <div ng-show="spotDetails.id != undefined">
-            <th> {{ spotDetails.bldg }}  {{ spotDetails.bldgName }}</th>
-          </div>
         </tr>
       </table>
     </div>
@@ -52,22 +49,32 @@
         <!-- Uses the spotsApp from spotController.js etc to find listings -->
 
           <!-- Table for the building listings -->
-          <table class="table table-striped table-hover">
+          <table class="table table-striped table-hover" id="myTable">
+                <!-- Headers for the tables -->
+                <th> </th>
+                <th> <a ng-click= "sort_by('bldgCode')">Bld<i class="fa fa-sort"></i></a></th>
+                <th> <a ng-click= "sort_by('bldgName')">Name<i class="fa fa-sort"></i></a></th>
+            <tbody class="panel">
+              <!-- Creates the table format by pulling the response.data from $scope.spots -->
+              <tr id="listingRows" ng-repeat-start="spot in spots | filter: spotQuery | orderBy:sortingOrder:reverse"
+                ng-click="showDetails(spots.indexOf(spot))" data-toggle="collapse" data-target="#fakeass" data-parent="#myTable">
 
-            <!-- Headers for the tables -->
-            <th>   </th><th>Bld</th><th>Name</th>
+                <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
+                <td><span class="glyphicon glyphicon-chevron-down"></span><td>
+                  <td> {{ spot.bldgCode }} </td>
+                  <td> {{ spot.bldgName }} </td>
+                <!-- <td> {{ spot.bldgFormalName }} </td> -->
+              </tr>
+              <tr ng-repeat-end class="collapse" id="fakeass">
+                <td colspan="3">
+                    Hidden row for {{spot.bldgName}}
+                </td>
+                <td>
+                  {{spot.spots}}
+                </td>
+              </tr>
+            </tbody>
 
-            <!-- Creates the table format by pulling the response.data from $scope.spots -->
-            <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery"
-              ng-click="showDetails(spots.indexOf(spot))">
-
-              <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
-              <td> {{ spot.triangle }} </td>
-              <td> {{ spot.bldgCode }} </td>
-              <td> {{ spot.bldgName }} </td>
-              <!-- <td> {{ spot.bldgFormalName }} </td> -->
-
-            </tr>
           </table>
 
         </div>
