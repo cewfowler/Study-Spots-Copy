@@ -67,9 +67,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       for (var i = 0; i < $scope.spots.length; i++) {
 
         //ADD triangles
-        $scope.spots.triangle[i] = "►";
         $scope.spotDetails = $scope.spots[i];
-        $scope.spotDetails.triangle = $scope.spots.triangle[i];
 
         var obj = $scope.spots[i];
         var feature = {
@@ -81,7 +79,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
             // "spots": obj.spots
-            "spots": testRooms
+            "spots": ["Room1", "Room2"]
           },
           "geometry": {
             "type": "Point",
@@ -89,6 +87,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           }
         }
         $scope.spots_geo.features[i] = feature;
+      }
+      for (var i = 0; i < $scope.spots.length; i++) {
+        $scope.spots[i].spots = ['Test1', 'Test2'];
       }
       console.dir($scope.spots_geo);
 
@@ -136,7 +137,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = $scope.spots[index];
 
       //CHANGE TRIANGLE
-      $scope.spotDetails.rooms = $scope.rooms;
       console.log($scope.spotDetails);
 
       var arrayFlyTo = $scope.spotDetails.coordinates;
@@ -216,6 +216,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
+    $scope.showDetail = function (u) {
+    if ($scope.active != u) {
+      $scope.active = u;
+    }
+    else {
+      $scope.active = null;
+    }
+  };
     //Initializes the map variable from the Map constructor
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
 

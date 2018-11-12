@@ -1,4 +1,4 @@
-body {
+  body {
     background-color: #FDFAF3;
     margin: 0;
     padding: 0;
@@ -87,18 +87,18 @@ body {
   }
 
   .rightbtn{
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #3F48CC;
-  color: white;
-  padding: 14px 15px;
-  border: none;
-  float: right;
-  margin:0 1% 0 0;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3F48CC;
+    color: white;
+    padding: 14px 15px;
+    border: none;
+    float: right;
+    margin:0 1% 0 0;
 }
-.rightbtn:hover {
-  background-color: #3F48b0;
-}
+  .rightbtn:hover {
+    background-color: #3F48b0;
+  }
 
   .mapboxgl-popup-content{
     text-align: center
@@ -116,31 +116,31 @@ body {
     padding-left: 8px;
   }
   input[type=search] {
-      /*make search bar pretty*/
-      font: 17px arial, sans-serif;
-      opacity: 0.75;
-      width: 66%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 3px solid #ccc;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-      outline: none;
+    /*make search bar pretty*/
+    font: 17px arial, sans-serif;
+    opacity: 0.75;
+    width: 66%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
   }
   input[type=text]:focus {
-      border: 3px solid #555;
+    border: 3px solid #555;
   }
   .mapboxgl-popup {
-      max-width: 400px;
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
 
   /* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: center;
-  bottom: 0;
-  right: 15px;
-  z-index: 9;
-}
+  .form-popup {
+    display: none;
+    position: center;
+    bottom: 0;
+    right: 15px;
+      z-index: 9;
+    }
