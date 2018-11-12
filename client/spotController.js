@@ -132,20 +132,35 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       });
     };
 
+    //Function that will sort sidebar listings and manipulates global variables
     $scope.sort_by = function(inputValue) {
-    if ($scope.sortingOrder == inputValue)
-      $scope.reverse = !$scope.reverse;
 
-    $scope.sortingOrder = inputValue;
-  };
+      //Checks to see if the current value that it is sorting by is being clicked
+      if ($scope.sortingOrder == inputValue)
+        //Reverses the ordering if the inputValue has been clicked
+        $scope.reverse = !$scope.reverse;
+
+      //Sets sort value to the input value
+      $scope.sortingOrder = inputValue;
+    };
     //performs the functionality of sidebar locating buidings an instantiating a popup
     $scope.showDetails = function (index) {
 
+      //Sets scope variable equal to clicked spot
       $scope.spotDetails = $scope.spots[index];
 
-      //CHANGE TRIANGLE
+      //Logs spot for debu purposes
       console.log($scope.spotDetails);
 
+      //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
+      if ($scope.active != $scope.spotDetails.bldgCode) {
+        $scope.active = $scope.spotDetails.bldgCode;
+      }
+      else {
+        $scope.active = null;
+      }
+
+      //Set of processes that allow the map to fly to the spot clicked on from the menu
       var arrayFlyTo = $scope.spotDetails.coordinates;
 
       console.log(arrayFlyTo);
@@ -157,6 +172,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       })
 
+      //Creates pictureURl for use in the map popup
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
       //function that creates the URL
@@ -223,16 +239,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-    $scope.showDetail = function (u) {
-    if ($scope.active != u) {
-      $scope.active = u;
+    //Tentative method to claim a room from a building
+    $scope.claimSpot = function(bCode, roomName) {
+      console.log("Claiming " + roomName + " at building with code " + bCode);
     }
-    else {
-      $scope.active = null;
-    }
-  };
-    //Initializes the map variable from the Map constructor
-    //Method that will initialize local points on the map (need to be able to convert JSON data first)
 
       //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
@@ -264,7 +274,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
 
-      $scope.spotQuery = $scope.spotDetails.name;
+      $scope.active = $scope.spotDetails.bldgCode;
       //basic form of the URL for the image
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
@@ -377,14 +387,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
   }]);
-$(document).ready(function(){
-  $("#fakeass").on("hide.bs.collapse", function(){
-    $(".td").html('<span class="glyphicon glyphicon-chevron-down"></span>');
-  });
-  $("#fakeass").on("show.bs.collapse", function(){
-    $(".td").html('<span class="glyphicon glyphicon-chevron-up"></span>');
-  });
-});
 
 
 
