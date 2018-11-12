@@ -116,14 +116,21 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
     //Function that will add a spot from bldgCode
-    $scope.add = function (index) {
+    $scope.add = function (bCode, roomName) {
 
-      ////////TODO: Need to add proper add functionality once local markers can return information
-      //This may not work fully, copied it from the other index_functions controller to condense
-      console.log("Adding to bldg " + $scope.spots[index].bldg.bldgCode);
-      //Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
+      //Debugging for index of passed in spot
 
-    }
+      //able to pull index properly from menu bar on the left sidebar
+      //TODO: fix issues with pulling bldg code from map
+      console.log(bCode);
+      console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
+      Spots.create(bCode, roomName).then(function(response) {
+        console.log("Woo: " + response);
+      }, function (error) {
+        console.log('Unable to create room:', error);
+
+      });
+    };
 
     $scope.sort_by = function(inputValue) {
     if ($scope.sortingOrder == inputValue)
