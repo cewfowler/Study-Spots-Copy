@@ -143,4 +143,19 @@
     bottom: 0;
     right: 15px;
       z-index: 9;
-    }
+  }
+  #sidebar-repeat {
+    background-color: #0021A5;
+    color: #FFFFFF;
+
+  }
+  #sidebar-repeat:hover {
+    background-color: #FA4616;
+  }
+  #sidebar-expand {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  .fa {
+    color:#FFFFFF;
+  }
