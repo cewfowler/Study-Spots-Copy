@@ -11,17 +11,6 @@ var map = new mapboxgl.Map({
   //29.648578, -82.346109 for Gainesville lat/lng, switch for center
 });
 
-angular.module('spots').controller('authentController', ['$scope',
-  function($scope, Spots){
-    $scope.login = function(){
-
-    }
-
-    $scope.signup = function(){
-
-    }
-
-  }])
 
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function ($scope, Spots) {
@@ -62,7 +51,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-      var testRooms = ["Room1", "Room2"];
+      var testRooms = ["Room1"];
       $scope.spots.triangle = [];
       for (var i = 0; i < $scope.spots.length; i++) {
 
@@ -70,6 +59,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spots.triangle[i] = "►";
         $scope.spotDetails = $scope.spots[i];
         $scope.spotDetails.triangle = $scope.spots.triangle[i];
+
+        //ADDS testRooms as dummy ROOMS with dummy UPVOTES
+        $scope.spotDetails.spots = testRooms;
+        $scope.spotDetails.upvotes = 0;
 
         var obj = $scope.spots[i];
         var feature = {
@@ -80,8 +73,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
-            // "spots": obj.spots
-            "spots": testRooms
+            "spots": obj.spots
+            //"spots": testRooms
           },
           "geometry": {
             "type": "Point",
@@ -108,7 +101,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           'icon-allow-overlap': true
         }
       });
-      
+
     }, function (error) {
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
@@ -141,6 +134,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spotDetails.triangle = "►";
         $scope.spots.triangle[index] = "►";
       }
+
+
       console.log($scope.spotDetails);
 
       var arrayFlyTo = $scope.spotDetails.coordinates;
@@ -218,6 +213,18 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
            )
       popups.addTo(map);
+    }
+
+    //INCREMENT DUMMY UPVOTE
+    $scope.upvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes++;
+    }
+
+    //DECREMENT DUMMY UPVOTE
+    $scope.downvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes--;
     }
 
     //Initializes the map variable from the Map constructor

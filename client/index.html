@@ -58,7 +58,7 @@
             <th>   </th><th>Bld</th><th>Name</th>
 
             <!-- Creates the table format by pulling the response.data from $scope.spots -->
-            <tr id="listingRows" ng-repeat="spot in spots | filter: spotQuery"
+            <tr id="listingRows" ng-repeat-start="spot in spots | filter: spotQuery as x"
               ng-click="showDetails(spots.indexOf(spot))">
 
               <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
@@ -66,6 +66,29 @@
               <td> {{ spot.bldgCode }} </td>
               <td> {{ spot.bldgName }} </td>
               <!-- <td> {{ spot.bldgFormalName }} </td> -->
+
+
+              <!-- show rooms when triangle points down -->
+              <tr ng-repeat="room in spot.spots" ng-show="spot.triangle=='▼'">
+                <td> </td>
+                <td >{{room}}</td>
+                <td ><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">◀</button>
+                  {{ spot.upvotes }}
+                  <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▶</button></td>
+              </tr>
+
+              <!-- Show no rooms if rooms are empty-->
+              <tr ng-repeat-end ng-show="spot.spots.length == 0 && spot.triangle=='▼'">
+                <td> </td>
+                <td colspan="4">No rooms</td>
+              </tr>
+
+              <!-- if query doesnt find anything -->
+              <tr ng-if="x.length ===0">
+                <td> </td>
+                <td> </td>
+                <td>No results found.</td>
+              </tr>
 
             </tr>
           </table>
