@@ -51,7 +51,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-      var testRooms = ["Room1"];
       $scope.spots.triangle = [];
       for (var i = 0; i < $scope.spots.length; i++) {
 
@@ -61,7 +60,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spotDetails.triangle = $scope.spots.triangle[i];
 
         //ADDS testRooms as dummy ROOMS with dummy UPVOTES
-        $scope.spotDetails.spots = testRooms;
+      //  $scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
 
         var obj = $scope.spots[i];
@@ -74,7 +73,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
             "spots": obj.spots
-            //"spots": testRooms
           },
           "geometry": {
             "type": "Point",
@@ -106,6 +104,21 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //Debug log for the response if an error was thrown
       console.log('Unable to retrieve listings:', error);
     });
+
+    $scope.sort_by = function(inputValue) {
+
+      //Checks to see if the current value that it is sorting by is being clicked
+      if ($scope.sortingOrder == inputValue)
+        //Reverses the ordering if the inputValue has been clicked
+        $scope.reverse = !$scope.reverse;
+
+      //Sets sort value to the input value
+      $scope.sortingOrder = inputValue;
+    }
+
+    $scope.claimSpot = function(bCode, roomName) {
+      console.log("Claiming " + roomName + " at building with code " + bCode);
+    }
 
     //Function that will add a spot from bldgCode
     $scope.add = function (bCode, roomName) {
