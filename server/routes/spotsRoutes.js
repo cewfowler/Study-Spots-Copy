@@ -80,13 +80,13 @@ module.exports = function(app) {
     console.log("Retrieving room");
     var reqSpot;
 
-    SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
+    SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
 
       if (err) {
         console.log("Error finding bldg with code " + req.params.bCode);
         return err;
       }
-
+      console.log(studySpot);
       var curSpots = studySpot.spots.toBSON();
 
       for (i = 0; i < curSpots.length; i++){
