@@ -60,11 +60,13 @@
           <table class="table table-striped table-hover">
 
             <!-- Headers for the tables -->
-            <th>   </th><th>Bld</th><th>Name</th>
+            <th>   </th>
+            <th ng-click="sort_by('bldgCode')" >Bld</th>
+            <th ng-click="sort_by('bldgName')">Name</th>
 
             <!-- Creates the table format by pulling the response.data from $scope.spots -->
-            <tr id="listingRows" ng-repeat-start="spot in spots | filter: spotQuery as x"
-              ng-click="showDetails(spots.indexOf(spot))">
+            <tr id="listingRows" ng-repeat-start="spot in spots | orderBy:sortingOrder:reverse
+              | filter: spotQuery as x" ng-click="showDetails(spots.indexOf(spot))">
 
               <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
               <td> {{ spot.triangle }} </td>
@@ -76,9 +78,9 @@
               <!-- show rooms when triangle points down -->
               <tr ng-repeat="room in spot.spots" ng-show="spot.triangle=='▼'">
                 <td> </td>
-                <td >{{room}}</td>
+                <td >{{room.location}}</td>
                 <td ><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">◀</button>
-                  {{ spot.upvotes }}
+                  {{ room.upvotes }}
                   <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▶</button></td>
               </tr>
 
