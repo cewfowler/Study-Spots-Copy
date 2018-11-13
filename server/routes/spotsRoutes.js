@@ -52,8 +52,8 @@ module.exports = function(app) {
             exists = true;
             res.status(202).send();
           }
-        }
-      });*/
+        }*/
+      });
 
       if (!exists) {
         SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
@@ -66,7 +66,7 @@ module.exports = function(app) {
 
             res.status(201).send(spot);
         });
-      });
+      };
 
   });
 
