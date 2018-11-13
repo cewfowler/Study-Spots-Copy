@@ -56,7 +56,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       for (var i = 0; i < $scope.spots.length; i++) {
 
         //ADD triangles
+        $scope.spots.triangle[i] = "►";
         $scope.spotDetails = $scope.spots[i];
+        $scope.spotDetails.triangle = $scope.spots.triangle[i];
 
         //ADDS testRooms as dummy ROOMS with dummy UPVOTES
         $scope.spotDetails.spots = testRooms;
@@ -80,9 +82,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           }
         }
         $scope.spots_geo.features[i] = feature;
-      }
-      for (var i = 0; i < $scope.spots.length; i++) {
-        $scope.spots[i].spots = ['Test1', 'Test2'];
       }
       console.dir($scope.spots_geo);
 
@@ -110,7 +109,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     //Function that will add a spot from bldgCode
     $scope.add = function (bCode, roomName) {
-
       //Debugging for index of passed in spot
 
       //able to pull index properly from menu bar on the left sidebar
@@ -123,40 +121,31 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         console.log('Unable to create room:', error);
 
       });
-    };
+      //Spots.create($scope.spots.bldg.bldgCode, $scope.bldg.roomName);
 
-    //Function that will sort sidebar listings and manipulates global variables
-    $scope.sort_by = function(inputValue) {
+    }
 
-      //Checks to see if the current value that it is sorting by is being clicked
-      if ($scope.sortingOrder == inputValue)
-        //Reverses the ordering if the inputValue has been clicked
-        $scope.reverse = !$scope.reverse;
-
-      //Sets sort value to the input value
-      $scope.sortingOrder = inputValue;
-    };
     //performs the functionality of sidebar locating buidings an instantiating a popup
     $scope.showDetails = function (index) {
 
-      //Sets scope variable equal to clicked spot
       $scope.spotDetails = $scope.spots[index];
 
-      //Logs spot for debu purposes
+      //CHANGE TRIANGLE
+      $scope.spotDetails.rooms = $scope.rooms;
+      $scope.spotDetails.triangle = $scope.spots.triangle[index];
+
+      if ($scope.spots.triangle[index] == "►"){
+        $scope.spotDetails.triangle = "▼";
+        $scope.spots.triangle[index] = "▼";
+      }
+      else{
+        $scope.spotDetails.triangle = "►";
+        $scope.spots.triangle[index] = "►";
+      }
+
+
       console.log($scope.spotDetails);
 
-      //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
-      if ($scope.active != $scope.spotDetails.bldgCode) {
-        $scope.active = $scope.spotDetails.bldgCode;
-      }
-      else {
-        $scope.active = null;
-      }
-      
-      console.log($scope.spotDetails);
-
-
-      //Set of processes that allow the map to fly to the spot clicked on from the menu
       var arrayFlyTo = $scope.spotDetails.coordinates;
 
       console.log(arrayFlyTo);
@@ -168,7 +157,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       })
 
-      //Creates pictureURl for use in the map popup
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
       //function that creates the URL
@@ -235,10 +223,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-    //Tentative method to claim a room from a building
-    $scope.claimSpot = function(bCode, roomName) {
-      console.log("Claiming " + roomName + " at building with code " + bCode);
-    }
     //INCREMENT DUMMY UPVOTE
     $scope.upvote = function(index){
       $scope.spotDetails = $scope.spots[index];
@@ -284,7 +268,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
 
-      $scope.active = $scope.spotDetails.bldgCode;
+
       //basic form of the URL for the image
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
@@ -359,8 +343,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
-      let mapStyles = document.getElementById("map");
-
       var flyToPoint = feature.geometry.coordinates;
       console.log(flyToPoint);
 
@@ -373,15 +355,11 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         });
       }
       else {
-        mapStyles.style.width = "66%";
-        mapStyles.style.left = "507px";
-        menu.style.width = "500px";
         map.flyTo({
           center: flyToPoint,
           speed: 0.2,
           offset: [0, 150],
         });
-
       }
     });
 
@@ -397,6 +375,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
 
   }]);
+
 
 
 
