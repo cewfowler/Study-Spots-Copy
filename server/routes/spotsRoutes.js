@@ -86,19 +86,25 @@ module.exports = function(app) {
         console.log("Error finding bldg with code " + req.params.bCode);
         return err;
       }
+      else if (!studySpot) {
+        console.log("Building not found");
+        return;
+      }
       console.log(studySpot);
       var curSpots = studySpot.spots.toBSON();
 
       for (i = 0; i < curSpots.length; i++){
+
         if (curSpots[i].location == req.params.room) {
           console.log("Returning room " + curSpots[i].location);
-          spot = curSpots[i];
+          reqSpot = curSpots[i];
         }
       }
+
     }).then(function() {
-      if (spot) {
+      if (reqSpot) {
         console.log("Room found");
-        res.status(201).send(spot);
+        res.status(201).send(reqSpot);
       }
       else {
         console.log("Room not found");
