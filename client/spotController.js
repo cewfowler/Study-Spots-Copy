@@ -11,17 +11,6 @@ var map = new mapboxgl.Map({
   //29.648578, -82.346109 for Gainesville lat/lng, switch for center
 });
 
-angular.module('spots').controller('authentController', ['$scope',
-  function($scope, Spots){
-    $scope.login = function(){
-
-    }
-
-    $scope.signup = function(){
-
-    }
-
-  }])
 
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function ($scope, Spots) {
@@ -62,12 +51,16 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-      var testRooms = ["Room1", "Room2"];
+      var testRooms = ["Room1"];
       $scope.spots.triangle = [];
       for (var i = 0; i < $scope.spots.length; i++) {
 
         //ADD triangles
         $scope.spotDetails = $scope.spots[i];
+
+        //ADDS testRooms as dummy ROOMS with dummy UPVOTES
+        $scope.spotDetails.spots = testRooms;
+        $scope.spotDetails.upvotes = 0;
 
         var obj = $scope.spots[i];
         var feature = {
@@ -78,8 +71,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
-            // "spots": obj.spots
-            "spots": ["Room1", "Room2"]
+            "spots": obj.spots
+            //"spots": testRooms
           },
           "geometry": {
             "type": "Point",
@@ -159,6 +152,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       else {
         $scope.active = null;
       }
+      
+      console.log($scope.spotDetails);
+
 
       //Set of processes that allow the map to fly to the spot clicked on from the menu
       var arrayFlyTo = $scope.spotDetails.coordinates;
@@ -243,6 +239,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     $scope.claimSpot = function(bCode, roomName) {
       console.log("Claiming " + roomName + " at building with code " + bCode);
     }
+    //INCREMENT DUMMY UPVOTE
+    $scope.upvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes++;
+    }
+
+    //DECREMENT DUMMY UPVOTE
+    $scope.downvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes--;
+    }
+
+    //Initializes the map variable from the Map constructor
+    //Method that will initialize local points on the map (need to be able to convert JSON data first)
 
       //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();

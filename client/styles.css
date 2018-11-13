@@ -159,3 +159,16 @@
   .fa {
     color:#FFFFFF;
   }
+
+
+  .upvoteButton{
+    font-size: 10px;
+    cursor: pointer;
+    background-color: none;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+  }
+  .upvoteButton:hover {
+    background-color: #DDDDD5;
+  }
