@@ -8,6 +8,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="styles.css">
@@ -18,7 +19,7 @@
   <!-- Uses the spotsApp from app.js etc to find listings -->
   <div ng-app="spotsApp" ng-controller="SpotsController">
 
-  <!-- Header -->
+    <!-- Header -->
     <div class="row">
       <table>
         <tr>
@@ -34,10 +35,6 @@
           <th>
             <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
           </th>
-
-          <div ng-show="spotDetails.id != undefined">
-            <th> {{ spotDetails.bldg }}  {{ spotDetails.bldgName }}</th>
-          </div>
         </tr>
       </table>
     </div>
@@ -47,27 +44,48 @@
     <div id="myMenu" class="sidebar" style="width: 0px;">
 
       <!-- Search bar -->
-      <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+      <input type="search" name="q" size="31" placeholder="Search for building" ng-model="spotQuery">
 
-        <!-- Uses the spotsApp from spotController.js etc to find listings -->
+      <!-- Table for the building listings 
+        <!-- Creates container div element for the spots listing in the sidebar 
+        <div id="spotsList" class="container" >
+          <div id="sidebar-heading" class="row" style="color: #000000">
+            <div class="col-xs-1"> Details </div>
 
-          <!-- Table for the building listings -->
-          <table class="table table-striped table-hover">
+            <!-- Allows the headings of the table to be clicked to sort through rows 
+            <!-- TODO: Need to correct the icons located next to the headers
+            <!-- Expanded implementation
+            <div class="col-xs-1" ng-click="sort_by('bldgCode')"> Code <i class="fa fa-sort"></i></div>
+            <div class="col-xs-4 left" ng-click="sort_by('bldgName')"> Name <i class="fa fa-sort"></i></div>
+          </div>
 
-            <!-- Headers for the tables -->
-            <th>   </th><th>Bld</th><th>Name</th>
+          <!-- Creates div element that has uses ng-repeat to iterate through the response.data -->
+          <!-- Filters the data with the spotQuery entry and orders it based on the sorting object -->
+          <!-- Also calls the showDetails function which pans map, opens popup, and opens expanded menu -->
 
-            <!-- Creates the table format by pulling the response.data from $scope.spots -->
+          <!-- Expanded implementation
+          <div id="sidebar-repeat" class="row" ng-repeat-start="spot in spots | filter: spotQuery | orderBy:sortingOrder:reverse"
+            ng-click="showDetails(spots.indexOf(spot))" ng-class-odd="'alt'">
+           -->
+      
+          <!-- Creates the table format by pulling the response.data from $scope.spots -->
             <tr id="listingRows" ng-repeat-start="spot in spots | filter: spotQuery as x"
               ng-click="showDetails(spots.indexOf(spot))">
 
-              <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
-              <td> {{ spot.triangle }} </td>
-              <td> {{ spot.bldgCode }} </td>
-              <td> {{ spot.bldgName }} </td>
-              <!-- <td> {{ spot.bldgFormalName }} </td> -->
-
-
+           <!-- The object that displays the disclosure triangle for each row 
+            <div class="col-xs-1">
+              <a href="">
+                <i ng-hide="active==spot.bldgCode" class="fa fa-caret-right fa-2x"></i>
+                <i ng-show="active==spot.bldgCode" class="fa fa-caret-down fa-2x"></i>
+              </a>
+            </div>
+           -->
+          <!--
+            <!-- Parameters for the data that will be in each row 
+            <div class="col-xs-1">{{spot.bldgCode}}</div>
+            <div class="col-xs-4 left">{{spot.bldgName}}</div>
+          </div>
+          -->
               <!-- show rooms when triangle points down -->
               <tr ng-repeat="room in spot.spots" ng-show="spot.triangle=='▼'">
                 <td> </td>
@@ -93,10 +111,37 @@
             </tr>
           </table>
 
+          <!-- Initialization of the expanded menu object -->
+          <!-- Expanded initialization
+          <div id="sidebar-expand" class="row" ng-repeat-end="" ng-show="active==spot.bldgCode" ng-class-odd="'alt'">
+            <div class="col-xs-12">
+
+              <!-- Heading for the expanded menu 
+              <h2 class="cap">{{spot.bldgName}}</h2>
+            </div>
+
+            <!-- Creates outline for the submenu of the sidebar when something is clicked
+            <div class="col-md-3 col-xs-6 small">
+              <label>Building:</label> {{spot.bldgName}}<br>
+              <label>Number:</label> {{spot.bldgNum}}<br>
+              <label>Code:</label> {{spot.bldgCode}}<br>
+              <label>Spots available: </label>
+
+              <!-- Creates buttons based off of the rooms in spot.spots (TODO: implement a way to find which are available)
+              <div ng-repeat="room in spot.spots" ng-click="claimSpot(spotDetails.bldgCode, room)"> <button>{{room}}</button></div><br>
+              <label>Add spot: </label>
+
+                <!--Creates area for the user to input a new room for a building
+                <form novalidate>
+                  <th><input type="text" ng-model="bldg.roomName" placeholder="Room Name"></th>
+                  <th><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)">Add</button></th>
+                </form>
+              <br>
+            </div>
+          </div>
         </div>
-
-
-
+        -->
+    </div>
 
     <!-- navigation bar -->
     <div class="row2" id="menu_toggle">
@@ -106,37 +151,16 @@
     </div>
 
 
-<div ng-controller="authentController">
-  <!-- SIGN UP POPUP -->
-<div class="sign-form" id="signupForm">
-  <form novalidate>
-    <br><input ng-model="email" type="text" placeholder="Email"><br>
-    <br><input ng-model="password" type="text" placeholder="Password"><br>
-    <br><button class="openbtn" id="addbutton" ng-click="signup()" style="margin-left:25%">Sign Up</button>
 
-  </form>
-</div>
-<!-- LOG IN POPUP -->
-<div class="sign-form" id="loginForm" >
-  <form novalidate>
-    <br><input ng-model="email" type="text" placeholder="Email"><br>
-    <br><input ng-model="password" type="text" placeholder="Password"><br>
-    <br><button class="openbtn" id="addbutton" ng-click="login()" style="margin-left:30%">Login</button>
-  </form>
-</div>
-</div>
-</div>
+    <!-- creates id in the <p> for the mapbox to load -->
+    <p id='map'></p>
 
-
-
-  <!-- creates id in the <p> for the mapbox to load -->
-  <p id='map' ng-click="spotDetails"></p>
-
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="spotFactory.js"></script>
-  <script type="text/javascript" src="spotController.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="spotFactory.js"></script>
+    <script type="text/javascript" src="spotController.js"></script>
     <script type="text/javascript" src="authentController.js"></script>
-  <script type="text/javascript" src="index_functions.js"></script>
-<!--  <script type="text/javascript" src="mapbox_functions.js"></script> -->
-  </body>
+    <script type="text/javascript" src="index_functions.js"></script>
+    <!--  <script type="text/javascript" src="mapbox_functions.js"></script> -->
+</body>
+
 </html>
