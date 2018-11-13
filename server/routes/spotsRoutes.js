@@ -66,8 +66,7 @@ module.exports = function(app) {
 
             res.status(201).send(spot);
         });
-      }
-    }
+      });
 
   });
 
