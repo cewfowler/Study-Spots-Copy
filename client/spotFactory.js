@@ -13,8 +13,8 @@ angular.module('spots', []).factory('Spots', function($http) {
 	      return $http.post('/spots/' + bCode, {spot: roomName});
       },
 
-      update: function(bCode, room, updatedRoom) {
-	      return $http.post('/spots/' + bCode + '/' + room, {spot: updatedRoom});
+      update: function(bCode, room/*, updatedRoom*/) {
+	      return $http.post('/spots/' + bCode + '/' + room)//, {spot: updatedRoom});
       },
      };
      return methods;
