@@ -29,7 +29,7 @@ body {
 
     top: 104px;
     bottom: 40px;
-    height: 83%;
+    height: 83.5%;
     width: 99%;
     left: 0px;
     transition: 0.5s;
@@ -115,6 +115,7 @@ body {
   .row2{
     background-color: #BC581A;
     padding-left: 8px;
+
   }
   input[type=search] {
       /*make search bar pretty*/
@@ -157,4 +158,12 @@ border: none;
 }
 .upvoteButton:hover {
 background-color: #DDDDD5;
+}
+
+.row{
+  margin-left: 0.5%
+}
+
+.upvote-num{
+  margin-left:3%;
 }
