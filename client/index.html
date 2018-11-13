@@ -69,10 +69,10 @@
               <!-- show rooms when triangle points down -->
               <tr ng-repeat="room in spot.spots" ng-show="spot.triangle=='▼'">
                 <td> </td>
-                <td >{{room.location}}</td>
-                <td ><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">◀</button>
-                  {{ room.upvotes }}
-                  <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▶</button></td>
+                <td ><div style="height:25px;"></div>{{room.location}}</td>
+                <td ><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">▲</button>
+                  <div class="upvote-num">{{ room.upvotes }}</div>
+                  <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▼</button></td>
               </tr>
 
 
