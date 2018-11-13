@@ -78,6 +78,8 @@ module.exports = function(app) {
   // find specific room in a bldg
   app.get('/spots/:bCode/:room', function(req,res) {
     console.log("Retrieving room");
+    var reqSpot;
+
     SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
 
       if (err) {
@@ -85,16 +87,23 @@ module.exports = function(app) {
         return err;
       }
 
-      studySpot.spots.find({location: req.params.room}, function(err, spot) {
+      var curSpots = studySpot.spots.toBSON();
 
-        if (err) {
-          console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
-          return err;
+      for (i = 0; i < curSpots.length; i++){
+        if (curSpots[i].location == req.params.room) {
+          console.log("Returning room " + curSpots[i].location);
+          spot = curSpots[i];
         }
-
-        res.status(200).send(spot);
-
-      })
+      }
+    }).then(function() {
+      if (spot) {
+        console.log("Room found");
+        res.status(201).send(spot);
+      }
+      else {
+        console.log("Room not found");
+        res.status(202).send();
+      }
     });
   });
 
