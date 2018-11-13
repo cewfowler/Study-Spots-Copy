@@ -39,27 +39,34 @@ module.exports = function(app) {
       //TODO: which of these to use
       //var newSpot = req.params.spot;
       var newSpot = new StudySpot(req.params.room);
+      var exists = false;
 
-      /*
+
       SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, spot) {
-        spot.spots.findOne({location: newSpot.location}, function(err, spot) {
-          if (spot) {
-            req.failureFlash("Spot currently exists");
+        /*
+        var roomExists = spot.spots.toBSON();
+        for (i = 0; i < roomExists.length; i++){
+          if (roomExists[i].location == newSpot.location) {
+            //req.flash("Spot currently exists");
+            console.log("Room already exists");
+            exists = true;
             res.status(202).send();
           }
-        })
+        }
       });*/
 
-      SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
-        {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
+      if (!exists) {
+        SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
+          {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
 
-          if (err) {
-            console.log("Error updating building with code " + req.params.bCode);
-            return err;
-          }
+            if (err) {
+              console.log("Error updating building with code " + req.params.bCode);
+              return err;
+            }
 
-          res.status(201).send(spot);
-      });
+            res.status(201).send(spot);
+        });
+      }
 
   });
 
