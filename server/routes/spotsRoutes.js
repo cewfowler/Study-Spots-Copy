@@ -66,9 +66,10 @@ module.exports = function(app) {
               res.status(201).send(spot);
           });
         }
-      else {
-        res.status(202).send();
-      }
+
+        else {
+          res.status(202).send();
+        }
     })
 
   });
@@ -99,6 +100,7 @@ module.exports = function(app) {
 
   // TODO: finish route
   //update number of upvotes/downvotes for a room
+  /*
   app.post('/spots/:bCode/:room', function(req,res) {
     SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
 
@@ -129,5 +131,5 @@ module.exports = function(app) {
 
     });
   });
-
+  */
 }
