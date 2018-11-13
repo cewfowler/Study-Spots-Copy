@@ -48,3 +48,5 @@ class StudySpot {
     return this.availability;
   };
 };
+
+module.exports = StudySpot;
