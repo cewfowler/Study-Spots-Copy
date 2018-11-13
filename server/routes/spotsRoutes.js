@@ -1,7 +1,7 @@
 //var mongoose = require('mongoose'),
 var SpotModel = require('../models/spots.server.model.js'),
     //config = require('../../config/config'),
-    spot = require('../models/spotsClass.js');
+    StudySpot = require('../models/spotsClass.js');
 
 module.exports = function(app) {
 
@@ -27,35 +27,46 @@ module.exports = function(app) {
         res.status(200).send(bldg);
       });
   });
-  
+
 
   // adds a new study spot to bldg with bCode
   // params: bCode,location
   // initializes study spot with no upvotes/downvotes
   //TODO: testing
-  app.post('/spots/:bCode', function(req, res){
+  app.post('/spots/:bCode/:room', function(req, res){
       console.log("Attempting to post new study spot");
 
       //TODO: which of these to use
       //var newSpot = req.params.spot;
-      var newSpot = req.spot;
+      var newSpot = new StudySpot(req.params.room);
+      var exists = false;
 
-      console.log(newSpot);
-      SpotModel.find({bldgCode: req.params.bCode.toUpperCase()},
-        function(err, spotToUpdate) {
 
-          if (err) {
-            console.log("Error updating building with code " + req.params.bCode);
-            return err;
+      SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, spot) {
+        /*
+        var roomExists = spot.spots.toBSON();
+        for (i = 0; i < roomExists.length; i++){
+          if (roomExists[i].location == newSpot.location) {
+            //req.flash("Spot currently exists");
+            console.log("Room already exists");
+            exists = true;
+            res.status(202).send();
           }
+        }*/
+      });
 
-          spotToUpdate.spots.push(newSpot);
-          spotToUpdate.markModified('spots');
-          spotToUpdate.save();
+      if (!exists) {
+        SpotModel.findOneAndUpdate({bldgCode: req.params.bCode.toUpperCase()},
+          {$push: {spots: newSpot}}, {new: true}, function(err, spot) {
 
+            if (err) {
+              console.log("Error updating building with code " + req.params.bCode);
+              return err;
+            }
 
-          res.status(201).send(spotToUpdate);
+            res.status(201).send(spot);
         });
+      };
 
   });
 

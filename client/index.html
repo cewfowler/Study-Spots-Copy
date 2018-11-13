@@ -43,7 +43,7 @@
     <div id="myMenu" class="sidebar" style="width: 0px;">
 
       <!-- Search bar -->
-      <input type="search" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+      <input type="search" id="mySearch" name="q" size="31" placeholder="Search" ng-model="spotQuery">
 
         <!-- Uses the spotsApp from spotController.js etc to find listings -->
 
@@ -75,6 +75,16 @@
                   <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▶</button></td>
               </tr>
 
+              <tr ng-show="spot.triangle=='▼'">
+                <div class="form-popup" id="addForm" >
+                  <form novalidate>
+                    <td></td>
+                    <td><input type="text" ng-model="bldg.roomName" placeholder="Room Name"></td>
+                    <td><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)">Add</button></td>
+                  </form>
+                </div>
+              </tr>
+
               <!-- Show no rooms if rooms are empty-->
               <tr ng-repeat-end ng-show="spot.spots.length == 0 && spot.triangle=='▼'">
                 <td> </td>
@@ -92,6 +102,9 @@
           </table>
 
         </div>
+
+
+
 
 
 

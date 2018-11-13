@@ -14,6 +14,7 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-left: 5px;
+    height: 84%;
     z-index: -1;
   }
   h1 {

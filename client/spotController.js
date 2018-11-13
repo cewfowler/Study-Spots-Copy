@@ -334,10 +334,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       }
 
-
-
+      //Name variable. used to pass the name to search bar in sidemenu
+      nameToPass = feature.properties.bldgName;
       //Sets a variable equal to the array of information that gets passed in from layer
-
       //Creates a new popup based upon the attributes of the clicked marker
       $scope.popup = new mapboxgl.Popup({ offset: [0, -15] })
 
@@ -349,7 +348,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="openMenu()">Add Spot</button>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="passNameToSearchBar(nameToPass)">Add Spot</button>'
         )
         .addTo(map);
 

@@ -79,5 +79,13 @@ function toggleSignup(){
   }
 }
 
+//Passes the buildinng
+function passNameToSearchBar(buildingName) {
+  openMenu();
+  let searchBar = document.getElementById("mySearch");
+  searchBar.value = buildingName;
+  // console.log("This is q " + searchBar);
+}
+
 //TODO: Implement filtering of the markers
 //TODO: Implement more user-settings for map layers (building names, satellite)
