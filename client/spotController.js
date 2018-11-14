@@ -348,7 +348,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="passNameToSearchBar(nameToPass)">Add Spot</button>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="passNameToSearchBar(nameToPass)">Reserve Spot</button>'
         )
         .addTo(map);
 
