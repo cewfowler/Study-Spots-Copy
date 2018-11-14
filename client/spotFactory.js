@@ -7,14 +7,21 @@ angular.module('spots', []).factory('Spots', function($http) {
         return $http.get('/spots');
       },
 
+      getBldg: function(bCode) {
+        return $http.get('/spots/' + bCode);
+      },
+
+      getRoom: function(bCode, roomName) {
+        return $http.get('/spots/' + bCode + '/' + roomName);
+      },
+
       //Basic create methods for the spots url and building code
-      //TODO: adjust this according to spotsRoutes.js file
 	    create: function(bCode, roomName) {
 	      return $http.post('/spots/' + bCode + '/' + roomName);
       },
 
-      update: function(bCode, room/*, updatedRoom*/) {
-	      return $http.post('/spots/' + bCode + '/' + room)//, {spot: updatedRoom});
+      update: function(bCode, room, updatedRoom) {
+	      return $http.put('/spots/' + bCode + '/' + room), {spot: updatedRoom});
       },
      };
      return methods;
