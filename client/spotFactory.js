@@ -7,9 +7,10 @@ angular.module('spots', []).factory('Spots', function($http) {
         return $http.get('/spots');
       },
 
+      /*
       getBldg: function(bCode) {
         return $http.get('/spots/' + bCode);
-      },
+      }, */
 
       getRoom: function(bCode, roomName) {
         return $http.get('/spots/' + bCode + '/' + roomName);

@@ -66,7 +66,7 @@ module.exports = function(app) {
         }
 
         else {
-          res.status(202).send();
+          res.status(302).send();
         }
     })
 
@@ -106,10 +106,11 @@ module.exports = function(app) {
       }
       else {
         console.log("Room not found");
-        res.status(202).send();
+        res.status(302).send();
       }
     });
   });
+
 
   // TODO: finish route
   //update number of upvotes/downvotes for a room
@@ -134,7 +135,7 @@ module.exports = function(app) {
 
       if (!rooms){
         console.log("No rooms found");
-        res.status(202).send();
+        res.status(302).send();
         update = false;
         return;
       }
@@ -159,15 +160,23 @@ module.exports = function(app) {
       if (update) {
         SpotModel.findOneAndUpdate({bldgCode: req.params.bCode}, {$set: {spots: rooms}},
           {new: true}, function(err, updatedSpot) {
-
+            if (err) {
+              console.log(err);
+              res.send();
+              return(err);
+            }
+            else {
+              res.status(201).send(updatedSpot);
+            }
           });
 
       }
 
       else {
         console.log("Unable to update room");
-        res.status(202).send();
+        res.status(302).send();
       }
+      
     });
 
   });
