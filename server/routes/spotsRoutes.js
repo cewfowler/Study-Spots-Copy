@@ -147,7 +147,7 @@ module.exports = function(app) {
           if (rooms[i].location.toLowerCase() = req.params.room.toLowerCase()) {
             //TODO: figure out method to change
             console.log("Swapping old room info with updated info");
-            //rooms[i] = req.body.spot;
+            rooms[i] = req.body.spot;
             return;
           }
 
@@ -176,7 +176,7 @@ module.exports = function(app) {
         console.log("Unable to update room");
         res.status(302).send();
       }
-      
+
     });
 
   });
