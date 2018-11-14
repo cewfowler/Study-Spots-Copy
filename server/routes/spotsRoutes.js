@@ -36,17 +36,15 @@ module.exports = function(app) {
   app.post('/spots/:bCode/:room', function(req, res){
       console.log("Attempting to post new study spot");
 
-      //TODO: which of these to use
-      //var newSpot = req.params.spot;
       var newSpot = new StudySpot(req.params.room);
       var exists = false;
 
-
+      //TODO: Test toLowerCase to check when user enters room with different capitalized letters
       SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, spot) {
 
         var roomExists = spot.spots.toBSON();
         for (i = 0; i < roomExists.length; i++){
-          if (roomExists[i].location == newSpot.location) {
+          if (roomExists[i].location.toLowerCase() == newSpot.location) {
             //req.flash("Spot currently exists");
             console.log("Room already exists");
             exists = true;
@@ -94,8 +92,8 @@ module.exports = function(app) {
       var curSpots = studySpot.spots.toBSON();
 
       for (i = 0; i < curSpots.length; i++){
-
-        if (curSpots[i].location == req.params.room) {
+        //TODO: Test toLowerCase to check when user enters room with different capitalized letters
+        if (curSpots[i].location.toLowerCase() == req.params.room.toLowerCase()) {
           console.log("Returning room " + curSpots[i].location);
           reqSpot = curSpots[i];
         }
@@ -115,36 +113,62 @@ module.exports = function(app) {
 
   // TODO: finish route
   //update number of upvotes/downvotes for a room
-  /*
-  app.post('/spots/:bCode/:room', function(req,res) {
-    SpotModel.find({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
+  app.put('/spots/:bCode/:room', function(req,res) {
+    var rooms;
+    var update = true;
+
+    SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
 
       if (err) {
-        console.log("Error finding bldg with code " + req.params.bCode);
+        console.log(err);
         return err;
       }
-      console.log(studySpot.spots);
 
-      studySpot.spots.find({location: req.params.room}, function(err, spot) {
-        if (err) {
-          console.log("Error finding room " + req.params.room + " in bldg " + req.params.bCode);
-          return err;
+      else if (!studySpot) {
+        console.log("Building not found");
+        return;
+      }
+
+      rooms = studySpot.spots.toBSON();
+    }).then(function() {
+
+      if (!rooms){
+        console.log("No rooms found");
+        res.status(202).send();
+        update = false;
+        return;
+      }
+
+      else {
+
+        for (i = 0; i < rooms.length; i++) {
+
+          if (rooms[i].location.toLowerCase() = req.params.room.toLowerCase()) {
+            //TODO: figure out method to change
+            console.log("Swapping old room info with updated info");
+            //rooms[i] = req.body;
+            return;
+          }
+
+          update = false;
         }
 
-        //TODO: think of ways other than updating from client side and saving
-        // ie. update from server side and then update client
-        // or only call this function once the room menu has closed
-        //spot = req.params.spot
-        spot = req.spot;
+      }
+    }).then(function() {
 
-        //TODO: Do these go below this find method?
-        studySpot.markModified('spots');
-        studySpot.save();
-        res.status(200).send(spot);
+      if (update) {
+        SpotModel.findOneAndUpdate({bldgCode: req.params.bCode}, {$set: {spots: rooms}},
+          {new: true}, function(err, updatedSpot) {
 
-      });
+          });
 
+      }
+
+      else {
+        console.log("Unable to update room");
+        res.status(202).send();
+      }
     });
+
   });
-  */
 }
