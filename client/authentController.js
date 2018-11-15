@@ -1,10 +1,10 @@
-angular.module('spots').controller('authentController', ['$scope',
-  function($scope, Spots){
-    $scope.login = function(){
+angular.module('spots').controller('authentController', ['$scope', 'Users',
+  function($scope, Users){
+    $scope.login = function(email, password){
 
     }
 
-    $scope.signup = function(){
+    $scope.signup = function(email, password){
 
     }
 
