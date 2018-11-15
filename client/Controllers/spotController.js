@@ -50,6 +50,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
+<<<<<<< HEAD
 <<<<<<< HEAD:client/Controllers/spotController.js
 
       for (var i = 0; i < $scope.spots.length; i++) {
@@ -62,6 +63,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         //ADD triangles
         $scope.spots.triangle[i] = "►";
 >>>>>>> initial:client/spotController.js
+=======
+      $scope.spots.triangle = [];
+      for (var i = 0; i < $scope.spots.length; i++) {
+
+        //ADD triangles
+        $scope.spots.triangle[i] = "►";
+>>>>>>> initial
         $scope.spotDetails = $scope.spots[i];
 
         //ADDS testRooms as dummy ROOMS with dummy UPVOTES
@@ -86,8 +94,11 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
+<<<<<<< HEAD
 <<<<<<< HEAD:client/Controllers/spotController.js
 =======
+=======
+>>>>>>> initial
       console.dir($scope.spots_geo);
 >>>>>>> initial:client/spotController.js
 
@@ -236,6 +247,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:client/Controllers/spotController.js
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
@@ -298,6 +310,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //Initializes the map variable from the Map constructor
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
 >>>>>>> initial:client/spotController.js
+=======
+    //INCREMENT DUMMY UPVOTE
+    $scope.upvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes++;
+    }
+
+    //DECREMENT DUMMY UPVOTE
+    $scope.downvote = function(index){
+      $scope.spotDetails = $scope.spots[index];
+      $scope.spotDetails.upvotes--;
+    }
+
+    //Initializes the map variable from the Map constructor
+    //Method that will initialize local points on the map (need to be able to convert JSON data first)
+>>>>>>> initial
 
       //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
