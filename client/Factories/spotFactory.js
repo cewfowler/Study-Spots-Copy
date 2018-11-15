@@ -38,24 +38,6 @@ angular.module('spots', []).factory('Spots', function($http) {
       */
       update: function(bCode, roomName, updatedRoom) {
 	      return $http.put('/spots/' + bCode + '/' + roomName, {spot: updatedRoom});
-      },
-
-      register: function(email, password) {
-        const options = {
-          email: email,
-          password: password
-        };
-
-        return $http.post('/user/register', options);
-      },
-
-      login: function(email, password) {
-        const options = {
-          email: email,
-          password: password
-        };
-
-        return $http.post('/user/login', options);
       }
 
      };
