@@ -45,7 +45,7 @@ module.exports = function(app) {
         var roomExists = spot.spots.toBSON();
         for (i = 0; i < roomExists.length; i++){
           if (roomExists[i].location.toLowerCase() == newSpot.location) {
-            //req.flash("Spot currently exists");
+            req.flash("Spot currently exists");
             console.log("Room already exists");
             exists = true;
             return;

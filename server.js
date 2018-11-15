@@ -3,8 +3,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     mongoose = require('mongoose'),
+    passport = require('passport'),
     config = require('./config/config'),
-    //cookieParser = require('cookie-parser')
+    flash = require('connect-flash'),
+    cookieParser = require('cookie-parser')
     port = process.env.PORT || 8080;
     //var uri;
 
@@ -17,6 +19,17 @@ app.use('/', express.static('client'));
 // api calls should be referenced using '/spots'
 //app.use('/spots/', routes);
 require('./server/routes/spotsRoutes')(app);
+
+//configure passport
+app.use(passport.initialize());
+app.use(passport.session({
+  secret: 'AskmeaboutmyWEINER',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(flash());
+
+require('./server/routes/authRoutes')(app,passport);
 
 app.use('/*', function(req,res){
   res.redirect('/');
