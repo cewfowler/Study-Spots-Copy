@@ -157,12 +157,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       $scope.spotDetails = $scope.spots[index];
 
-      //CHANGE TRIANGLE
       //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
+      if ($scope.active != $scope.spotDetails.bldgCode) {
+        $scope.active = $scope.spotDetails.bldgCode;
       }
-      else{
-        $scope.spotDetails.triangle = "►";
-        $scope.spots.triangle[index] = "►";
+      else {
+        $scope.active = null;
       }
 
 
@@ -245,9 +245,24 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-    //Outline of what the upvote function might look like
-    $scope.upvote = function(roomName){
     //TODO: Need to clarify way so that each building has individual values
+    //Need upvoted / downvoted to be adjusted for each building
+    $scope.upvote = function(room){
+      console.log(room);
+      if(upvoted==false && downvoted==false) {
+        upvoted=true;
+        room.upvotes++;
+      }
+      else if(downvoted==true){
+        downvoted=false;
+        upvoted=true;
+        room.upvotes = room.upvotes +2;
+      }
+      else {
+        upvoted=false;
+        room.upvotes--;
+      }
+      console.log(room);
 
     }
 
