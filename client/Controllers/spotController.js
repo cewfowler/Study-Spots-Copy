@@ -50,26 +50,11 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-<<<<<<< HEAD
-<<<<<<< HEAD:client/Controllers/spotController.js
-
-      for (var i = 0; i < $scope.spots.length; i++) {
-
-        //Adds triangle object to each instance of $scope.spots
-=======
       $scope.spots.triangle = [];
       for (var i = 0; i < $scope.spots.length; i++) {
 
         //ADD triangles
         $scope.spots.triangle[i] = "►";
->>>>>>> initial:client/spotController.js
-=======
-      $scope.spots.triangle = [];
-      for (var i = 0; i < $scope.spots.length; i++) {
-
-        //ADD triangles
-        $scope.spots.triangle[i] = "►";
->>>>>>> initial
         $scope.spotDetails = $scope.spots[i];
 
         //ADDS testRooms as dummy ROOMS with dummy UPVOTES
@@ -94,13 +79,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-<<<<<<< HEAD
-<<<<<<< HEAD:client/Controllers/spotController.js
-=======
-=======
->>>>>>> initial
       console.dir($scope.spots_geo);
->>>>>>> initial:client/spotController.js
 
       map.addSource('spots', {
         type: 'geojson',
@@ -247,54 +226,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD:client/Controllers/spotController.js
-    //TODO: Need to clarify way so that each building has individual values
-    //Need upvoted / downvoted to be adjusted for each building
-    $scope.upvote = function(room){
-      var tempRoom = room;
-      if(upvoted==false && downvoted==false) {
-        upvoted=true;
-        tempRoom.upvotes++;
-      }
-      else if(downvoted==true){
-        downvoted=false;
-        upvoted=true;
-        tempRoom.upvotes = tempRoom.upvotes +2;
-      }
-      else {
-        upvoted=false;
-        tempRoom.upvotes--;
-      }
-      $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
-    }
-
-    //TODO: Need to clarify way so that each building has individual values
-    //Need upvoted / downvoted to be adjusted for each building
-    $scope.downvote = function(room){
-      var tempRoom = room;
-      if(upvoted==false && downvoted==false) {
-        downvoted=true;
-        tempRoom.upvotes--;
-      }
-      else if(upvoted==true){
-        upvoted=false;
-        downvoted=true;
-        tempRoom.upvotes = tempRoom.upvotes -2;
-      }
-      else {
-        downvoted=false;
-        tempRoom.upvotes++;
-      }
-      $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
-    }
-
-    //Outline of what the update function might look like
-    $scope.update = function(bCode, roomName, updatedRoom) {
-
-
-      Spots.update(bCode, roomName, updatedRoom);
-=======
     //INCREMENT DUMMY UPVOTE
     $scope.upvote = function(index){
       $scope.spotDetails = $scope.spots[index];
@@ -309,23 +240,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     //Initializes the map variable from the Map constructor
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
->>>>>>> initial:client/spotController.js
-=======
-    //INCREMENT DUMMY UPVOTE
-    $scope.upvote = function(index){
-      $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.upvotes++;
-    }
-
-    //DECREMENT DUMMY UPVOTE
-    $scope.downvote = function(index){
-      $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.upvotes--;
-    }
-
-    //Initializes the map variable from the Map constructor
-    //Method that will initialize local points on the map (need to be able to convert JSON data first)
->>>>>>> initial
 
       //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
