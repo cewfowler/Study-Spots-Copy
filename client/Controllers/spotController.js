@@ -385,6 +385,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         )
         .addTo(map);
 
+        $scope.spotQuery = $scope.spotDetails.bldgName;
+        $scope.apply();
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
