@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     config = require('../../config/config'),
     Schema = mongoose.Schema,
-    db = mongoose.createConnection(config.spotsdb.uri);
+    db = mongoose.connect(config.spotsdb.uri);
 
 var spotsSchema = new Schema ({
   bldgName: {
