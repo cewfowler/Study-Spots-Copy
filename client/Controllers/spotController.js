@@ -25,12 +25,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //Uses the getAll function from the spotFactory file
     Spots.getAll().then(function (response) {
 
-      //Debug log for the response from the function
-      console.log(response);
-
       //Sets the spots variable in the scope to response.data when pulled
       $scope.spots = response.data;
-      console.log($scope.spots);
 
       /* Format for the data entries
         geoJson:
@@ -84,8 +80,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-
-      console.dir($scope.spots_geo);
 
       map.addSource('spots', {
         type: 'geojson',
@@ -165,12 +159,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.active = null;
       }
 
-
-      console.log($scope.spotDetails);
-
       var arrayFlyTo = $scope.spotDetails.coordinates;
 
-      console.log(arrayFlyTo);
       map.flyTo({
         zoom: 16.5,
         center: [arrayFlyTo[1], arrayFlyTo[0]],
@@ -248,8 +238,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
     $scope.upvote = function(room){
-      console.log(room);
-      console.log($scope.spotDetails.spots.indexOf(room));
       var tempRoom = room;
       if(upvoted==false && downvoted==false) {
         upvoted=true;
@@ -264,16 +252,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         upvoted=false;
         tempRoom.upvotes--;
       }
-      console.log(tempRoom);
       $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
-      console.log($scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)]);
     }
 
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
     $scope.downvote = function(room){
-      console.log(room);
-      console.log($scope.spotDetails.spots.indexOf(room));
       var tempRoom = room;
       if(upvoted==false && downvoted==false) {
         downvoted=true;
@@ -288,9 +272,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         downvoted=false;
         tempRoom.upvotes++;
       }
-      console.log(tempRoom);
       $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
-      console.log($scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)]);
     }
 
     //Outline of what the update function might look like
@@ -327,7 +309,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       if (!features.length) {
         return;
       }
-      // console.log(features);
+
       var feature = features[0];
       $scope.spotDetails = features[0].properties;
       console.log($scope.spotDetails);
@@ -407,7 +389,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
       var flyToPoint = feature.geometry.coordinates;
-      console.log(flyToPoint);
 
       //Checks if the menu is open or not and adjust the fly/panover properly
       if (menu.style.width != "0px") {
