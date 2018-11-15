@@ -19,6 +19,10 @@ var map = new mapboxgl.Map({
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function ($scope, Spots) {
 
+    let upvoted = false;
+    let downvoted = false;
+
+
     //Uses the getAll function from the spotFactory file
     Spots.getAll().then(function (response) {
 
@@ -55,14 +59,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         ]
       }
 
-      $scope.spots.triangle = [];
-
       for (var i = 0; i < $scope.spots.length; i++) {
 
         //Adds triangle object to each instance of $scope.spots
-        $scope.spots.triangle[i] = "►";
         $scope.spotDetails = $scope.spots[i];
-        $scope.spotDetails.triangle = $scope.spots.triangle[i];
 
         //$scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
@@ -157,17 +157,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
       $scope.spotDetails = $scope.spots[index];
 
-      //CHANGE TRIANGLE
-      $scope.spotDetails.rooms = $scope.rooms;
-      $scope.spotDetails.triangle = $scope.spots.triangle[index];
-
-      if ($scope.spots.triangle[index] == "►"){
-        $scope.spotDetails.triangle = "▼";
-        $scope.spots.triangle[index] = "▼";
+      //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
+      if ($scope.active != $scope.spotDetails.bldgCode) {
+        $scope.active = $scope.spotDetails.bldgCode;
       }
-      else{
-        $scope.spotDetails.triangle = "►";
-        $scope.spots.triangle[index] = "►";
+      else {
+        $scope.active = null;
       }
 
 
@@ -250,16 +245,46 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-    //Outline of what the upvote function might look like
-    $scope.upvote = function(roomName){
-      $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.spots.indexOf(roomName).upvotes++;
+    //TODO: Need to clarify way so that each building has individual values
+    //Need upvoted / downvoted to be adjusted for each building
+    $scope.upvote = function(room){
+      console.log(room);
+      if(upvoted==false && downvoted==false) {
+        upvoted=true;
+        room.upvotes++;
+      }
+      else if(downvoted==true){
+        downvoted=false;
+        upvoted=true;
+        room.upvotes = room.upvotes +2;
+      }
+      else {
+        upvoted=false;
+        room.upvotes--;
+      }
+      console.log(room);
+
     }
 
-    //Outline of what the downvote function might look like
-    $scope.downvote = function(roomName){
-      $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.spots.indexOf(roomName).downvotes++;
+    //TODO: Need to clarify way so that each building has individual values
+    //Need upvoted / downvoted to be adjusted for each building
+    $scope.downvote = function(room){
+      console.log(room);
+      if(upvoted==false && downvoted==false) {
+        downvoted=true;
+        room.upvotes--;
+      }
+      else if(upvoted==true){
+        upvoted=false;
+        downvoted=true;
+        room.upvotes = room.upvotes -2;
+      }
+      else {
+        downvoted=false;
+        room.upvotes++;
+      }
+      console.log(room);
+
     }
 
     //Outline of what the update function might look like

@@ -13,6 +13,8 @@ angular.module('spots', []).factory('Spots', function($http) {
       },
 
       /*
+      TODO: Implement a way for the showDetails of the building to refresh after adding a listing
+
       //Retrieval method that allows the information for a building to be recovered from the code
       getBldg: function(bCode) {
         return $http.get('/spots/' + bCode);

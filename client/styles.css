@@ -150,8 +150,8 @@ body {
 .upvoteButton{
 font-size: 10px;
 cursor: pointer;
-background-color: none;
-color: white;
+background-color: white;
+color: black;
 padding: 5px 5px;
 border: none;
 
@@ -166,4 +166,8 @@ background-color: #DDDDD5;
 
 .upvote-num{
   margin-left:3%;
+}
+
+.fa-caret-right, .fa-caret-down, .fa-caret-up{
+  color: #000000;
 }
