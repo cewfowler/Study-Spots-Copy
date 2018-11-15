@@ -24,7 +24,9 @@ module.exports = function(app, passport) {
   });
 
   app.get('/user', isLoggedIn, function(req, res) {
+    Users.findOne({email: req.user.email}, function(err, user) {
 
+    });
   })
 
 }

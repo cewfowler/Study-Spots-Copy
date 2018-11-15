@@ -141,7 +141,7 @@
         <form novalidate>
           <br><input ng-model="email" type="text" placeholder="Email"><br>
           <br><input ng-model="password" type="text" placeholder="Password"><br>
-          <br><button class="openbtn" id="addbutton" ng-click="signup()" style="margin-left:25%">Sign Up</button>
+          <br><button class="openbtn" id="addbutton" ng-click="signup(email, password)" style="margin-left:25%">Sign Up</button>
         </form>
 
         <!-- End of sign-in form div -->
@@ -171,9 +171,9 @@
 
   <!-- Initialization of local .js files for use in the project-->
   <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="spotFactory.js"></script>
-  <script type="text/javascript" src="spotController.js"></script>
-  <script type="text/javascript" src="authentController.js"></script>
+  <script type="text/javascript" src="Factories/spotFactory.js"></script>
+  <script type="text/javascript" src="Controllers/spotController.js"></script>
+  <script type="text/javascript" src="Controllers/authentController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
 
   <!-- End of body tag -->
