@@ -262,6 +262,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     });
     map.addControl(locationTracker, 'bottom-right');
 
+
+
+
+    var popupButton 
+
+
+
+
     //Event that checks for a click on the buildings layer
     map.on('click', 'spots', function (e) {
 
