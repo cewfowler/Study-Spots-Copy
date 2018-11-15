@@ -22,7 +22,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     let upvoted = false;
     let downvoted = false;
 
-
     //Uses the getAll function from the spotFactory file
     Spots.getAll().then(function (response) {
 
@@ -156,6 +155,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     $scope.showDetails = function (index) {
 
       $scope.spotDetails = $scope.spots[index];
+      $scope.updatedRoom = $scope.spotDetails;
 
       //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
       if ($scope.active != $scope.spotDetails.bldgCode) {
@@ -249,47 +249,55 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //Need upvoted / downvoted to be adjusted for each building
     $scope.upvote = function(room){
       console.log(room);
+      console.log($scope.spotDetails.spots.indexOf(room));
+      var tempRoom = room;
       if(upvoted==false && downvoted==false) {
         upvoted=true;
-        room.upvotes++;
+        tempRoom.upvotes++;
       }
       else if(downvoted==true){
         downvoted=false;
         upvoted=true;
-        room.upvotes = room.upvotes +2;
+        tempRoom.upvotes = tempRoom.upvotes +2;
       }
       else {
         upvoted=false;
-        room.upvotes--;
+        tempRoom.upvotes--;
       }
-      console.log(room);
-
+      console.log(tempRoom);
+      $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
+      console.log($scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)]);
     }
 
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
     $scope.downvote = function(room){
       console.log(room);
+      console.log($scope.spotDetails.spots.indexOf(room));
+      var tempRoom = room;
       if(upvoted==false && downvoted==false) {
         downvoted=true;
-        room.upvotes--;
+        tempRoom.upvotes--;
       }
       else if(upvoted==true){
         upvoted=false;
         downvoted=true;
-        room.upvotes = room.upvotes -2;
+        tempRoom.upvotes = tempRoom.upvotes -2;
       }
       else {
         downvoted=false;
-        room.upvotes++;
+        tempRoom.upvotes++;
       }
-      console.log(room);
-
+      console.log(tempRoom);
+      $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
+      console.log($scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)]);
     }
 
     //Outline of what the update function might look like
-    $scope.update = function(bCode, room, updatedRoom) {
-      Spots.update(bCode, room, updatedRoom);
+    $scope.update = function(bCode, roomName, updatedRoom) {
+
+
+      Spots.update(bCode, roomName, updatedRoom);
 
     }
 
