@@ -1,25 +1,22 @@
+//Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWhvY2hiZXJnZXIiLCJhIjoiY2puMHc3YzhxMDBxNjN4cjRiZnhydHBxOCJ9.raEmNfLBC69cKpMn-aqznA';
 
-/*Creates basic map object bound to 'map' id in index.html
-  Uses basic styling found at that link
-  Centers around marston/turlington Hall
-  Basic zoom start level
-*/
-//  TODO: Implement more stylings for the map for users to interact with
+//handles if the image does not exist in .jpg OR .JPG extension. First will try in the .JPG and then revert to fallback img.
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/adamhochberger/cjn0w9i1o97y12rp63jwo2j1k', //basic stylesheet
   center: [-82.346109, 29.648578], // starting position [lng, lat]
+  // hash: true,
   zoom: 16.5 // starting zoom
   //29.648578, -82.346109 for Gainesville lat/lng, switch for center
 });
 
 
-//Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
   function ($scope, Spots) {
 
     //Uses the getAll function from the spotFactory file
+    ////////TODO: Ensure this works properly with the spotsRouters
     Spots.getAll().then(function (response) {
 
       //Debug log for the response from the function
@@ -54,17 +51,16 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         "features": [
         ]
       }
-
       $scope.spots.triangle = [];
-
       for (var i = 0; i < $scope.spots.length; i++) {
 
-        //Adds triangle object to each instance of $scope.spots
+        //ADD triangles
         $scope.spots.triangle[i] = "►";
         $scope.spotDetails = $scope.spots[i];
         $scope.spotDetails.triangle = $scope.spots.triangle[i];
 
-        //$scope.spotDetails.spots = testRooms;
+        //ADDS testRooms as dummy ROOMS with dummy UPVOTES
+      //  $scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
 
         var obj = $scope.spots[i];
@@ -85,7 +81,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-
       console.dir($scope.spots_geo);
 
       map.addSource('spots', {
@@ -110,30 +105,27 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       console.log('Unable to retrieve listings:', error);
     });
 
-    //Takes in a basic input value and sets that for the ng-repeat table to list the rooms by
-    //If the same value is clicked, then the option is reversed
     $scope.sort_by = function(inputValue) {
 
       //Checks to see if the current value that it is sorting by is being clicked
-      if ($scope.sortingOrder == inputValue) {
-
+      if ($scope.sortingOrder == inputValue)
         //Reverses the ordering if the inputValue has been clicked
         $scope.reverse = !$scope.reverse;
-      }
 
       //Sets sort value to the input value
       $scope.sortingOrder = inputValue;
     }
 
-    //Outline of what the claimSpot function might look like
     $scope.claimSpot = function(bCode, roomName) {
       console.log("Claiming " + roomName + " at building with code " + bCode);
     }
 
     //Function that will add a spot from bldgCode
     $scope.add = function (bCode, roomName) {
-
       //Debugging for index of passed in spot
+
+      //able to pull index properly from menu bar on the left sidebar
+      //TODO: fix issues with pulling bldg code from map
       console.log(bCode);
       console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
       Spots.create(bCode, roomName).then(function(response) {
@@ -147,12 +139,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     }
 
     //performs the functionality of sidebar locating buidings an instantiating a popup
-    //Also allows the triangles to change depending on the status of the menu_toggle
-
-    /*TODO: Optimize the icon flipping per the secondary branch that was attempted to be merged before
-      Also attempt to use fa-icons to save space on indexing and ensure that the
-      it is easy to manipulate the expansions for Chris' updateRoom
-      */
     $scope.showDetails = function (index) {
 
       $scope.spotDetails = $scope.spots[index];
@@ -181,9 +167,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         center: [arrayFlyTo[1], arrayFlyTo[0]],
         speed: 0.8,
         offset: [-255, 150],
-      });
 
-      //Performs picture get for the corresponding point that has been clicked
+      })
+
       var pictureURL = "https://campusmap.ufl.edu/library/photos/stars/";
 
       //function that creates the URL
@@ -240,7 +226,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       if (checkPopup[0]) checkPopup[0].remove();
 
 
-      //Creates popup object without the add spot function (since these will have been clicked from the menu)
+      //These popups are different from the popups found on the map... they dont include the addSpot button
       var popups = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat([arrayFlyTo[1], arrayFlyTo[0]])
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
@@ -250,26 +236,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       popups.addTo(map);
     }
 
-    //Outline of what the upvote function might look like
-    $scope.upvote = function(roomName){
+    //INCREMENT DUMMY UPVOTE
+    $scope.upvote = function(index){
       $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.spots.indexOf(roomName).upvotes++;
+      $scope.spotDetails.upvotes++;
     }
 
-    //Outline of what the downvote function might look like
-    $scope.downvote = function(roomName){
+    //DECREMENT DUMMY UPVOTE
+    $scope.downvote = function(index){
       $scope.spotDetails = $scope.spots[index];
-      $scope.spotDetails.spots.indexOf(roomName).downvotes++;
+      $scope.spotDetails.upvotes--;
     }
 
-    //Outline of what the update function might look like
-    $scope.update = function(bCode, room, updatedRoom) {
-      Spots.update(bCode, room, updatedRoom);
+    //Initializes the map variable from the Map constructor
+    //Method that will initialize local points on the map (need to be able to convert JSON data first)
 
-    }
-
-
-    //Initalizes a basic zoom control for the Mapbox
+      //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
@@ -399,7 +381,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       map.getCanvas().style.cursor = 'pointer';
     });
 
-
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'spots', function () {
       map.getCanvas().style.cursor = '';
@@ -409,7 +390,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
 
 
-//Function that returns what pictures to use for an error
+
 function onError(img) {
   delete img.onerror;
   var n = img.src;
