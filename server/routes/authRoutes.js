@@ -4,7 +4,7 @@ var Users = require('../models/users.server.model.js'),
 
 module.exports = function(app, passport) {
 
-  app.get('/user/login', passport.authenticate('local-login', {
+  app.post('/user/login', passport.authenticate('local-login', {
     failureFlash: true
   }), function(req, res) {
 
@@ -23,4 +23,15 @@ module.exports = function(app, passport) {
     res.status(302).redirect('/');
   });
 
+  app.get('/user', isLoggedIn, function(req, res) {
+
+  })
+
+}
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()){
+    return next();
+  }
+  req.flash("Please login.");
 }
