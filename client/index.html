@@ -58,10 +58,10 @@
 
         <!-- Headers for the tables -->
         <th>   </th>
-        <th ng-click="sort_by('bldgCode')" >Bld</th>
+        <th ng-click="sort_by('bldgCode')">Bld</th>
         <th ng-click="sort_by('bldgName')">Name</th>
 
-        <!-- Creates the table format by pulling the response.data from $scope.spots -->
+        <!-- Creates the table of listings from $scope.spots -->
         <!-- Allows elements from ng-repeat to be sorted by sortingOrder paramter -->
         <!-- Runs showDetails method when any spot is clicked -->
 
@@ -78,8 +78,8 @@
           <!-- show rooms when triangle points down -->
           <tr ng-repeat="room in spot.spots" ng-show="spot.triangle=='▼'">
             <td> </td>
-            <td ><div style="height:25px;"></div>{{room.location}}</td>
-            <td ><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">▲</button>
+            <td><div style="height:25px;"></div>{{room.location}}</td>
+            <td><button class="upvoteButton" ng-click="downvote(spots.indexOf(spot))">▲</button>
               <div class="upvote-num">{{ room.upvotes }}</div>
               <button class="upvoteButton" ng-click="upvote(spots.indexOf(spot))">▼</button></td>
           </tr>
