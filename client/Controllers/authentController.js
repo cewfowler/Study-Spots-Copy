@@ -8,4 +8,4 @@ angular.module('spots').controller('authentController', ['$scope', 'Users',
       Users.register(email, password);
     }
 
-  }])
+  }]);
