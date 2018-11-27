@@ -6,7 +6,8 @@ var express = require('express'),
     passport = require('passport'),
     config = require('./config/config'),
     flash = require('connect-flash'),
-    cookieParser = require('cookie-parser')
+    session = require('express-session'),
+    cookieParser = require('cookie-parser'),
     port = process.env.PORT || 8080;
     //var uri;
 
@@ -20,13 +21,17 @@ app.use('/', express.static('client'));
 //app.use('/spots/', routes);
 require('./server/routes/spotsRoutes')(app);
 
-//configure passport
-app.use(passport.initialize());
-app.use(passport.session({
+
+app.use(session({
   secret: 'AskmeaboutmyWEINER',
   resave: true,
   saveUninitialized: true
 }));
+
+//configure passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 
 require('./server/routes/authRoutes')(app,passport);

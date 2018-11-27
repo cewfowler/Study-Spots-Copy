@@ -36,4 +36,5 @@ function isLoggedIn(req, res, next) {
     return next();
   }
   req.flash("Please login.");
+  res.redirect('/');
 }
