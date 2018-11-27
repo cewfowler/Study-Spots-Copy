@@ -420,8 +420,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
   }]);
 
-
-
 //Function that returns what pictures to use for an error
 function onError(img) {
   delete img.onerror;
@@ -432,4 +430,17 @@ function onError(img) {
     img.height = 200;
     img.src = "images/gator404.png"
   }
+}
+
+//automatically searches building on click from within map
+function nameToSidebar(name) {
+  openMenu();
+  var scope = angular.element($("#mySearch")).scope();
+  scope.$apply(function () {
+    scope.spotQuery = name;
+  })
+  // var scope2 = angular.element($("")).scope();
+  // scope2.$apply(function () {
+  //   //perform stuff
+  // })
 }
