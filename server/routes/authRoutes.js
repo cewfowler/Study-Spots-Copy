@@ -17,6 +17,7 @@ module.exports = function(app, passport) {
     failureFlash: true
   }), function(req, res) {
     console.log("here + ");
+    res.status(302).send();
   });
 
   app.get('/user/logout' , function(req, res) {

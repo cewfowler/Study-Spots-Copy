@@ -28,16 +28,14 @@ var UsersSchema = new Schema ({
 
   //keeps track of upvoted rooms
   upvoted: {
-    rooms: {
-      type: [String]
-    }
+    bldgCodes: [String],
+    rooms: [String]
   },
 
   //keeps track of downvotes rooms
   downvoted: {
-    rooms: {
-      type: [String]
-    }
+    bldgCodes: [String],
+    rooms: [String]
   },
 
   createdAt: {

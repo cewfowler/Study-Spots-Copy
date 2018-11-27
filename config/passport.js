@@ -3,7 +3,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var Users = require('../server/models/users.server.model');
 
-var User = require('../server/models/users.server.model.js');
 
 module.exports = function(passport) {
 
@@ -12,7 +11,7 @@ module.exports = function(passport) {
   });
 
   passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
+    Users.findById(id, function(err, user) {
       done(err, user);
     })
   });
@@ -56,7 +55,6 @@ module.exports = function(passport) {
   },
 
   function(req, email, password, done) {
-    console.log('inside local-signup');
     if (email) {
       email = email.toLowerCase();
     }
@@ -67,25 +65,29 @@ module.exports = function(passport) {
       if (!req.user) {
         console.log("User is not in session");
 
-        Users.find({email: email}, function(err, user) {
+        Users.findOne({email: email}, function(err, user) {
+          console.log("inside find + " + user);
           if (err) {
             return done(err);
           }
 
-          if (user) {
+          if (user && false) {
+            console.log("Found user");
             return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
           }
 
           else {
             console.log("Creating new user");
 
-            var newUser = new User();
+            var newUser = new Users();
             newUser.email = email;
             newUser.password = newUser.setPassword(password);
-            newUser.save();
+            Users.save(newUser);
           }
 
-        })
+        });
+
+
       }
     })
   })
