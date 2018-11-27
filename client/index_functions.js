@@ -44,39 +44,18 @@ function toggleForm() {
   }
 }
 
-//toggles signup form
-function toggleLogin(){
-  //open login form
-  if (document.getElementById("loginForm").style.display =="none"){
-    //make sure both login form and signup form arent open at
-    //the same time
-    if (document.getElementById("signupForm").style.display == "block"){
-          document.getElementById("signupForm").style.display = "none";
+// Get the modal
+var modal = document.getElementById('login-id');
+var modal2 = document.getElementById('signin-id');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-    document.getElementById("loginForm").style.display = "block";
-  }
-
-  //close login form
-  else{
-    document.getElementById("loginForm").style.display = "none";
-  }
-}
-
-//toggles login form
-function toggleSignup(){
-  //Open signup form
-  if (document.getElementById("signupForm").style.display == "none"){
-    //Close login if opened
-    if (document.getElementById("loginForm").style.display == "block"){
-      document.getElementById("loginForm").style.display = "none";
+    if (event.target == modal2) {
+      modal2.style.display = "none";
     }
-    document.getElementById("signupForm").style.display = "block";
-  }
-
-  //Close signup form
-  else{
-    document.getElementById("signupForm").style.display = "none";
-  }
 }
 
 //Passes the buildinng
