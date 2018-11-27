@@ -1,4 +1,4 @@
-angular.module('spots').controller('authentController', ['$scope', 'Users',
+angular.module('spots').controller('AuthenticationController', ['$scope', 'Users',
   function($scope, Users){
     $scope.login = function(email, password){
       Users.login(email, password);

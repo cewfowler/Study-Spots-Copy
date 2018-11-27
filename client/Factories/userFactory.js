@@ -1,5 +1,5 @@
-//Initalizes a factory for the ng-app "spots" with the name "Spots"
-angular.module('spots', []).factory('Users', function($http) {
+//Initalizes a factory for the ng-app "spots" with the name "Users"
+angular.module('spots').factory('Users', function($http) {
   var methods = {
     register: function(email, password) {
       const options = {
