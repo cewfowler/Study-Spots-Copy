@@ -58,7 +58,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         $scope.spotDetails = $scope.spots[i];
 
         //ADDS testRooms as dummy ROOMS with dummy UPVOTES
-      //  $scope.spotDetails.spots = testRooms;
+        //  $scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
 
         var obj = $scope.spots[i];
@@ -103,7 +103,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       console.log('Unable to retrieve listings:', error);
     });
 
-    $scope.sort_by = function(inputValue) {
+    $scope.sort_by = function (inputValue) {
 
       //Checks to see if the current value that it is sorting by is being clicked
       if ($scope.sortingOrder == inputValue)
@@ -114,7 +114,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       $scope.sortingOrder = inputValue;
     }
 
-    $scope.claimSpot = function(bCode, roomName) {
+    $scope.claimSpot = function (bCode, roomName) {
       console.log("Claiming " + roomName + " at building with code " + bCode);
     }
 
@@ -126,7 +126,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //TODO: fix issues with pulling bldg code from map
       console.log(bCode);
       console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
-      Spots.create(bCode, roomName).then(function(response) {
+      Spots.create(bCode, roomName).then(function (response) {
         console.log("Woo: " + response);
       }, function (error) {
         console.log('Unable to create room:', error);
@@ -222,18 +222,18 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-           )
+        )
       popups.addTo(map);
     }
 
     //INCREMENT DUMMY UPVOTE
-    $scope.upvote = function(index){
+    $scope.upvote = function (index) {
       $scope.spotDetails = $scope.spots[index];
       $scope.spotDetails.upvotes++;
     }
 
     //DECREMENT DUMMY UPVOTE
-    $scope.downvote = function(index){
+    $scope.downvote = function (index) {
       $scope.spotDetails = $scope.spots[index];
       $scope.spotDetails.upvotes--;
     }
@@ -241,14 +241,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //Initializes the map variable from the Map constructor
     //Method that will initialize local points on the map (need to be able to convert JSON data first)
 
-      //Initalizes a basic zoom control for the Mapbox
+    //Initalizes a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
     //Initalizes a location finder for the Mapbox
     var locationTracker = new mapboxgl.GeolocateControl({
       positionOptions: {
-          enableHighAccuracy: true
+        enableHighAccuracy: true
       },
       showUserLocation: true
     });
@@ -338,12 +338,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="passNameToSearchBar(nameToPass)">Reserve Spot</button>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="openMenu()">Reserve Spot</button>'
+          //onclick="passNameToSearchBar(nameToPass)"
         )
         .addTo(map);
 
-        $scope.spotQuery = $scope.spotDetails.bldgName;
-        $scope.apply();
+      //automatically searches building on click from within map
+      $scope.spotQuery = nameToPass;
+      $scope.$apply();
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
@@ -364,6 +366,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
           offset: [0, 150],
         });
       }
+
     });
 
 
@@ -377,9 +380,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       map.getCanvas().style.cursor = '';
     });
 
+
   }]);
-
-
 
 
 function onError(img) {

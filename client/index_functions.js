@@ -45,46 +45,38 @@ function toggleForm() {
 }
 
 //toggles signup form
-function toggleLogin(){
+function toggleLogin() {
   //open login form
-  if (document.getElementById("loginForm").style.display =="none"){
+  if (document.getElementById("loginForm").style.display == "none") {
     //make sure both login form and signup form arent open at
     //the same time
-    if (document.getElementById("signupForm").style.display == "block"){
-          document.getElementById("signupForm").style.display = "none";
+    if (document.getElementById("signupForm").style.display == "block") {
+      document.getElementById("signupForm").style.display = "none";
     }
     document.getElementById("loginForm").style.display = "block";
   }
 
   //close login form
-  else{
+  else {
     document.getElementById("loginForm").style.display = "none";
   }
 }
 
 //toggles login form
-function toggleSignup(){
+function toggleSignup() {
   //Open signup form
-  if (document.getElementById("signupForm").style.display == "none"){
+  if (document.getElementById("signupForm").style.display == "none") {
     //Close login if opened
-    if (document.getElementById("loginForm").style.display == "block"){
+    if (document.getElementById("loginForm").style.display == "block") {
       document.getElementById("loginForm").style.display = "none";
     }
     document.getElementById("signupForm").style.display = "block";
   }
 
   //Close signup form
-  else{
+  else {
     document.getElementById("signupForm").style.display = "none";
   }
-}
-
-//Passes the buildinng
-function passNameToSearchBar(buildingName) {
-  openMenu();
-  let searchBar = document.getElementById("mySearch");
-  searchBar.value = buildingName;
-  // console.log("This is q " + searchBar);
 }
 
 //TODO: Implement filtering of the markers
