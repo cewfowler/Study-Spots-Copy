@@ -145,10 +145,10 @@
     <div ng-controller="AuthenticationController">
       <!-- SIGN UP POPUP -->
       <div class="sign-form" id="signupForm">
-        <form novalidate>
-          <br><input ng-model="email" type="text" placeholder="Email"><br>
-          <br><input ng-model="password" type="text" placeholder="Password"><br>
-          <br><button class="openbtn" id="addbutton" ng-click="signup(email, password)" style="margin-left:25%">Sign Up</button>
+        <form action="/user/register" method="post">
+          <br><input name="email" type="email" placeholder="Email" required><br>
+          <br><input name="password" type="password" placeholder="Password" required><br>
+          <br><button class="openbtn" id="addbutton" type="submit" style="margin-left:25%">Sign Up</button>
         </form>
 
         <!-- End of sign-in form div -->

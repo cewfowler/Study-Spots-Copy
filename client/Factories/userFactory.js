@@ -2,21 +2,28 @@
 angular.module('spots').factory('Users', function($http) {
   var methods = {
     register: function(email, password) {
-      const options = {
+      /*
+      const data = {
         email: email,
         password: password
-      };
+      };*/
 
-      return $http.post('/user/register', options);
+      return $http({
+        url: "/user/register",
+        method: "POST",
+        email: email,
+        password: password
+      });
+      
     },
 
     login: function(email, password) {
-      const options = {
+      const data = {
         email: email,
         password: password
       };
 
-      return $http.post('/user/login', options);
+      return $http.post('/user/login', data);
     }
   };
   return methods;

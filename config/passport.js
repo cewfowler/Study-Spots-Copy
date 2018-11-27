@@ -3,7 +3,19 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var Users = require('../server/models/users.server.model');
 
+var User = require('../server/models/users.server.model.js');
+
 module.exports = function(passport) {
+
+  passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    })
+  });
 
   //passport local authentication strategy
   passport.use('local-login', new LocalStrategy({
@@ -42,7 +54,9 @@ module.exports = function(passport) {
     passwordField: 'password',
     passReqToCallback: true
   },
+
   function(req, email, password, done) {
+    console.log('inside local-signup');
     if (email) {
       email = email.toLowerCase();
     }
@@ -77,19 +91,4 @@ module.exports = function(passport) {
   })
   );
 
-}
-
-var User = require('../server/models/users.server.model.js');
-
-module.exports = function(passport) {
-
-  passport.serializeUser(function(user, done) {
-    done(null, user.id);
-  });
-
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    })
-  })
 }

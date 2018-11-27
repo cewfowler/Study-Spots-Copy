@@ -17,9 +17,14 @@ app.use(morgan('dev'));
 //serve client
 app.use('/', express.static('client'));
 
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json()); // get information from html forms
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // api calls should be referenced using '/spots'
 //app.use('/spots/', routes);
 require('./server/routes/spotsRoutes')(app);
+require('./config/passport.js')(passport);
 
 
 app.use(session({
