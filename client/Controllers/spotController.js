@@ -338,14 +338,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="openMenu()">Reserve Spot</button>'
-          //onclick="passNameToSearchBar(nameToPass)"
+          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(nameToPass)" ondblclick="closeMenu()">Reserve Spot</button>'
         )
         .addTo(map);
-
-      //automatically searches building on click from within map
-      $scope.spotQuery = nameToPass;
-      $scope.$apply();
 
       //Finds the menu documentElement
       var menu = document.getElementById("myMenu");
@@ -393,4 +388,19 @@ function onError(img) {
     img.height = 200;
     img.src = "images/gator404.png"
   }
+}
+
+//automatically searches building on click from within map
+function nameToSidebar(name) {
+  
+  openMenu();
+  var scope = angular.element($("#mySearch")).scope();
+  scope.$apply(function () {
+    scope.spotQuery = name;
+  })
+
+  // var scope2 = angular.element($("")).scope();
+  // scope2.$apply(function () {
+  //   //perform stuff
+  // })
 }
