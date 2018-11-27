@@ -63,7 +63,11 @@ UsersSchema.methods.setPassword = function(password) {
 //check user entered password against password in db (using hashing)
 UsersSchema.methods.validatePassword = function(password) {
   const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
-  return this.hash === hash;
+  if (this.password === hash) {
+    this.lastLogin = Date.now();
+    return true;
+  }
+  return false;
 }
 
 UsersSchema.methods.generateJWT = function() {

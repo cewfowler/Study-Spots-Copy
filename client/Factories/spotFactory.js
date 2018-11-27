@@ -1,5 +1,5 @@
 //Initalizes a factory for the ng-app "spots" with the name "Spots"
-angular.module('spots', []).factory('Spots', function($http) {
+angular.module('spots').factory('Spots', function($http) {
 
   //Methods variable for the SpotFactory
   var methods = {

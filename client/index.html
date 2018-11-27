@@ -70,7 +70,7 @@
           <!-- Runs showDetails method when any spot is clicked -->
 
           <tr id="listingRows" ng-repeat-start="spot in spots | orderBy:sortingOrder:reverse
-            | filter: spotQuery as x" ng-click="showDetails(spots.indexOf(spot))">
+            | filter: spotQuery as x" ng-click="showDetails(spots.indexOf(spot))" >
 
             <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
             <th>
@@ -142,13 +142,13 @@
     </div>
 
     <!-- Controller for authentication of user -->
-    <div ng-controller="authentController">
+    <div ng-controller="AuthenticationController">
       <!-- SIGN UP POPUP -->
       <div class="sign-form" id="signupForm">
-        <form novalidate>
-          <br><input ng-model="email" type="text" placeholder="Email"><br>
-          <br><input ng-model="password" type="text" placeholder="Password"><br>
-          <br><button class="openbtn" id="addbutton" ng-click="signup(email, password)" style="margin-left:25%">Sign Up</button>
+        <form action="/user/register" method="post">
+          <br><input name="email" type="email" placeholder="Email" required><br>
+          <br><input name="password" type="password" placeholder="Password" required><br>
+          <br><button class="openbtn" id="addbutton" type="submit" style="margin-left:25%">Sign Up</button>
         </form>
 
         <!-- End of sign-in form div -->
@@ -168,7 +168,7 @@
     <!-- End of authentController div -->
     </div>
 
-  <!-- End of ng-controller and ng-app div -->
+  <!-- End of and ng-app div -->
   </div>
 
 
@@ -179,9 +179,9 @@
   <!-- Initialization of local .js files for use in the project-->
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="Factories/userFactory.js"></script>
+  <script type="text/javascript" src="Controllers/authentController.js"></script>
   <script type="text/javascript" src="Factories/spotFactory.js"></script>
   <script type="text/javascript" src="Controllers/spotController.js"></script>
-  <script type="text/javascript" src="Controllers/authentController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
 
   <!-- End of body tag -->

@@ -12,9 +12,11 @@ module.exports = function(app, passport) {
 
 
   app.post('/user/register', passport.authenticate('local-signup', {
+    successRedirect : '/user', // redirect to the secure profile section
+    //failureRedirect : '/', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
-
+    console.log("here + ");
   });
 
   app.get('/user/logout' , function(req, res) {
@@ -36,4 +38,5 @@ function isLoggedIn(req, res, next) {
     return next();
   }
   req.flash("Please login.");
+  res.redirect('/');
 }
