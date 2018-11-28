@@ -58,12 +58,21 @@ window.onclick = function(event) {
     }
 }
 
-//Passes the buildinng
-function passNameToSearchBar(buildingName) {
+//automatically searches building on click from within map
+function nameToSidebar(name) {
   openMenu();
-  let searchBar = document.getElementById("mySearch");
-  searchBar.value = buildingName;
-  // console.log("This is q " + searchBar);
+  var scope = angular.element($("#mySearch")).scope();
+  scope.$apply(function () {
+    scope.spotQuery = name;
+  })
+}
+
+//button to clear search box
+function clearSearchBox() {
+  var scope = angular.element($("#mySearch")).scope();
+  scope.$apply(function () {
+    scope.spotQuery = "";
+  })
 }
 
 //TODO: Implement filtering of the markers
