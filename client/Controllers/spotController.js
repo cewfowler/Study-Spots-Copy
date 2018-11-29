@@ -61,8 +61,42 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
         //$scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
-
         var obj = $scope.spots[i];
+        temp_color = "#5e5353";
+
+        if(String(obj.bldgName).includes("Hall")) {
+          temp_color = "#4169e1";//royal blue
+        }
+
+        if(String(obj.bldgName).includes("Library")) {
+          temp_color = "#00ced1";//dark turquoise
+        }
+
+        if(String(obj.bldgName).includes("Greenhouse")) {
+          temp_color = "#006400";//dark green
+        }
+
+        if(String(obj.bldgName).includes("Sorority")) {
+          temp_color = "#ff69b4";//hot pink
+        }
+
+        if(String(obj.bldgName).includes("Fraternity")) {
+          temp_color = "#b22222";//firebrick
+        }
+
+        if(String(obj.bldgName).includes("Reitz")) {
+          temp_color = "#ff4500";//red orange
+        }
+
+        if(String(obj.bldgName).includes("Recreation") || String(obj.bldgName).includes("Norman Gym") || String(obj.bldgName).includes("Stadium") || String(obj.bldgName).includes("Tennis") || String(obj.bldgName).includes("Basketball")) {
+          temp_color = "#ffff00";//yellow
+        }
+
+        // if(String(obj.bldgName).includes("Shands")) {
+        //   temp_color = "#d2691e";//chocolate
+        // }
+
+
         var feature = {
           "type": "Feature",
           "properties": {
@@ -71,7 +105,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
-            "spots": obj.spots
+            "spots": obj.spots,
+            "color": temp_color
           },
           "geometry": {
             "type": "Point",
@@ -80,7 +115,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-
+      console.log($scope.spots_geo)
       map.addSource('spots', {
         type: 'geojson',
         data: $scope.spots_geo,
@@ -93,9 +128,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         type: 'symbol',
         source: 'spots',
         layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true
+          'text-line-height': 1,
+          'text-padding': 0,
+          'text-anchor': 'bottom',
+          'text-allow-overlap': false,
+          'text-field': "",
+          'icon-optional': true,
+          'text-font': ['Font Awesome 5 Free Solid'],
+          'text-size': 18
+        },
+        paint: {
+          'text-translate-anchor': 'viewport',
+          'text-color': ['get', 'color'] //must data drive this
         }
+
       });
 
     }, function (error) {
@@ -105,7 +151,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     //Takes in a basic input value and sets that for the ng-repeat table to list the rooms by
     //If the same value is clicked, then the option is reversed
-    $scope.sort_by = function(inputValue) {
+    $scope.sort_by = function (inputValue) {
 
       //Checks to see if the current value that it is sorting by is being clicked
       if ($scope.sortingOrder == inputValue) {
@@ -119,7 +165,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     }
 
     //Outline of what the claimSpot function might look like
-    $scope.claimSpot = function(bCode, roomName) {
+    $scope.claimSpot = function (bCode, roomName) {
       console.log("Claiming " + roomName + " at building with code " + bCode);
     }
 
@@ -129,7 +175,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       //Debugging for index of passed in spot
       console.log(bCode);
       console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
-      Spots.create(bCode, roomName).then(function(response) {
+      Spots.create(bCode, roomName).then(function (response) {
         console.log("Woo: " + response);
       }, function (error) {
         console.log('Unable to create room:', error);
@@ -224,32 +270,33 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       var checkPopup = document.getElementsByClassName('mapboxgl-popup');
       if (checkPopup[0]) checkPopup[0].remove();
 
-
+      testName = $scope.spotDetails.bldgName;
       //Creates popup object without the add spot function (since these will have been clicked from the menu)
       var popups = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat([arrayFlyTo[1], arrayFlyTo[0]])
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-           )
+          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(testName)" ondblclick="closeMenu()">Reserve Spot</button>'
+        )
       popups.addTo(map);
     }
 
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
-    $scope.upvote = function(room){
+    $scope.upvote = function (room) {
       var tempRoom = room;
-      if(upvoted==false && downvoted==false) {
-        upvoted=true;
+      if (upvoted == false && downvoted == false) {
+        upvoted = true;
         tempRoom.upvotes++;
       }
-      else if(downvoted==true){
-        downvoted=false;
-        upvoted=true;
-        tempRoom.upvotes = tempRoom.upvotes +2;
+      else if (downvoted == true) {
+        downvoted = false;
+        upvoted = true;
+        tempRoom.upvotes = tempRoom.upvotes + 2;
       }
       else {
-        upvoted=false;
+        upvoted = false;
         tempRoom.upvotes--;
       }
       $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
@@ -257,26 +304,26 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
     //TODO: Need to clarify way so that each building has individual values
     //Need upvoted / downvoted to be adjusted for each building
-    $scope.downvote = function(room){
+    $scope.downvote = function (room) {
       var tempRoom = room;
-      if(upvoted==false && downvoted==false) {
-        downvoted=true;
+      if (upvoted == false && downvoted == false) {
+        downvoted = true;
         tempRoom.upvotes--;
       }
-      else if(upvoted==true){
-        upvoted=false;
-        downvoted=true;
-        tempRoom.upvotes = tempRoom.upvotes -2;
+      else if (upvoted == true) {
+        upvoted = false;
+        downvoted = true;
+        tempRoom.upvotes = tempRoom.upvotes - 2;
       }
       else {
-        downvoted=false;
+        downvoted = false;
         tempRoom.upvotes++;
       }
       $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
     }
 
     //Outline of what the update function might look like
-    $scope.update = function(bCode, roomName, updatedRoom) {
+    $scope.update = function (bCode, roomName, updatedRoom) {
 
 
       Spots.update(bCode, roomName, updatedRoom);
@@ -291,7 +338,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     //Initalizes a location finder for the Mapbox
     var locationTracker = new mapboxgl.GeolocateControl({
       positionOptions: {
-          enableHighAccuracy: true
+        enableHighAccuracy: true
       },
       showUserLocation: true
     });
@@ -432,3 +479,18 @@ function onError(img) {
   }
 }
 
+function colorPicker(name) {
+  console.log(name.toLowerCase());
+  console.log(name.includes("hall"));
+  var defaultColor = '#5e5353';
+
+  if (name.includes("computer")) {
+    return 'c0c0c0';
+  }
+  else if (name.includes("hall")) {
+    return "FFFFFF";
+  }
+  else {
+    return defaultColor;
+  }
+}
