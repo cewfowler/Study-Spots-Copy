@@ -88,8 +88,9 @@ module.exports = function(passport) {
 
             var newUser = new User();
             newUser.email = email;
-            newUser.password = newUser.setPassword(password);
-            User.findOneAndUpdate({"email": newUser.email}, newUser, {upsert: true}, function(err, newU) {
+            newUser.setPassword(password);
+            console.log(newUser.password);
+            User.findOneAndUpdate({"email": newUser.email}, newUser, {upsert: true, new: true}, function(err, newU) {
               console.log(newU);
             });
           }
