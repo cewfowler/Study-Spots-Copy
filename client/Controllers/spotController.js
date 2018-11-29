@@ -61,8 +61,42 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
 
         //$scope.spotDetails.spots = testRooms;
         $scope.spotDetails.upvotes = 0;
-
         var obj = $scope.spots[i];
+        temp_color = "#5e5353";
+
+        if(String(obj.bldgName).includes("Hall")) {
+          temp_color = "#4169e1";//royal blue
+        }
+
+        if(String(obj.bldgName).includes("Library")) {
+          temp_color = "#00ced1";//dark turquoise
+        }
+
+        if(String(obj.bldgName).includes("Greenhouse")) {
+          temp_color = "#006400";//dark green
+        }
+
+        if(String(obj.bldgName).includes("Sorority")) {
+          temp_color = "#ff69b4";//hot pink
+        }
+
+        if(String(obj.bldgName).includes("Fraternity")) {
+          temp_color = "#b22222";//firebrick
+        }
+
+        if(String(obj.bldgName).includes("Reitz")) {
+          temp_color = "#ff4500";//red orange
+        }
+
+        if(String(obj.bldgName).includes("Recreation") || String(obj.bldgName).includes("Norman Gym") || String(obj.bldgName).includes("Stadium") || String(obj.bldgName).includes("Tennis") || String(obj.bldgName).includes("Basketball")) {
+          temp_color = "#ffff00";//yellow
+        }
+
+        // if(String(obj.bldgName).includes("Shands")) {
+        //   temp_color = "#d2691e";//chocolate
+        // }
+
+
         var feature = {
           "type": "Feature",
           "properties": {
@@ -71,7 +105,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
             "bldgFormalName": String(obj.bldgFormalName),
             "bldgName": String(obj.bldgName),
             "bldgNum": String(obj.bldgNum),
-            "spots": obj.spots
+            "spots": obj.spots,
+            "color": temp_color
           },
           "geometry": {
             "type": "Point",
@@ -80,7 +115,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         }
         $scope.spots_geo.features[i] = feature;
       }
-
+      console.log($scope.spots_geo)
       map.addSource('spots', {
         type: 'geojson',
         data: $scope.spots_geo,
@@ -104,7 +139,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
         },
         paint: {
           'text-translate-anchor': 'viewport',
-          'text-color': colorPicker(obj.bldgFormalName) //must data drive this
+          'text-color': ['get', 'color'] //must data drive this
         }
 
       });
@@ -235,13 +270,14 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       var checkPopup = document.getElementsByClassName('mapboxgl-popup');
       if (checkPopup[0]) checkPopup[0].remove();
 
-
+      testName = $scope.spotDetails.bldgName;
       //Creates popup object without the add spot function (since these will have been clicked from the menu)
       var popups = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat([arrayFlyTo[1], arrayFlyTo[0]])
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
+          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(testName)" ondblclick="closeMenu()">Reserve Spot</button>'
         )
       popups.addTo(map);
     }
@@ -443,18 +479,3 @@ function onError(img) {
   }
 }
 
-function colorPicker(name) {
-  console.log(name.toLowerCase());
-  console.log(name.includes("hall"));
-  var defaultColor = '#5e5353';
-
-  if (name.includes("computer")) {
-    return 'c0c0c0';
-  }
-  else if (name.includes("hall")) {
-    return "FFFFFF";
-  }
-  else {
-    return defaultColor;
-  }
-}
