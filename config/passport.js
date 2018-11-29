@@ -92,7 +92,7 @@ module.exports = function(passport) {
 
           else if (user) {
             console.log("Found user");
-            return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+            return done(null, false, req.flash('signupError', 'That email is already taken.'));
           }
 
           else {
