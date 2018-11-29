@@ -32,7 +32,12 @@ module.exports = function(passport) {
   },
   function(req, email, password, done) {
 
-    if (email){
+    if (req.isAuthenticated()) {
+      console.log("Already logged in");
+      return done(null, false);
+    }
+
+    if (email) {
       email = email.toLowerCase();
     }
 
@@ -64,6 +69,12 @@ module.exports = function(passport) {
   },
 
   function(req, email, password, done) {
+
+    if (req.isAuthenticated()) {
+      console.log("Already logged in");
+      return done(null, false);
+    }
+
     if (email) {
       email = email.toLowerCase();
     }
@@ -79,7 +90,7 @@ module.exports = function(passport) {
             return done(err);
           }
 
-          if (user) {
+          else if (user) {
             console.log("Found user");
             return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
           }
@@ -94,11 +105,11 @@ module.exports = function(passport) {
             User.findOneAndUpdate({"email": newUser.email}, newUser, {upsert: true, new: true}, function(err, newU) {
               console.log(newU);
             });
+            return done(null, true);
           }
 
         });
 
-        return done(null, true);
       }
     })
   })

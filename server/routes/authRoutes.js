@@ -18,8 +18,8 @@ module.exports = function(app, passport) {
     failureRedirect : '/', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
-    console.log("here + " + req.isAuthenticated());
-    res.status(302).redirect('/');
+    /*console.log("here + " + req.isAuthenticated());
+    res.status(302).redirect('/');*/
   });
 
   app.get('/user/logout' , function(req, res) {
@@ -29,9 +29,20 @@ module.exports = function(app, passport) {
   });
 
   app.get('/user', isLoggedIn, function(req, res) {
+
     Users.findOne({email: req.user.email}, function(err, user) {
 
     });
+
+  });
+
+  app.get('/loggedIn', function(req, res) {
+    if (req.isAuthenticated()) {
+      res.send(true);
+    }
+    else {
+      res.send(false);
+    }
   })
 
 }
