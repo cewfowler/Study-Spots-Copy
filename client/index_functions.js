@@ -46,7 +46,7 @@ function toggleForm() {
 
 // Get the modal
 var modal = document.getElementById('login-id');
-var modal2 = document.getElementById('signin-id');
+var modal2 = document.getElementById('signup-id');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

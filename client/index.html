@@ -136,7 +136,7 @@
       <div class="row2" id="menu_toggle">
         <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
         <button id="signup" class="rightbtn"
-          onclick="document.getElementById('signin-id').style.display='block'">Sign Up</button>
+          onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
         <button id="login" class="rightbtn"
           onclick="document.getElementById('login-id').style.display='block'">Log In</button>
 
@@ -175,12 +175,12 @@
             </form>
           </div>
           <!-- END LOGIN FORM -->
-          
+
           <!-- SIGN UP FORM -->
           <div id="signup-id" class="modal">
             <form class="modal-content animate" action="/user/register" method="post">
               <div class="imgcontainer">
-                <span onclick="document.getElementById('signin-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('signup-id').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
               </div>
 
@@ -206,7 +206,7 @@
               </div>
             </form>
           </div>
-          <!-- END SIGNIN FORM -->
+          <!-- END SIGNUP FORM -->
 
           </div>
           <!-- END authentController -->
