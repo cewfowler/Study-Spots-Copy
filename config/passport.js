@@ -48,6 +48,7 @@ module.exports = function(passport) {
         if (!user || !user.validatePassword(password)) {
           return done(null, false, {errors: { 'email or password': 'is invalid'} });
         }
+        console.log("Correct user and password");
 
         return done(null, user);
       }).catch(done);
