@@ -1,19 +1,27 @@
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var Users = require('../server/models/users.server.model');
+var User = require('../server/models/users.server.model');
 
 
 module.exports = function(passport) {
-
+/*
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
 
   passport.deserializeUser(function(id, done) {
-    Users.findById(id, function(err, user) {
+    User.findById(id, function(err, user) {
       done(err, user);
     })
+  });*/
+
+  passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+
+  passport.deserializeUser(function(user, done) {
+    done(null, user);
   });
 
   //passport local authentication strategy
@@ -31,7 +39,7 @@ module.exports = function(passport) {
     //async
     process.nextTick(function() {
 
-      Users.find({email: email}, function(err, user) {
+      User.findOne({email: email}, function(err, user) {
         if (err) {
           return done(err);
         }
@@ -65,8 +73,7 @@ module.exports = function(passport) {
       if (!req.user) {
         console.log("User is not in session");
 
-        Users.findOne({email: email}, function(err, user) {
-          console.log("inside find + " + user);
+        User.findOne({email: email}, function(err, user) {
           if (err) {
             return done(err);
           }
@@ -79,15 +86,17 @@ module.exports = function(passport) {
           else {
             console.log("Creating new user");
 
-            var newUser = new Users();
+            var newUser = new User();
             newUser.email = email;
             newUser.password = newUser.setPassword(password);
-            Users.save(newUser);
+            User.findOneAndUpdate({"email": newUser.email}, newUser, {upsert: true}, function(err, newU) {
+              console.log(newU);
+            });
           }
 
         });
 
-
+        return done(null, true);
       }
     })
   })

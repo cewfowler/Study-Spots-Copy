@@ -5,6 +5,8 @@ var Users = require('../models/users.server.model.js'),
 module.exports = function(app, passport) {
 
   app.post('/user/login', passport.authenticate('local-login', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
 
@@ -12,12 +14,12 @@ module.exports = function(app, passport) {
 
 
   app.post('/user/register', passport.authenticate('local-signup', {
-    successRedirect : '/user', // redirect to the secure profile section
-    //failureRedirect : '/', // redirect back to the signup page if there is an error
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
-    console.log("here + ");
-    res.status(302).send();
+    console.log("here + " + req.isAuthenticated());
+    res.status(302).redirect('/');
   });
 
   app.get('/user/logout' , function(req, res) {

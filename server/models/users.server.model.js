@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     // generate hash and salt from received password string
     crypto = require('crypto'),
     jwt = require('jsonwebtoken'),
-    db = mongoose.connect(config.usersdb.uri);
+    db = mongoose.createConnection(config.usersdb.uri);
 
 var UsersSchema = new Schema ({
 
