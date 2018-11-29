@@ -432,15 +432,3 @@ function onError(img) {
   }
 }
 
-//automatically searches building on click from within map
-function nameToSidebar(name) {
-  openMenu();
-  var scope = angular.element($("#mySearch")).scope();
-  scope.$apply(function () {
-    scope.spotQuery = name;
-  })
-  // var scope2 = angular.element($("")).scope();
-  // scope2.$apply(function () {
-  //   //perform stuff
-  // })
-}
