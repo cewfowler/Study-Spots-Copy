@@ -479,3 +479,18 @@ function onError(img) {
   }
 }
 
+function colorPicker(name) {
+  console.log(name.toLowerCase());
+  console.log(name.includes("hall"));
+  var defaultColor = '#5e5353';
+
+  if (name.includes("computer")) {
+    return 'c0c0c0';
+  }
+  else if (name.includes("hall")) {
+    return "FFFFFF";
+  }
+  else {
+    return defaultColor;
+  }
+}
