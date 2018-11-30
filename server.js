@@ -17,6 +17,7 @@ app.use(morgan('dev'));
 //serve client
 app.use('/', express.static('client'));
 
+app.use(flash()); //for sending flash messages
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,8 +37,6 @@ app.use(session({
 //configure passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use(flash());
 
 require('./server/routes/authRoutes')(app,passport);
 

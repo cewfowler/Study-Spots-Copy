@@ -31,8 +31,27 @@ module.exports = function(app, passport) {
   app.get('/user', isLoggedIn, function(req, res) {
 
     Users.findOne({email: req.user.email}, function(err, user) {
-
+      if (err) {
+        console.log("Error finding user!");
+        res.status(500).redirect('/');
+      }
+      res.status(200).send(user);
     });
+
+  });
+
+  app.put('/user', isLoggedIn, function(req, res) {
+
+    Users.findOneAndUpdate({email: req.params.user.email.toLowerCase()}, req.params.user,
+      {new: true}, function(err, userUpdated) {
+        if (err) {
+          console.log("Error updating");
+          res.status(500).redirect('/');
+        }
+
+        console.log('New user info is ' + userUpdated);
+        res.status(200).send(userUpdated);
+      });
 
   });
 

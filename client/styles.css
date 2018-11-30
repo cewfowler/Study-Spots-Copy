@@ -24,6 +24,9 @@ body {
     padding-top: 15px
 
   }
+  .table td, th{
+    border-color: #3F48CC !important;
+  }
   #map {
     position: absolute;
 
@@ -173,7 +176,7 @@ background-color: #DDDDD5;
 }
 
 input[type=text], input[type=password] {
-    width: 50%;
+    width: 95%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -214,7 +217,9 @@ img.avatar {
 }
 
 .container {
-    padding: 16px;
+  margin: 24px 0 12px 0;
+  position: relative;
+  width: auto;
 }
 
 span.psw {
