@@ -90,12 +90,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
       });
       map.addLayer({
         id: 'spots',
-        type: 'symbol',
-        source: 'spots',
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true
-        }
+        type: 'heatmap',
+        source: 'spots'
+      //   layout: {
+      //     'icon-image': 'marker-15',
+      //     'icon-allow-overlap': true
+      //   }
       });
 
     }, function (error) {
