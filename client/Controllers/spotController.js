@@ -283,43 +283,45 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
     }
 
     //TODO: Need to clarify way so that each building has individual values
-    //Need upvoted / downvoted to be adjusted for each building
+      //Need to figure out how to have each room show their overall upvotes/downvotes
     $scope.upvote = function(bldgCode, room, user){
 
-    var upvotes = user.upvotes;
-    //Need to access user.upvotes[indexOf(bldgCode)].rooms[indexOf(room)]
+      var upvotes = user.upvotes;
+      var downvotes = user.downvotes;
+      //user.upvotes and downvotes contains [bldgCodes] and [rooms]
+      //need to search for room value in user.upvotes.rooms
+      //then need to check if value for bldgCode exists at that place
+      //going to iterate through entirety of upvotes until this is satisfied so duplicates are okay
 
-    // Checks to see if user has upvotes at a particular building and room
-    // Array will hold bldgCode value and a separate room value
-    // Will need to iterate through arrays and see if at the index of bldgCode, user has that room
-
-
-    //if not found, then it will return an upvoted false
-    //If the room is then upvoted, it will be appended into this array
-    //If the room is downvoted or the upvote is removed, then the upvoted value will be removed from it's array
-    //The same occurs for if a room that was downvoted is then upvoted, or the downvote is removed
-
+      //NEED THESE CASES TO BE IMPLEMENTED
+      //Case1: bldgCode and room does not exist anywhere
+        //It is pushed to both arrays in user.upvotes
+      //Case2: bldgCode and room exists in user.upvotes and they click upvote
+        //It is spliced from both arrays in user.upvotes
+      //Case3: bldgCode and room exists in user.downvotes and they click upvote
+        //It is spliced from both arrays in user.downvotes and pushed to both in user.upvotes
 
     }
 
-    //TODO: Need to clarify way so that each building has individual values
-    //Need upvoted / downvoted to be adjusted for each building
-    $scope.downvote = function (room) {
-      var tempRoom = room;
-      if (upvoted == false && downvoted == false) {
-        downvoted = true;
-        tempRoom.upvotes--;
-      }
-      else if (upvoted == true) {
-        upvoted = false;
-        downvoted = true;
-        tempRoom.upvotes = tempRoom.upvotes - 2;
-      }
-      else {
-        downvoted = false;
-        tempRoom.upvotes++;
-      }
-      $scope.updatedRoom.spots[$scope.spotDetails.spots.indexOf(room)] = tempRoom;
+    //TODO: Need to implement overall schema but this should be the required methodology
+      //Need to figure out how to have each room show their overall upvotes/downvotes
+    $scope.downvote = function (bldgCode, room, user) {
+
+      var upvotes = user.upvotes;
+      var downvotes = user.downvotes;
+      //user.upvotes and downvotes contains [bldgCodes] and [rooms]
+      //need to search for room value in user.downvotes.rooms
+      //then need to check if value for bldgCode exists at that place
+      //going to iterate through entirety of upvotes until this is satisfied so duplicates are okay
+
+      //NEED THESE CASES TO BE IMPLEMENTED
+      //Case1: bldgCode and room does not exist anywhere
+        //It is pushed to both arrays in user.downvotes
+      //Case2: bldgCode and room exists in user.downvotes and they click downvote
+        //It is spliced from both arrays in user.downvotes
+      //Case3: bldgCode and room exists in user.upvotes and they click downvote
+        //It is spliced from both arrays in user.upvotes and pushed to both in user.downvotes
+
     }
 
     //Outline of what the update function might look like
