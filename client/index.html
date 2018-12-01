@@ -158,6 +158,7 @@
             <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
           </div>
 
+<<<<<<< HEAD
           <div class="container">
             <b>Email:</b><div></div>
             <input type="text" name="email" placeholder="Enter Email" required>
@@ -165,11 +166,24 @@
             <b>Password:</b><div></div>
             <input type="password" name="password" placeholder="Enter Password" required>
             </div>
+=======
+              <div class="container">
+                <b>Email:</b><div></div>
+                <input type="text" name="email" placeholder="Enter Email" required>
+                <div>
+                <b>Password:</b><div></div>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+
+                <div></div>
+                <button type="submit">Login</button>
+>>>>>>> small change
 
             <div></div>
             <button type="submit">Login</button>
 
           </div>
+<<<<<<< HEAD
 
         </form>
       </div>
@@ -181,6 +195,39 @@
           <div class="imgcontainer">
             <span onclick="document.getElementById('signup-id').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
+=======
+          <!-- END LOGIN FORM -->
+          
+          <!-- SIGN UP FORM -->
+          <div id="signup-id" class="modal">
+            <form class="modal-content animate" action="/user/register" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('signin-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
+              </div>
+
+              <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <b>Email:</b><div></div>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <div>
+                <b>Password:</b><div></div>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                </div>
+                <b>Repeat Password:</b><div></div>
+                <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+                <div></div>
+
+
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                <div class="clearfix">
+                  <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+              </div>
+            </form>
+>>>>>>> small change
           </div>
 
           <div class="container">
