@@ -150,13 +150,12 @@ module.exports = function(app) {
             rooms[i] = req.body.spot;
             return;
           }
-
-          update = false;
         }
 
+        update = false;
       }
     }).then(function() {
-
+      
       if (update) {
         SpotModel.findOneAndUpdate({bldgCode: req.params.bCode}, {$set: {spots: rooms}},
           {new: true}, function(err, updatedSpot) {
