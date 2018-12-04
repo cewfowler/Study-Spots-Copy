@@ -51,6 +51,9 @@ body {
     background-color: #3F48b0;
   }
 
+  .btn-container{
+    text-align: center
+  }
   #formbutton{
     font-size: 13px;
     cursor: pointer;
