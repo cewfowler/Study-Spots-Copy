@@ -284,10 +284,66 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //TODO: Need to clarify way so that each building has individual values
       //Need to figure out how to have each room show their overall upvotes/downvotes
-    $scope.upvote = function(bldgCode, room, user){
+    $scope.upvote = function(bldgCode, room){
+      $scope.user = userService.user;
+      var temp_room = room;
+      console.log($scope.user);
+      var upvotes = $scope.user.upvoted;
+      var downvotes = $scope.user.downvoted;
 
-      var upvotes = user.upvotes;
-      var downvotes = user.downvotes;
+      var building_found_upvotes = false;
+      var rooms_found_upvotes = false;
+      var building_found_downvotes = false;
+      var rooms_found_downvotes = false;
+
+      var i = 0;
+      var j = 0;
+      while(i < upvotes.bldgCodes.length) {
+        if(upvotes.bldgCodes[i] == bldgCode) {
+          if(upvotes.rooms[i] == temp_room.location) {
+            building_found_upvotes = true;
+            rooms_found_upvotes = true;
+            break;
+          }
+        }
+        i += 1;
+      }
+
+      while(j < downvotes.bldgCodes.length) {
+        if(downvotes.bldgCodes[j] == bldgCode) {
+          if(downvotes.rooms[j] == temp_room.location) {
+            building_found_downvotes = true;
+            rooms_found_downvotes = true;
+            break;
+          }
+        }
+        j += 1;
+      }
+
+      if(building_found_upvotes == true && rooms_found_upvotes == true) {
+        temp_room.upvotes--;
+        upvotes.bldgCodes.splice(i, 1);
+        upvotes.rooms.splice(i, 1);
+      }
+
+      else if (building_found_upvotes == false && rooms_found_upvotes == false
+      && building_found_downvotes == true && rooms_found_downvotes == true) {
+        temp_room.downvotes--;
+        downvotes.bldgCodes.splice(j, 1);
+        downvotes.rooms.splice(j, 1);
+
+        temp_room.upvotes++;
+        upvotes.bldgCodes.push(bldgCode);
+        upvotes.rooms.push(temp_room.location);
+      }
+
+      else {
+        temp_room.upvotes++;
+        upvotes.bldgCodes.push(bldgCode);
+        upvotes.rooms.push(temp_room.location);
+      }
+
+    }
       //user.upvotes and downvotes contains [bldgCodes] and [rooms]
       //need to search for room value in user.upvotes.rooms
       //then need to check if value for bldgCode exists at that place
@@ -301,14 +357,73 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       //Case3: bldgCode and room exists in user.downvotes and they click upvote
         //It is spliced from both arrays in user.downvotes and pushed to both in user.upvotes
 
-    }
+      //Can call room.upvote() after successful check
+
 
     //TODO: Need to implement overall schema but this should be the required methodology
       //Need to figure out how to have each room show their overall upvotes/downvotes
-    $scope.downvote = function (bldgCode, room, user) {
+    $scope.downvote = function (bldgCode, room) {
 
-      var upvotes = user.upvotes;
-      var downvotes = user.downvotes;
+      $scope.user = userService.user;
+      var temp_room = room;
+      console.log($scope.user);
+      var upvotes = $scope.user.upvoted;
+      var downvotes = $scope.user.downvoted;
+
+      var building_found_upvotes = false;
+      var rooms_found_upvotes = false;
+      var building_found_downvotes = false;
+      var rooms_found_downvotes = false;
+
+      var i = 0;
+      var j = 0;
+
+      while(i < downvotes.bldgCodes.length) {
+        if(downvotes.bldgCodes[i] == bldgCode) {
+          if(downvotes.rooms[i] == temp_room.location) {
+            building_found_downvotes = true;
+            rooms_found_downvotes = true;
+            break;
+          }
+        }
+        i += 1;
+      }
+
+      while(j < upvotes.bldgCodes.length) {
+        if(upvotes.bldgCodes[j] == bldgCode) {
+          if(upvotes.rooms[j] == temp_room.location) {
+            building_found_upvotes = true;
+            rooms_found_upvotes = true;
+            break;
+          }
+        }
+        j += 1;
+      }
+
+      if(building_found_downvotes == true && rooms_found_downvotes == true) {
+        temp_room.downvotes--;
+        downvotes.bldgCodes.splice(i, 1);
+        downvotes.rooms.splice(i, 1);
+
+      }
+
+      else if (building_found_downvotes == false && rooms_found_downvotes == false
+      && building_found_upvotes == true && rooms_found_upvotes == true) {
+        temp_room.upvotes--;
+        upvotes.bldgCodes.splice(j, 1);
+        upvotes.rooms.splice(j, 1);
+
+        temp_room.downvotes++;
+        downvotes.bldgCodes.push(bldgCode);
+        downvotes.rooms.push(temp_room.location);
+      }
+
+      else {
+        temp_room.downvotes++;
+        downvotes.bldgCodes.push(bldgCode);
+        downvotes.rooms.push(temp_room.location);
+
+      }
       //user.upvotes and downvotes contains [bldgCodes] and [rooms]
       //need to search for room value in user.downvotes.rooms
       //then need to check if value for bldgCode exists at that place
@@ -326,10 +441,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //Outline of what the update function might look like
     $scope.update = function (bCode, roomName, updatedRoom) {
-
-
       Spots.update(bCode, roomName, updatedRoom);
-
     }
 
 
