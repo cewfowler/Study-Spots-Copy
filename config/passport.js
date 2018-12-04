@@ -59,7 +59,7 @@ module.exports = function(passport) {
           console.log(newU);
         });
         return done(null, user);
-      }).catch(done);
+      })
     });
 
   }));
