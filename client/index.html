@@ -73,10 +73,10 @@
               <td></td>
               <td><div style="height:25px;"></div>{{room.location}}</td>
               <td>
-                <button class="upvoteButton" ng-click="upvote(room.bldgCode, room)">
+                <button class="upvoteButton" ng-click="upvote(spot.bldgCode, room)">
                   <i class="fa fa-caret-up fa-2x"></i></button>
                 <div class="upvote-num">{{ room.upvotes }}</div>
-                <button class="upvoteButton" ng-click="downvote(room.bldgCode, room)">
+                <button class="upvoteButton" ng-click="downvote(spot.bldgCode, room)">
                   <i class="fa fa-caret-down fa-2x"></i></button>
               </td>
             </tr>
