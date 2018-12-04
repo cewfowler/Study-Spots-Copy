@@ -99,6 +99,7 @@ body {
   border: none;
   float: right;
   margin:0 1% 0 0;
+  border-radius: 10%;
 }
 .rightbtn:hover {
   background-color: #3F48b0;
