@@ -19,9 +19,6 @@ var map = new mapboxgl.Map({
 angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userService',
   function ($scope, Spots, userService) {
 
-    let upvoted = false;
-    let downvoted = false;
-
     //Uses the getAll function from the spotFactory file
     Spots.getAll().then(function (response) {
 
@@ -197,6 +194,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       $scope.spotDetails = $scope.spots[index];
       $scope.updatedRoom = $scope.spotDetails;
 
+      console.log($scope.updatedRoom);
+
       //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
       if ($scope.active != $scope.spotDetails.bldgCode) {
         $scope.active = $scope.spotDetails.bldgCode;
@@ -287,7 +286,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     $scope.upvote = function(bldgCode, room){
       $scope.user = userService.user;
       var temp_room = room;
-      console.log($scope.user);
       var upvotes = $scope.user.upvoted;
       var downvotes = $scope.user.downvoted;
 
@@ -343,6 +341,11 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         upvotes.rooms.push(temp_room.location);
       }
 
+      $scope.user.upvoted = upvotes;
+      $scope.user.downvoted = downvotes;
+
+      $scope.update(bldgCode, room.location, temp_room, userService.user);
+
     }
       //user.upvotes and downvotes contains [bldgCodes] and [rooms]
       //need to search for room value in user.upvotes.rooms
@@ -359,14 +362,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
       //Can call room.upvote() after successful check
 
-
-    //TODO: Need to implement overall schema but this should be the required methodology
-      //Need to figure out how to have each room show their overall upvotes/downvotes
     $scope.downvote = function (bldgCode, room) {
 
       $scope.user = userService.user;
       var temp_room = room;
-      console.log($scope.user);
       var upvotes = $scope.user.upvoted;
       var downvotes = $scope.user.downvoted;
 
@@ -424,6 +423,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         downvotes.rooms.push(temp_room.location);
 
       }
+
+      $scope.user.upvoted = upvotes;
+      $scope.user.downvoted = downvotes;
+
       //user.upvotes and downvotes contains [bldgCodes] and [rooms]
       //need to search for room value in user.downvotes.rooms
       //then need to check if value for bldgCode exists at that place
@@ -437,11 +440,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       //Case3: bldgCode and room exists in user.upvotes and they click downvote
         //It is spliced from both arrays in user.upvotes and pushed to both in user.downvotes
 
+      $scope.update(bldgCode, room.location, temp_room, userService.user);
     }
 
     //Outline of what the update function might look like
-    $scope.update = function (bCode, roomName, updatedRoom) {
+    $scope.update = function (bCode, roomName, updatedRoom, user) {
       Spots.update(bCode, roomName, updatedRoom);
+      Spots.updateUser(user);
     }
 
 

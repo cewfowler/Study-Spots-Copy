@@ -40,6 +40,45 @@ angular.module('spots').factory('Spots', function($http) {
       */
       update: function(bCode, roomName, updatedRoom) {
 	      return $http.put('/spots/' + bCode + '/' + roomName, {spot: updatedRoom});
+      },
+
+      register: function(email, password) {
+        /*
+        const data = {
+          email: email,
+          password: password
+        };*/
+
+        return $http({
+          url: "/user/register",
+          method: "POST",
+          email: email,
+          password: password
+        });
+
+      },
+
+      login: function(email, password) {
+        const data = {
+          email: email,
+          password: password
+        };
+
+        return $http.post('/user/login', data);
+      },
+
+      getUser: function(email) {
+        const data = {
+          email: email
+        };
+        return $http.get('/user', data);
+      },
+
+      updateUser: function(user) {
+        const data = {
+          user: user
+        };
+        return $http.put('/user', data);
       }
 
      };

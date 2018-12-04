@@ -41,9 +41,8 @@ module.exports = function(app, passport) {
   });
 
   app.put('/user', isLoggedIn, function(req, res) {
-
-    Users.findOneAndUpdate({email: req.params.user.email.toLowerCase()}, req.params.user,
-      {new: true}, function(err, userUpdated) {
+    Users.findOneAndUpdate({email: req.user.email.toLowerCase()}, req.user,
+    function(err, userUpdated) {
         if (err) {
           console.log("Error updating");
           res.status(500).redirect('/');

@@ -1,26 +1,33 @@
-angular.module('spots').controller('AuthenticationController', ['$scope', 'Users', '$localStorage', 'userService', 
-  function($scope, Users, $localStorage, userService){
+angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots', '$localStorage', 'userService',
+  function($scope, Spots, $localStorage, userService){
 
     $scope.$storage = $localStorage.$default({
       email: ""
     });
 
+    if($scope.$storage.email != "") {
+      Spots.getUser($scope.$storage.email).then(function(user) {
+        userService.user = user.data;
+      });
+    }
+
     $scope.login = function(email, password){
-      Users.login(email, password);
+      Spots.login(email, password);
       $scope.$storage.email = email;
-      userService.user = user.data;
     }
 
     $scope.signup = function(email, password){
-      Users.register(email, password);
-      $scope.$storage.email = email
-      userService.user = user.data;
+      Spots.register(email, password);
+      $scope.$storage.email = email;
     }
 
     $scope.current = function(){
-      Users.getUser($scope.$storage.email).then(function(user) {
+      Spots.getUser($scope.$storage.email).then(function(user) {
         userService.user = user.data;
       });
+    }
 
+    $scope.update = function(){
+      Spots.updateUser(userService.user.email, userService.user);
     }
   }]);

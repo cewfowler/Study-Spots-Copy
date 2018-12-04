@@ -144,7 +144,7 @@ module.exports = function(app) {
 
         for (i = 0; i < rooms.length; i++) {
 
-          if (rooms[i].location.toLowerCase() = req.params.room.toLowerCase()) {
+          if (rooms[i].location.toLowerCase() == req.params.room.toLowerCase()) {
             //TODO: figure out method to change
             console.log("Swapping old room info with updated info");
             rooms[i] = req.body.spot;
@@ -162,7 +162,7 @@ module.exports = function(app) {
           {new: true}, function(err, updatedSpot) {
             if (err) {
               console.log(err);
-              res.send();
+              res.status(302).send();
               return(err);
             }
             else {
