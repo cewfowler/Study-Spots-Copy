@@ -14,9 +14,9 @@ function openMenu() {
   let menu = document.getElementById("myMenu");
   let mapStyles = document.getElementById("map");
   if (menu.style.width == "0px") {
-    mapStyles.style.width = "66%";
-    mapStyles.style.left = "507px";
-    menu.style.width = "500px";
+    mapStyles.style.width = "36%";
+    mapStyles.style.left = "757px";
+    menu.style.width = "750px";
   }
 }
 
