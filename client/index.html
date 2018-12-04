@@ -18,6 +18,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -118,6 +119,8 @@
           <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
           <button class="rightbtn" ng-click="current()">Test</button>
           <button class="rightbtn" ng-click="logout()"> Logout</button>
+          <button id="account" class="rightbtn"
+            onclick="document.getElementById('account-id').style.display='block'">Account</button>
           <button id="signup" class="rightbtn"
             onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
           <button id="login" class="rightbtn"
@@ -185,6 +188,26 @@
 
           <!-- END SIGNUP FORM -->
         </div>
+
+            <!-- ACCOUNT CARD -->
+            <div id="account-id" class="accountcard">
+              <form class="modal-content animate">
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <img src="images/logo4.jpg" alt="Avatar" style="width:300px; height:200px">
+                </div>
+    
+                <div class="card">
+                  <h1>John Doe</h1>
+                  <a href="https://github.com/adamhochberger/study-spots"><p>    </p><i class="fa fa-github"></i></a> 
+                  <a href="https://campusmap.ufl.edu/#/index"><i class="fa fa-map"></i></a> 
+                  <a href="https://ufl.libcal.com/reserve/"><i class="fa fa-book"></i></a> 
+                  
+                </div>
+    
+              </form>
+            </div>
+            <!-- END ACCOUNT CARD -->
 
       <!-- Authent end -->
       </div>

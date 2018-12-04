@@ -93,6 +93,30 @@ body {
     display: none;
   }
 
+  #inner {
+    display: table;
+    margin: 0 auto;
+  }
+
+  #account-id.accountcard {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+
   .rightbtn{
   font-size: 14px;
   cursor: pointer;
