@@ -29,8 +29,6 @@
     <!-- Uses the SpotsController from spotController.js to find listings -->
     <div ng-controller="SpotsController">
 
-
-
       <!--Menu sidebar -->
       <div id="myMenu" class="sidebar" style="width: 0px;">
 
@@ -75,7 +73,7 @@
               <td>
                 <button class="upvoteButton" ng-click="upvote(spot.bldgCode, room)">
                   <i class="fa fa-caret-up fa-2x"></i></button>
-                <div class="upvote-num">{{ room.upvotes }}</div>
+                <div class="upvote-num">{{ room.upvotes - room.downvotes}}</div>
                 <button class="upvoteButton" ng-click="downvote(spot.bldgCode, room)">
                   <i class="fa fa-caret-down fa-2x"></i></button>
               </td>
@@ -119,6 +117,7 @@
         <div class="row2" id="menu_toggle">
           <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
           <button class="rightbtn" ng-click="current()">Test</button>
+          <button class="rightbtn" ng-click="logout()"> Logout</button>
           <button id="signup" class="rightbtn"
             onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
           <button id="login" class="rightbtn"

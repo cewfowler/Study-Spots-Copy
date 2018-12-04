@@ -22,12 +22,19 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
     }
 
     $scope.current = function(){
-      Spots.getUser($scope.$storage.email).then(function(user) {
-        userService.user = user.data;
-      });
+      console.log(userService.user);
     }
 
     $scope.update = function(){
       Spots.updateUser(userService.user.email, userService.user);
+    }
+    $scope.logout = function() {
+      Spots.logout();
+      userService.user = "";
+      $scope.$storage.email = "";
+
+    }
+    $scope.current = function() {
+      console.log(userService.user);
     }
   }]);

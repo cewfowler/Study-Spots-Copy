@@ -79,6 +79,10 @@ angular.module('spots').factory('Spots', function($http) {
           user: user
         };
         return $http.put('/user', data);
+      },
+      
+      logout: function() {
+        return $http.get('/user/logout');
       }
 
      };

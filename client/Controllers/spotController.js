@@ -285,7 +285,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       //Need to figure out how to have each room show their overall upvotes/downvotes
     $scope.upvote = function(bldgCode, room){
       $scope.user = userService.user;
-      console.log($scope.user)
       var temp_room = room;
       var upvotes = $scope.user.upvoted;
       var downvotes = $scope.user.downvoted;
@@ -446,12 +445,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //Outline of what the update function might look like
     $scope.update = function (bCode, roomName, updatedRoom, user) {
-      Spots.update(bCode, roomName, updatedRoom);
+      Spots.update(bCode, roomName, updatedRoom).then(function() {
+        console.log(bCode);
+      });
       Spots.updateUser(user);
     }
 
-
-    //Initalizes a basic zoom control for the Mapbox
+    //Initalizes  a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
