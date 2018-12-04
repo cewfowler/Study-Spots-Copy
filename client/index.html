@@ -12,6 +12,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
   <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
 
   <!-- Initialization of the stylesheets to be used in project -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel='stylesheet' />
@@ -28,188 +29,191 @@
     <!-- Uses the SpotsController from spotController.js to find listings -->
     <div ng-controller="SpotsController">
 
-    <!-- Header -->
-      <div class="row">
-        <table>
-          <tr>
-            <th>
-              <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
-            </th>
-            <th>
-              <h1>Study Spots </h1>
-            </th>
-            <th>
-              <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
-            </th>
-            <th>
-              <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
-            </th>
-          </tr>
-        </table>
+      <!-- Header -->
+        <div class="row">
+          <table>
+            <tr>
+              <th>
+                <img src="images/placeholder_logo.png" alt="logo" style="width:75px;height:60px">
+              </th>
+              <th>
+                <h1>Study Spots </h1>
+              </th>
+              <th>
+                <img src="images/campus.jpg" alt="campus" style="width:150px;height:60px">
+              </th>
+              <th>
+                <img src="images/century.jpg" alt="century" style="width:150px;height:60px">
+              </th>
+            </tr>
+          </table>
 
-        <!-- End of top page row div -->
+          <!-- End of top page row div -->
+        </div>
+
+
+        <!--Menu sidebar -->
+        <div id="myMenu" class="sidebar" style="width: 0px;">
+
+          <!-- Search bar -->
+          <input type="search" id="mySearch" name="q" size="31" placeholder="Search" ng-model="spotQuery">
+          <button class= "fas fa-times" id="clearButton" onclick="clearSearchBox()"></button>
+
+          <!-- Table for the building listings -->
+          <table class="table table-hover">
+            <col width="30">
+            <col width="200">
+            <col width="60">
+            <!-- Headers for the tables -->
+            <th>   </th>
+            <th ng-click="sort_by('bldgCode')">Bld</th>
+            <th ng-click="sort_by('bldgName')">Name</th>
+
+            <!-- Creates the table of listings from $scope.spots -->
+            <!-- Allows elements from ng-repeat to be sorted by sortingOrder paramter -->
+            <!-- Runs showDetails method when any spot is clicked -->
+
+            <tr id="listingRows" ng-repeat-start="spot in spots | orderBy:sortingOrder:reverse
+              | filter: spotQuery as x" ng-click="showDetails(spots.indexOf(spot))" >
+
+              <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
+              <th>
+                <a href="">
+                  <i ng-hide="active==spot.bldgCode" class="fa fa-caret-right"></i>
+                  <i ng-show="active==spot.bldgCode" class="fa fa-caret-down"></i>
+                </a>
+              </th>
+              <td> {{ spot.bldgCode }} </td>
+              <td> {{ spot.bldgName }} </td>
+
+              <!-- <td> {{ spot.bldgFormalName }} </td> -->
+
+
+              <!-- show rooms when triangle points down -->
+              <tr ng-repeat="room in spot.spots" ng-show="active==spot.bldgCode">
+                <td></td>
+                <td><div style="height:25px;"></div>{{room.location}}</td>
+                <td>
+                  <button class="upvoteButton" ng-click="upvote(spot.bldgCode, room)">
+                    <i class="fa fa-caret-up fa-2x"></i></button>
+                  <div class="upvote-num">{{ room.upvotes - room.downvotes}}</div>
+                  <button class="upvoteButton" ng-click="downvote(spot.bldgCode, room)">
+                    <i class="fa fa-caret-down fa-2x"></i></button>
+                </td>
+              </tr>
+
+
+              <!-- Show no rooms if rooms are empty -->
+              <tr ng-show="spot.spots.length == 0 && active==spot.bldgCode">
+                <td> </td>
+                <td colspan="4">No rooms</td>
+              </tr>
+
+              <!-- End of top page row div -->
+              <tr ng-repeat-end ng-show="active==spot.bldgCode">
+                <div class="form-popup" id="addForm" >
+                  <form novalidate>
+                    <td></td>
+                    <td><input type="room-text" ng-model="bldg.roomName" placeholder="Room Name"></td>
+                    <td><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)" onclick="location.reload()">Add</button></td>
+                  </form>
+                </div>
+              </tr>
+
+              <!-- if query doesnt find anything -->
+              <tr ng-if="x.length ===0">
+                <td> </td>
+                <td> </td>
+                <td>No results found.</td>
+              </tr>
+
+            </tr>
+          </table>
+        <!-- End of sidebar menu div -->
+        </div>
+
+      <!-- End spotcsontroller -->
       </div>
 
 
-      <!--Menu sidebar -->
-      <div id="myMenu" class="sidebar" style="width: 0px;">
+      <div ng-controller="AuthenticationController">
+        <!-- navigation bar -->
+        <div class="row2" id="menu_toggle">
+          <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
+          <button class="rightbtn" ng-click="current()">Test</button>
+          <button id="signup" class="rightbtn"
+            onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
+          <button id="login" class="rightbtn"
+            onclick="document.getElementById('login-id').style.display='block'">Log In</button>
 
-        <!-- Search bar -->
-        <input type="search" id="mySearch" name="q" size="31" placeholder="Search" ng-model="spotQuery">
-        <button class= "fas fa-times" id="clearButton" onclick="clearSearchBox()"></button>
+          <!-- End of top page second row div -->
+        </div>
 
-        <!-- Table for the building listings -->
-        <table class="table table-hover">
-          <col width="30">
-          <col width="200">
-          <col width="60">
-          <!-- Headers for the tables -->
-          <th>   </th>
-          <th ng-click="sort_by('bldgCode')">Bld</th>
-          <th ng-click="sort_by('bldgName')">Name</th>
+      <!-- End of SpotsController div -->
 
-          <!-- Creates the table of listings from $scope.spots -->
-          <!-- Allows elements from ng-repeat to be sorted by sortingOrder paramter -->
-          <!-- Runs showDetails method when any spot is clicked -->
+        <!-- LOGIN FORM -->
+        <div id="login-id" class="modal">
+          <form class="modal-content animate" action="/user/login" method="post" novalidate>
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
+            </div>
 
-          <tr id="listingRows" ng-repeat-start="spot in spots | orderBy:sortingOrder:reverse
-            | filter: spotQuery as x" ng-click="showDetails(spots.indexOf(spot))" >
-
-            <!-- Displays the corresponding image from the spot iteration of $scope.spots -->
-            <th>
-              <a href="">
-                <i ng-hide="active==spot.bldgCode" class="fa fa-caret-right"></i>
-                <i ng-show="active==spot.bldgCode" class="fa fa-caret-down"></i>
-              </a>
-            </th>
-            <td> {{ spot.bldgCode }} </td>
-            <td> {{ spot.bldgName }} </td>
-
-            <!-- <td> {{ spot.bldgFormalName }} </td> -->
-
-
-            <!-- show rooms when triangle points down -->
-            <tr ng-repeat="room in spot.spots" ng-show="active==spot.bldgCode">
-              <td></td>
-              <td><div style="height:25px;"></div>{{room.location}}</td>
-              <td>
-                <button class="upvoteButton" ng-click="upvote(room)">
-                  <i class="fa fa-caret-up fa-2x"></i></button>
-                <div class="upvote-num">{{ room.upvotes }}</div>
-                <button class="upvoteButton" ng-click="downvote(room)">
-                  <i class="fa fa-caret-down fa-2x"></i></button>
-              </td>
-            </tr>
-
-
-            <!-- Show no rooms if rooms are empty -->
-            <tr ng-show="spot.spots.length == 0 && active==spot.bldgCode">
-              <td> </td>
-              <td colspan="4">No rooms</td>
-            </tr>
-
-            <!-- End of top page row div -->
-            <tr ng-repeat-end ng-show="active==spot.bldgCode">
-              <div class="form-popup" id="addForm" >
-                <form novalidate>
-                  <td></td>
-                  <td><input type="room-text" ng-model="bldg.roomName" placeholder="Room Name"></td>
-                  <td><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)" onclick="location.reload()">Add</button></td>
-                </form>
+            <div class="container">
+              <b>Email:</b><div></div>
+              <input type="text" ng-model="email" placeholder="Enter Email" required>
+              <div>
+              <b>Password:</b><div></div>
+              <input type="password" ng-model="password" placeholder="Enter Password" required>
               </div>
-            </tr>
 
-            <!-- if query doesnt find anything -->
-            <tr ng-if="x.length ===0">
-              <td> </td>
-              <td> </td>
-              <td>No results found.</td>
-            </tr>
+              <div></div>
+              <button type="submit" ng-click="login(email, password)">Login</button>
 
-          </tr>
-        </table>
-      <!-- End of sidebar menu div -->
+            </div>
+
+          </form>
+        </div>
+        <!-- END LOGIN FORM -->
+
+        <!-- SIGN UP FORM -->
+        <div id="signup-id" class="modal">
+          <form class="modal-content animate" action="/user/register" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('signup-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <h1>Sign Up</h1>
+              <p>Please fill in this form to create an account.</p>
+              <b>Email:</b><div></div>
+              <input type="text" placeholder="Enter Email" name="email" required>
+              <div>
+              <b>Password:</b><div></div>
+              <input type="password" placeholder="Enter Password" name="password" required>
+              </div>
+              <b>Repeat Password:</b><div></div>
+              <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+              <div></div>
+
+
+              <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+              <div class="clearfix">
+                <button type="submit" ng-click="register(email, password)">Login</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- END SIGNUP FORM -->
+        </div>
+
+      <!-- Authent end -->
       </div>
 
-
-      <!-- navigation bar -->
-      <div class="row2" id="menu_toggle">
-        <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
-        <button id="signup" class="rightbtn"
-          onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
-        <button id="login" class="rightbtn"
-          onclick="document.getElementById('login-id').style.display='block'">Log In</button>
-
-        <!-- End of top page second row div -->
-      </div>
-
-    <!-- End of SpotsController div -->
+    <!-- END Spots -->
     </div>
-
-
-    <!-- End of AuthenticationController div -->
-    <div ng-controller="AuthenticationController">
-
-      <!-- LOGIN FORM -->
-      <div id="login-id" class="modal">
-        <form class="modal-content animate" action="/user/login" method="post" novalidate>
-          <div class="imgcontainer">
-            <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
-          </div>
-
-          <div class="container">
-            <b>Email:</b><div></div>
-            <input type="text" name="email" placeholder="Enter Email" required>
-            <div>
-            <b>Password:</b><div></div>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            </div>
-
-            <div></div>
-            <button type="submit">Login</button>
-
-          </div>
-
-        </form>
-      </div>
-      <!-- END LOGIN FORM -->
-
-      <!-- SIGN UP FORM -->
-      <div id="signup-id" class="modal">
-        <form class="modal-content animate" action="/user/register" method="post">
-          <div class="imgcontainer">
-            <span onclick="document.getElementById('signup-id').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="images/placeholder_logo.png" alt="Avatar" class="avatar">
-          </div>
-
-          <div class="container">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
-            <b>Email:</b><div></div>
-            <input type="text" placeholder="Enter Email" name="email" required>
-            <div>
-            <b>Password:</b><div></div>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            </div>
-            <b>Repeat Password:</b><div></div>
-            <input type="password" placeholder="Repeat Password" name="password-repeat" required>
-            <div></div>
-
-
-            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-            <div class="clearfix">
-              <button type="submit" class="signupbtn">Sign Up</button>
-            </div>
-          </div>
-        </form>
-        
-        <!-- END SIGNUP FORM -->
-      </div>
-
-      <!-- END authentController -->
-      </div>
 
 
 
@@ -219,7 +223,7 @@
 
 
   <!-- creates id in the <p> for the mapbox to load -->
-  <p id='map' ng-click="spotDetails"></p>
+  <p id='map'></p>
 
   <!-- Initialization of local .js files for use in the project-->
   <script type="text/javascript" src="app.js"></script>

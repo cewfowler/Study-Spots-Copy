@@ -16,8 +16,8 @@ var map = new mapboxgl.Map({
 
 
 //Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
-angular.module('spots').controller('SpotsController', ['$scope', 'Spots',
-  function ($scope, Spots) {
+angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userService',
+  function ($scope, Spots, userService) {
 
     let upvoted = false;
     let downvoted = false;
