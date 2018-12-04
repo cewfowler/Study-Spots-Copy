@@ -38,6 +38,11 @@ var UsersSchema = new Schema ({
     rooms: [String]
   },
 
+  favorited: {
+    bldgCodes: [String],
+    rooms: [String]
+  },
+
   createdAt: {
     type: Date,
     default: Date.now()

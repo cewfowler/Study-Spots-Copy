@@ -162,7 +162,7 @@ module.exports = function(app) {
           {new: true}, function(err, updatedSpot) {
             if (err) {
               console.log(err);
-              res.status(302).send();
+              res.status(500).send();
               return(err);
             }
             else {

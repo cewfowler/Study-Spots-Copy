@@ -15,8 +15,8 @@ function openMenu() {
   let mapStyles = document.getElementById("map");
   if (menu.style.width == "0px") {
     mapStyles.style.width = "66%";
-    mapStyles.style.left = "507px";
-    menu.style.width = "500px";
+    mapStyles.style.left = "33%";
+    menu.style.width = "33%";
   }
 }
 
@@ -26,7 +26,7 @@ function closeMenu() {
   let mapStyles = document.getElementById("map");
   if (menu.style.width != "0px") {
     mapStyles.style.width = "99%";
-    mapStyles.style.left = "0px";
+    mapStyles.style.left = "0%";
     menu.style.width = "0px";
 
   }

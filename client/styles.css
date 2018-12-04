@@ -8,13 +8,13 @@ body {
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 116px;
+    top: 7%;
     left: 0;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-left: 5px;
-    height: 84%;
+    height: 90%;
     z-index: -1;
   }
   h1 {
@@ -30,9 +30,9 @@ body {
   #map {
     position: absolute;
 
-    top: 104px;
+    top: 5%;
     bottom: 40px;
-    height: 83.5%;
+    height: 92%;
     width: 99%;
     left: 0px;
     transition: 0.5s;
@@ -99,6 +99,7 @@ body {
   border: none;
   float: right;
   margin:0 1% 0 0;
+  border-radius: 10%;
 }
 .rightbtn:hover {
   background-color: #3F48b0;
