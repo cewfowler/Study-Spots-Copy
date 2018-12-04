@@ -43,6 +43,11 @@ var UsersSchema = new Schema ({
     rooms: [String]
   },
 
+  reserved: {
+    bldgCode: String,
+    room: String
+  },
+
   createdAt: {
     type: Date,
     default: Date.now()

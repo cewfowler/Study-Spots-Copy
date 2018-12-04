@@ -120,7 +120,7 @@ body {
   .rightbtn{
   font-size: 14px;
   cursor: pointer;
-  background-color: #3F48CC;
+  background-color: #BC581A;
   color: white;
   padding: 14px 15px;
   border: none;
@@ -144,7 +144,7 @@ body {
     margin-left: 50px;
   }
   .row2{
-    background-color: #BC581A;
+    background-color: #3F48CC;
     padding-left: 8px;
 
   }
