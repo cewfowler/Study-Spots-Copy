@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
     failureRedirect : '/', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
-
+    res.status(302).send();
   });
 
 
@@ -20,6 +20,7 @@ module.exports = function(app, passport) {
   }), function(req, res) {
     /*console.log("here + " + req.isAuthenticated());
     res.status(302).redirect('/');*/
+    res.status(302).send();
   });
 
   app.get('/user/logout' , function(req, res) {

@@ -285,6 +285,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       //Need to figure out how to have each room show their overall upvotes/downvotes
     $scope.upvote = function(bldgCode, room){
       $scope.user = userService.user;
+      console.log($scope.user)
       var temp_room = room;
       var upvotes = $scope.user.upvoted;
       var downvotes = $scope.user.downvoted;
