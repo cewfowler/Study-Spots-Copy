@@ -55,6 +55,9 @@ module.exports = function(passport) {
         }
         console.log("Correct user and password");
 
+      User.findOneAndUpdate({email: email}, {$set: {lastLogin: Date.now()}}, {new: true}, function(err, newU) {
+        console.log(newU);
+      });
         return done(null, user);
       }).catch(done);
     });
