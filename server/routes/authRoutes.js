@@ -56,12 +56,7 @@ module.exports = function(app, passport) {
   });
 
   app.get('/loggedIn', function(req, res) {
-    if (req.isAuthenticated()) {
-      res.send(true);
-    }
-    else {
-      res.send(false);
-    }
+    res.send(req.isAuthenticated());
   })
 
 }
