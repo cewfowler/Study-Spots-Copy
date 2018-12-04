@@ -8,13 +8,13 @@ body {
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 116px;
+    top: 7%;
     left: 0;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-left: 5px;
-    height: 84%;
+    height: 90%;
     z-index: -1;
   }
   h1 {
