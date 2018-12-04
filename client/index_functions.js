@@ -27,7 +27,7 @@ function closeMenu() {
   if (menu.style.width != "0px") {
     mapStyles.style.width = "99%";
     mapStyles.style.left = "0%";
-    menu.style.width = "0%";
+    menu.style.width = "0px";
 
   }
 }
