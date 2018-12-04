@@ -73,14 +73,39 @@
               <td></td>
               <td><div style="height:25px;"></div>{{room.location}}</td>
               <td>
-                <button class="upvoteButton" ng-click="upvote(room)">
+                <button class="upvoteButton" ng-click="upvote(room.bldgCode, room)">
                   <i class="fa fa-caret-up fa-2x"></i></button>
                 <div class="upvote-num">{{ room.upvotes }}</div>
-                <button class="upvoteButton" ng-click="downvote(room)">
+                <button class="upvoteButton" ng-click="downvote(room.bldgCode, room)">
                   <i class="fa fa-caret-down fa-2x"></i></button>
               </td>
             </tr>
-          </table>
+            <!-- Show no rooms if rooms are empty -->
+            <tr ng-show="spot.spots.length == 0 && active==spot.bldgCode">
+              <td> </td>
+              <td colspan="4">No rooms</td>
+            </tr>
+
+            <!-- End of top page row div -->
+            <tr ng-repeat-end ng-show="active==spot.bldgCode">
+              <div class="form-popup" id="addForm" >
+                <form novalidate>
+                  <td></td>
+                  <td><input type="room-text" ng-model="bldg.roomName" placeholder="Room Name"></td>
+                  <td><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)" onclick="location.reload()">Add</button></td>
+                </form>
+              </div>
+            </tr>
+
+            <!-- if query doesnt find anything -->
+            <tr ng-if="x.length ===0">
+              <td> </td>
+              <td> </td>
+              <td>No results found.</td>
+            </tr>
+
+          </tr>
+        </table>
 
           <!-- End of top page row div -->
         </div>
