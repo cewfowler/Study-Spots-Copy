@@ -30,9 +30,9 @@ body {
   #map {
     position: absolute;
 
-    top: 104px;
+    top: 5%;
     bottom: 40px;
-    height: 83.5%;
+    height: 92%;
     width: 99%;
     left: 0px;
     transition: 0.5s;
