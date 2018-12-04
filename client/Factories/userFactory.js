@@ -14,7 +14,7 @@ angular.module('spots').factory('Users', function($http) {
         email: email,
         password: password
       });
-      
+
     },
 
     login: function(email, password) {
@@ -24,6 +24,21 @@ angular.module('spots').factory('Users', function($http) {
       };
 
       return $http.post('/user/login', data);
+    },
+
+    getUser: function(email) {
+      const data = {
+        email: email
+      };
+      return $http.get('/user', data);
+    },
+
+    updateUser: function(email, password) {
+      const data = {
+        email: email,
+        password: password
+      };
+      return $http.put('/user', data)
     }
   };
   return methods;
