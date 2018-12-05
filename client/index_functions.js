@@ -95,6 +95,22 @@ function togglePassword(){
   }
 }
 
+//Smooth scroll down when button is pressed
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+
+
 // function checkLoggedIn() {
 //   var obj;
 //   return fetch('/loggedIn')
