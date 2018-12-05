@@ -30,15 +30,19 @@ module.exports = function(app, passport) {
   });
 
   app.get('/user', isLoggedIn, function(req, res) {
+/*
+    console.log("Req log");
     console.log(req);
-    Users.findOne({email: req.email.toLowerCase()}, function(err, user) {
+    Users.findOne({email: req.user.email.toLowerCase()}, function(err, user) {
       if (err) {
         console.log("Error finding user!");
         res.status(500).redirect('/');
       }
-      res.status(200).send(user);
-      console.log("Successful User Find");
-    });
+      */
+      res.status(200).send(req.user);
+
+      //console.log("Successful User Find");
+    //});
 
   });
 

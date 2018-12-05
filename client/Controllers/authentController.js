@@ -7,26 +7,28 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
 
 
     if ($scope.$storage.email != "") {
-      Spots.getUser($scope.$storage.email).then(function (user) {
+      Spots.getUser().then(function (user) {
         userService.user = user.data;
         console.log(userService.user);
       });
     }
 
-    $scope.findUser = function(user) {
-      Spots.getUser(user).then(function(newUser) {
-        $scope.user = newUser;
-      })
-    }
-
     $scope.login = function (email, password) {
       Spots.login(email, password);
       $scope.$storage.email = email;
+      Spots.getUser().then(function (user) {
+        userService.user = user.data;
+        console.log(userService.user);
+      });
     }
 
     $scope.signup = function (email, password) {
       Spots.register(email, password);
       $scope.$storage.email = email;
+      Spots.getUser().then(function (user) {
+        userService.user = user.data;
+        console.log(userService.user);
+      });
     }
 
     $scope.current = function () {
