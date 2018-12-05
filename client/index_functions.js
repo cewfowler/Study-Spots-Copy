@@ -84,7 +84,7 @@ function clearSearchBox() {
   })
 }
 
-//show Password
+//show Password when checkbox is pressed
 function togglePassword(){
   var element = document.getElementById('checkPassword');
   if (element.type == "password"){
