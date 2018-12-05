@@ -146,6 +146,21 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       console.log('Unable to retrieve listings:', error);
     });
 
+    $scope.setCurrentRoom = function(room) {
+      $scope.currentRoom = room;
+    }
+
+    $scope.availableTime = function(room, index) {
+      if(room == null) {
+        return false;
+      }
+      if(room.availability[index] == true) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
     //Takes in a basic input value and sets that for the ng-repeat table to list the rooms by
     //If the same value is clicked, then the option is reversed
     $scope.sortingOrder = 'bldgName';
@@ -164,8 +179,22 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     }
 
     //Outline of what the claimSpot function might look like
-    $scope.claimSpot = function (bCode, roomName) {
-      console.log("Claiming " + roomName + " at building with code " + bCode);
+    $scope.claimSpot = function (bCode, roomLocation, time, availabilityArray) {
+      console.log(bCode);
+      console.log(roomLocation);
+      console.log(time);
+      console.log(availabilityArray);
+      console.log("Claiming " + roomLocation + " at building with code " + bCode + " at " + time);
+      Spots.getUser($scope.$storage.email).then(function(user) {
+        var temp_user = user;
+      });
+      console.log(temp_user);
+      temp_user.reserved.bldgCodes = bCode;
+      temp_user.reserved.rooms = roomlocation;
+
+      Spots.updateUser(temp_user).then(function(user) {
+        userService.user = user;
+      });
     }
 
     //Function that will add a spot from bldgCode
@@ -194,9 +223,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     $scope.showDetails = function (index) {
 
       $scope.spotDetails = $scope.spots[index];
-      $scope.updatedRoom = $scope.spotDetails;
-
-      console.log($scope.updatedRoom);
+      $scope.currentBldg = $scope.spotDetails;
+      console.log($scope.spotDetails);
 
       //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
       if ($scope.active != $scope.spotDetails.bldgCode) {
@@ -480,10 +508,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       });
     }
 
-    //Outline of what the update function might look like
-    $scope.update = function (bCode, roomName, updatedRoom, user) {
-
-    }
 
     //Initalizes  a basic zoom control for the Mapbox
     var nav = new mapboxgl.NavigationControl();

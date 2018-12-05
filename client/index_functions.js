@@ -49,6 +49,7 @@ function toggleForm() {
 var modal = document.getElementById('login-id');
 var modal2 = document.getElementById('signup-id');
 var modal3 = document.getElementById('account-id');
+var modal4 = document.getElementById('reservation-id');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -60,6 +61,9 @@ window.onclick = function(event) {
     }
     if (event.target == modal3) {
       modal3.style.display = "none";
+    }
+    if (event.target == modal4) {
+      modal4.style.display = "none";
     }
 }
 

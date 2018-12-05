@@ -36,10 +36,6 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
       $scope.$storage.email = "";
 
     }
-    $scope.current = function () {
-      console.log(userService.user);
-    }
-
     $scope.isLogged = function () {
       // console.log("User Email is: " + $scope.$storage.email);
       if ($scope.$storage.email == "") {

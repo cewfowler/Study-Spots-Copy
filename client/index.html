@@ -78,7 +78,10 @@
             <!-- show rooms when triangle points down -->
             <tr ng-repeat="room in spot.spots" ng-show="active==spot.bldgCode">
               <td></td>
-              <td><div style="height:25px;"></div>{{room.location}}</td>
+              <td>{{room.location}}
+                <button class="rightbtn" onclick="document.getElementById('reservation-id').style.display='block';"
+                  ng-click="setCurrentRoom(room)">Reserve Room</button>
+              </td>
               <td>
                 <button class="upvoteButton" ng-show="isLogged()" ng-click="upvote(spot.bldgCode, room)">
                   <i class="fa fa-caret-up fa-2x"></i></button>
@@ -99,7 +102,7 @@
 
             <!-- End of top page row div -->
             <tr ng-repeat-end ng-show="active==spot.bldgCode">
-              <div class="form-popup" id="addForm" >
+              <div class="form-popup" id="addForm">
                 <form novalidate>
                   <td></td>
                   <td><input type="room-text" ng-model="bldg.roomName" placeholder="Room Name"></td>
@@ -144,7 +147,7 @@
 
         <!-- LOGIN FORM -->
         <div id="login-id" class="modal">
-          <form class="modal-content animate" action="/user/login" method="post" novalidate>
+          <form class="modal-content animate">
             <div class="imgcontainer">
               <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
               <img src="images/logo4.jpg" alt="Avatar" class="avatar" style="width:300px; height:200px">
@@ -169,7 +172,7 @@
 
         <!-- SIGN UP FORM -->
         <div id="signup-id" class="modal">
-          <form class="modal-content animate" action="/user/register" method="post">
+          <form class="modal-content animate">
             <div class="imgcontainer">
               <span onclick="document.getElementById('signup-id').style.display='none'" class="close" title="Close Modal">&times;</span>
               <img src="images/logo4.jpg" alt="Avatar" class="avatar" style="width:300px; height:200px">
@@ -193,7 +196,7 @@
               <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
               <div class="btn-container">
-                <button type="submit" ng-click="register(email, password)" class="openbtn">Login</button>
+                <button type="submit" ng-click="signup(email, password)" class="openbtn">Login</button>
               </div>
             </div>
           </form>
@@ -201,26 +204,54 @@
           <!-- END SIGNUP FORM -->
         </div>
 
-            <!-- ACCOUNT CARD -->
-            <div id="account-id" class="accountcard">
-              <form class="modal-content animate">
-                <div class="imgcontainer">
-                  <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  <img src="images/logo4.jpg" alt="Avatar" style="width:300px; height:200px">
-                </div>
-
-                <div class="card">
-                  <h1></h1>
-                  <a href="https://github.com/adamhochberger/study-spots"><p>    </p><i class="fa fa-github"></i></a>
-                  <a href="https://campusmap.ufl.edu/#/index"><i class="fa fa-map"></i></a>
-                  <a href="https://ufl.libcal.com/reserve/"><i class="fa fa-book"></i></a>
-
-                </div>
-
-              </form>
+        <!-- ACCOUNT CARD -->
+        <div id="account-id" class="accountcard">
+          <form class="modal-content animate">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('account-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="images/logo4.jpg" alt="Avatar" style="width:300px; height:200px">
             </div>
-            <!-- END ACCOUNT CARD -->
 
+            <div class="card">
+              <h1></h1>
+              <a href="https://github.com/adamhochberger/study-spots"><p>    </p><i class="fa fa-github"></i></a>
+              <a href="https://campusmap.ufl.edu/#/index"><i class="fa fa-map"></i></a>
+              <a href="https://ufl.libcal.com/reserve/"><i class="fa fa-book"></i></a>
+
+            </div>
+
+          </form>
+        </div>
+        <!-- END ACCOUNT CARD -->
+
+        <div id="reservation-id" class="accountcard">
+          <form class="modal-content animate">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('reservation-id').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="images/logo4.jpg" alt="Avatar" style="width:300px; height:200px">
+            </div>
+
+            <div class="card">
+              <th> {{currentRoom.location}} </th><br>
+                <form>
+                <input ng-show="availableTime(currentRoom, 0)" type= 'radio' ng-model='roomChoice' value="7:25am"><label for="7:25am">7:25am</label><br>
+                <input ng-show="availableTime(currentRoom, 1)" type= 'radio' ng-model='roomChoice' value="8:30am"><label for="8:30am">8:30am</label><br>
+                <input ng-show="availableTime(currentRoom, 2)" type= 'radio' ng-model='roomChoice' value="9:35am"><label for="9:35am">9:35am</label><br>
+                <input ng-show="availableTime(currentRoom, 3)" type= 'radio' ng-model='roomChoice' value="10:40am"><label for="10:40am">10:40am</label><br>
+                <input ng-show="availableTime(currentRoom, 4)" type= 'radio' ng-model='roomChoice' value="11:45am"><label for="11:45am">11:45am</label><br>
+                <input ng-show="availableTime(currentRoom, 5)" type= 'radio' ng-model='roomChoice' value="12:50pm"><label for="12:50pm">12:50pm</label><br>
+                <input ng-show="availableTime(currentRoom, 6)" type= 'radio' ng-model='roomChoice' value="1:55pm"><label for="1:55pm">1:55pm</label><br>
+                <input ng-show="availableTime(currentRoom, 7)" type= 'radio' ng-model='roomChoice' value="3:00pm"><label for="3:00pm">3:00pm</label><br>
+                <input ng-show="availableTime(currentRoom, 8)" type= 'radio' ng-model='roomChoice' value="4:05pm"><label for="4:05pm">4:05pm</label><br>
+                <input ng-show="availableTime(currentRoom, 9)" type= 'radio' ng-model='roomChoice' value="5:10pm"><label for="5:10pm">5:10pm</label><br>
+                <input ng-show="availableTime(currentRoom, 10)" type= 'radio' ng-model='roomChoice' value="6:15pm"><label for="6:15pm">6:15pm</label><br>
+                <input ng-show="availableTime(currentRoom, 11)" type= 'radio' ng-model='roomChoice' value="7:20pm"><label for="7:20pm">7:20pm</label><br>
+                <input ng-show="availableTime(currentRoom, 12)" type= 'radio' ng-model='roomChoice' value="8:20pm"><label for="8:20pm">8:20pm</label><br>
+                <input ng-show="availableTime(currentRoom, 13)" type= 'radio' ng-model='roomChoice' value="9:20pm"><label for="9:20pm">9:20pm</label><br>
+                <button type="submit" ng-click="claimSpot(currentBldg.bldgCode, currentRoom.location, roomChoice, currentRoom.availability)" class="openbtn">Make reservation</button>
+              </form>
+          </form>
+        </div>
       <!-- Authent end -->
       </div>
 

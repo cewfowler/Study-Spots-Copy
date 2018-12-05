@@ -30,7 +30,6 @@ module.exports = function(app, passport) {
   });
 
   app.get('/user', isLoggedIn, function(req, res) {
-    console.log(req);
     Users.findOne({email: req.user.email.toLowerCase()}, function(err, user) {
       if (err) {
         console.log("Error finding user!");
