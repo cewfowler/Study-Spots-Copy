@@ -163,11 +163,35 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       $scope.sortingOrder = inputValue;
     }
 
-    //Outline of what the claimSpot function might look like
-    $scope.claimSpot = function (bCode, roomName) {
-      console.log("Claiming " + roomName + " at building with code " + bCode);
+
+    $scope.availableTime = function(room, index) {
+      if(room == null) {
+        return false;
+      }
+      if(room.availability[index] == true) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 
+    $scope.setCurrentRoom = function(room) {
+      $scope.currentRoom = room;
+    }
+
+    //Outline of what the claimSpot function might look like
+    $scope.claimSpot = function (bCode, roomLocation, time, availabilityArray) {
+      console.log(userService.user);
+      var temp_user = userService.user;
+      console.log(temp_user);
+      temp_user.reserved.bldgCode = bCode;
+      temp_user.reserved.room = roomlocation;
+
+      Spots.updateUser(temp_user).then(function(user) {
+        userService.user = user;
+      });
+    }
     //Function that will add a spot from bldgCode
     $scope.add = function (bCode, roomName) {
 
