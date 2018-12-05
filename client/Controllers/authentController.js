@@ -3,13 +3,13 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
 
       $scope.$storage = $localStorage.$default({
         email: ""
-
       });
-    
+
 
     if ($scope.$storage.email != "") {
       Spots.getUser($scope.$storage.email).then(function (user) {
         userService.user = user.data;
+        console.log(userService.user);
       });
     }
 

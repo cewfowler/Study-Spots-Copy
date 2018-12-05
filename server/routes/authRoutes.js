@@ -30,25 +30,27 @@ module.exports = function(app, passport) {
   });
 
   app.get('/user', isLoggedIn, function(req, res) {
-
-    Users.findOne({email: req.user.email}, function(err, user) {
+    console.log(req);
+    Users.findOne({email: req.user.email.toLowerCase()}, function(err, user) {
       if (err) {
         console.log("Error finding user!");
         res.status(500).redirect('/');
       }
       res.status(200).send(user);
+      console.log("Successful User Find");
     });
 
   });
 
-  app.put('/user', isLoggedIn, function(req, res) {
-    Users.findOneAndUpdate({email: req.user.email.toLowerCase()}, req.user,
+  app.put('/user', function(req, res) {
+    Users.findOneAndUpdate({email: req.body.user.email.toLowerCase()},
+    {upvoted :req.body.user.upvoted, downvoted: req.body.user.downvoted},
+    {new : true},
     function(err, userUpdated) {
         if (err) {
           console.log("Error updating");
           res.status(500).redirect('/');
         }
-
         console.log('New user info is ' + userUpdated);
         res.status(200).send(userUpdated);
       });

@@ -284,10 +284,9 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     //TODO: Need to clarify way so that each building has individual values
       //Need to figure out how to have each room show their overall upvotes/downvotes
     $scope.upvote = function(bldgCode, room){
-      $scope.user = userService.user;
       var temp_room = room;
-      var upvotes = $scope.user.upvoted;
-      var downvotes = $scope.user.downvoted;
+      var upvotes = userService.user.upvoted;
+      var downvotes = userService.user.downvoted;
 
       var building_found_upvotes = false;
       var rooms_found_upvotes = false;
@@ -303,8 +302,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
             rooms_found_upvotes = true;
             break;
           }
+          else {
+            i += 1;
+          }
         }
-        i += 1;
+        else {
+          i += 1;
+        }
       }
 
       while(j < downvotes.bldgCodes.length) {
@@ -314,8 +318,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
             rooms_found_downvotes = true;
             break;
           }
+          else {
+            j += 1;
+          }
         }
-        j += 1;
+        else {
+          j += 1;
+        }
       }
 
       if(building_found_upvotes == true && rooms_found_upvotes == true) {
@@ -340,12 +349,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         upvotes.bldgCodes.push(bldgCode);
         upvotes.rooms.push(temp_room.location);
       }
-
+      $scope.user = userService.user;
       $scope.user.upvoted = upvotes;
       $scope.user.downvoted = downvotes;
 
-      $scope.update(bldgCode, room.location, temp_room, userService.user);
+      Spots.updateUser($scope.user).then(function(newUser) {
+        var temp_user = newUser.config.data;
 
+        Spots.getUser(temp_user).then(function(user) {
+          userService.user = user.config.email.user;
+        });
+      });
+      Spots.update(bldgCode, room.location, temp_room).then(function(room) {
+
+      });
     }
       //user.upvotes and downvotes contains [bldgCodes] and [rooms]
       //need to search for room value in user.upvotes.rooms
@@ -364,10 +381,10 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     $scope.downvote = function (bldgCode, room) {
 
-      $scope.user = userService.user;
       var temp_room = room;
-      var upvotes = $scope.user.upvoted;
-      var downvotes = $scope.user.downvoted;
+      console.log(userService.user);
+      var upvotes = userService.user.upvoted;
+      var downvotes = userService.user.downvoted;
 
       var building_found_upvotes = false;
       var rooms_found_upvotes = false;
@@ -384,8 +401,13 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
             rooms_found_downvotes = true;
             break;
           }
+          else {
+            i += 1;
+          }
         }
-        i += 1;
+        else {
+          i += 1;
+        }
       }
 
       while(j < upvotes.bldgCodes.length) {
@@ -395,15 +417,19 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
             rooms_found_upvotes = true;
             break;
           }
+          else {
+            j += 1;
+          }
         }
-        j += 1;
+        else {
+          j += 1;
+        }
       }
 
       if(building_found_downvotes == true && rooms_found_downvotes == true) {
         temp_room.downvotes--;
         downvotes.bldgCodes.splice(i, 1);
         downvotes.rooms.splice(i, 1);
-
       }
 
       else if (building_found_downvotes == false && rooms_found_downvotes == false
@@ -424,6 +450,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
       }
 
+      $scope.user = userService.user;
       $scope.user.upvoted = upvotes;
       $scope.user.downvoted = downvotes;
 
@@ -440,15 +467,20 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       //Case3: bldgCode and room exists in user.upvotes and they click downvote
         //It is spliced from both arrays in user.upvotes and pushed to both in user.downvotes
 
-      $scope.update(bldgCode, room.location, temp_room, userService.user);
+      Spots.updateUser($scope.user).then(function(newUser) {
+        var temp_user = newUser.config.data;
+        Spots.getUser(temp_user).then(function(user) {
+          userService.user = user.config.email.user;
+        });
+      });
+      Spots.update(bldgCode, room.location, temp_room).then(function(room) {
+
+      });
     }
 
     //Outline of what the update function might look like
     $scope.update = function (bCode, roomName, updatedRoom, user) {
-      Spots.update(bCode, roomName, updatedRoom).then(function() {
-        console.log(bCode);
-      });
-      Spots.updateUser(user);
+
     }
 
     //Initalizes  a basic zoom control for the Mapbox

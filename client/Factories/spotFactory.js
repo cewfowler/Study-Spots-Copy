@@ -75,12 +75,9 @@ angular.module('spots').factory('Spots', function($http) {
       },
 
       updateUser: function(user) {
-        const data = {
-          user: user
-        };
-        return $http.put('/user', data);
+        return $http.put('/user', {user: user});
       },
-      
+
       logout: function() {
         return $http.get('/user/logout');
       }

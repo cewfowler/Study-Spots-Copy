@@ -68,7 +68,7 @@ module.exports = function(app) {
         else {
           res.status(302).send();
         }
-    })
+    });
 
   });
 
@@ -99,7 +99,7 @@ module.exports = function(app) {
         }
       }
 
-    }).then(function() {
+    }).exec(function() {
       if (reqSpot) {
         console.log("Room found");
         res.status(201).send(reqSpot);
@@ -116,10 +116,8 @@ module.exports = function(app) {
   //update number of upvotes/downvotes for a room
   app.put('/spots/:bCode/:room', function(req,res) {
     var rooms;
-    var update = true;
-
+    var update = false;
     SpotModel.findOne({bldgCode: req.params.bCode.toUpperCase()}, function(err, studySpot) {
-
       if (err) {
         console.log(err);
         return err;
@@ -131,8 +129,8 @@ module.exports = function(app) {
       }
 
       rooms = studySpot.spots.toBSON();
-    }).then(function() {
 
+    }).then(function() {
       if (!rooms){
         console.log("No rooms found");
         res.status(302).send();
@@ -148,17 +146,14 @@ module.exports = function(app) {
             //TODO: figure out method to change
             console.log("Swapping old room info with updated info");
             rooms[i] = req.body.spot;
-            return;
+            update = true;
           }
         }
-
-        update = false;
       }
-    }).then(function() {
-      
+
       if (update) {
-        SpotModel.findOneAndUpdate({bldgCode: req.params.bCode}, {$set: {spots: rooms}},
-          {new: true}, function(err, updatedSpot) {
+        SpotModel.findOneAndUpdate({bldgCode: req.params.bCode}, {spots: rooms}, {new : true},
+          function(err, updatedSpot) {
             if (err) {
               console.log(err);
               res.status(500).send();
@@ -170,7 +165,6 @@ module.exports = function(app) {
           });
 
       }
-
       else {
         console.log("Unable to update room");
         res.status(302).send();
