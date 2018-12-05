@@ -84,6 +84,17 @@ function clearSearchBox() {
   })
 }
 
+//show Password
+function togglePassword(){
+  var element = document.getElementById('checkPassword');
+  if (element.type == "password"){
+    element.type = "text";
+  }
+  else{
+    element.type = "password";
+  }
+}
+
 // function checkLoggedIn() {
 //   var obj;
 //   return fetch('/loggedIn')
