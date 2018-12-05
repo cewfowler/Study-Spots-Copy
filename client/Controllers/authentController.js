@@ -39,12 +39,14 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
     }
 
     $scope.isLogged = function () {
-      console.log("User Email is: " + userService.user.email);
-      if(userService.user.email == null){
+      // console.log("User Email is: " + $scope.$storage.email);
+      if($scope.$storage.email == ""){
         return false;
       }
       else {
         return true;
       }
     }
+
+    
   }]);
