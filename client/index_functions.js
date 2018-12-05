@@ -80,6 +80,7 @@ function clearSearchBox() {
   })
 }
 
+<<<<<<< HEAD
 // function checkLoggedIn() {
 //   var obj;
 //   return fetch('/loggedIn')
@@ -87,6 +88,33 @@ function clearSearchBox() {
 //   .then(data => obj = data)
 //   .then(obj => console.log(obj));
 // }
+=======
+//show password checkbox
+function togglePassword(){
+  if (document.getElementById("checkPassword").type == "password"){
+    document.getElementById("checkPassword").type = "text";
+  }
+  else{
+    document.getElementById("checkPassword").type = "password";
+  }
+}
+
+
+//Smooth scroll down when button is pressed
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+>>>>>>> 1e04b4cb9874d7db90bc2d9b6a1b6f4e9f68bf33
 
 //TODO: Implement filtering of the markers
 //TODO: Implement more user-settings for map layers (building names, satellite)
