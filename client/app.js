@@ -7,3 +7,7 @@ angular.module('spots', ['ngStorage']).service('userService', function() {
 
 /* register the application and inject all the necessary dependencies */
 var app = angular.module('spotsApp', ['spots']);
+
+app.config(['$qProvider', function ($qProvider) {
+    $qProvider.errorOnUnhandledRejections(false);
+}]);
