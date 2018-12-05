@@ -36,6 +36,7 @@
 
     <!-- Uses the SpotsController from spotController.js to find listings -->
     <div ng-controller="SpotsController">
+      <div ng-controller="AuthenticationController">
 
       <!--Menu sidebar -->
       <div id="myMenu" class="sidebar" style="width: 0px;">
@@ -79,10 +80,14 @@
               <td></td>
               <td><div style="height:25px;"></div>{{room.location}}</td>
               <td>
-                <button class="upvoteButton" ng-click="upvote(spot.bldgCode, room)">
+                <button class="upvoteButton" ng-show="isLogged()" ng-click="upvote(spot.bldgCode, room)">
+                  <i class="fa fa-caret-up fa-2x"></i></button>
+                <button class="upvoteButton" ng-hide="isLogged()" onclick="document.getElementById('login-id').style.display='block'">
                   <i class="fa fa-caret-up fa-2x"></i></button>
                 <div class="upvote-num">{{ room.upvotes - room.downvotes}}</div>
-                <button class="upvoteButton" ng-click="downvote(spot.bldgCode, room)">
+                <button class="upvoteButton" ng-show="isLogged()" ng-click="downvote(spot.bldgCode, room)">
+                  <i class="fa fa-caret-down fa-2x"></i></button>
+                <button class="upvoteButton" ng-hide="isLogged()" onclick="document.getElementById('login-id').style.display='block'">
                   <i class="fa fa-caret-down fa-2x"></i></button>
               </td>
             </tr>
@@ -98,7 +103,10 @@
                 <form novalidate>
                   <td></td>
                   <td><input type="room-text" ng-model="bldg.roomName" placeholder="Room Name"></td>
-                  <td><button id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)" onclick="location.reload()">Add</button></td>
+                  <td>
+                    <button ng-show="isLogged()" id="addbutton" ng-click="add(spotDetails.bldgCode, bldg.roomName)" onclick="location.reload()">Add</button>
+                    <button ng-hide="isLogged()" id="addbutton" onclick="document.getElementById('login-id').style.display='block'">Add</button>
+                  </td>
                 </form>
               </div>
             </tr>
@@ -117,10 +125,7 @@
         </div>
 
       <!-- End spotcsontroller -->
-      </div>
 
-
-      <div ng-controller="AuthenticationController">
         <!-- navigation bar -->
         <div class="row2" id="menu_toggle">
           <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
@@ -203,15 +208,15 @@
                   <span onclick="document.getElementById('login-id').style.display='none'" class="close" title="Close Modal">&times;</span>
                   <img src="images/logo4.jpg" alt="Avatar" style="width:300px; height:200px">
                 </div>
-    
+
                 <div class="card">
                   <h1></h1>
-                  <a href="https://github.com/adamhochberger/study-spots"><p>    </p><i class="fa fa-github"></i></a> 
-                  <a href="https://campusmap.ufl.edu/#/index"><i class="fa fa-map"></i></a> 
-                  <a href="https://ufl.libcal.com/reserve/"><i class="fa fa-book"></i></a> 
-                  
+                  <a href="https://github.com/adamhochberger/study-spots"><p>    </p><i class="fa fa-github"></i></a>
+                  <a href="https://campusmap.ufl.edu/#/index"><i class="fa fa-map"></i></a>
+                  <a href="https://ufl.libcal.com/reserve/"><i class="fa fa-book"></i></a>
+
                 </div>
-    
+
               </form>
             </div>
             <!-- END ACCOUNT CARD -->
