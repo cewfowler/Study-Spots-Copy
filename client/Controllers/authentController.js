@@ -32,9 +32,19 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
       Spots.logout();
       userService.user = "";
       $scope.$storage.email = "";
-
+      
     }
     $scope.current = function() {
       console.log(userService.user);
+    }
+
+    $scope.isLogged = function () {
+      console.log("User Email is: " + userService.user.email);
+      if(userService.user.email == null){
+        return false;
+      }
+      else {
+        return true;
+      }
     }
   }]);

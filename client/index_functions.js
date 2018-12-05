@@ -9,6 +9,7 @@ function toggleMenu() {
   }
 }
 
+
 //opens the menu
 function openMenu() {
   let menu = document.getElementById("myMenu");
@@ -78,6 +79,14 @@ function clearSearchBox() {
     scope.spotQuery = "";
   })
 }
+
+// function checkLoggedIn() {
+//   var obj;
+//   return fetch('/loggedIn')
+//   .then(res => res.json())
+//   .then(data => obj = data)
+//   .then(obj => console.log(obj));
+// }
 
 //TODO: Implement filtering of the markers
 //TODO: Implement more user-settings for map layers (building names, satellite)

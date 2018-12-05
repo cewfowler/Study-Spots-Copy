@@ -117,12 +117,13 @@
         <!-- navigation bar -->
         <div class="row2" id="menu_toggle">
           <button class="openbtn" onclick="toggleMenu()">☰ Menu</button>
-          <button class="rightbtn" ng-click="logout()"> Logout</button>
-          <button id="account" class="rightbtn"
+          <button class="openbtn" onclick="checkLoggedIn()">☰ Test Login</button>
+          <button ng-show="isLogged()" class="rightbtn" ng-click="logout()"> Logout</button>
+          <button ng-show="isLogged()" id="account" class="rightbtn"
             onclick="document.getElementById('account-id').style.display='block'">Account</button>
-          <button id="signup" class="rightbtn"
+          <button ng-hide="isLogged()" id="signup" class="rightbtn"
             onclick="document.getElementById('signup-id').style.display='block'">Sign Up</button>
-          <button id="login" class="rightbtn"
+          <button ng-hide="isLogged()" id="login" class="rightbtn"
             onclick="document.getElementById('login-id').style.display='block'">Log In</button>
 
           <!-- End of top page second row div -->
