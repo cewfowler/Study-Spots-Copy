@@ -79,5 +79,31 @@ function clearSearchBox() {
   })
 }
 
+//show password checkbox
+function togglePassword(){
+  if (document.getElementById("checkPassword").type == "password"){
+    document.getElementById("checkPassword").type = "text";
+  }
+  else{
+    document.getElementById("checkPassword").type = "password";
+  }
+}
+
+
+//Smooth scroll down when button is pressed
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+
 //TODO: Implement filtering of the markers
 //TODO: Implement more user-settings for map layers (building names, satellite)

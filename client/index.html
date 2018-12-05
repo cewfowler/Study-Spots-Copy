@@ -23,7 +23,14 @@
 </head>
 
 <body>
-
+  <div class="header"></div>
+  <div class="header-text">
+    <h2>Welcome to Study Spots</h2>
+    <h2></h2>
+    <a class="ct-btn-scroll ct-js-btn-scroll" href="#menu_toggle">
+      <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png">
+    </a>
+  </div>
   <!-- Uses the spotsApp from app.js etc to find listings -->
   <div ng-app="spotsApp">
 
@@ -170,10 +177,11 @@
               <input type="text" placeholder="Enter Email" name="email" required>
               <div>
               <b>Password:</b><div></div>
-              <input type="password" placeholder="Enter Password" name="password" required>
+              <input id="checkPassword" type="password" placeholder="Enter Password" name="password" required>
               </div>
-              <b>Repeat Password:</b><div></div>
-              <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+              <label>
+                <input type="checkbox" onclick="togglePassword()" style="margin-bottom:15px"> Show Password
+              </label>
               <div></div>
 
 
@@ -230,6 +238,7 @@
   <script type="text/javascript" src="Factories/spotFactory.js"></script>
   <script type="text/javascript" src="Controllers/spotController.js"></script>
   <script type="text/javascript" src="index_functions.js"></script>
+
 
   <!-- End of body tag -->
   </body>
