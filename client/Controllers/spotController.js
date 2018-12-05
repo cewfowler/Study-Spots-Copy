@@ -278,7 +278,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         .setHTML('<h3>' + $scope.spotDetails.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(testName)" ondblclick="closeMenu()">Reserve Spot</button>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(testName)" ondblclick="closeMenu()">View Spot</button>'
         )
       popups.addTo(map);
     }
@@ -582,7 +582,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         .setHTML('<h3>' + feature.properties.bldgName + '</h3><p>'
           + '</p>'
           + '<img id = "buildIMG" img src= ' + fetchURL(".jpg") + ' alt="Building Image" width="300" height="200" onerror="onError(this)">'
-          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(nameToPass)" ondblclick="closeMenu()">Reserve Spot</button>'
+          + '<br><br><button class="trigger" id="formbutton" onclick="nameToSidebar(nameToPass)" ondblclick="closeMenu()">View Spot</button>'
         )
         .addTo(map);
 
