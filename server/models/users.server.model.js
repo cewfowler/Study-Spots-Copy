@@ -44,14 +44,8 @@ var UsersSchema = new Schema ({
   },
 
   reserved: {
-    bldgCode: {
-      type: String,
-      default: ""
-    },
-    room: {
-      type: String,
-      default: ""
-    }
+    bldgCode: String,
+    room: String
   },
 
   createdAt: {

@@ -33,7 +33,7 @@ module.exports = function(app, passport) {
 /*
     console.log("Req log");
     console.log(req);
-    Users.findOne({email: req.email.toLowerCase()}, function(err, user) {
+    Users.findOne({email: req.user.email.toLowerCase()}, function(err, user) {
       if (err) {
         console.log("Error finding user!");
         res.status(500).redirect('/');
