@@ -1,6 +1,16 @@
 # study-spots
 Group 3 for Wednesday 12:50 section
 
+Welcome to StudySpots(TM)! This is a web application designed by:
+Christian Fowler, Adam Hochberger, Danny Moolchand, and Robert Parker.
+
+This app lets users view a map of all the buildings in the University of Florida. The purpose of this app is to allow students to easily locate avaialable classrooms or study rooms, view the most coveted ones, and to also reserve one for their own personal user.
+
+In order to vote on a room or add a new room, you must create and account first. Otherwise, you can just browse the map and rooms in each building.
+
+Below is a weekly summary of our accomplishments: 
+
+
 Week 1 8-Oct: 
 Created user stories for Sprint 1
 Divide tasks among the four of us:
@@ -68,6 +78,7 @@ Updated user schema, user authentication/registration/login fully implemented
 CSS added to sign-in and login forms
 Code refactoring
 Fixed bugs with upvoting and downvoting
+
 
 Week 9 - 3-Dec:
 Implemented sessions with Passport
