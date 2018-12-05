@@ -148,6 +148,8 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //Takes in a basic input value and sets that for the ng-repeat table to list the rooms by
     //If the same value is clicked, then the option is reversed
+    $scope.sortingOrder = 'bldgName';
+
     $scope.sort_by = function (inputValue) {
 
       //Checks to see if the current value that it is sorting by is being clicked
