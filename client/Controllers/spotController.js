@@ -182,11 +182,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //Outline of what the claimSpot function might look like
     $scope.claimSpot = function (bCode, roomLocation, time, availabilityArray) {
+      console.log(roomLocation);
       console.log(userService.user);
       var temp_user = userService.user;
       console.log(temp_user);
       temp_user.reserved.bldgCode = bCode;
-      temp_user.reserved.room = roomlocation;
+      temp_user.reserved.room = roomLocation;
 
       Spots.updateUser(temp_user).then(function(user) {
         userService.user = user;
@@ -219,6 +220,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
       $scope.spotDetails = $scope.spots[index];
       $scope.updatedRoom = $scope.spotDetails;
+      $scope.currentBldg = $scope.updatedRoom;
 
       console.log($scope.updatedRoom);
 
