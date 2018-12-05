@@ -16,7 +16,7 @@ var map = new mapboxgl.Map({
 
 
 //Initalizes a controller for the ng-app "spots", utilizes the $scope and the "Spots" factory
-angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userService',
+angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userService', '$localStorage',
   function ($scope, Spots, userService) {
 
     //Uses the getAll function from the spotFactory file
