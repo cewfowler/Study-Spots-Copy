@@ -13,6 +13,12 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
       });
     }
 
+    $scope.findUser = function(user) {
+      Spots.getUser(user).then(function(newUser) {
+        $scope.user = newUser;
+      })
+    }
+
     $scope.login = function (email, password) {
       Spots.login(email, password);
       $scope.$storage.email = email;

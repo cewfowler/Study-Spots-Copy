@@ -68,10 +68,7 @@ angular.module('spots').factory('Spots', function($http) {
       },
 
       getUser: function(email) {
-        const data = {
-          email: email
-        };
-        return $http.get('/user', data);
+        return $http.get('/user', {email: email});
       },
 
       updateUser: function(user) {
