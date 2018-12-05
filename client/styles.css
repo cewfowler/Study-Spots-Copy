@@ -158,10 +158,10 @@ body, html {
   cursor: pointer;
   background-color: #BC581A;
   color: white;
-  padding: 14px 15px;
+  padding: 5px 10px;
   border: none;
   float: right;
-  margin:0 1% 0 0;
+  margin: 10px;
   border-radius: 10%;
 }
 .rightbtn:hover {
