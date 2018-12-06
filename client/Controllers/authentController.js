@@ -6,7 +6,6 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
       });
 
     Spots.getUser().then(function(user) {
-      console.log(user);
       userService.user = user.data;
       $scope.currentUser = userService.user;
     });
