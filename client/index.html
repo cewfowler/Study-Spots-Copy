@@ -169,7 +169,7 @@
               </div>
 
               <div class="btn-container">
-                <button type="submit" ng-click="login(email, password)" class="openbtn">Login</button>
+                <button ng-click="login(email, password)" class="openbtn">Login</button>
               </div>
             </div>
 
@@ -190,11 +190,11 @@
               <p>Please fill in this form to create an account.</p>
               <b>Email:</b>
               <div></div>
-              <input type="text" placeholder="Enter Email" name="email" required>
+              <input type="text" placeholder="Enter Email" ng-model="email2" required>
               <div>
                 <b>Password:</b>
                 <div></div>
-                <input id="checkPassword" type="password" placeholder="Enter Password" name="password" required>
+                <input id="checkPassword" type="password" placeholder="Enter Password" ng-model="password2" required>
               </div>
               <label>
                 <input type="checkbox" onclick="togglePassword()" style="margin-bottom:15px"> Show Password
@@ -202,10 +202,10 @@
               <div></div>
 
 
-              <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+              <p>By creating an account you agree to our <a style="color:dodgerblue">Terms & Privacy</a>.</p>
 
               <div class="btn-container">
-                <button type="submit" ng-click="register(email, password)" class="openbtn">Login</button>
+                <button ng-click="signup(email2, password2)" class="openbtn">Login</button>
               </div>
             </div>
           </form>
@@ -223,11 +223,11 @@
 
             <div class="card">
               <h1>Upvoted Rooms</h1>
-              <p>{{user.upvoted.rooms.join(", ")}}</p>
+              <p>{{currentUser.upvoted.rooms.join(", ")}}</p>
 
               <br>
               <h1>Reserved Rooms</h1>
-              <p>{{user.reserved.room}}</p>
+              <p>{{currentUser.reserved.room}}</p>
               <a href="https://github.com/adamhochberger/study-spots">
                 <p> </p><i class="fa fa-github"></i>
               </a>
@@ -263,7 +263,7 @@
                 <input ng-show="availableTime(currentRoom, 11)" type= 'radio' ng-model='roomChoice' value="7:20pm"><label for="7:20pm">7:20pm</label><br>
                 <input ng-show="availableTime(currentRoom, 12)" type= 'radio' ng-model='roomChoice' value="8:20pm"><label for="8:20pm">8:20pm</label><br>
                 <input ng-show="availableTime(currentRoom, 13)" type= 'radio' ng-model='roomChoice' value="9:20pm"><label for="9:20pm">9:20pm</label><br>
-                <button type="submit" ng-click="claimSpot(currentBldg.bldgCode, currentRoom.location, roomChoice, currentRoom.availability)" class="openbtn">Make reservation</button>
+                <button type="submit" onclick="document.getElementById('reservation-id').style.display='none'" title="Close Modal" ng-click="claimSpot(currentBldg.bldgCode, currentRoom, roomChoice)" class="openbtn" &times; >Make reservation</button>
               </form>
           </form>
         </div>

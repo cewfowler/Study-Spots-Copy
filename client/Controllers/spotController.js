@@ -181,17 +181,25 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     }
 
     //Outline of what the claimSpot function might look like
-    $scope.claimSpot = function (bCode, roomLocation, time, availabilityArray) {
-      console.log(roomLocation);
+    $scope.claimSpot = function (bCode, room, time) {
+      console.log(room.location);
       console.log(userService.user);
       var temp_user = userService.user;
-      console.log(temp_user);
       temp_user.reserved.bldgCode = bCode;
-      temp_user.reserved.room = roomLocation;
-
+      temp_user.reserved.room = room.location;
+      $scope.currentUser = temp_user;
       Spots.updateUser(temp_user).then(function(user) {
-        userService.user = user;
+        userService.user = user.data;
+        console.log(userService.user);
       });
+      var time_array = ['7:25am', '8:30am', '9:35am', '10:40am', '11:45am', '12:50pm', '1:55pm', '3:00pm', '4:05pm', '5:10pm', '6:15pm', '7:20pm', '8:20pm', '9:20pm']
+      var temp_room = room;
+
+      temp_room.availability[time_array.indexOf(time)] = false;
+      Spots.update(bCode, room.location, temp_room).then(function(room) {
+
+      });
+
     }
     //Function that will add a spot from bldgCode
     $scope.add = function (bCode, roomName) {

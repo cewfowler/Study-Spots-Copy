@@ -1,45 +1,27 @@
-angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots', '$localStorage', 'userService',
-  function ($scope, Spots, $localStorage, userService) {
+angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots', '$sessionStorage', 'userService',
+  function ($scope, Spots, $sessionStorage, userService) {
 
-      $scope.$storage = $localStorage.$default({
+      $scope.$storage = $sessionStorage.$default({
         email: ""
       });
 
-
-    if ($scope.$storage.email != "") {
-      Spots.getUser().then(function (user) {
-        userService.user = user.data;
-        console.log(userService.user);
-      });
-    }
-
-    $scope.findUser = function(user) {
-      Spots.getUser(user).then(function(newUser) {
-        $scope.user = newUser;
-      })
-    }
+    Spots.getUser().then(function(user) {
+      console.log(user);
+      userService.user = user.data;
+      $scope.currentUser = userService.user;
+    });
 
     $scope.login = function (email, password) {
       Spots.login(email, password);
       $scope.$storage.email = email;
-      Spots.getUser().then(function (user) {
-        userService.user = user.data;
-        console.log(userService.user);
-      });
     }
 
     $scope.signup = function (email, password) {
       Spots.register(email, password);
+      $scope.logout();
       $scope.$storage.email = email;
-      Spots.getUser().then(function (user) {
-        userService.user = user.data;
-        console.log(userService.user);
-      });
     }
 
-    $scope.current = function () {
-      console.log(userService.user);
-    }
 
     $scope.update = function () {
       Spots.updateUser(userService.user.email, userService.user);
@@ -48,12 +30,7 @@ angular.module('spots').controller('AuthenticationController', ['$scope', 'Spots
       Spots.logout();
       userService.user = "";
       $scope.$storage.email = "";
-
     }
-    $scope.current = function () {
-      console.log(userService.user);
-    }
-
     $scope.isLogged = function () {
       // console.log("User Email is: " + $scope.$storage.email);
       if ($scope.$storage.email == "") {

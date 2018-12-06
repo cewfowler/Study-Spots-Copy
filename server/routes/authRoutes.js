@@ -12,14 +12,13 @@ module.exports = function(app, passport) {
     res.status(302).send();
   });
 
-
   app.post('/user/register', passport.authenticate('local-signup', {
     successRedirect : '/#menu_toggle', // redirect to the secure profile section
     failureRedirect : '/#menu_toggle', // redirect back to the signup page if there is an error
     failureFlash: true
   }), function(req, res) {
-    /*console.log("here + " + req.isAuthenticated());
-    res.status(302).redirect('/');*/
+    /*console.log("here + " + req.isAuthenticated()); */
+    console.log(res);
     res.status(302).send();
   });
 
@@ -41,6 +40,7 @@ module.exports = function(app, passport) {
       */
       res.status(200).send(req.user);
 
+
       //console.log("Successful User Find");
     //});
 
@@ -48,7 +48,8 @@ module.exports = function(app, passport) {
 
   app.put('/user', function(req, res) {
     Users.findOneAndUpdate({email: req.body.user.email.toLowerCase()},
-    {upvoted :req.body.user.upvoted, downvoted: req.body.user.downvoted},
+    {upvoted :req.body.user.upvoted, downvoted: req.body.user.downvoted,
+    reserved: req.body.user.reserved},
     {new : true},
     function(err, userUpdated) {
         if (err) {
@@ -63,7 +64,7 @@ module.exports = function(app, passport) {
 
   app.get('/loggedIn', function(req, res) {
     res.send(req.isAuthenticated());
-  })
+  });
 
 }
 
