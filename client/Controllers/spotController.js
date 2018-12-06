@@ -112,7 +112,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
         }
         $scope.spots_geo.features[i] = feature;
       }
-      console.log($scope.spots_geo)
+
       map.addSource('spots', {
         type: 'geojson',
         data: $scope.spots_geo,
@@ -182,15 +182,12 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
     //Outline of what the claimSpot function might look like
     $scope.claimSpot = function (bCode, room, time) {
-      console.log(room.location);
-      console.log(userService.user);
       var temp_user = userService.user;
       temp_user.reserved.bldgCode = bCode;
       temp_user.reserved.room = room.location;
       $scope.currentUser = temp_user;
       Spots.updateUser(temp_user).then(function(user) {
         userService.user = user.data;
-        console.log(userService.user);
       });
       var time_array = ['7:25am', '8:30am', '9:35am', '10:40am', '11:45am', '12:50pm', '1:55pm', '3:00pm', '4:05pm', '5:10pm', '6:15pm', '7:20pm', '8:20pm', '9:20pm']
       var temp_room = room;
@@ -205,10 +202,7 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     $scope.add = function (bCode, roomName) {
 
       //Debugging for index of passed in spot
-      console.log(bCode);
-      console.log("Adding " + roomName + " to bldg " + $scope.spotDetails.bldgCode);
       Spots.create(bCode, roomName).then(function (response) {
-        console.log("Woo: " + response);
       }, function (error) {
         console.log('Unable to create room:', error);
 
@@ -230,7 +224,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
       $scope.updatedRoom = $scope.spotDetails;
       $scope.currentBldg = $scope.updatedRoom;
 
-      console.log($scope.updatedRoom);
 
       //Sets the active spot to be the clicked on spot, for the sidebar menu expansion
       if ($scope.active != $scope.spotDetails.bldgCode) {
@@ -418,7 +411,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
     $scope.downvote = function (bldgCode, room) {
 
       var temp_room = room;
-      console.log(userService.user);
       var upvotes = userService.user.upvoted;
       var downvotes = userService.user.downvoted;
 
@@ -547,7 +539,6 @@ angular.module('spots').controller('SpotsController', ['$scope', 'Spots', 'userS
 
       var feature = features[0];
       $scope.spotDetails = features[0].properties;
-      console.log($scope.spotDetails);
 
 
       //basic form of the URL for the image
@@ -668,8 +659,8 @@ function onError(img) {
 }
 
 function colorPicker(name) {
-  console.log(name.toLowerCase());
-  console.log(name.includes("hall"));
+  /*console.log(name.toLowerCase());
+  console.log(name.includes("hall"));*/
   var defaultColor = '#5e5353';
 
   if (name.includes("computer")) {
